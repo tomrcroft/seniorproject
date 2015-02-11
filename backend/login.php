@@ -28,25 +28,30 @@
 
     //database check for login information
     function CheckDBForLogin($username,$password)
-    {
-        if(!$this->DBLogin())
-        {
-            $this->HandleError("Database login failed!");
-            return false;
-        }          
+    {          
         $username = $this->SanitizeForSQL($username);
         $pwdmd5 = md5($password);
-        //Gurnit edit the query below
-        $qry = "Select name, email from $this->tablename ".
-            " where username='$username' and password='$pwdmd5' "; 
-        $result = mysql_query($qry,$this->connection);
+        
+        // Connect to MSSQL
+        $link = mssql_connect($server, 'sa', 'phpfi');
 
-        if(!$result || mysql_num_rows($result) <= 0)
-        {
-            $this->HandleError("The username or password is incorrect");
+        if (!$link) {
+            $this->HandleError("Something went wrong while connecting to MSSQL");
             return false;
         }
-        return true;
+        
+        $count = mssql_query('select count(*) from cmt.[User] where username = @username and password = @pwdmd5');
+        
+        if ($count == 1)
+        {
+            mssql_free_result($count);
+            return true;
+        }
+        else
+        {
+            mssql_free_result($count);
+            return false;
+        }
     }
 
 ?>
