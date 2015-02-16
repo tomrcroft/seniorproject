@@ -33,7 +33,7 @@
         $pwdmd5 = md5($password);
         
         // Connect to MSSQL
-        $link = mssql_connect($server, 'sa', 'phpfi');
+        $link = mssql_connect(ALEXBIGLAPTOP, 'Alex', 'harmonic');
 
         if (!$link) {
             $this->HandleError("Something went wrong while connecting to MSSQL");

@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<?php require_once '../backend/login.php'; ?>
+
 <html>
     <head>
         <meta charset="utf-8" />
@@ -88,7 +90,7 @@
                 <div class="row">
                     <div class="large-12 columns">
                     Login
-                        <form action="../backend/login.php" method="POST">
+                        <form action="../backend/login.php" method="post">
                             <div class="row">
                                 <div class="large-12 columns">
                                     <input type="text" name="username" placeholder="Username" />
