@@ -24,15 +24,6 @@
     //checks if can be added to the database
     function AddToDatabase(&$formvars)
     {
-       if(!$this->DBLogin())
-       {
-           $this->HandleError("Database login failed!");
-           return false;
-       }
-       if(!$this->Ensuretable())
-       {
-           return false;
-       }
        if(!$this->IsFieldUnique($formvars,'email'))
        {
            $this->HandleError("This email is already registered");
@@ -55,28 +46,18 @@
    //inserts into the database   
    function InsertIntoDB(&$formvars)
     {
-        $confirmcode = $this->MakeConfirmationMd5($formvars['email']);
+        // Connect to MSSQL
+        $link = mssql_connect($server, 'sa', 'phpfi');
 
-        $insert_query = 'insert into '.$this->tablename.'(
-                name,
-                email,
-                username,
-                password,
-                confirmcode
-                )
-                values
-                (
-                "' . $this->SanitizeForSQL($formvars['name']) . '",
-                "' . $this->SanitizeForSQL($formvars['email']) . '",
-                "' . $this->SanitizeForSQL($formvars['username']) . '",
-                "' . md5($formvars['password']) . '",
-                "' . $confirmcode . '"
-                )';      
-        if(!mysql_query( $insert_query ,$this->connection))
-        {
-            $this->HandleDBError("Error inserting data to the table\nquery:$insert_query");
+        //Checks connection
+        if (!$link) {
+            $this->HandleError("Something went wrong while connecting to MSSQL");
             return false;
         }        
+        
+        //Insert data
+        
+        
         return true;
     }
 ?>
