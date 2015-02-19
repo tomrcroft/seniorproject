@@ -22,8 +22,9 @@
      
     session_start();
      
-    $_SESSION[$this->GetLoginSessionVar()] = $username;
-     
+    $_SESSION['login_user']=$email; // Initializing Session
+    header('location: index.html'); // Redirecting To Other Page
+                        
     return true;
 
     //database check for login information
