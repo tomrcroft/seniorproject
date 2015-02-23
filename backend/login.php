@@ -22,19 +22,35 @@
      
     session_start();
      
-    $_SESSION[$this->GetLoginSessionVar()] = $username;
-     
+    $_SESSION['login_user']=$email; // Initializing Session
+    header('location: index.html'); // Redirecting To Other Page
+                        
     return true;
 
     //database check for login information
     function CheckDBForLogin($username,$password)
     {          
+<<<<<<< HEAD
         $username = $this->SanitizeForSQL($username);
         $pwdmd5 = md5($password);
         
         // Connect to MSSQL
         $link = mssql_connect(ALEXBIGLAPTOP, 'Alex', 'harmonic');
 
+=======
+        //prevents SQL injection
+        $username = stripslashes($username);
+        $password = stripslashes($password);
+        $username = mysql_real_escape_string($username);
+        $password = mysql_real_escape_string($password);
+        
+        //encrypts password
+        $pwdmd5 = md5($password);
+
+        // Connect to MSSQL
+        $link = mssql_connect($server, 'sa', 'phpfi');
+
+>>>>>>> 53221d572f78bab7094e15c965fabddcc605602a
         if (!$link) {
             $this->HandleError("Something went wrong while connecting to MSSQL");
             return false;
