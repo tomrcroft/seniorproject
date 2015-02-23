@@ -7,19 +7,11 @@
 
     $formvars = array();
 
-    if(!$this->ValidateRegistrationSubmission())
-    {
-        return false;
-    }
-
+    ValidateRegistrationSubmission();
+    
     $this->CollectRegistrationSubmission($formvars);
 
-    if(!$this->AddToDatabase($formvars))
-    {
-        return false;
-    }
-
-    return true;
+    AddToDatabase($formvars);
     
     //checks if can be added to the database
     function AddToDatabase(&$formvars)
