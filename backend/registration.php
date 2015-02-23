@@ -7,11 +7,16 @@
 
     $formvars = array();
 
-    ValidateRegistrationSubmission();
+    //implement - ValidateRegistrationSubmission();
     
     $this->CollectRegistrationSubmission($formvars);
 
-    AddToDatabase($formvars);
+    if(AddToDatabase($formvars))
+    {
+        session_start();
+        $_SESSION['login_user']=$username; // Initializing Session
+        header('location: dashboard.php'); // Redirecting To Other Page
+    }
     
     //checks if can be added to the database
     function AddToDatabase(&$formvars)
