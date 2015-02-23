@@ -30,14 +30,13 @@
     //database check for login information
     function CheckDBForLogin($username,$password)
     {          
-<<<<<<< HEAD
+
         $username = $this->SanitizeForSQL($username);
         $pwdmd5 = md5($password);
         
         // Connect to MSSQL
         $link = mssql_connect(ALEXBIGLAPTOP, 'Alex', 'harmonic');
 
-=======
         //prevents SQL injection
         $username = stripslashes($username);
         $password = stripslashes($password);
@@ -50,7 +49,6 @@
         // Connect to MSSQL
         $link = mssql_connect($server, 'sa', 'phpfi');
 
->>>>>>> 53221d572f78bab7094e15c965fabddcc605602a
         if (!$link) {
             $this->HandleError("Something went wrong while connecting to MSSQL");
             return false;
