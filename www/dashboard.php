@@ -55,6 +55,10 @@
             </section>
         </nav>
 
+        <div id="welcome_message">
+
+        </div>
+
         <li class="has-form">
             <div class="row collapse">
                 <div class="large-8 small-9 columns">
