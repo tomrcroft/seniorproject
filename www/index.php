@@ -31,14 +31,13 @@
                 </li>
             </ul>
 
-            <section class="top-bar-section">
-                <!-- Right Nav Section -->
+<!--             <section class="top-bar-section">
                 <ul class="right">
                     <li class="has-form">
                         <a href="#" class="button">Login</a>
                     </li>
                 </ul>
-            </section>
+            </section> -->
         </nav>
 
         <div class="welcome">
@@ -98,7 +97,7 @@
                 <div class="row">
                     <div class="large-12 columns">
                     Login
-                        <form action="../backend/login.php" method="post">
+                        <form action="../backend/login.php" method="POST">
                             <div class="row">
                                 <div class="large-12 columns">
                                     <input type="text" name="username" placeholder="Username" />
@@ -114,6 +113,8 @@
                                     <input type="submit" class="button expand" value="Log In"/>
                                 </div>
                             </div>
+                        </form>
+                        <form action="forgot_password.php" method="POST">
                             <div class="row">
                                 <div class="large-12 large-centered columns">
                                     <input type="submit" class="button expand" value="Forgot Password?"/>
