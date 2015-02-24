@@ -2,12 +2,16 @@
 
     if(empty($_POST['username']))
     {
-        $this->HandleError("Please enter a Username!");
+        print '<script type="text/javascript">'; 
+        print 'alert("Please enter a Username!")'; 
+        print '</script>';
     }
      
     elseif(empty($_POST['password']))
     {
-        $this->HandleError("Please enter a Password!");
+        print '<script type="text/javascript">'; 
+        print 'alert("Please enter a Password!")'; 
+        print '</script>';
     }
     
     else 
@@ -15,9 +19,9 @@
         $username = trim($_POST['username']);
         $password = trim($_POST['password']);
 
-        if(!$this->CheckDBForLogin($username,$password))
+        if(!CheckDBForLogin($username,$password))
         {
-            $this->HandleError("Username or password is incorrect!");
+            
         }
         else
         {
@@ -41,7 +45,9 @@
             $link = mssql_connect($server, 'sa', 'phpfi');
 
             if (!$link) {
-                $this->HandleError("Something went wrong while connecting to MSSQL");
+                print '<script type="text/javascript">'; 
+                print 'alert("Something went wrong with connecting to the database!")'; 
+                print '</script>';
                 return false;
             }
 
@@ -54,6 +60,9 @@
             }
             else
             {
+                print '<script type="text/javascript">'; 
+                print 'alert("Username or Password is incorrect!")'; 
+                print '</script>';
                 mssql_free_result($count);
                 return false;
             }
