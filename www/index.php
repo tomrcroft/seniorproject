@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<?php require_once '../backend/login.php'; ?>
+<?php 
+// require_once '../backend/login.php'; 
+?>
 
 <html>
     <head>

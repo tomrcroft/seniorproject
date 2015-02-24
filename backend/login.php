@@ -22,7 +22,7 @@
     session_start();
      
     $_SESSION['login_user']=$email; // Initializing Session
-    header('location: index.html'); // Redirecting To Other Page
+    header('location: ../www/dashboard.php'); // Redirecting To Other Page
                         
     return true;
 
