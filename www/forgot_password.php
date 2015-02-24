@@ -24,14 +24,14 @@
             <ul class="title-area">
                 <!-- <img src="../lib/images/smallCMTlogo.jpg" alt="CMT" style="width:100px;height:110px">-->
                 <li class="name">
-                    <h1><a href="#">Costume Inventory System</a></h1>
+                    <h1><a href="index.php">Costume Inventory System</a></h1>
                 </li>
             </ul>
 
             <section class="top-bar-section">
                 <ul class="right">
                     <li class="has-form">
-                        <a href="#" class="button">Login</a>
+                        <a href="index.php" class="button">Login</a>
                     </li>
                 </ul>
             </section>
@@ -54,7 +54,7 @@
                                 </div>
                             </div>
                         </form>
-                        <form action="index.php" method="post">
+                        <form action="index.php" method="POST">
                             <div class="row">
                                 <div class="large-12 large-centered columns">
                                     <input type="submit" class="button expand" value="Cancel"/>
