@@ -13,6 +13,7 @@
 
         <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
         <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
+        <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
 
     </head>
 
