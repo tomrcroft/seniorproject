@@ -47,7 +47,9 @@
                 <!-- Right Nav Section -->
                 <ul class="right">
                     <li class="has-form">
-                        <a href="#" class="button">Logout</a>
+                        <form action="../backend/logout.php" method="POST">
+                            <input type="submit" class="button" value="Logout"></input>
+                        </form>
                     </li>
                 </ul>
             </section>
