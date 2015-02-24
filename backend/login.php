@@ -2,20 +2,19 @@
 
     if(empty($_POST['username']))
     {
-        $this->HandleError("Please enter a Username!");
-        return false;
+        print '<script type="text/javascript">'; 
+        print 'alert("Please enter a Username!")'; 
+        print '</script>';
     }
      
-    if(empty($_POST['password']))
+    elseif(empty($_POST['password']))
     {
-        $this->HandleError("Please enter a Password!");
-        return false;
+        print '<script type="text/javascript">'; 
+        print 'alert("Please enter a Password!")'; 
+        print '</script>';
     }
-     
-    $username = trim($_POST['username']);
-    $password = trim($_POST['password']);
-     
-    if(!$this->CheckDBForLogin($username,$password))
+    
+    else 
     {
         return false;
     }
@@ -45,27 +44,18 @@
         
         //encrypts password
         $pwdmd5 = md5($password);
+        $username = trim($_POST['username']);
+        $password = trim($_POST['password']);
 
-        // Connect to MSSQL
-        $link = mssql_connect($server, 'sa', 'phpfi');
-
-        if (!$link) {
-            $this->HandleError("Something went wrong while connecting to MSSQL");
-            return false;
-        }
-        
-        $count = mssql_query('select count(*) from cmt.[User] where username = @username and password = @pwdmd5');
-        
-        if ($count == 1)
+        if(!CheckDBForLogin($username,$password))
         {
-            mssql_free_result($count);
-            return true;
+            
         }
         else
         {
-            mssql_free_result($count);
-            return false;
+            session_start();
+            $_SESSION['login_user']=$username; // Initializing Session
+            header('location: dashboard.php'); // Redirecting To Other Page
         }
     }
-
 ?>

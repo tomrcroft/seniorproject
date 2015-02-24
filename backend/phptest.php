@@ -1,5 +1,5 @@
 <?php
-$serverName = "ALEXBIGLAPTOP";
+$serverName = "ALEXBIGLAPTOP"; //put your servername here
 $connection = array( "Database"=>"CMT");
 $conn = sqlsrv_connect( $serverName, $connection);
 

@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Costume Inventory System | Dashboard</title>
+        <title>CMT | Costume Inventory System | Dashboard</title>
 
         <!-- Required header files -->
         <script src="../lib/foundation/js/vendor/jquery.js" type="text/javascript"></script>
@@ -13,6 +13,7 @@
 
         <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
         <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
+        <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
 
     </head>
 
@@ -52,76 +53,18 @@
             </section>
         </nav>
 
-        Hello
-        <br>
-        Hello
-                <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello
-                <br>
-        Hello
-                <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello
-                <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello
-                <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello
-                <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello
-        <br>
-        Hello
-                <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello
-                <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello
-                <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello
-                <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello
-                <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello
-                <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello
+        <li class="has-form">
+            <div class="row collapse">
+                <div class="large-8 small-9 columns">
+                    <input type="text" placeholder="Find Stuff">
+                </div>
+                <div class="large-4 small-3 columns">
+                    <a href="#" class="alert button expand">Search</a>
+                </div>
+            </div>
+        </li>
+
+
     <script>
         $(document).foundation();
     </script>

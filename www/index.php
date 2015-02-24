@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
         <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
         <link rel="stylesheet" href="../lib/css/index.css" type="text/css">
+        <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
 
     </head>
 
@@ -37,6 +38,11 @@
                 </ul>
             </section>
         </nav>
+
+        <div class="welcome">
+            Costume Inventory<br><br>
+            Welcome to the Califo
+        </div>
 
         <div class="login large-3 large-centered columns">
             <div class="login-box">
@@ -104,6 +110,11 @@
                             <div class="row">
                                 <div class="large-12 large-centered columns">
                                     <input type="submit" class="button expand" value="Log In"/>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="large-12 large-centered columns">
+                                    <input type="submit" class="button expand" value="Forgot Password?"/>
                                 </div>
                             </div>
                         </form>
