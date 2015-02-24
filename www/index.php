@@ -41,11 +41,11 @@
         </nav>
 
         <div class="welcome">
-            Costume Inventory<br><br>
-            Welcome to the Califo
+            Costume Inventory<br>
+            Welcome to the California Musical Theatre Inventory System.
         </div>
 
-        <div class="login large-3 large-centered columns">
+        <div class="registration large-3 large-centered columns">
             <div class="login-box">
                 <div class="row">
                     <div class="large-12 columns">
