@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="../lib/css/index.css" type="text/css">
         <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
 
+
     </head>
 
     <body>
@@ -42,19 +43,19 @@
                 <div class="row">
                     <div class="large-12 columns">
                     Forgot Password?
-                        <form action="#" method="post">
+                        <form method="POST">
                             <div class="row">
                                 <div class="large-12 columns">
-                                    <input type="text" name="email" placeholder="E-Mail" />
+                                    <input type="text" name="email" id="email" placeholder="E-Mail" />
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="large-12 large-centered columns">
-                                    <input type="submit" class="button expand" value="Reset Password"/>
+                                    <input type="submit" class="button expand" id="reset_pass_button" value="Reset Password"/>
                                 </div>
                             </div>
                         </form>
-                        <form action="index.php" method="POST">
+                        <form action="index.php">
                             <div class="row">
                                 <div class="large-12 large-centered columns">
                                     <input type="submit" class="button expand" value="Cancel"/>
