@@ -52,7 +52,7 @@
                 <div class="row">
                     <div class="large-12 columns">
                         Registration
-                        <form action ="../backend/registration.php" method="POST">
+                        <form method="POST">
                             <div class="row">
                                 <div class="large-12 columns">
                                     <input type="text" name="firstName" id="signup_firstname" placeholder="First Name" />
@@ -99,7 +99,7 @@
                 <div class="row">
                     <div class="large-12 columns">
                     Login
-                        <form action="../backend/login.php" method="POST">
+                        <form method="POST">
                             <div class="row">
                                 <div class="large-12 columns">
                                     <input type="text" name="username" id="login_username" placeholder="Username" />
