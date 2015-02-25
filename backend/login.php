@@ -9,15 +9,11 @@
     $username = mysql_real_escape_string($username);
     $password = mysql_real_escape_string($password);
 
-    if(!CheckDBForLogin($username,$password))
-    {
-
-    }
-    else
-    {
-        $_SESSION['login_user']=$username; // Initializing Session
-        header('location: ../www/dashboard.php'); // Redirecting To Other Page
-    }
+    CheckDBForLogin($username,$password);
+    
+    $_SESSION['login_user']=$username; // Initializing Session
+    header('location: ../www/dashboard.php'); // Redirecting To Other Page
+    
     //database check for login information
     function CheckDBForLogin($username,$password)
     {          
@@ -28,26 +24,24 @@
         $link = mssql_connect($server, 'sa', 'phpfi');
 
         if (!$link) {
-            print '<script type="text/javascript">'; 
-            print 'alert("Something went wrong with connecting to the database!")'; 
-            print '</script>';
-            return false;
+            $output = "Something went wrong with connecting to the database!"; 
+            $json = json_encode($output);
+            echo $json;
         }
 
-        $count = mssql_query('select count(*) from cmt.[User] where username = $username and password = $pwdmd5');
+        $str = "select count(*) from cmt.[User] where username = $username and password = $pwdmd5";
+        $count = mssql_query($str);
 
         if ($count == 1)
         {
             mssql_free_result($count);
-            return true;
         }
         else
         {
-            print '<script type="text/javascript">'; 
-            print 'alert("Username or Password is incorrect!")'; 
-            print '</script>';
+            $output = "Username or Password is incorrect!"; 
+            $json = json_encode($output);
             mssql_free_result($count);
-            return false;
+            echo $json;
         }
     }
 
