@@ -5,11 +5,15 @@
        return false;
     }
 
-    if(AddToDatabase())
+    $formvars = array($_POST['firstName'],$_POST['lastName'],$_POST['Company'],$_POST['email'],$_POST['username'],$_POST['password']);
+    
+    //ValidateRegistrationSubmission();
+    
+    if(AddToDatabase($formvars))
     {
         session_start();
-        $_SESSION['login_user']=$username; // Initializing Session
-        header('location: dashboard.php'); // Redirecting To Other Page
+        $_SESSION['login_user']=$formvars[4]; // Initializing Session
+        header('location: ../www/dashboard.php'); // Redirecting To Other Page
     }
     
     //validate registration form data
@@ -19,23 +23,23 @@
     }
 
     //checks if can be added to the database
-    function AddToDatabase()
+    function AddToDatabase($formvars)
     {
-       if(!IsFieldUnique($_POST['email']))
+       /*if(!IsFieldUnique($formvars[3]))
        {
            print '<script type="text/javascript">'; 
-           print 'alert("The email address '. $_POST['email'].' is already registered!")'; 
+           print 'alert("The email address '. $formvars[3].' is already registered!")'; 
            print '</script>';
            return false;
        }
         
-       if(!IsFieldUnique($_POST['username']))
+       if(!IsFieldUnique($formvars[4]))
        {
            print '<script type="text/javascript">'; 
-           print 'alert("The email address '. $_POST['username'].' is already taken!")'; 
+           print 'alert("The email address '. $formvars[4].' is already taken!")'; 
            print '</script>';
            return false;
-       }        
+       }        */
        if(!InsertIntoDB($formvars))
        {
            print '<script type="text/javascript">'; 
@@ -47,7 +51,7 @@
    }
    
    //inserts into the database   
-   function InsertIntoDB(&$formvars)
+   function InsertIntoDB($formvars)
     {
         // Connect to MSSQL
         $link = mssql_connect($server, 'sa', 'phpfi');
@@ -61,7 +65,18 @@
         }        
         
         //Insert data
+        $str = "EXECUTE CMT.[dbo].[Add_Or_Update_User] 
+        @First_Name = '$formvars[0]'
+        ,@Last_Name = '$formvars[1]'
+        ,@Company = '$formvars[2]'
+        ,@Username = '$formvars[3]'
+        ,@Email = '$formvars[4]'
+        ,@Password = '$formvars[5]'
+        GO";
         
+        $stmt = mssql_init($str);//makes statement
+        mssql_execute($stmt);//runs statement
+        mssql_free_statement($stmt);//frees statement
         
         return true;
     }

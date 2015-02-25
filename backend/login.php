@@ -34,7 +34,7 @@
             return false;
         }
 
-        $count = mssql_query('select count(*) from cmt.[User] where username = @username and password = @pwdmd5');
+        $count = mssql_query('select count(*) from cmt.[User] where username = $username and password = $pwdmd5');
 
         if ($count == 1)
         {
