@@ -27,24 +27,21 @@
     {
        /*if(!IsFieldUnique($formvars[3]))
        {
-           print '<script type="text/javascript">'; 
-           print 'alert("The email address '. $formvars[3].' is already registered!")'; 
-           print '</script>';
+           $output = "The email address '. $formvars[3].' has an account!"; 
+           $json = json_encode($output);
+           echo $json;
            return false;
        }
         
        if(!IsFieldUnique($formvars[4]))
        {
-           print '<script type="text/javascript">'; 
-           print 'alert("The email address '. $formvars[4].' is already taken!")'; 
-           print '</script>';
+           $output = "The username '. $formvars[4].' is already taken!"; 
+           $json = json_encode($output);
+           echo $json;
            return false;
        }        */
        if(!InsertIntoDB($formvars))
        {
-           print '<script type="text/javascript">'; 
-           print 'alert("Problems with the database entry")'; 
-           print '</script>';
            return false;
        }
        return true;
@@ -58,9 +55,9 @@
 
         //Checks connection
         if (!$link) {
-            print '<script type="text/javascript">'; 
-            print 'alert("Something went wrong with connecting to the database!")'; 
-            print '</script>';
+            $output = "Problems with the database connection!"; 
+            $json = json_encode($output);
+            echo $json;
             return false;
         }        
         
