@@ -47,7 +47,7 @@
         // Connect to MSSQL
         $server = 'JWOW\SQLEXPRESS';//remember to change the server
         //                            user,password
-        $link = mssql_connect($server, 'sa', 'phpfi');
+        $link = mssql_connect($server, 'JWow/jdub9_000', 'dalaolla271/2');
 
         //Checks connection
         if (!$link) {
