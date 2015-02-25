@@ -56,20 +56,31 @@
             </section>
         </nav>
 
-        <div id="welcome_message">
 
+
+        <div class="row">
+            <div class="large-1 columns">
+                <ul class="side-nav">
+                    <li class="active"><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Link 3</a></li>
+                    <li><a href="#">Link 4</a></li>
+                </ul>
+            </div>
+<!--             <div class="large-11 columns">
+                <input type="text" placeholder="Find Stuff">
+                <a href="#" class="alert button expand">Search</a>
+            </div> -->
         </div>
-
-        <li class="has-form">
-            <div class="row collapse">
+<!--             <div class="row collapse">
                 <div class="large-8 small-9 columns">
                     <input type="text" placeholder="Find Stuff">
                 </div>
                 <div class="large-4 small-3 columns">
                     <a href="#" class="alert button expand">Search</a>
                 </div>
-            </div>
-        </li>
+            </div> -->
 
 
     <script>
