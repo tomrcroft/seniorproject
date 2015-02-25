@@ -1,18 +1,12 @@
 <?php
-
-    if(!isset($_POST['submitted']))
-    {
-       return false;
-    }
-
-    $formvars = array($_POST['firstName'],$_POST['lastName'],$_POST['Company'],$_POST['email'],$_POST['username'],$_POST['password']);
+    session_start();
+        
+    $formvars = array($_POST['firstName'],$_POST['lastName'],$_POST['Company'],$_POST['email'],$_POST['username'],  md5($_POST['password']));
     
     //ValidateRegistrationSubmission();
     
     if(AddToDatabase($formvars))
     {
-        session_start();
-        $_SESSION['login_user']=$formvars[4]; // Initializing Session
         header('location: ../www/dashboard.php'); // Redirecting To Other Page
     }
     
@@ -51,6 +45,8 @@
    function InsertIntoDB($formvars)
     {
         // Connect to MSSQL
+        $server = 'JWOW\SQLEXPRESS';//remember to change the server
+        //                            user,password
         $link = mssql_connect($server, 'sa', 'phpfi');
 
         //Checks connection
@@ -62,16 +58,17 @@
         }        
         
         //Insert data
-        $str = "EXECUTE CMT.[dbo].[Add_Or_Update_User] 
-        @First_Name = '$formvars[0]'
-        ,@Last_Name = '$formvars[1]'
-        ,@Company = '$formvars[2]'
-        ,@Username = '$formvars[3]'
-        ,@Email = '$formvars[4]'
-        ,@Password = '$formvars[5]'
-        GO";
-        
+        $str = "Add_Or_Update_User";
         $stmt = mssql_init($str);//makes statement
+        
+        //bind variables
+        mssql_bind($stmt, '@First_Name', $formvars[0], SQLVARCHAR, false, false, 60);
+        mssql_bind($stmt, '@Last_Name', $formvars[1], SQLVARCHAR, false, false, 20);
+        mssql_bind($stmt, '@Company', $formvars[2], SQLVARCHAR, false, false, 60);
+        mssql_bind($stmt, '@Username', $formvars[3], SQLVARCHAR, false, false, 60);
+        mssql_bind($stmt, '@Email', $formvars[4], SQLVARCHAR, false, false, 60);
+        mssql_bind($stmt, '@Password', $formvars[5], SQLVARCHAR, false, false, 20);
+        
         mssql_execute($stmt);//runs statement
         mssql_free_statement($stmt);//frees statement
         
