@@ -5,36 +5,42 @@
        return false;
     }
 
-    $formvars = array();
-
-    //implement - ValidateRegistrationSubmission();
-    
-    $this->CollectRegistrationSubmission($formvars);
-
-    if(AddToDatabase($formvars))
+    if(AddToDatabase())
     {
         session_start();
         $_SESSION['login_user']=$username; // Initializing Session
         header('location: dashboard.php'); // Redirecting To Other Page
     }
     
-    //checks if can be added to the database
-    function AddToDatabase(&$formvars)
+    //validate registration form data
+    function ValidateRegistrationSubmission()
     {
-       if(!$this->IsFieldUnique($formvars,'email'))
+        // do stuff
+    }
+
+    //checks if can be added to the database
+    function AddToDatabase()
+    {
+       if(!IsFieldUnique($_POST['email']))
        {
-           $this->HandleError("This email is already registered");
+           print '<script type="text/javascript">'; 
+           print 'alert("The email address '. $_POST['email'].' is already registered!")'; 
+           print '</script>';
            return false;
        }
         
-       if(!$this->IsFieldUnique($formvars,'username'))
+       if(!IsFieldUnique($_POST['username']))
        {
-           $this->HandleError("This UserName is already used. Please try another username");
+           print '<script type="text/javascript">'; 
+           print 'alert("The email address '. $_POST['username'].' is already taken!")'; 
+           print '</script>';
            return false;
        }        
-       if(!$this->InsertIntoDB($formvars))
+       if(!InsertIntoDB($formvars))
        {
-           $this->HandleError("Inserting to Database failed!");
+           print '<script type="text/javascript">'; 
+           print 'alert("Problems with the database entry")'; 
+           print '</script>';
            return false;
        }
        return true;
@@ -48,7 +54,9 @@
 
         //Checks connection
         if (!$link) {
-            $this->HandleError("Something went wrong while connecting to MSSQL");
+            print '<script type="text/javascript">'; 
+            print 'alert("Something went wrong with connecting to the database!")'; 
+            print '</script>';
             return false;
         }        
         
