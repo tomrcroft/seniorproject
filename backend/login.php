@@ -16,7 +16,7 @@
     else
     {
         $_SESSION['login_user']=$username; // Initializing Session
-        header('location: dashboard.php'); // Redirecting To Other Page
+        header('location: ../www/dashboard.php'); // Redirecting To Other Page
     }
     //database check for login information
     function CheckDBForLogin($username,$password)

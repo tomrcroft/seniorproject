@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php 
+// require_once '../backend/login.php'; 
+?>
+
 <html>
     <head>
         <meta charset="utf-8" />
@@ -10,10 +14,12 @@
         <script src="../lib/foundation/js/vendor/jquery.js" type="text/javascript"></script>
         <script src="../lib/foundation/js/vendor/modernizr.js" type="text/javascript"></script>
         <script src="../lib/foundation/js/foundation.min.js" type="text/javascript"></script>
+        <script src="../lib/js/login.js" type="text/javascript"></script>
 
         <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
         <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
         <link rel="stylesheet" href="../lib/css/index.css" type="text/css">
+        <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
 
     </head>
 
@@ -22,34 +28,58 @@
             <ul class="title-area">
                 <!-- <img src="../lib/images/smallCMTlogo.jpg" alt="CMT" style="width:100px;height:110px">-->
                 <li class="name">
-                    <h1><a href="#">Costume Inventory System</a></h1>
+                    <h1><a href="index.php">Costume Inventory System</a></h1>
                 </li>
             </ul>
 
-            <section class="top-bar-section">
-                <!-- Right Nav Section -->
+<!--             <section class="top-bar-section">
                 <ul class="right">
                     <li class="has-form">
                         <a href="#" class="button">Login</a>
                     </li>
                 </ul>
-            </section>
+            </section> -->
         </nav>
 
-        <div class="login large-3 large-centered columns">
+        <div class="welcome">
+            Costume Inventory<br>
+            Welcome to the California Musical Theatre Inventory System.
+        </div>
+
+        <div class="registration large-3 large-centered columns">
             <div class="login-box">
                 <div class="row">
                     <div class="large-12 columns">
                         Registration
-                        <form>
+                        <form action ="../backend/registration.php" method="POST">
                             <div class="row">
                                 <div class="large-12 columns">
-                                    <input type="text" name="username" placeholder="Username" />
+                                    <input type="text" name="firstName" id="signup_firstname" placeholder="First Name" />
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="large-12 columns">
-                                    <input type="password" name="password" placeholder="Password" />
+                                    <input type="text" name="lastName" id="signup_lastname" placeholder="Last Name" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <input type="text" name="Company" id="signup_company" placeholder="Company" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <input type="text" name="email" id="signup_email" placeholder="E-mail" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <input type="text" name="username" id="signup_username" placeholder="Username" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <input type="password" name="password" id="signup_password" placeholder="Password" />
                                 </div>
                             </div>
                             <div class="row">
@@ -68,20 +98,27 @@
                 <div class="row">
                     <div class="large-12 columns">
                     Login
-                        <form>
+                        <form action="../backend/login.php" method="POST">
                             <div class="row">
                                 <div class="large-12 columns">
-                                    <input type="text" name="username" placeholder="Username" />
+                                    <input type="text" name="username" id="login_username" placeholder="Username" />
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="large-12 columns">
-                                    <input type="password" name="password" placeholder="Password" />
+                                    <input type="password" name="password" id="login_password" placeholder="Password" />
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="large-12 large-centered columns">
-                                    <input type="submit" class="button expand" value="Log In"/>
+                                    <input type="submit" class="button expand" id="login_button" value="Log In"/>
+                                </div>
+                            </div>
+                        </form>
+                        <form action="forgot_password.php" method="POST">
+                            <div class="row">
+                                <div class="large-12 large-centered columns">
+                                    <input type="submit" class="button expand" value="Forgot Password?"/>
                                 </div>
                             </div>
                         </form>

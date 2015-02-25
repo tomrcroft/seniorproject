@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Costume Inventory System | Dashboard</title>
+        <title>CMT | Costume Inventory System | Dashboard</title>
 
         <!-- Required header files -->
         <script src="../lib/foundation/js/vendor/jquery.js" type="text/javascript"></script>
@@ -13,6 +13,7 @@
 
         <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
         <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
+        <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
 
     </head>
 
@@ -21,7 +22,7 @@
             <ul class="title-area">
                 <!-- <img src="../lib/images/smallCMTlogo.jpg" alt="CMT" style="width:100px;height:110px">-->
                 <li class="name">
-                    <h1><a href="#">Costume Inventory System</a></h1>
+                    <h1><a href="index.php">Costume Inventory System</a></h1>
                 </li>
             </ul>
 
@@ -46,82 +47,30 @@
                 <!-- Right Nav Section -->
                 <ul class="right">
                     <li class="has-form">
-                        <a href="#" class="button">Logout</a>
+                        <form action="../backend/logout.php" method="POST">
+                            <input type="submit" class="button" value="Logout"></input>
+                        </form>
                     </li>
                 </ul>
             </section>
         </nav>
 
-        Hello
-        <br>
-        Hello
-                <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello
-                <br>
-        Hello
-                <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello
-                <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello
-                <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello
-                <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello
-        <br>
-        Hello
-                <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello
-                <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello
-                <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello
-                <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello
-                <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello
-                <br>
-        Hello        <br>
-        Hello        <br>
-        Hello        <br>
-        Hello
+        <div id="welcome_message">
+
+        </div>
+
+        <li class="has-form">
+            <div class="row collapse">
+                <div class="large-8 small-9 columns">
+                    <input type="text" placeholder="Find Stuff">
+                </div>
+                <div class="large-4 small-3 columns">
+                    <a href="#" class="alert button expand">Search</a>
+                </div>
+            </div>
+        </li>
+
+
     <script>
         $(document).foundation();
     </script>
