@@ -116,7 +116,7 @@
                                 </div>
                             </div>
                         </form>
-                        <form action="forgot_password.php" method="POST">
+                        <form action="forgot_password.php">
                             <div class="row">
                                 <div class="large-12 large-centered columns">
                                     <input type="submit" class="button expand" value="Forgot Password?"/>
