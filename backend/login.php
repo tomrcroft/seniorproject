@@ -21,6 +21,8 @@
         $pwdmd5 = md5($password);
 
         // Connect to MSSQL
+        $server = 'JWOW\SQLEXPRESS';//remember to change the server
+        //                            user,password
         $link = mssql_connect($server, 'sa', 'phpfi');
 
         if (!$link) {
