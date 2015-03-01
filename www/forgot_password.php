@@ -43,15 +43,18 @@
                 <div class="row">
                     <div class="large-12 columns">
                     Forgot Password?
-                        <form method="POST">
+
+                        <form method="post">
                             <div class="row">
                                 <div class="large-12 columns">
-                                    <input type="text" name="email" id="email" placeholder="E-Mail" />
+                                    <input type="text" name="email" id="reset_email" placeholder="E-Mail" />
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="large-12 large-centered columns">
-                                    <input type="submit" class="button expand" id="reset_pass_button" value="Reset Password"/>
+
+                                    <input type="submit" class="button expand" id="reset_email_button" value="Reset Password"/>
+
                                 </div>
                             </div>
                         </form>
