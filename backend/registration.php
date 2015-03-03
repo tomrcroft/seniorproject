@@ -1,11 +1,10 @@
 <?php
-  
     if(isset($_POST['submit']))
     {
         session_start();
         echo "I got in";
         $formvars = array($_POST['firstname'],$_POST['lastname'],$_POST['company'],$_POST['email'],$_POST['username'],  md5($_POST['password']));
-        echo json_encode($formvars);
+
         //ValidateRegistrationSubmission();
 
         //checks if can be added to the database
