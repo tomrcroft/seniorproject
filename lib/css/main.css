@@ -13,3 +13,7 @@ body {
 .top-bar-section .has-form {
     background-color: #000000;
 }
+
+.row{
+   max-width: 100%;
+}
