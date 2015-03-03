@@ -55,12 +55,12 @@
                         <form method="POST">
                             <div class="row">
                                 <div class="large-12 columns">
-                                    <input type="text" name="firstName" id="signup_firstname" placeholder="First Name" />
+                                    <input type="text" name="firstname" id="signup_firstname" placeholder="First Name" />
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="large-12 columns">
-                                    <input type="text" name="lastName" id="signup_lastname" placeholder="Last Name" />
+                                    <input type="text" name="lastname" id="signup_lastname" placeholder="Last Name" />
                                 </div>
                             </div>
                             <div class="row">

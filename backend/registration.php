@@ -1,8 +1,9 @@
 <?php
     session_start();
         
-    $formvars = array($_POST['firstName'],$_POST['lastName'],$_POST['Company'],$_POST['email'],$_POST['username'],  md5($_POST['password']));
+    $formvars = array($_POST['firstname'],$_POST['lastname'],$_POST['company'],$_POST['email'],$_POST['username'],  md5($_POST['password']));
     
+    echo json_encode($formvars);
     //ValidateRegistrationSubmission();
     
     if(AddToDatabase($formvars))
