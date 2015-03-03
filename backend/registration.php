@@ -1,50 +1,41 @@
 <?php
-    session_start();
-        
-    $formvars = array($_POST['firstname'],$_POST['lastname'],$_POST['company'],$_POST['email'],$_POST['username'],  md5($_POST['password']));
-    
-    echo json_encode($formvars);
-    //ValidateRegistrationSubmission();
-    
-    if(AddToDatabase($formvars))
+
+    if(isset($_POST['submit']))
     {
-        header('location: ../www/dashboard.php'); // Redirecting To Other Page
+        session_start();
+        echo "I got in";
+        $formvars = array($_POST['firstName'],$_POST['lastName'],$_POST['Company'],$_POST['email'],$_POST['username'],  md5($_POST['password']));
+
+        //ValidateRegistrationSubmission();
+
+        //checks if can be added to the database
+        /*if(!IsFieldUnique($formvars[3]))
+        {
+            $output = "The email address '. $formvars[3].' has an account!"; 
+            $json = json_encode($output);
+            echo $json;
+            return false;
+        }
+
+        if(!IsFieldUnique($formvars[4]))
+        {
+            $output = "The username '. $formvars[4].' is already taken!"; 
+            $json = json_encode($output);
+            echo $json;
+            return false;
+        }        */
+        InsertIntoDB($formvars);
     }
-    
-    //validate registration form data
+   //validate registration form data
     function ValidateRegistrationSubmission()
     {
         // do stuff
     }
 
-    //checks if can be added to the database
-    function AddToDatabase($formvars)
-    {
-       /*if(!IsFieldUnique($formvars[3]))
-       {
-           $output = "The email address '. $formvars[3].' has an account!"; 
-           $json = json_encode($output);
-           echo $json;
-           return false;
-       }
-        
-       if(!IsFieldUnique($formvars[4]))
-       {
-           $output = "The username '. $formvars[4].' is already taken!"; 
-           $json = json_encode($output);
-           echo $json;
-           return false;
-       }        */
-       if(!InsertIntoDB($formvars))
-       {
-           return false;
-       }
-       return true;
-   }
-   
-   //inserts into the database   
+    //inserts into the database   
    function InsertIntoDB($formvars)
     {
+        echo"time to connect";
         // Connect to MSSQL
         $server = 'JWOW\SQLEXPRESS';//remember to change the server
         //                            user,password
@@ -55,7 +46,6 @@
             $output = "Problems with the database connection!"; 
             $json = json_encode($output);
             echo $json;
-            return false;
         }        
         
         //Insert data
@@ -72,7 +62,6 @@
         
         mssql_execute($stmt);//runs statement
         mssql_free_statement($stmt);//frees statement
-        
-        return true;
+        echo"im done";
     }
 ?>
