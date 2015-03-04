@@ -1,31 +1,28 @@
 <?php
-  
-    if(isset($_POST['submit']))
+    session_start();
+    echo "I got in";
+    $formvars = array($_POST['firstname'],$_POST['lastname'],$_POST['company'],$_POST['email'],$_POST['username'],  md5($_POST['password']));
+
+    //ValidateRegistrationSubmission();
+
+    //checks if can be added to the database
+    /*if(!IsFieldUnique($formvars[3]))
     {
-        session_start();
-        echo "I got in";
-        $formvars = array($_POST['firstname'],$_POST['lastname'],$_POST['company'],$_POST['email'],$_POST['username'],  md5($_POST['password']));
-        echo json_encode($formvars);
-        //ValidateRegistrationSubmission();
-
-        //checks if can be added to the database
-        /*if(!IsFieldUnique($formvars[3]))
-        {
-            $output = "The email address '. $formvars[3].' has an account!"; 
-            $json = json_encode($output);
-            echo $json;
-            return false;
-        }
-
-        if(!IsFieldUnique($formvars[4]))
-        {
-            $output = "The username '. $formvars[4].' is already taken!"; 
-            $json = json_encode($output);
-            echo $json;
-            return false;
-        }        */
-        InsertIntoDB($formvars);
+        $output = "The email address '. $formvars[3].' has an account!"; 
+        $json = json_encode($output);
+        echo $json;
+        return false;
     }
+
+    if(!IsFieldUnique($formvars[4]))
+    {
+        $output = "The username '. $formvars[4].' is already taken!"; 
+        $json = json_encode($output);
+        echo $json;
+        return false;
+    }        */
+    InsertIntoDB($formvars);
+
    //validate registration form data
     function ValidateRegistrationSubmission()
     {
@@ -38,8 +35,8 @@
         echo"time to connect";
         // Connect to MSSQL
         $server = 'JWOW\SQLEXPRESS';//remember to change the server
-        //                            user,password
-        $link = mssql_connect($server, 'JWow/jdub9_000', 'dalaolla271/2');
+        $connectionInfo = array( "Database"=>"CMT", "UID"=>"JWow/jdub9_000", "PWD"=>"dalaolla271/2");
+        $link = sqlsrv_connect($server, $connectionInfo);
 
         //Checks connection
         if (!$link) {
