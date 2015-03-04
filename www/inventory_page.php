@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
         <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
         <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
+        <link rel="stylesheet" href="../lib/css/inventory_page.css" type="text/css">
 
     </head>
 
@@ -73,6 +74,10 @@
             <!-- Main Content Section -->
             <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
             <div class="large-9 push-3 large-uncentered columns">
+
+                <div class="inventory_image">
+                    <img src="../lib/images/costumes/costume1.jpg" alt="Yoda">
+                </div>
 
             <h3>Page Title <small>Page subtitle</small></h3>
 
