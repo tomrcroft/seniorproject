@@ -68,15 +68,18 @@
             </div>
         </div>
 
-    <div class="row">
         <div class="row">    
 
             <!-- Main Content Section -->
             <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
-            <div class="large-9 push-3 large-uncentered columns">
-
-                <div class="inventory_image">
-                    <img src="../lib/images/costumes/costume1.jpg" alt="Yoda">
+            <div class="large-9 push-3 columns">
+                <div class="row">
+                    <div class="large-12 columns">
+                        <div class="left inventory_image">
+                            <img src="../lib/images/costumes/costume1.jpg" alt="Yoda">
+                        </div>
+                        INVENTORY DESCRIPTION HERE
+                    </div>
                 </div>
 
             <h3>Page Title <small>Page subtitle</small></h3>
@@ -109,7 +112,6 @@
 
             </div>
         </div>
-    </div>
 
 
         <!-- Footer -->

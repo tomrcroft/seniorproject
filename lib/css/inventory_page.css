@@ -1,4 +1,6 @@
 .inventory_image {
    max-width: 15%;
    max-height: 15%;
+   margin-right: 1%;
+   margin-bottom: 1%;
 }
