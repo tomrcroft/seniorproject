@@ -10,6 +10,7 @@
         <script src="../lib/foundation/js/vendor/jquery.js" type="text/javascript"></script>
         <script src="../lib/foundation/js/vendor/modernizr.js" type="text/javascript"></script>
         <script src="../lib/foundation/js/foundation.min.js" type="text/javascript"></script>
+        <script src="../lib/js/search.js" type="text/javascript"></script>
 
         <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
         <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
@@ -57,10 +58,10 @@
 
         <div class="row collapse">
                 <div class="large-8 small-9 columns">
-                    <input type="text" placeholder="Search Inventory Database">
+                    <input type="text" id="search_term" placeholder="Search Inventory Database">
                 </div>
                 <div class="large-4 small-3 columns">
-                    <a href="#" class="alert button expand postfix">Search</a>
+                    <input type="submit" class="alert button expand postfix" id="search_page_form" value="Search"></input>
                 </div>
             </div>
 
