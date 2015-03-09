@@ -4,13 +4,12 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>CMT | Costume Inventory System | Dashboard</title>
+        <title>Costume Inventory System | Dashboard</title>
 
         <!-- Required header files -->
         <script src="../lib/foundation/js/vendor/jquery.js" type="text/javascript"></script>
         <script src="../lib/foundation/js/vendor/modernizr.js" type="text/javascript"></script>
         <script src="../lib/foundation/js/foundation.min.js" type="text/javascript"></script>
-        <script src="../lib/js/logout.js" type="text/javascript"></script>
 
         <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
         <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
@@ -56,8 +55,7 @@
             </section>
         </nav>
 
-
-            <div class="row collapse">
+        <div class="row collapse">
                 <div class="large-8 small-9 columns">
                     <input type="text" placeholder="Search Inventory Database">
                 </div>
@@ -89,7 +87,6 @@
                 <p><img src="http://placehold.it/320x240&text=Ad" /></p>
                 </div>
             </div>
-
 
     <script>
         $(document).foundation();

@@ -113,7 +113,7 @@
 
             <!-- Nav Sidebar -->
             <!-- This is source ordered to be pulled to the left on larger screens -->
-            <div class="large-3 pull-9 large-uncentered columns">
+            <div class="large-3 pull-9 columns">
 
             <ul class="side-nav">
                 <li><a href="#">Section 1</a></li>
