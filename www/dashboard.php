@@ -60,7 +60,6 @@
 
         </div>
 
-        <li class="has-form">
             <div class="row collapse">
                 <div class="large-8 small-9 columns">
                     <input type="text" placeholder="Find Stuff">
@@ -69,7 +68,6 @@
                     <a href="#" class="alert button expand">Search</a>
                 </div>
             </div>
-        </li>
 
 
     <script>

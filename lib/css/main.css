@@ -2,6 +2,13 @@ body {
     background: #404040;
     color: #FFFFFF;
 }
+h3 {
+   color: #FFFFFF;
+}
+
+h3 small {
+   color: #FFFFFF;
+}
 
 .top-bar {
     background: #000000;
