@@ -3,8 +3,6 @@
     echo "I got in";
     $formvars = array($_POST['firstname'],$_POST['lastname'],$_POST['company'],$_POST['email'],$_POST['username'],  md5($_POST['password']));
 
-    //ValidateRegistrationSubmission();
-
     //checks if can be added to the database
     /*if(!IsFieldUnique($formvars[3]))
     {
@@ -23,17 +21,11 @@
     }        */
     InsertIntoDB($formvars);
 
-   //validate registration form data
-    function ValidateRegistrationSubmission()
-    {
-        // do stuff
-    }
-
     //inserts into the database   
    function InsertIntoDB($formvars)
     {
         echo"time to connect";
-        // Connect to MSSQL
+        
         $server = 'JWOW\SQLEXPRESS';//remember to change the server
         $connectionInfo = array( "Database"=>"CMT", "UID"=>"JWow/jdub9_000", "PWD"=>"dalaolla271/2");
         $link = sqlsrv_connect($server, $connectionInfo);
@@ -44,21 +36,16 @@
             $json = json_encode($output);
             echo $json;
         }        
-        
-        //Insert data
-        $str = "Add_Or_Update_User";
-        $stmt = mssql_init($str);//makes statement
-        
-        //bind variables
-        mssql_bind($stmt, '@First_Name', $formvars[0], SQLVARCHAR, false, false, 60);
-        mssql_bind($stmt, '@Last_Name', $formvars[1], SQLVARCHAR, false, false, 20);
-        mssql_bind($stmt, '@Company', $formvars[2], SQLVARCHAR, false, false, 60);
-        mssql_bind($stmt, '@Username', $formvars[3], SQLVARCHAR, false, false, 60);
-        mssql_bind($stmt, '@Email', $formvars[4], SQLVARCHAR, false, false, 60);
-        mssql_bind($stmt, '@Password', $formvars[5], SQLVARCHAR, false, false, 20);
-        
-        mssql_execute($stmt);//runs statement
-        mssql_free_statement($stmt);//frees statement
-        echo"im done";
+        else
+        {
+            echo 'I connected';
+            //Insert data
+            $str = "{?= call Add_Or_Update_User( , ?, ?, ?, ?, ?, ?, , , )}";
+
+            sqlsrv_query($link,$str,$formvars);//runs statement
+            sqlsrv_free_stmt($stmt);//frees statement
+            sqlsrv_close($link);
+            echo"im done";
+        }
     }
 ?>

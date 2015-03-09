@@ -14,6 +14,7 @@
         CheckDBForLogin($username,$password);
 
         $_SESSION['login_user']=$username; // Initializing Session
+        // go to dashboard.php
     }
     //database check for login information
     function CheckDBForLogin($username,$password)
@@ -23,27 +24,31 @@
 
         // Connect to MSSQL
         $server = 'JWOW\SQLEXPRESS';//remember to change the server
-        //                            user,password
-        $link = mssql_connect($server, 'JWow/jdub9_000', 'dalaolla271/2');
+        $connectionInfo = array( "Database"=>"CMT", "UID"=>"JWow/jdub9_000", "PWD"=>"dalaolla271/2");
+        $link = sqlsrv_connect($server, $connectionInfo);
 
         if (!$link) {
             $output = "Something went wrong with connecting to the database!"; 
             $json = json_encode($output);
             echo $json;
         }
+        echo 'I connected';
+        $str = "select count(*) from cmt.[User] where username = ? and password = ?";
+        $params = array($username,$pwdmd5);
+        $count = sqlsrv_query($link,$str,$params);
 
-        $str = "select count(*) from cmt.[User] where username = $username and password = $pwdmd5";
-        $count = mssql_query($str);
-
-        if ($count == 1)
+        if ($count == sqlsrv_next_result($count))
         {
-            mssql_free_result($count);
+            echo 'I made it';
+            sqlsrv_free_stmt($count);
+            sqlsrv_close($link);
         }
         else
         {
             $output = "Username or Password is incorrect!"; 
             $json = json_encode($output);
             mssql_free_result($count);
+            sqlsrv_close($link);
             echo $json;
         }
     }
