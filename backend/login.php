@@ -40,22 +40,24 @@
         // $str = "select count(*) from cmt.[User] where username = ? and password = ?";
         $str = "select count(*) from dbo.[User] where username = ? and password = ?";
         $params = array($username,$pwdmd5);
-        $count = sqlsrv_query($link,$str,$params);
+        $stmt = sqlsrv_query($link,$str,$params);
         
-        if( $count === false ) {
+        if( $stmt === false ) {
             die( print_r( sqlsrv_errors(), true));
         }
-        else if ($count == sqlsrv_next_result($count))
+        
+        $count = sqlsrv_num_rows($stmt);
+        if ($count === 1)
         {
             echo 'I made it';
-            sqlsrv_free_stmt($count);
+            sqlsrv_free_stmt($stmt);
             sqlsrv_close($link);
         }
         else
         {
             $output = "Username or Password is incorrect!"; 
             $json = json_encode($output);
-            sqlsrv_free_stmt($count);
+            sqlsrv_free_stmt($stmt);
             sqlsrv_close($link);
             echo $json;
         }
