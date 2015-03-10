@@ -32,12 +32,16 @@
             $json = json_encode($output);
             echo $json;
         }
+        
         echo 'I connected';
         $str = "select count(*) from cmt.[User] where username = ? and password = ?";
         $params = array($username,$pwdmd5);
         $count = sqlsrv_query($link,$str,$params);
-
-        if ($count == sqlsrv_next_result($count))
+        
+        if( $count === false ) {
+            die( print_r( sqlsrv_errors(), true));
+        }
+        else if ($count == sqlsrv_next_result($count))
         {
             echo 'I made it';
             sqlsrv_free_stmt($count);
