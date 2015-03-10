@@ -43,7 +43,7 @@
             //Insert data
             $str = "{?= call Add_Or_Update_User( , ?, ?, ?, ?, ?, ?, , , )}";
 
-            sqlsrv_query($link,$str,$formvars);//runs statement
+            $stmt = sqlsrv_query($link,$str,$formvars);//runs statement
             sqlsrv_free_stmt($stmt);//frees statement
             sqlsrv_close($link);
             echo"im done";
