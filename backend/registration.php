@@ -24,7 +24,7 @@
     //inserts into the database   
    function InsertIntoDB($formvars)
     {
-        echo"time to connect";
+        // echo"time to connect";
         
         $server = 'ALEXBIGLAPTOP';//remember to change the server
         $connectionInfo = array( "Database"=>"CMT");
@@ -39,7 +39,7 @@
         }        
         else
         {
-            echo 'I connected';
+            // echo 'I connected';
             //Insert data
             $str = "{call dbo.Add_Or_Update_User(?, ?, ?, ?, ?, ?)}";
             // $str = "INSERT INTO User (First_Name, Last_Name, Company, Username, Email, Password) VALUES (?, ?, ?, ?, ?, ?)";
@@ -50,7 +50,7 @@
             }
             sqlsrv_free_stmt($stmt);//frees statement
             sqlsrv_close($link);
-            echo"im done";
+            echo"Registration Successful, please login now.";
         }
     }
 ?>
