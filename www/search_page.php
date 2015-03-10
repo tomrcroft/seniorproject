@@ -57,13 +57,13 @@
         </nav>
 
         <div class="row collapse">
-                <div class="large-8 small-9 columns">
-                    <input type="text" id="search_term" placeholder="Search Inventory Database">
-                </div>
-                <div class="large-4 small-3 columns">
-                    <input type="submit" class="alert button expand postfix" id="search_page_form" value="Search"></input>
-                </div>
+            <div class="large-8 small-9 columns">
+                <input type="text" id="search_term" placeholder="Search Inventory Database">
             </div>
+            <div class="large-4 small-3 columns">
+                <input type="submit" class="alert button expand postfix" id="search_page_form" value="Search"></input>
+            </div>
+        </div>
 
         <div class="row">    
 
