@@ -1,6 +1,6 @@
 <?php
-    if(isset($_POST['submit']))
-    {
+    // if(isset($_POST['submit']))
+    // {
         session_start();
 
         $username = trim($_POST['username']);
@@ -8,14 +8,14 @@
         //prevents SQL injection
         $username = stripslashes($username);
         $password = stripslashes($password);
-        $username = mysql_real_escape_string($username);
-        $password = mysql_real_escape_string($password);
+        // $username = mysql_real_escape_string($username);
+        // $password = mysql_real_escape_string($password);
 
         CheckDBForLogin($username,$password);
 
         $_SESSION['login_user']=$username; // Initializing Session
         // go to dashboard.php
-    }
+    // }
     //database check for login information
     function CheckDBForLogin($username,$password)
     {          
@@ -23,8 +23,11 @@
         $pwdmd5 = md5($password);
 
         // Connect to MSSQL
-        $server = 'JWOW\SQLEXPRESS';//remember to change the server
-        $connectionInfo = array( "Database"=>"CMT", "UID"=>"JWow/jdub9_000", "PWD"=>"dalaolla271/2");
+        // $server = 'JWOW\SQLEXPRESS';//remember to change the server
+        // $connectionInfo = array( "Database"=>"CMT", "UID"=>"JWow/jdub9_000", "PWD"=>"dalaolla271/2");
+        $server = 'ALEXBIGLAPTOP';
+        $connectionInfo = array ( "Database"=>"CMT");
+
         $link = sqlsrv_connect($server, $connectionInfo);
 
         if (!$link) {
@@ -34,7 +37,8 @@
         }
         
         echo 'I connected';
-        $str = "select count(*) from cmt.[User] where username = ? and password = ?";
+        // $str = "select count(*) from cmt.[User] where username = ? and password = ?";
+        $str = "select count(*) from dbo.[User] where username = ? and password = ?";
         $params = array($username,$pwdmd5);
         $count = sqlsrv_query($link,$str,$params);
         
@@ -51,7 +55,7 @@
         {
             $output = "Username or Password is incorrect!"; 
             $json = json_encode($output);
-            mssql_free_result($count);
+            sqlsrv_free_stmt($count);
             sqlsrv_close($link);
             echo $json;
         }
