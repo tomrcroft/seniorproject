@@ -26,8 +26,9 @@
     {
         echo"time to connect";
         
-        $server = 'JWOW\SQLEXPRESS';//remember to change the server
-        $connectionInfo = array( "Database"=>"CMT", "UID"=>"JWow/jdub9_000", "PWD"=>"dalaolla271/2");
+        $server = 'ALEXBIGLAPTOP';//remember to change the server
+        $connectionInfo = array( "Database"=>"CMT");
+        // $connectionInfo = array( "Database"=>"CMT", "UID"=>"JWow/jdub9_000", "PWD"=>"dalaolla271/2");
         $link = sqlsrv_connect($server, $connectionInfo);
 
         //Checks connection

@@ -1,5 +1,6 @@
 <?php
-$serverName = "JWOW\SQLEXPRESS"; //put your servername here
+// $serverName = "JWOW\SQLEXPRESS"; //put your servername here
+$serverName = "ALEXBIGLAPTOP";
 $connection = array( "Database"=>"CMT");
 $conn = sqlsrv_connect( $serverName, $connection);
 
