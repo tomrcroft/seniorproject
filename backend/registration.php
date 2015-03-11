@@ -24,10 +24,11 @@
     //inserts into the database   
    function InsertIntoDB($formvars)
     {
-        echo"time to connect";
+        // echo"time to connect";
         
-        $server = 'JWOW\SQLEXPRESS';//remember to change the server
-        $connectionInfo = array( "Database"=>"CMT", "UID"=>"JWow/jdub9_000", "PWD"=>"dalaolla271/2");
+        $server = 'ALEXBIGLAPTOP';//remember to change the server
+        $connectionInfo = array( "Database"=>"CMT");
+        // $connectionInfo = array( "Database"=>"CMT", "UID"=>"JWow/jdub9_000", "PWD"=>"dalaolla271/2");
         $link = sqlsrv_connect($server, $connectionInfo);
 
         //Checks connection
@@ -38,14 +39,18 @@
         }        
         else
         {
-            echo 'I connected';
+            // echo 'I connected';
             //Insert data
-            $str = "{?= call Add_Or_Update_User( , ?, ?, ?, ?, ?, ?, , , )}";
+            $str = "{call dbo.Add_Or_Update_User(?, ?, ?, ?, ?, ?)}";
+            // $str = "INSERT INTO User (First_Name, Last_Name, Company, Username, Email, Password) VALUES (?, ?, ?, ?, ?, ?)";
 
-            sqlsrv_query($link,$str,$formvars);//runs statement
+            $stmt = sqlsrv_query($link,$str,$formvars);//runs statement
+            if ($stmt === false) {
+                die(print_r(sqlsrv_errors(), true));
+            }
             sqlsrv_free_stmt($stmt);//frees statement
             sqlsrv_close($link);
-            echo"im done";
+            echo"Registration Successful, please login now.";
         }
     }
 ?>
