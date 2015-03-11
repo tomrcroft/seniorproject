@@ -6,8 +6,8 @@
         $username = trim($_POST['username']);
         $password = trim($_POST['password']);
         //prevents SQL injection
-        $username = stripslashes($username);
-        $password = stripslashes($password);
+        // $username = stripslashes($username);
+        // $password = stripslashes($password);
         // $username = mysql_real_escape_string($username);
         // $password = mysql_real_escape_string($password);
 
@@ -38,7 +38,7 @@
         
         echo 'I connected';
         // $str = "select count(*) from cmt.[User] where username = ? and password = ?";
-        $str = "select count(*) from dbo.[User] where username = ? and password = ?";
+        $str = "select count(*) from dbo.[User] where username = '?' and password = '?'";
         $params = array($username,$pwdmd5);
         $stmt = sqlsrv_query($link,$str,$params);
         
@@ -47,6 +47,8 @@
         }
         
         $count = sqlsrv_num_rows($stmt);
+        echo " $count";
+        echo " $stmt";
         if ($count === 1)
         {
             echo 'I made it';

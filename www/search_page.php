@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
         <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
         <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
+        <link rel="stylesheet" href="../lib/css/search_page.css" type="text/css">
 
     </head>
 
@@ -61,7 +62,7 @@
                 <input type="text" id="search_term" placeholder="Search Inventory Database">
             </div>
             <div class="large-4 small-3 columns">
-                <input type="submit" class="alert button expand postfix" id="search_page_form" value="Search"></input>
+                <input class="alert button expand postfix" id="search_page_form" value="Search"></input>
             </div>
         </div>
 
@@ -74,119 +75,135 @@
             <div class="large-9 push-3 columns">
                 <div class="row">
 
-                    <div class="large-4 small-6 columns">
-                        <img src="../lib/images/costumes/costume1.jpg">
+                    <div class="inventory_image large-4 small-6 columns">
+                            <img src="../lib/images/costumes/costume1.jpg">
+                        <div class="panel clearfix centered">
+                            <h5>Item Name</h5>
+                            <h5>Rental Status: Available</h5>
+                            <h6 class="subheader">$000.00</h6>
+                            <div class="button">Default Button</div>
+                        </div>
+                    </div>
+
+                    <div class="inventory_image large-4 small-6 columns">
+
+                            <img src="../lib/images/costumes/costume2.jpg">
 
                         <div class="panel">
                             <h5>Item Name</h5>
+                            <h5>Rental Status: Unavailable</h5>
                             <h6 class="subheader">$000.00</h6>
                         </div>
                     </div>
 
-                    <div class="large-4 small-6 columns">
-                        <img src="../lib/images/costumes/costume2.jpg">
+                    <div class="inventory_image large-4 small-6 columns">
+
+                            <img src="../lib/images/costumes/costume3.jpg">
 
                         <div class="panel">
                             <h5>Item Name</h5>
+                            <h5>Rental Status: Available</h5>
                             <h6 class="subheader">$000.00</h6>
                         </div>
                     </div>
 
-                    <div class="large-4 small-6 columns">
-                        <img src="../lib/images/costumes/costume3.jpg">
+                    <div class="inventory_image large-4 small-6 columns">
+
+                            <img src="../lib/images/costumes/costume4.jpg">
 
                         <div class="panel">
                             <h5>Item Name</h5>
+                            <h5>Rental Status: Available</h5>
                             <h6 class="subheader">$000.00</h6>
                         </div>
                     </div>
 
-                    <div class="large-4 small-6 columns">
-                        <img src="../lib/images/costumes/costume4.jpg">
-
-                        <div class="panel">
-                            <h5>Item Name</h5>
-                            <h6 class="subheader">$000.00</h6>
-                        </div>
-                    </div>
-
-                        <div class="large-4 small-6 columns">
+                    <div class="inventory_image large-4 small-6 columns">
                         <img src="../lib/images/costumes/costume5.jpg">
 
                         <div class="panel">
                             <h5>Item Name</h5>
+                            <h5>Rental Status: Unavailable</h5>
                             <h6 class="subheader">$000.00</h6>
                         </div>
                     </div>
 
-                    <div class="large-4 small-6 columns">
+                    <div class="inventory_image large-4 small-6 columns">
                         <img src="../lib/images/costumes/costume6.jpg">
 
                         <div class="panel">
                             <h5>Item Name</h5>
+                            <h5>Rental Status: Unavailable</h5>
                             <h6 class="subheader">$000.00</h6>
                         </div>
                     </div>
 
-                    <div class="large-4 small-6 columns">
+                    <div class="inventory_image large-4 small-6 columns">
                         <img src="../lib/images/costumes/costume7.jpg">
 
                         <div class="panel">
                             <h5>Item Name</h5>
+                            <h5>Rental Status: Available</h5>
                             <h6 class="subheader">$000.00</h6>
                         </div>
                     </div>
 
-                    <div class="large-4 small-6 columns">
+                    <div class="inventory_image large-4 small-6 columns">
                         <img src="../lib/images/costumes/costume8.jpg">
 
                         <div class="panel">
                             <h5>Item Name</h5>
+                            <h5>Rental Status: Available</h5>
                             <h6 class="subheader">$000.00</h6>
                         </div>
                     </div>
 
-                    <div class="large-4 small-6 columns">
+                    <div class="inventory_image large-4 small-6 columns">
                         <img src="../lib/images/costumes/costume9.jpg">
 
                         <div class="panel">
                             <h5>Item Name</h5>
+                            <h5>Rental Status: Available</h5>
                             <h6 class="subheader">$000.00</h6>
                         </div>
                     </div>
 
-                    <div class="large-4 small-6 columns">
+                    <div class="inventory_image large-4 small-6 columns">
                         <img src="../lib/images/costumes/costume10.jpg">
 
                         <div class="panel">
                             <h5>Item Name</h5>
+                            <h5>Rental Status: Available</h5>
                             <h6 class="subheader">$000.00</h6>
                         </div>
                     </div>
 
-                    <div class="large-4 small-6 columns">
+                    <div class="inventory_image large-4 small-6 columns">
                         <img src="../lib/images/costumes/costume11.jpg">
 
                         <div class="panel">
                             <h5>Item Name</h5>
+                            <h5>Rental Status: Available</h5>
                             <h6 class="subheader">$000.00</h6>
                         </div>
                     </div>
 
-                    <div class="large-4 small-6 columns">
+                    <div class="inventory_image large-4 small-6 columns">
                         <img src="../lib/images/costumes/costume12.jpg">
 
                         <div class="panel">
                             <h5>Item Name</h5>
+                            <h5>Rental Status: Available</h5>
                             <h6 class="subheader">$000.00</h6>
                         </div>
                     </div>
 
-                    <div class="large-4 small-6 columns">
+                    <div class="inventory_image large-4 small-6 columns">
                         <img src="../lib/images/costumes/costume13.jpg">
 
                         <div class="panel">
                             <h5>Item Name</h5>
+                            <h5>Rental Status: Available</h5>
                             <h6 class="subheader">$000.00</h6>
                         </div>
                     </div>
