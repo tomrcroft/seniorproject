@@ -72,62 +72,125 @@
 
 
             <div class="large-9 push-3 columns">
-              <div class="row">
-     
-                <div class="large-4 small-6 columns">
-                  <img src="http://placehold.it/1000x1000&text=Thumbnail">
-     
-                  <div class="panel">
-                    <h5>Item Name</h5>
-                    <h6 class="subheader">$000.00</h6>
-                  </div>
+                <div class="row">
+
+                    <div class="large-4 small-6 columns">
+                        <img src="../lib/images/costumes/costume1.jpg">
+
+                        <div class="panel">
+                            <h5>Item Name</h5>
+                            <h6 class="subheader">$000.00</h6>
+                        </div>
+                    </div>
+
+                    <div class="large-4 small-6 columns">
+                        <img src="../lib/images/costumes/costume2.jpg">
+
+                        <div class="panel">
+                            <h5>Item Name</h5>
+                            <h6 class="subheader">$000.00</h6>
+                        </div>
+                    </div>
+
+                    <div class="large-4 small-6 columns">
+                        <img src="../lib/images/costumes/costume3.jpg">
+
+                        <div class="panel">
+                            <h5>Item Name</h5>
+                            <h6 class="subheader">$000.00</h6>
+                        </div>
+                    </div>
+
+                    <div class="large-4 small-6 columns">
+                        <img src="../lib/images/costumes/costume4.jpg">
+
+                        <div class="panel">
+                            <h5>Item Name</h5>
+                            <h6 class="subheader">$000.00</h6>
+                        </div>
+                    </div>
+
+                        <div class="large-4 small-6 columns">
+                        <img src="../lib/images/costumes/costume5.jpg">
+
+                        <div class="panel">
+                            <h5>Item Name</h5>
+                            <h6 class="subheader">$000.00</h6>
+                        </div>
+                    </div>
+
+                    <div class="large-4 small-6 columns">
+                        <img src="../lib/images/costumes/costume6.jpg">
+
+                        <div class="panel">
+                            <h5>Item Name</h5>
+                            <h6 class="subheader">$000.00</h6>
+                        </div>
+                    </div>
+
+                    <div class="large-4 small-6 columns">
+                        <img src="../lib/images/costumes/costume7.jpg">
+
+                        <div class="panel">
+                            <h5>Item Name</h5>
+                            <h6 class="subheader">$000.00</h6>
+                        </div>
+                    </div>
+
+                    <div class="large-4 small-6 columns">
+                        <img src="../lib/images/costumes/costume8.jpg">
+
+                        <div class="panel">
+                            <h5>Item Name</h5>
+                            <h6 class="subheader">$000.00</h6>
+                        </div>
+                    </div>
+
+                    <div class="large-4 small-6 columns">
+                        <img src="../lib/images/costumes/costume9.jpg">
+
+                        <div class="panel">
+                            <h5>Item Name</h5>
+                            <h6 class="subheader">$000.00</h6>
+                        </div>
+                    </div>
+
+                    <div class="large-4 small-6 columns">
+                        <img src="../lib/images/costumes/costume10.jpg">
+
+                        <div class="panel">
+                            <h5>Item Name</h5>
+                            <h6 class="subheader">$000.00</h6>
+                        </div>
+                    </div>
+
+                    <div class="large-4 small-6 columns">
+                        <img src="../lib/images/costumes/costume11.jpg">
+
+                        <div class="panel">
+                            <h5>Item Name</h5>
+                            <h6 class="subheader">$000.00</h6>
+                        </div>
+                    </div>
+
+                    <div class="large-4 small-6 columns">
+                        <img src="../lib/images/costumes/costume12.jpg">
+
+                        <div class="panel">
+                            <h5>Item Name</h5>
+                            <h6 class="subheader">$000.00</h6>
+                        </div>
+                    </div>
+
+                    <div class="large-4 small-6 columns">
+                        <img src="../lib/images/costumes/costume13.jpg">
+
+                        <div class="panel">
+                            <h5>Item Name</h5>
+                            <h6 class="subheader">$000.00</h6>
+                        </div>
+                    </div>
                 </div>
-     
-                <div class="large-4 small-6 columns">
-                  <img src="http://placehold.it/500x500&text=Thumbnail">
-     
-                  <div class="panel">
-                    <h5>Item Name</h5>
-                    <h6 class="subheader">$000.00</h6>
-                  </div>
-                </div>
-     
-                <div class="large-4 small-6 columns">
-                  <img src="http://placehold.it/500x500&text=Thumbnail">
-     
-                  <div class="panel">
-                    <h5>Item Name</h5>
-                    <h6 class="subheader">$000.00</h6>
-                  </div>
-                </div>
-     
-                <div class="large-4 small-6 columns">
-                  <img src="http://placehold.it/500x500&text=Thumbnail">
-     
-                  <div class="panel">
-                    <h5>Item Name</h5>
-                    <h6 class="subheader">$000.00</h6>
-                  </div>
-                </div>
-     
-                <div class="large-4 small-6 columns">
-                  <img src="http://placehold.it/500x500&text=Thumbnail">
-     
-                  <div class="panel">
-                    <h5>Item Name</h5>
-                    <h6 class="subheader">$000.00</h6>
-                  </div>
-                </div>
-     
-                <div class="large-4 small-6 columns">
-                  <img src="http://placehold.it/500x500&text=Thumbnail">
-     
-                  <div class="panel">
-                    <h5>Item Name</h5>
-                    <h6 class="subheader">$000.00</h6>
-                  </div>
-                </div>
-              </div>
             </div>
 
             <div class="large-3 pull-9 columns">
