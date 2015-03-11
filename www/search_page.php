@@ -74,7 +74,7 @@
             <div class="large-9 push-3 columns">
                 <div class="row">
 
-                    <div class="thumbnail large-4 small-6 columns">
+                    <div class="inventory_image large-4 small-6 columns">
                             <img src="../lib/images/costumes/costume1.jpg">
                         <div class="panel clearfix centered">
                             <h5>Item Name</h5>
@@ -84,7 +84,7 @@
                         </div>
                     </div>
 
-                    <div class="thumbnail large-4 small-6 columns">
+                    <div class="inventory_image large-4 small-6 columns">
 
                             <img src="../lib/images/costumes/costume2.jpg">
 
