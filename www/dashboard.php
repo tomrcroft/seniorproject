@@ -49,9 +49,7 @@
                 <!-- Right Nav Section -->
                 <ul class="right">
                     <li class="has-form">
-                        <form method="GET">
-                            <input type="submit" class="button" id="logout_button" value="Logout"></input>
-                        </form>
+                        <div class="button" id="logout_button" value="Logout">Logout</div>
                     </li>
                 </ul>
             </section>

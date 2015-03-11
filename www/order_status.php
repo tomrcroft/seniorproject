@@ -51,9 +51,7 @@
                 <!-- Right Nav Section -->
                 <ul class="right">
                     <li class="has-form">
-                        <form method="GET">
-                            <input type="submit" class="button" id="logout_button" value="Logout"></input>
-                        </form>
+                        <div class="button" id="logout_button" value="Logout">Logout</div>
                     </li>
                 </ul>
             </section>
@@ -112,56 +110,16 @@
                 <ul class="large-block-grid-2">
                   <li>
                     <ul>
-                      <li><strong>Author: </strong>John Doe</li>
-                      <li><strong>Published:</strong> 2008</li>
-                      <li><strong>More info:</strong> Lorem ipsum</li>
-                      <li><strong>More cat stuff: </strong> cats cats cats</li>
+                      <li><strong>Color:</strong> Black</li>
+                      <li><strong>Size:</strong> Large</li>
+                      <li><strong>Group:</strong> Star Wars</li>
+                      
                     </ul>
                   </li>
                   <li>
                     <ul>
-                      <li><strong>Wow cats:</strong> so wow</li>
-                      <li><strong>Lorem cats:</strong> ipsum kitty</li>
-                      <li><strong>Series:</strong> all the cats</li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr>
-      </div>
-      <div class="row ">
-        <div class="large-2 columns">
-          <a href="#"> <span> </span><img src="http://placehold.it/250x300&text=Costume Image" alt="Costume Image" class=" thumbnail"></a>
-        </div>
-        <div class="large-10 columns">
-          <div class="row">
-            <div class=" large-9 columns">
-              <h5><a href="#">Costume Name</a></h5>
-              <p>Costume Type</p>
-            </div>
-            <div class=" large-3 columns">
-              <div class="button expand medium remove_item">Remove Item</div>
-               
-            </div>
-            <div class="row">
-              <div class=" large-12 columns">
-                <ul class="large-block-grid-2">
-                  <li>
-                    <ul>
-                      <li><strong>Author: </strong>John Doe</li>
-                      <li><strong>Published:</strong> 2008</li>
-                      <li><strong>More info:</strong> Lorem ipsum</li>
-                      <li><strong>More cat stuff: </strong> cats cats cats</li>
-                    </ul>
-                  </li>
-                  <li>
-                    <ul>
-                      <li><strong>Wow cats:</strong> so wow</li>
-                      <li><strong>Lorem cats:</strong> ipsum kitty</li>
-                      <li><strong>Series:</strong> all the cats</li>
+                      <li><strong>Rental Fee:</strong> $000.00</li>
+                      
                     </ul>
                   </li>
                 </ul>
@@ -190,17 +148,16 @@
                 <ul class="large-block-grid-2">
                   <li>
                     <ul>
-                      <li><strong>Author: </strong>John Doe</li>
-                      <li><strong>Published:</strong> 2008</li>
-                      <li><strong>More info:</strong> Lorem ipsum</li>
-                      <li><strong>More cat stuff: </strong> cats cats cats</li>
+                      <li><strong>Color:</strong> Black</li>
+                      <li><strong>Size:</strong> Large</li>
+                      <li><strong>Group:</strong> Star Wars</li>
+                      
                     </ul>
                   </li>
                   <li>
                     <ul>
-                      <li><strong>Wow cats:</strong> so wow</li>
-                      <li><strong>Lorem cats:</strong> ipsum kitty</li>
-                      <li><strong>Series:</strong> all the cats</li>
+                      <li><strong>Rental Fee:</strong> $000.00</li>
+                      
                     </ul>
                   </li>
                 </ul>
@@ -229,17 +186,54 @@
                 <ul class="large-block-grid-2">
                   <li>
                     <ul>
-                      <li><strong>Author: </strong>John Doe</li>
-                      <li><strong>Published:</strong> 2008</li>
-                      <li><strong>More info:</strong> Lorem ipsum</li>
-                      <li><strong>More cat stuff: </strong> cats cats cats</li>
+                      <li><strong>Color:</strong> Black</li>
+                      <li><strong>Size:</strong> Large</li>
+                      <li><strong>Group:</strong> Star Wars</li>
+                      
                     </ul>
                   </li>
                   <li>
                     <ul>
-                      <li><strong>Wow cats:</strong> so wow</li>
-                      <li><strong>Lorem cats:</strong> ipsum kitty</li>
-                      <li><strong>Series:</strong> all the cats</li>
+                      <li><strong>Rental Fee:</strong> $000.00</li>
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="row ">
+        <div class="large-2 columns">
+          <a href="#"> <span> </span><img src="http://placehold.it/250x300&text=Costume Image" alt="Costume Image" class=" thumbnail"></a>
+        </div>
+        <div class="large-10 columns">
+          <div class="row">
+            <div class=" large-9 columns">
+              <h5><a href="#">Costume Name</a></h5>
+              <p>Costume Type</p>
+            </div>
+            <div class=" large-3 columns">
+              <div class="button expand medium remove_item">Remove Item</div>
+               
+            </div>
+            <div class="row">
+              <div class=" large-12 columns">
+                <ul class="large-block-grid-2">
+                  <li>
+                    <ul>
+                      <li><strong>Color:</strong> Black</li>
+                      <li><strong>Size:</strong> Large</li>
+                      <li><strong>Group:</strong> Star Wars</li>
+                      
+                    </ul>
+                  </li>
+                  <li>
+                    <ul>
+                      <li><strong>Rental Fee:</strong> $000.00</li>
+                      
                     </ul>
                   </li>
                 </ul>
