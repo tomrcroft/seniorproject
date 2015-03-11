@@ -42,7 +42,7 @@
                     </li>
                     <li class="divider"></li>
                     <li>
-                        <a href="#2">Current Order Status</a>
+                        <a href="#order_status.php">Current Order Status</a>
                     </li>
                     <li class="divider"></li>
                 </ul>
@@ -81,6 +81,7 @@
                                 <img src="../lib/images/costumes/costume1.jpg" alt="Yoda">
                             </div>
                             INVENTORY DESCRIPTION HERE
+                            <div class="button">Add Item</div>
                         </div>
                     </div>
 
@@ -104,7 +105,6 @@
                     INSEAM: <br>
                     RENT STATUS: <br>
                     RENTAL FEE: <br>
-
                 </p>
 
             

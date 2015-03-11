@@ -41,7 +41,7 @@
                     </li>
                     <li class="divider"></li>
                     <li>
-                        <a href="#2">Current Order Status</a>
+                        <a href="order_status.php">Current Order Status</a>
                     </li>
                     <li class="divider"></li>
                 </ul>
