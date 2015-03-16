@@ -17,4 +17,12 @@ while($result = mysql_fetch_array( $query ))
 // display results however we want
 
 }
+
+//if there are no matches..
+$anymatches=mysql_num_rows($query);
+if ($anymatches == 0)
+{
+echo "Sorry, but we can not find an entry to match your search...<br><br>";
+}
+
 ?>
