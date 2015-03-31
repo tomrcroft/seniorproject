@@ -10,7 +10,8 @@ $connectionInfo = array( "UID"=>$username, "PWD"=>$password, "Database"=>$databa
 $conn = sqlsrv_connect( $serverName, $connectionInfo);
 
 $find = trim($_POST['searchterm']);
-
+// $find = trim('tutu');
+// echo $find;
 // $find = "apple";
 // assuming $find is input being searched
 // We perform a bit of filtering

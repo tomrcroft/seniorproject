@@ -65,14 +65,14 @@
             </div>
         </div>
 
-        <div class="row" id="search_results">    
+        <div class="row">    
 
             <!-- Main Content Section -->
             <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
-            
+
 
             <div class="large-9 push-3 columns">
-                <div class="row">
+                <div class="row" id="search_results">
 
                     <div class="inventory_image large-4 small-6 columns">
                             <img src="../lib/images/costumes/costume1.jpg">
@@ -232,8 +232,8 @@
                 </ul>
 
                 <p><img src="http://placehold.it/320x240&text=Ad" /></p>
-                </div>
             </div>
+        </div>
 
     <script>
         $(document).foundation();
