@@ -1,8 +1,16 @@
 <?php
 // connect to db first
+$serverName="cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433";
+$database="CMT";
+$username="admin";
+$password="SJSUcmpe195";
+
+//DO NOT EDIT BELOW THIS LINE
+$connectionInfo = array( "UID"=>$username, "PWD"=>$password, "Database"=>$database);
+$conn = sqlsrv_connect( $serverName, $connectionInfo);
 
 
-// assuming #find is input being searched
+// assuming $find is input being searched
 // We perform a bit of filtering
 $find = explode(' ', $find);
 $find = strtoupper($find);
@@ -24,5 +32,4 @@ if ($anymatches == 0)
 {
 echo "Sorry, but we can not find an entry to match your search...<br><br>";
 }
-
 ?>
