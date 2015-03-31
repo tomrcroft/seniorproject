@@ -9,13 +9,15 @@ $password="SJSUcmpe195";
 $connectionInfo = array( "UID"=>$username, "PWD"=>$password, "Database"=>$database);
 $conn = sqlsrv_connect( $serverName, $connectionInfo);
 
-$find = "apple";
+$find = trim($_POST['searchterm']);
+
+// $find = "apple";
 // assuming $find is input being searched
 // We perform a bit of filtering
-//$find = explode(' ', $find);
-//$find = strtoupper($find);
-//$find = strip_tags($find);
-$find = trim ($find);
+// $find = explode(' ', $find);
+// $find = strtoupper($find);
+// $find = strip_tags($find);
+// $find = trim ($find);
 
 $query = sqlsrv_query( $conn, "SELECT * FROM cmt..costume WHERE costume_name LIKE '%$find%'"); // need to fix to find $find
 
