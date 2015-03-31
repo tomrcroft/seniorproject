@@ -75,7 +75,7 @@
                 <div class="row" id="search_results">
 
                     <div class="inventory_image large-4 small-6 columns">
-                            <img src="../lib/images/costumes/costume1.jpg">
+                            <img src="../lib/images/costumes/18.jpg">
                         <div class="panel clearfix centered">
                             <h5>Item Name</h5>
                             <h5>Rental Status: Available</h5>

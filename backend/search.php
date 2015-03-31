@@ -10,7 +10,7 @@ $connectionInfo = array( "UID"=>$username, "PWD"=>$password, "Database"=>$databa
 $conn = sqlsrv_connect( $serverName, $connectionInfo);
 
 $find = trim($_POST['searchterm']);
-// $find = trim('tutu');
+// $find = trim('wife');
 // echo $find;
 // $find = "apple";
 // assuming $find is input being searched
@@ -33,7 +33,7 @@ $rows[] = $result;
 }
 // echo $num_items_returned;
 
-echo json_encode(array("results"=>$rows, "numItems"=>$num_items_returned));
+echo json_encode(array("searchterm"=> $find, "results"=>$rows, "numItems"=>$num_items_returned));
 
 // if ($num_items_returned == 0)
 // {
