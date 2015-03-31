@@ -9,25 +9,26 @@ $password="SJSUcmpe195";
 $connectionInfo = array( "UID"=>$username, "PWD"=>$password, "Database"=>$database);
 $conn = sqlsrv_connect( $serverName, $connectionInfo);
 
-
+$find = "apple";
 // assuming $find is input being searched
 // We perform a bit of filtering
-$find = explode(' ', $find);
-$find = strtoupper($find);
-$find = strip_tags($find);
+//$find = explode(' ', $find);
+//$find = strtoupper($find);
+//$find = strip_tags($find);
 $find = trim ($find);
 
-$query = mssql_query("SELECT * FROM cmt.[User] WHERE username='$username'"); // need to fix to find $find
+$query = sqlsrv_query( $conn, "SELECT * FROM cmt..costume WHERE costume_name LIKE '%$find%'"); // need to fix to find $find
 
-while($result = mysql_fetch_array( $query ))
+while($result = sqlsrv_fetch_array( $query ))
 {
 
-// display results however we want
+echo "heres one result";
+// display results however we wan
 
 }
 
 //if there are no matches..
-$anymatches=mysql_num_rows($query);
+$anymatches=sqlsrv_num_rows($query);
 if ($anymatches == 0)
 {
 echo "Sorry, but we can not find an entry to match your search...<br><br>";
