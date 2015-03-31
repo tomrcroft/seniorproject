@@ -20,19 +20,22 @@ $find = trim($_POST['searchterm']);
 // $find = trim ($find);
 
 $query = sqlsrv_query( $conn, "SELECT * FROM cmt..costume WHERE costume_name LIKE '%$find%'"); // need to fix to find $find
+$rows = array();
+$num_items_returned = 0;
 
 while($result = sqlsrv_fetch_array( $query ))
 {
-
-echo "heres one result";
+$num_items_returned++;
 // display results however we wan
+$rows[] = $result;
 
 }
+// echo $num_items_returned;
 
-//if there are no matches..
-$anymatches=sqlsrv_num_rows($query);
-if ($anymatches == 0)
-{
-echo "Sorry, but we can not find an entry to match your search...<br><br>";
-}
+echo json_encode(array("results"=>$rows, "numItems"=>$num_items_returned));
+
+// if ($num_items_returned == 0)
+// {
+// echo "Sorry, but we can not find an entry to match your search...<br><br>";
+// }
 ?>
