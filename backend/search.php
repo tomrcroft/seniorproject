@@ -10,8 +10,8 @@ $connectionInfo = array( "UID"=>$username, "PWD"=>$password, "Database"=>$databa
 $conn = sqlsrv_connect( $serverName, $connectionInfo);
 
 $find = trim($_POST['searchterm']);
-// $find = trim('tutu');
-// echo $find;
+// $find = trim('wife');
+// echo "$find ";
 // $find = "apple";
 // assuming $find is input being searched
 // We perform a bit of filtering
@@ -31,7 +31,16 @@ $num_items_returned++;
 // display results however we wan
 $rows[] = $result;
 
+   // foreach($rows as $itemNum => $itemNumAttr){
+   //    foreach ($itemNumAttr as $attribute => $value){
+   //       // if($attribute === 'Notes')
+   //          // echo "Value: $Value";
+   //    }
+   // }
 }
+// echo print_r($rows[0]['Notes']);
+// echo " ";
+// echo print_r($rows[0]['Waist_to_Hem']);
 // echo print_r($rows);
 // echo $num_items_returned;
 
