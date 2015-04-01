@@ -1,7 +1,7 @@
 <?php
     session_start();
     echo "I got in";
-    $formvars = array($_POST['firstname'],$_POST['lastname'],$_POST['company'],$_POST['email'],$_POST['username'],  md5($_POST['password']));
+    $formvars = array($_POST['firstname'],$_POST['lastname'],$_POST['company'],$_POST['email'],$_POST['username'],  $_POST['password']);
 
     //checks if can be added to the database
     /*if(!IsFieldUnique($formvars[3]))

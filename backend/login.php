@@ -34,14 +34,15 @@
         }
         
         echo 'I connected';
-        $str = "select count(*) from cmt.[User] where username = ? and password = ?";
+        $str = "select username from dbo.[User] where username = ? and password = ?";
         $params = array($username,$password);
         $count = sqlsrv_query($link,$str,$params);
+        $row_count = sqlsrv_num_rows( $count );
         
         if( $count === false ) {
             die( print_r( sqlsrv_errors(), true));
         }
-        else if ($count == sqlsrv_next_result($count))
+        else if ($row_count === 1)
         {
             echo 'I made it';
             sqlsrv_free_stmt($count);
