@@ -10,7 +10,7 @@ $connectionInfo = array( "UID"=>$username, "PWD"=>$password, "Database"=>$databa
 $conn = sqlsrv_connect( $serverName, $connectionInfo);
 
 $find = trim($_POST['searchterm']);
-// $find = trim('wife');
+// $find = trim('tutu');
 // echo $find;
 // $find = "apple";
 // assuming $find is input being searched
@@ -21,6 +21,7 @@ $find = trim($_POST['searchterm']);
 // $find = trim ($find);
 
 $query = sqlsrv_query( $conn, "SELECT * FROM cmt..costume WHERE costume_name LIKE '%$find%'"); // need to fix to find $find
+// echo $query;
 $rows = array();
 $num_items_returned = 0;
 
@@ -31,6 +32,7 @@ $num_items_returned++;
 $rows[] = $result;
 
 }
+// echo print_r($rows);
 // echo $num_items_returned;
 
 echo json_encode(array("searchterm"=> $find, "results"=>$rows, "numItems"=>$num_items_returned));

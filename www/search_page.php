@@ -71,7 +71,7 @@
             <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
 
 
-            <div class="large-9 push-3 columns">
+            <div class="large-10 push-2 columns">
                 <div class="row" id="search_results">
 
                     <div class="inventory_image large-4 small-6 columns">
@@ -221,14 +221,26 @@
                 </div>
             </div>
 
-            <div class="large-3 pull-9 columns">
+            <div class="large-2 pull-10 columns">
                 <ul class="side-nav">
+                    <li class="facet-category" id="age-facet">
+                        <label>Age</label>
+                        <li><input id="adult_facet" type="checkbox"><label for="checkbox1">Adult</label></li>
+                        <li><input id="child_facet" type="checkbox"><label for="checkbox2">Child</label></li>
+                    </li>
+                    <li>
+                        <label>Gender</label>
+                        <li><input id="male_facet" type="checkbox"><label for="checkbox1">Male</label></li>
+                        <li><input id="female_facet" type="checkbox"><label for="checkbox2">Female</label></li>
+                    </li>
+                    <li>
+                        <label>Rental Fee</label>
+                        <li><input id="pricefacet_less25" type="checkbox"><label for="checkbox1">Less Than $25.00</label></li>
+                        <li><input id="pricefacet_50" type="checkbox"><label for="checkbox2">$25.00 - $50.00</label></li>
+                    </li>
                     <li><a href="#">Section 1</a></li>
-                    <li><a href="#">Section 2</a></li>
-                    <li><a href="#">Section 3</a></li>
-                    <li><a href="#">Section 4</a></li>
-                    <li><a href="#">Section 5</a></li>
-                    <li><a href="#">Section 6</a></li>
+
+                    <li><div class="button">Filter</div></li>
                 </ul>
 
                 <p><img src="http://placehold.it/320x240&text=Ad" /></p>
