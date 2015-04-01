@@ -143,7 +143,7 @@
                     </div>
 
                     <div class="inventory_image large-4 small-6 columns">
-                        <img src="../lib/images/costumes/costume7.jpg">
+                        <img src="http://placehold.it/320x240&text=Item">
 
                         <div class="panel">
                             <h5>Item Name</h5>
@@ -209,7 +209,7 @@
                     </div>
 
                     <div class="inventory_image large-4 small-6 columns">
-                        <img src="../lib/images/costumes/costume13.jpg">
+                        <img src="http://placehold.it/320x240&text=Item">
 
                         <div class="panel">
                             <h5>Item Name</h5>
@@ -222,25 +222,29 @@
             </div>
 
             <div class="large-2 pull-10 columns">
-                <ul class="side-nav">
+                <ul class="side-nav" id="facets">
                     <li class="facet-category" id="age-facet">
                         <label>Age</label>
-                        <li><input id="adult_facet" type="checkbox"><label for="checkbox1">Adult</label></li>
-                        <li><input id="child_facet" type="checkbox"><label for="checkbox2">Child</label></li>
+                        <li><input id="adult_facet" type="checkbox" value="adult"><label for="adult_facet">Adult</label></li>
+                        <li><input id="child_facet" type="checkbox" value="child"><label for="child_facet">Child</label></li>
                     </li>
-                    <li>
+                    <li class="facet-category" id="gender-facet">
                         <label>Gender</label>
-                        <li><input id="male_facet" type="checkbox"><label for="checkbox1">Male</label></li>
-                        <li><input id="female_facet" type="checkbox"><label for="checkbox2">Female</label></li>
+                        <li><input id="male_facet" type="checkbox" value="male"><label for="male_facet">Male</label></li>
+                        <li><input id="female_facet" type="checkbox" value="female"><label for="female_facet">Female</label></li>
                     </li>
-                    <li>
+                    <li class="facet-category" id="price-facet">
                         <label>Rental Fee</label>
-                        <li><input id="pricefacet_less25" type="checkbox"><label for="checkbox1">Less Than $25.00</label></li>
-                        <li><input id="pricefacet_50" type="checkbox"><label for="checkbox2">$25.00 - $50.00</label></li>
+                        <li><input id="pricefacet_less25" type="checkbox" value="less25"><label for="pricefacet_less25">Less Than $25.00</label></li>
+                        <li><input id="pricefacet_50" type="checkbox" value="25-50"><label for="pricefacet_50">$25.00 - $50.00</label></li>
                     </li>
-                    <li><a href="#">Section 1</a></li>
+                    <li class="facet-category" id="group-facet">
+                        <label>Costume Group</label>
+                        <li><input id="group_facet1" type="checkbox" value="group1"><label for="group_facet1">Into the Woods</label></li>
+                        <li><input id="group_facet2" type="checkbox" value="group2"><label for="group_facet2">Ballet</label></li>
+                    </li>
 
-                    <li><div class="button">Filter</div></li>
+                    <li><div class="button" id="filter_button">Filter</div></li>
                 </ul>
 
                 <p><img src="http://placehold.it/320x240&text=Ad" /></p>
