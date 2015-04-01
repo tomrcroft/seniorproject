@@ -72,10 +72,10 @@
 
 
             <div class="large-9 push-3 columns">
-                <div class="row">
+                <div class="row" id="search_results">
 
                     <div class="inventory_image large-4 small-6 columns">
-                            <img src="../lib/images/costumes/costume1.jpg">
+                            <img src="../lib/images/costumes/18.jpg">
                         <div class="panel clearfix centered">
                             <h5>Item Name</h5>
                             <h5>Rental Status: Available</h5>
@@ -232,8 +232,8 @@
                 </ul>
 
                 <p><img src="http://placehold.it/320x240&text=Ad" /></p>
-                </div>
             </div>
+        </div>
 
     <script>
         $(document).foundation();
