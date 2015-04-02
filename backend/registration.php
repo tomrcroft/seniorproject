@@ -1,7 +1,7 @@
 <?php
     session_start();
     echo "I got in";
-    $formvars = array($_POST['firstname'],$_POST['lastname'],$_POST['company'],$_POST['email'],$_POST['username'],  $_POST['password']);
+    $formvars = array($_POST['firstname'],$_POST['lastname'],$_POST['company'],$_POST['email'],$_POST['username'],  md5($_POST['password']));
 
     //checks if can be added to the database
     /*if(!IsFieldUnique($formvars[3]))
@@ -24,7 +24,7 @@
     //inserts into the database   
    function InsertIntoDB($formvars)
     {
-        // echo"time to connect";
+        echo"time to connect";
         
         $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';//remember to change the server
         $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
@@ -38,18 +38,14 @@
         }        
         else
         {
-            // echo 'I connected';
+            echo 'I connected';
             //Insert data
-            $str = "{call dbo.Add_Or_Update_User(?, ?, ?, ?, ?, ?)}";
-            // $str = "INSERT INTO User (First_Name, Last_Name, Company, Username, Email, Password) VALUES (?, ?, ?, ?, ?, ?)";
+            $str = "{?= call Add_Or_Update_User( , ?, ?, ?, ?, ?, ?, , , )}";
 
-            $stmt = sqlsrv_query($link,$str,$formvars);//runs statement
-            if ($stmt === false) {
-                die(print_r(sqlsrv_errors(), true));
-            }
+            sqlsrv_query($link,$str,$formvars);//runs statement
             sqlsrv_free_stmt($stmt);//frees statement
             sqlsrv_close($link);
-            echo"Registration Successful, please login now.";
+            echo"im done";
         }
     }
 ?>
