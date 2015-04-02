@@ -29,8 +29,10 @@ function itemView()
         }
         //change result into an array
         $row = sqlsrv_fetch_array( $query, SQLSRV_FETCH_ASSOC);
-        
         //return as json object
+        $json = json_encode($row);
+        echo $json;
+        
         sqlsrv_free_stmt($query);//frees statement
         sqlsrv_close($link);
     }
