@@ -9,8 +9,8 @@ $password="SJSUcmpe195";
 $connectionInfo = array( "UID"=>$username, "PWD"=>$password, "Database"=>$database);
 $conn = sqlsrv_connect( $serverName, $connectionInfo);
 
-$find = trim($_POST['searchterm']);
-// $find = trim('wife');
+//$find = trim($_POST['searchterm']);
+ $find = trim('dress');
 // echo "$find ";
 // $find = "apple";
 // assuming $find is input being searched
@@ -25,11 +25,20 @@ $query = sqlsrv_query( $conn, "SELECT * FROM cmt..costume WHERE costume_name LIK
 $rows = array();
 $num_items_returned = 0;
 
+$dir = 'C:/Users/Aymeric/Desktop/image_tester';
+
 while($result = sqlsrv_fetch_array( $query ))
 {
-$num_items_returned++;
 // display results however we wan
 $rows[] = $result;
+$temp = $rows[$num_items_returned]['Costume_Image'];
+file_put_contents($dir.'/test'.$num_items_returned.'.jpeg', $temp);
+$rows[$num_items_returned]['Costume_Image'] = $dir.'/test'.$num_items_returned.'.jpeg';
+
+echo $rows[$num_items_returned]['Costume_Image'];
+$num_items_returned++;
+ // create new directory with 744 permissions if it does not exist yet
+ // owner will be the user/group the PHP script is run under
 
    // foreach($rows as $itemNum => $itemNumAttr){
    //    foreach ($itemNumAttr as $attribute => $value){
