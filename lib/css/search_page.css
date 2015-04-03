@@ -7,3 +7,7 @@
 label {
    color: #FFFFFF;
 }
+
+[class*="column"] + [class*="column"]:last-child {
+   float: left;
+}
