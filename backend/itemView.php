@@ -1,8 +1,3 @@
-<html>
-<title>Inside HTML</title>
-<body>
-<p>I need to call a function... Here it is...</p>
-<p>
 <?php itemView();
 
 /*
@@ -36,7 +31,7 @@ function itemView()
         }
         //change result into an array
         $row = sqlsrv_fetch_array( $query, SQLSRV_FETCH_ASSOC);
-        if( $row['Rentable'] === 1)
+        if( $row['Rentable'] === 1 && !empty($row['Storage_Location']))
             $availability = '<span style="color: green">Available</span>';
         else 
             $availability = '<span style="color: red">Not Available</span>';
@@ -87,6 +82,4 @@ function itemView()
         sqlsrv_close($link);
     }
 }
-?></p>
-</body>
-</html>
+?>

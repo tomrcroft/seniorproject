@@ -73,44 +73,6 @@
             <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
             <?php include '../backend/itemView.php';?>
             <? itemView();?>
-            <!--<div class="large-9 push-3 columns">
-                <h3>COSTUME NAME <small>COSTUME TYPE</small></h3>
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <div class="left inventory_image">
-                                <img src="../lib/images/costumes/costume1.jpg" alt="Yoda">
-                            </div>
-                            INVENTORY DESCRIPTION HERE
-                            <div class="button">Add Item</div>
-                        </div>
-                    </div>
-
-                <p>
-                    COLOR: <br>
-                    GROUP: <br>
-                    FABRIC: <br>
-                    TIME PERIOD: <br>
-                    ADULT/CHILD: <br>
-                    SIZE: <br>
-                    GENDER: <br>
-                    DESIGNER: <br>
-                    CHEST: <br>
-                    WAIST: <br>
-                    HIPS: <br>
-                    GIRTH: <br>
-                    NECK: <br>
-                    SLEEVES: <br>
-                    NECK TO WAIST: <br>
-                    WAIST TO HEM: <br>
-                    INSEAM: <br>
-                    RENT STATUS: <br>
-                    RENTAL FEE: <br>
-                </p>
-
-            
-                
-            </div> --!>
-
 
             <!-- Nav Sidebar -->
             <!-- This is source ordered to be pulled to the left on larger screens -->
