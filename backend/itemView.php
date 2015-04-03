@@ -35,7 +35,7 @@ function itemView()
             $availability = '<span style="color: green">Available</span>';
         else 
             $availability = '<span style="color: red">Not Available</span>';
-        //print item still needs the photo code and costume type handle rent status int      
+        //print item still needs the photo code      
         echo'<!-- Main Content Section -->
             <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
             <div class="large-9 push-3 columns">
