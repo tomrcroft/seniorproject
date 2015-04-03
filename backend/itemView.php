@@ -1,4 +1,9 @@
-<?php
+<html>
+<title>Inside HTML</title>
+<body>
+<p>I need to call a function... Here it is...</p>
+<p>
+<?php itemView();
 
 /*
  * To change this template, choose Tools | Templates
@@ -6,7 +11,7 @@
  */
 function itemView()
 {
-    $id = $_GET['idnumber'];// whatever variable name it is
+    $id = array(17);//$_GET['idnumber'];// whatever variable name it is
     
     $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
     $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
@@ -21,7 +26,9 @@ function itemView()
     else
     {
         //Search for costume
-        $str = "select * from dbo.[Costume] where Costume_Key = ?";
+        $str = "SELECT * FROM dbo.[Costume], dbo.[Dic_Costume_Type], dbo.[Dic_Costume_Color] WHERE Costume_Key = ? 
+            AND dbo.[Costume].Costume_Type_Key = dbo.[Dic_Costume_Type].Costume_Type_Key
+            AND dbo.[Costume].Costume_Color_Key = dbo.[Dic_Costume_Color].Costume_Color_Key";
 
         $query = sqlsrv_query($link,$str,$id);//runs statement
         if( $query === false ) {
@@ -29,12 +36,57 @@ function itemView()
         }
         //change result into an array
         $row = sqlsrv_fetch_array( $query, SQLSRV_FETCH_ASSOC);
-        //return as json object
-        $json = json_encode($row);
-        echo $json;
+        if( $row['Rentable'] === 1)
+            $availability = '<span style="color: green">Available</span>';
+        else 
+            $availability = '<span style="color: red">Not Available</span>';
+        //print item still needs the photo code and costume type handle rent status int      
+        echo'<!-- Main Content Section -->
+            <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
+            <div class="large-9 push-3 columns">
+                <h3>'. $row['Costume_Name'] .'<small>'. $row['Costume_Type'] .'</small></h3>
+                    <div class="row">
+                        <div class="large-12 columns">
+                            <div class="left inventory_image">
+                                <img src="../lib/images/costumes/costume1.jpg" alt="Yoda">
+                            </div>
+                            '. $row['Costume_Description'] .'
+                            <div class="button">Add Item</div>
+                        </div>
+                    </div>
+
+                <p>
+                    COLOR: '. $row['Costume_Color'] .'<br>
+                    GROUP: '. $row['Costume_Group'] .'<br>
+                    FABRIC: '. $row['Costume_Fabric'] .'<br>
+                    TIME PERIOD: '. $row['Costume_Time_Period'] .'<br>
+                    ADULT/CHILD: '. $row['Adult_or_Child'] .'<br>
+                    SIZE: '. $row['Costume_Size'] .'<br>
+                    GENDER: '. $row['Costume_Gender'] .'<br>
+                    DESIGNER: '. $row['Costume_Designer'] .'<br>
+                    CHEST: '. $row['Chest'] .'<br>
+                    WAIST: '. $row['Waist'] .'<br>
+                    HIPS: '. $row['Hips'] .'<br>
+                    GIRTH: '. $row['Girth'] .'<br>
+                    NECK: '. $row['Neck'] .'<br>
+                    SLEEVES: '. $row['Sleeves'] .'<br>
+                    NECK TO WAIST: '. $row['Neck_to_Waist'] .'<br>
+                    WAIST TO HEM: '. $row['Waist_to_Hem'] .'<br>
+                    INSEAM: '. $row['Inseam'] .'<br>
+                    RENT STATUS: '. $availability .'<br>
+                    RENTAL FEE: $'. $row['Rental_Fee'] .'<br>
+                </p>
+
+            
+                
+            </div>';
+
+        
         
         sqlsrv_free_stmt($query);//frees statement
         sqlsrv_close($link);
     }
 }
-?>
+?></p>
+</body>
+</html>
