@@ -72,8 +72,7 @@
             <!-- Main Content Section -->
             <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
             <?php include '../backend/itemView.php';?>
-            <? itemView();?>
-
+            
             <!-- Nav Sidebar -->
             <!-- This is source ordered to be pulled to the left on larger screens -->
             <div class="large-3 pull-9 columns">
