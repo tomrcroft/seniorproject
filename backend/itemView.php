@@ -6,7 +6,8 @@
  */
 function itemView()
 {
-    $id = array(17);//$_GET['idnumber'];// whatever variable name it is
+    // $id = array(17);
+    $id = array($_GET['idnumber']);// whatever variable name it is
     
     $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
     $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
@@ -45,7 +46,7 @@ function itemView()
                     <div class="row">
                         <div class="large-12 columns">
                             <div class="left inventory_image">
-                                '. $pic .'
+                                <img src="../lib/images/temp/temp_photo.jpeg">
                             </div>
                             '. $row['Costume_Description'] .'
                             <div class="button">Add Item</div>
