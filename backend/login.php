@@ -1,21 +1,20 @@
 <?php
-    if(isset($_POST['submit']))
-    {
-        session_start();
+    
+    session_start();
 
-        $username = trim($_POST['username']);
-        $password = trim($_POST['password']);
-        //prevents SQL injection
-        //$username = stripslashes($username);
-        //$password = stripslashes($password);
-        //$username = mysql_real_escape_string($username);
-        //$password = mysql_real_escape_string($password);
+    $username = trim($_POST['username']);
+    $password = trim($_POST['password']);
+    //prevents SQL injection
+    //$username = stripslashes($username);
+    //$password = stripslashes($password);
+    //$username = mysql_real_escape_string($username);
+    //$password = mysql_real_escape_string($password);
 
-        CheckDBForLogin($username,$password);
+    CheckDBForLogin($username,$password);
 
-        $_SESSION['login_user']=$username; // Initializing Session
-        // go to dashboard.php
-    }
+    $_SESSION['login_user']=$username; // Initializing Session
+    // go to dashboard.php
+    
     //database check for login information
     function CheckDBForLogin($username,$password)
     {          
