@@ -34,27 +34,30 @@
         }
         
         echo 'I connected';
-        $str = "select username from dbo.[User] where username = ? and password = ?";
-        $params = array($username,$password);
+        $str = "select password from dbo.[User] where username = ?";
+        $params = array($username);
         $count = sqlsrv_query($link,$str,$params);
         $row_count = sqlsrv_num_rows( $count );
         
         if( $count === false ) {
             die( print_r( sqlsrv_errors(), true));
         }
-        else if ($row_count === 1)
+        else 
         {
-            echo 'I made it';
-            sqlsrv_free_stmt($count);
-            sqlsrv_close($link);
-        }
-        else
-        {
-            $output = "Username or Password is incorrect!"; 
-            $json = json_encode($output);
-            sqlsrv_free_stmt($count);
-            sqlsrv_close($link);
-            echo $json;
+            $row = sqlsrv_fetch_array( $count, SQLSRV_FETCH_NUMERIC);
+            if ($row_count === 1 && crypt($password, $row[0]) == $row[0]){
+                echo 'I made it';
+                sqlsrv_free_stmt($count);
+                sqlsrv_close($link);
+            }
+            else
+            {
+                $output = "Username or Password is incorrect!"; 
+                $json = json_encode($output);
+                sqlsrv_free_stmt($count);
+                sqlsrv_close($link);
+                echo $json;
+            }
         }
     }
 
