@@ -221,9 +221,8 @@
                 </div>
             </div>
             
-            <div class="large-2 pull-10 columns">
+            <div class="filter-facets large-2 pull-10 columns">
                 <!-- include search filter php file -->
-                <?php include '../backend/FilterDisplay.php';?>
                 <!-- where php ends -->
                 <p><img src="http://placehold.it/320x240&text=Ad" /></p>
             </div>
