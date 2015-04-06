@@ -31,10 +31,12 @@ function itemView()
         }
         //change result into an array
         $row = sqlsrv_fetch_array( $query, SQLSRV_FETCH_ASSOC);
-        if( $row['Rentable'] === 1 && !empty($row['Storage_Location']))
+        if( $row['Rentable'] === 1 && !empty($row['Storage_Location']))//checking if item is available
             $availability = '<span style="color: green">Available</span>';
         else 
             $availability = '<span style="color: red">Not Available</span>';
+        
+        $pic = file_put_contents('../lib/images/temp/temp_photo.jpeg', $row['Costume_Image']);//changing from blob format
         //print item still needs the photo code      
         echo'<!-- Main Content Section -->
             <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
@@ -43,7 +45,7 @@ function itemView()
                     <div class="row">
                         <div class="large-12 columns">
                             <div class="left inventory_image">
-                                <img src="../lib/images/costumes/costume1.jpg" alt="Yoda">
+                                '. $pic .'
                             </div>
                             '. $row['Costume_Description'] .'
                             <div class="button">Add Item</div>
