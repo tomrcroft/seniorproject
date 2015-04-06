@@ -6,7 +6,7 @@
  */
 function filterDisplay()
 {
-    $search = array('men');//$_GET['searchTerm'];//the value in the search box, should be empty string otherwise
+    $search = $_COOKIE['searchCookie'];//the value in the search box, should be empty string otherwise
     //if empty have the filter show all filter possibilities
     if(empty($search))
     {
@@ -61,8 +61,8 @@ function filterDisplay()
         }        
         else
         {
-            $query = 'SELECT DISTINCT Adult_or_Child FROM dbo.[Costume] WHERE Costume_Name LIKE ? ORDER BY Adult_or_Child';
-            $stmt = sqlsrv_query($link,$query,$search);//runs first query
+            $query = "SELECT DISTINCT Adult_or_Child FROM dbo.[Costume] WHERE Costume_Name LIKE '%$search%' ORDER BY Adult_or_Child";
+            $stmt = sqlsrv_query($link,$query);//runs first query
             if( $stmt === false ) {
                 die( print_r( sqlsrv_errors(), true));
             }
@@ -71,8 +71,8 @@ function filterDisplay()
             }
             sqlsrv_free_stmt($stmt);
             
-            $query2 = 'SELECT DISTINCT Costume_Gender FROM dbo.[Costume] WHERE Costume_Name LIKE ? ORDER BY Costume_Gender';
-            $stmt2 = sqlsrv_query($link,$query2,$search);//runs first query
+            $query2 = "SELECT DISTINCT Costume_Gender FROM dbo.[Costume] WHERE Costume_Name LIKE '%$search%' ORDER BY Costume_Gender";
+            $stmt2 = sqlsrv_query($link,$query2);//runs first query
             if( $stmt2 === false ) {
                 die( print_r( sqlsrv_errors(), true));
             }
@@ -81,9 +81,9 @@ function filterDisplay()
             }
             sqlsrv_free_stmt($stmt2);
             
-            $query3 = 'SELECT DISTINCT Costume_Type FROM dbo.[Dic_Costume_Type], dbo.[Costume] 
-                WHERE Costume_Name LIKE ? AND dbo.[Costume].Costume_Type_Key = dbo.[Dic_Costume_Type].Costume_Type_Key ORDER BY Costume_Type';
-            $stmt3 = sqlsrv_query($link,$query3,$search);//runs first query
+            $query3 = "SELECT DISTINCT Costume_Type FROM dbo.[Dic_Costume_Type], dbo.[Costume] 
+                WHERE Costume_Name LIKE '%$search%' AND dbo.[Costume].Costume_Type_Key = dbo.[Dic_Costume_Type].Costume_Type_Key ORDER BY Costume_Type";
+            $stmt3 = sqlsrv_query($link,$query3);//runs first query
             if( $stmt3 === false ) {
                 die( print_r( sqlsrv_errors(), true));
             }
@@ -92,8 +92,8 @@ function filterDisplay()
             }
             sqlsrv_free_stmt($stmt3);
             
-            $query4 = 'SELECT DISTINCT Costume_Group FROM dbo.[Costume] WHERE Costume_Name LIKE ? ORDER BY Costume_Group';
-            $stmt4 = sqlsrv_query($link,$query4,$search);//runs second query
+            $query4 = "SELECT DISTINCT Costume_Group FROM dbo.[Costume] WHERE Costume_Name LIKE '%$search%' ORDER BY Costume_Group";
+            $stmt4 = sqlsrv_query($link,$query4);//runs second query
             if( $stmt4 === false ) {
                 die( print_r( sqlsrv_errors(), true));
             }

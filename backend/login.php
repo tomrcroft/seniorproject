@@ -1,21 +1,20 @@
 <?php
-    if(isset($_POST['submit']))
-    {
-        session_start();
+    
+    session_start();
 
-        $username = trim($_POST['username']);
-        $password = trim($_POST['password']);
-        //prevents SQL injection
-        //$username = stripslashes($username);
-        //$password = stripslashes($password);
-        //$username = mysql_real_escape_string($username);
-        //$password = mysql_real_escape_string($password);
+    $username = trim($_POST['username']);
+    $password = trim($_POST['password']);
+    //prevents SQL injection
+    //$username = stripslashes($username);
+    //$password = stripslashes($password);
+    //$username = mysql_real_escape_string($username);
+    //$password = mysql_real_escape_string($password);
 
-        CheckDBForLogin($username,$password);
+    CheckDBForLogin($username,$password);
 
-        $_SESSION['login_user']=$username; // Initializing Session
-        // go to dashboard.php
-    }
+    $_SESSION['login_user']=$username; // Initializing Session
+    // go to dashboard.php
+    
     //database check for login information
     function CheckDBForLogin($username,$password)
     {          
@@ -34,27 +33,31 @@
         }
         
         echo 'I connected';
-        $str = "select username from dbo.[User] where username = ? and password = ?";
-        $params = array($username,$password);
+        $str = "select password from dbo.[User] where username = ?";
+        $params = array($username);
         $count = sqlsrv_query($link,$str,$params);
         $row_count = sqlsrv_num_rows( $count );
         
         if( $count === false ) {
             die( print_r( sqlsrv_errors(), true));
         }
-        else if ($row_count === 1)
+        else 
         {
-            echo 'I made it';
-            sqlsrv_free_stmt($count);
-            sqlsrv_close($link);
-        }
-        else
-        {
-            $output = "Username or Password is incorrect!"; 
-            $json = json_encode($output);
-            sqlsrv_free_stmt($count);
-            sqlsrv_close($link);
-            echo $json;
+            $row = sqlsrv_fetch_array( $count, SQLSRV_FETCH_NUMERIC);
+            if ($row_count === 1 && crypt($password, $row[0]) == $row[0]){
+                echo 'I made it';
+                sqlsrv_free_stmt($count);
+                sqlsrv_close($link);
+                header("Location: ../www/search_page.php");
+            }
+            else
+            {
+                $output = "Username or Password is incorrect!"; 
+                $json = json_encode($output);
+                sqlsrv_free_stmt($count);
+                sqlsrv_close($link);
+                echo $json;
+            }
         }
     }
 

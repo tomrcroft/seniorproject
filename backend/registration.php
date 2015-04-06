@@ -1,7 +1,8 @@
 <?php
     session_start();
     echo "I got in";
-    $formvars = array($_POST['firstname'],$_POST['lastname'],$_POST['company'],$_POST['email'],$_POST['username'],  md5($_POST['password']));
+    $crypt = better_crypt($_POST['password']);
+    $formvars = array($_POST['firstname'],$_POST['lastname'],$_POST['company'],$_POST['email'],$_POST['username'], $crypt);
 
     //checks if can be added to the database
     /*if(!IsFieldUnique($formvars[3]))
@@ -40,12 +41,25 @@
         {
             echo 'I connected';
             //Insert data
-            $str = "{?= call Add_Or_Update_User( , ?, ?, ?, ?, ?, ?, , , )}";
+            $str = "{call dbo.Add_Or_Update_User(?, ?, ?, ?, ?, ?)}";
 
-            sqlsrv_query($link,$str,$formvars);//runs statement
-            sqlsrv_free_stmt($stmt);//frees statement
+            $stmt = sqlsrv_query($link,$str,$formvars);//runs statement
+            if( $stmt === false ) {
+                die( print_r( sqlsrv_errors(), true));
+            }
+            sqlsrv_free_stmt($stmt);
             sqlsrv_close($link);
             echo"im done";
         }
+    }
+    
+    function better_crypt($input, $rounds = 7)
+    {
+      $salt = "";
+      $salt_chars = array_merge(range('A','Z'), range('a','z'), range(0,9));
+      for($i=0; $i < 22; $i++) {
+        $salt .= $salt_chars[array_rand($salt_chars)];
+      }
+      return crypt($input, sprintf('$2a$%02d$', $rounds) . $salt);
     }
 ?>
