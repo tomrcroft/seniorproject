@@ -220,8 +220,9 @@
                     </div>
                 </div>
             </div>
-
+            
             <div class="large-2 pull-10 columns">
+                <!-- include filter display.php -->
                 <ul class="side-nav" id="facets">
                     <li class="facet-category" id="age-facet">
                         <label>Age</label>
@@ -246,9 +247,10 @@
 
                     <li><div class="button" id="filter_button">Filter</div></li>
                 </ul>
-
+                <!-- where php ends -->
                 <p><img src="http://placehold.it/320x240&text=Ad" /></p>
             </div>
+            
         </div>
 
     <script>
