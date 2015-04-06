@@ -48,6 +48,7 @@
                 echo 'I made it';
                 sqlsrv_free_stmt($count);
                 sqlsrv_close($link);
+                header("Location: ../www/search_page.php");
             }
             else
             {
