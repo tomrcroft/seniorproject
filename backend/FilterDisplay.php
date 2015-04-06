@@ -6,7 +6,7 @@
  */
 function filterDisplay()
 {
-    $search = array('men');//$_GET['searchTerm'];//the value in the search box, should be empty string otherwise
+    $search = '';//array('men');//$_GET['searchTerm'];//the value in the search box, should be empty string otherwise
     //if empty have the filter show all filter possibilities
     if(empty($search))
     {
