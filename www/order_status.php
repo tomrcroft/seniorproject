@@ -46,6 +46,10 @@
                         <a href="order_status.php">Current Order Status</a>
                     </li>
                     <li class="divider"></li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="search_page.php">Search</a>
+                    </li>
                 </ul>
 
                 <!-- Right Nav Section -->
