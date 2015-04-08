@@ -7,5 +7,5 @@
 
     session_start();
     session_destroy();
-    header('Location: index.html');
+    header('Location: ../backend/search_page.php');
 ?>

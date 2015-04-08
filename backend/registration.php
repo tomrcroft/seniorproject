@@ -1,23 +1,23 @@
 <?php
     session_start();
     $crypt = better_crypt($_POST['password']);
-    $formvars = array($_POST['firstname'],$_POST['lastname'],$_POST['company'],$_POST['email'],$_POST['username'], $crypt);
+    $formvars = array($_POST['firstname'],$_POST['lastname'],$_POST['company'],$_POST['username'],$_POST['email'], $crypt);
 
     $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';//remember to change the server
     $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
     $link = sqlsrv_connect($server, $connectionInfo);
             
     //checks if can be added to the database
-    if(!IsUnique($link,'Email',array($formvars[3])))
+    if(!IsUnique($link,'Email',array($formvars[4])))
     {
-        $output = "The email address '. $formvars[3].' has an account!"; 
+        $output = "The email address '. $formvars[4].' has an account!"; 
         $json = json_encode($output);
         exit($json);
     }
 
-    if(!IsUnique($link,'Username',array($formvars[4])))
+    if(!IsUnique($link,'Username',array($formvars[3])))
     {
-        $output = "The username '. $formvars[4].' is already taken!"; 
+        $output = "The username '. $formvars[3].' is already taken!"; 
         $json = json_encode($output);
         exit($json);
     }        

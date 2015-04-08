@@ -1,15 +1,15 @@
 <?php
-    
     session_start();
 
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
-    
+    echo $username;
+    echo $password;
     CheckDBForLogin($username,$password);
 
-    $_SESSION['login_user']=$username; // Initializing Session
+    $_SESSION['login_user'] = $username; // Initializing Session
     // go to dashboard.php
-    header("Location: index.php");
+    header("Location: ../backend/index.php");
     
     //database check for login information
     function CheckDBForLogin($username,$password)
@@ -25,20 +25,20 @@
             exit($json);
         }
         
-        $str = "select password from dbo.[User] where username = ?";
+        $str = "select Username, Password from cmt..[User] where username = ?";
         $params = array($username);
-        $count = sqlsrv_query($link,$str,$params);
+        $stmt = sqlsrv_query($link,$str,$params);
         
-        if( $count === false ) {
+        if( $stmt === false ) {
             die( print_r( sqlsrv_errors(), true));
         }
         else 
         {
-            if (sqlsrv_has_rows($count)){
-                $row_count = sqlsrv_num_rows( $count );
-                $row = sqlsrv_fetch_array( $count, SQLSRV_FETCH_NUMERIC);
-                if ($row_count === 1 && crypt($password, $row[0]) == $row[0]){
-                    sqlsrv_free_stmt($count);
+            if (sqlsrv_has_rows($stmt)){
+                $row_count = sqlsrv_num_rows($stmt);
+                $row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_NUMERIC);
+                if ($row_count == 1 && crypt($password, $row[1]) == $row[1]){
+                    sqlsrv_free_stmt($stmt);
                     sqlsrv_close($link);
                 }
             }
@@ -46,7 +46,7 @@
             {
                 $output = "Username or Password is incorrect!"; 
                 $json = json_encode($output);
-                sqlsrv_free_stmt($count);
+                sqlsrv_free_stmt($stmt);
                 sqlsrv_close($link);
                 exit($json);
             }
