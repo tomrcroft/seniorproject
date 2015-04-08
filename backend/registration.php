@@ -4,31 +4,29 @@
     $crypt = better_crypt($_POST['password']);
     $formvars = array($_POST['firstname'],$_POST['lastname'],$_POST['company'],$_POST['email'],$_POST['username'], $crypt);
 
+    $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';//remember to change the server
+    $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
+    $link = sqlsrv_connect($server, $connectionInfo);
+            
     //checks if can be added to the database
-    if(!IsEmailUnique(array($formvars[3])))
+    if(!IsUnique($link,'Email',array($formvars[3])))
     {
         $output = "The email address '. $formvars[3].' has an account!"; 
         $json = json_encode($output);
         echo $json;
     }
 
-    if(!IsUsernameUnique('Username',array($formvars[4])))
+    if(!IsUnique($link,'Username',array($formvars[4])))
     {
         $output = "The username '. $formvars[4].' is already taken!"; 
         $json = json_encode($output);
         echo $json;
     }        
-    InsertIntoDB($formvars);
+    InsertIntoDB($link,$formvars);
 
     //inserts into the database   
-   function InsertIntoDB($formvars)
+   function InsertIntoDB($link,$formvars)
     {
-        echo"time to connect";
-        
-        $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';//remember to change the server
-        $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
-        $link = sqlsrv_connect($server, $connectionInfo);
-
         //Checks connection
         if (!$link) {
             $output = "Problems with the database connection!"; 
@@ -61,12 +59,8 @@
       return crypt($input, sprintf('$2a$%02d$', $rounds) . $salt);
     }
     
-    function IsEmailUnique($compare)
+    function IsUnique($link,$type,$compare)
     {
-        $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';//remember to change the server
-        $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
-        $link = sqlsrv_connect($server, $connectionInfo);
-
         //Checks connection
         if (!$link) {
             $output = "Problems with the database connection!"; 
@@ -76,60 +70,21 @@
         else
         {
             echo 'i checked for repeats';
-            $str = "SELECT Email FROM dbo.[User] WHERE Email = ?";
+            if ($type == 'Email')
+                $str = "SELECT Email FROM dbo.[User] WHERE Email = ?";
+            else
+                $str = "SELECT Username FROM dbo.[User] WHERE Username = ?";
             $stmt = sqlsrv_query($link,$str,$compare);//runs statement
             if( $stmt === false ) {
                 die( print_r( sqlsrv_errors(), true));
             }
-            $row_count = sqlsrv_num_rows( $stmt );
-            if( $row_count === false ) {
-                die( print_r( sqlsrv_errors(), true));
-            }
-            if ($row_count < 1)
-            {
-                echo 'i didnt fuck up';
-                return TRUE;
+            if(sqlsrv_has_rows( $stmt )) {
+                return FALSE;
             }
             else
-                return FALSE;
+                return TRUE;
             sqlsrv_free_stmt($stmt);
-            sqlsrv_close($link);
         }
     }
     
-    function IsUsernameUnique($compare)
-    {
-        $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';//remember to change the server
-        $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
-        $link = sqlsrv_connect($server, $connectionInfo);
-
-        //Checks connection
-        if (!$link) {
-            $output = "Problems with the database connection!"; 
-            $json = json_encode($output);
-            echo $json;
-        }        
-        else
-        {
-            echo 'i checked for repeats';
-            $str = "SELECT Username FROM dbo.[User] WHERE Username = ?";
-            $stmt = sqlsrv_query($link,$str,$compare);//runs statement
-            if( $stmt === false ) {
-                die( print_r( sqlsrv_errors(), true));
-            }
-            $row_count = sqlsrv_num_rows( $stmt );
-            if( $row_count === false ) {
-                die( print_r( sqlsrv_errors(), true));
-            }
-            if ($row_count < 1)
-            {
-                echo 'i didnt fuck up';
-                return TRUE;
-            }
-            else
-                return FALSE;
-            sqlsrv_free_stmt($stmt);
-            sqlsrv_close($link);
-        }
-    }
 ?>
