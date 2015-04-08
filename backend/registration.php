@@ -1,6 +1,5 @@
 <?php
     session_start();
-    echo "I got in";
     $crypt = better_crypt($_POST['password']);
     $formvars = array($_POST['firstname'],$_POST['lastname'],$_POST['company'],$_POST['email'],$_POST['username'], $crypt);
 
@@ -13,14 +12,14 @@
     {
         $output = "The email address '. $formvars[3].' has an account!"; 
         $json = json_encode($output);
-        echo $json;
+        exit($json);
     }
 
     if(!IsUnique($link,'Username',array($formvars[4])))
     {
         $output = "The username '. $formvars[4].' is already taken!"; 
         $json = json_encode($output);
-        echo $json;
+        exit($json);
     }        
     InsertIntoDB($link,$formvars);
 
@@ -31,11 +30,10 @@
         if (!$link) {
             $output = "Problems with the database connection!"; 
             $json = json_encode($output);
-            echo $json;
+            exit($json);
         }        
         else
         {
-            echo 'I connected';
             //Insert data
             $str = "{call dbo.Add_Or_Update_User(?, ?, ?, ?, ?, ?)}";
 
@@ -45,7 +43,6 @@
             }
             sqlsrv_free_stmt($stmt);
             sqlsrv_close($link);
-            echo"im done";
         }
     }
     
@@ -65,11 +62,10 @@
         if (!$link) {
             $output = "Problems with the database connection!"; 
             $json = json_encode($output);
-            echo $json;
+            exit($json);
         }        
         else
         {
-            echo 'i checked for repeats';
             if ($type == 'Email')
                 $str = "SELECT Email FROM dbo.[User] WHERE Email = ?";
             else

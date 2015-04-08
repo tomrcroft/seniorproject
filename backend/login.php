@@ -4,17 +4,12 @@
 
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
-    //prevents SQL injection
-    //$username = stripslashes($username);
-    //$password = stripslashes($password);
-    //$username = mysql_real_escape_string($username);
-    //$password = mysql_real_escape_string($password);
-
+    
     CheckDBForLogin($username,$password);
 
     $_SESSION['login_user']=$username; // Initializing Session
     // go to dashboard.php
-    header("Location: ../www/search_page.php");
+    header("Location: index.php");
     
     //database check for login information
     function CheckDBForLogin($username,$password)
@@ -27,7 +22,7 @@
         if (!$link) {
             $output = "Something went wrong with connecting to the database!"; 
             $json = json_encode($output);
-            echo $json;
+            exit($json);
         }
         
         $str = "select password from dbo.[User] where username = ?";
@@ -43,7 +38,6 @@
                 $row_count = sqlsrv_num_rows( $count );
                 $row = sqlsrv_fetch_array( $count, SQLSRV_FETCH_NUMERIC);
                 if ($row_count === 1 && crypt($password, $row[0]) == $row[0]){
-                    echo 'I made it';
                     sqlsrv_free_stmt($count);
                     sqlsrv_close($link);
                 }
@@ -54,7 +48,7 @@
                 $json = json_encode($output);
                 sqlsrv_free_stmt($count);
                 sqlsrv_close($link);
-                echo $json;
+                exit($json);
             }
         }
     }
