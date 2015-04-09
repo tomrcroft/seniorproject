@@ -25,6 +25,10 @@ h3 small {
    max-width: 100%;
 }
 
+.form_title {
+  font-size: 40px;
+}
+
 /*.search {
    padding: 8px;
    border-width: 1px;

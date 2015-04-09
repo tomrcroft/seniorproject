@@ -2,6 +2,10 @@
   background: #fff;
   border: 1px solid #ddd; 
   margin: 100px 0;
-  padding: 40px 20px 0 20px;
+  padding: 10px 20px 0 20px;
   color: #000000;
+}
+
+#account_company {
+   margin-bottom: 1rem;
 }
