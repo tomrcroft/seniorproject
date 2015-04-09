@@ -10,30 +10,50 @@ $password="SJSUcmpe195";
 $connectionInfo = array( "UID"=>$username, "PWD"=>$password, "Database"=>$database);
 $conn = sqlsrv_connect( $serverName, $connectionInfo);
 
+$str = "UPDATE CMT..[User] ";
 $user = $_SESSION['login_user'];
 $first_name = trim($_POST['first_name']);
 $last_name = trim($_POST['last_name']);
-$crypt = better_crypt($_POST['password']);
-$email = trim($_POST['email']);
 $company = trim($_POST['company']);
+$email = trim($_POST['email']);
+$pass = $_POST['password'];
+$contains = array();
 
+if ($first_name != '')
+{
+     $contains[] = "First_Name = '$first_name'";
+}
+if ($last_name != '')
+{
+    $contains[] = "Last_Name = '$last_name'";
+}
+if ($company != '')
+{
+    $contains[] = "Company = '$company'";
+}
+if ($email != '')
+{
+    $contains[] = "Email = '$email'";
+}
+if ($pass != '')
+{
+    $crypt = better_crypt($_POST['password']);
+    $contains[] = "Password = '$crypt'";
+}
+$query = $str;
+if (count($contains) > 0) {
+      $query .= " SET " . implode(', ', $contains);
+    }
+    
+$query .= " WHERE Username = '$user'";
 
-//$formvars = array($_POST['first_name'],$_POST['last_name'],$_POST['company'],$_POST['username'],$_POST['email'], $crypt);
-$formvars = array($first_name, $last_name, $company, $user, $email , $crypt);
-
-//fill in blanks
-$newvars = fillBlanks($conn, $formvars);
-$str = "{call dbo.Add_Or_Update_User(?, ?, ?, ?, ?, ?)}";
-
-$stmt = sqlsrv_query($conn,$str,$newvars);//runs statement
+$stmt = sqlsrv_query($conn,$query);//runs statement
 if( $stmt === false ) 
 	{
 	die( print_r( sqlsrv_errors(), true));
     }
 sqlsrv_free_stmt($stmt);
 sqlsrv_close($conn);
-
-echo "Information updated.";
 
 function better_crypt($input, $rounds = 7)
 {
@@ -47,7 +67,7 @@ function better_crypt($input, $rounds = 7)
 
 function fillBlanks($conn, $blanks)
 {
-    $str = "SELECT * FROM CMT..[User] WHERE Username = $blanks[3]";
+    $str = "SELECT * FROM CMT..[User] WHERE Username = '$blanks[3]'";
 
     $stmt = sqlsrv_query($conn,$str);//runs statement
     if( $stmt === false ) 
@@ -58,10 +78,15 @@ function fillBlanks($conn, $blanks)
     $count = 0;
     foreach ($blanks as $value) 
     {
-        if (empty($value))
+        if (trim($value) != '')
+        {
+            echo 'i found a blank';
             $value = $row[$count];
+        }
         $count ++;
     }
     sqlsrv_free_stmt($stmt);
-    }
+    return $blanks;
+}
+    
 ?>
