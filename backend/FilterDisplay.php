@@ -115,7 +115,7 @@ function printFilter($age, $gender, $type, $group)
                 <label>Age</label>';
                 foreach($age as $value1) {
                     if(!empty($value1))
-                        echo '<li><input id="age_facet" type="radio" value="'.$value1.'"><label for="'.$value1.'_facet">'.$value1.'</label></li>';
+                        echo '<li><input id="age_facet" name="age" type="radio" value="'.$value1.'"><label for="'.$value1.'_facet">'.$value1.'</label></li>';
                 }
                 //<li><input id="adult_facet" type="radio" value="adult"><label for="adult_facet">Adult</label></li>
                 //<li><input id="child_facet" type="radio" value="child"><label for="child_facet">Child</label></li>
@@ -124,7 +124,7 @@ function printFilter($age, $gender, $type, $group)
                 <label>Gender</label>';
                 foreach($gender as $value2) {
                     if(!empty($value2))
-                        echo '<li><input id="gender_facet" type="radio" value="'.$value2.'"><label for="'.$value2.'_facet">'.$value2.'</label></li>';
+                        echo '<li><input id="gender_facet" name="gender" type="radio" value="'.$value2.'"><label for="'.$value2.'_facet">'.$value2.'</label></li>';
                 }
                 //<li><input id="male_facet" type="radio" value="male"><label for="male_facet">Male</label></li>
                 //<li><input id="female_facet" type="radio" value="female"><label for="female_facet">Female</label></li>
@@ -133,7 +133,7 @@ function printFilter($age, $gender, $type, $group)
                 <label>Costume Type</label>';
                 foreach($type as $value3) {
                     if(!empty($value3))
-                        echo '<li><input id="type_facet" type="radio" value="'.$value3.'"><label for="typefacet_'.$value3.'">'.$value3.'</label></li>';
+                        echo '<li><input id="type_facet" name="type" type="radio" value="'.$value3.'"><label for="typefacet_'.$value3.'">'.$value3.'</label></li>';
                 }
                 //<li><input id="typefacet_hat" type="radio" value="hat"><label for="typefacet_hat">hat</label></li>
             echo '</li>
@@ -141,7 +141,7 @@ function printFilter($age, $gender, $type, $group)
                 <label>Costume Group</label>';
                 foreach($group as $value4) {
                     if(!empty($value4))
-                        echo '<li><input id="group_facet" type="radio" value="'.$value4.'"><label for="groupfacet_'.$value4.'">'.$value4.'</label></li>';
+                        echo '<li><input id="group_facet" name="group" type="radio" value="'.$value4.'"><label for="groupfacet_'.$value4.'">'.$value4.'</label></li>';
                 }
                 //<li><input id="groupfacet_2" type="radio" value="group2"><label for="groupfacet_2">Ballet</label></li>
             echo '</li>

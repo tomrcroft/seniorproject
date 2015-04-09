@@ -3,17 +3,17 @@
 <body>
 <?php
     
-    $search = 'men';
-    $by_age = 'Adult';
-    $by_sex = 'Male';
-    $by_type = 'Vest';
-    $by_group = '';
+    // $search = 'men';
+    // $by_age = 'Adult';
+    // $by_sex = 'Male';
+    // $by_type = 'Vest';
+    // $by_group = '';
 
-    /*$search = $_POST['searchterm'];
+    $search = $_POST['searchterm'];
     $by_age = $_POST['age_facet'];
     $by_sex = $_POST['gender_facet'];
     $by_type = $_POST['type_facet'];
-    $by_group = $_POST['group_facet'];*/
+    $by_group = $_POST['group_facet'];
 
     $query = "SELECT * FROM dbo.[Costume], dbo.[Dic_Costume_Type]";
     $conditions = array('dbo.[Costume].Costume_Type_Key = dbo.[Dic_Costume_Type].Costume_Type_Key');

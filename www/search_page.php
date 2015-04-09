@@ -73,8 +73,8 @@
 
             <div class="large-10 push-2 columns">
                 <div class="row" id="search_results">
-
-                    <div class="inventory_image large-4 small-6 columns">
+                    <p> no results </p>
+<!--                     <div class="inventory_image large-4 small-6 columns">
                             <img src="../lib/images/costumes/18.jpg">
                         <div class="panel clearfix centered">
                             <h5>Item Name</h5>
@@ -217,13 +217,13 @@
                             <h6 class="subheader">$000.00</h6>
                             <div class="add_item button">Add Item</div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
-            </div>
+            </div> 
             
             <div class="filter-facets large-2 pull-10 columns">
                 <!-- include search filter php file -->
-                
+                <!-- <div class="button" id="filter_button">Filter</div> -->
                 <!-- where php ends -->
                 <p><img src="http://placehold.it/320x240&text=Ad" /></p>
             </div>
