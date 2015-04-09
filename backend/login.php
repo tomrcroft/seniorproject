@@ -27,20 +27,21 @@
         
         $str = "select Username, Password from cmt..[User] where username = ?";
         $params = array($username);
-        $stmt = sqlsrv_query($link,$str,$params);
+        $stmt = sqlsrv_query($link,$str,$params,array('SQLSRV_CURSOR_STATIC'));
         
         if( $stmt === false ) {
             die( print_r( sqlsrv_errors(), true));
         }
         else 
         {
-            if (sqlsrv_has_rows($stmt)){
-                $row_count = sqlsrv_num_rows($stmt);
-                $row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_NUMERIC);
-                if ($row_count == 1 && crypt($password, $row[1]) == $row[1]){
+            $row_count = sqlsrv_num_rows($stmt);
+            if( $row_count === false ) {
+                die( print_r( sqlsrv_errors(), true));
+            }
+            $row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_NUMERIC);
+            if ($row_count == 1 && crypt($password, $row[1]) == $row[1]){
                     sqlsrv_free_stmt($stmt);
                     sqlsrv_close($link);
-                }
             }
             else
             {
