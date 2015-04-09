@@ -1,19 +1,16 @@
-<!DOCTYPE html>
-<html>
-<body>
 <?php
     
-    // $search = 'men';
+    // $search = 'test';
     // $by_age = 'Adult';
-    // $by_sex = 'Male';
-    // $by_type = 'Vest';
-    // $by_group = '';
+    // $by_sex = 'm';
+    // $by_type = 'Accessories';
+    // $by_group = 'none';
 
-    $search = $_POST['searchterm'];
-    $by_age = $_POST['age_facet'];
-    $by_sex = $_POST['gender_facet'];
-    $by_type = $_POST['type_facet'];
-    $by_group = $_POST['group_facet'];
+    $search = trim($_POST['searchterm']);
+    $by_age = trim($_POST['age_facet']);
+    $by_sex = trim($_POST['gender_facet']);
+    $by_type = trim($_POST['type_facet']);
+    $by_group = trim($_POST['group_facet']);
 
     $query = "SELECT * FROM dbo.[Costume], dbo.[Dic_Costume_Type]";
     $conditions = array('dbo.[Costume].Costume_Type_Key = dbo.[Dic_Costume_Type].Costume_Type_Key');
@@ -35,10 +32,10 @@
     }
 
     $sql = $query;
-    if (count($conditions) > 0) {
+    if (count($conditions) > 1) {
       $sql .= " WHERE " . implode(' AND ', $conditions);
     }
-    echo $sql;
+    // echo $sql;
     
     $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
     $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
@@ -78,5 +75,3 @@
                 
 
 ?>
-</body>
-</html>

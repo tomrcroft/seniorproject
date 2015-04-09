@@ -112,7 +112,7 @@ function printFilter($age, $gender, $type, $group)
     //print the search filter
     echo '<ul class="side-nav" id="facets">
             <li class="facet-category" id="age-facet">
-                <label>Age</label>';
+                <div class="facet-title">Age</div>';
                 foreach($age as $value1) {
                     if(!empty($value1))
                         echo '<li><input id="age_facet" name="age" type="radio" value="'.$value1.'"><label for="'.$value1.'_facet">'.$value1.'</label></li>';
@@ -121,7 +121,7 @@ function printFilter($age, $gender, $type, $group)
                 //<li><input id="child_facet" type="radio" value="child"><label for="child_facet">Child</label></li>
             echo '</li>
             <li class="facet-category" id="gender-facet">
-                <label>Gender</label>';
+                <div class="facet-title">Gender</div>';
                 foreach($gender as $value2) {
                     if(!empty($value2))
                         echo '<li><input id="gender_facet" name="gender" type="radio" value="'.$value2.'"><label for="'.$value2.'_facet">'.$value2.'</label></li>';
@@ -130,7 +130,7 @@ function printFilter($age, $gender, $type, $group)
                 //<li><input id="female_facet" type="radio" value="female"><label for="female_facet">Female</label></li>
             echo '</li>
             <li class="facet-category" id="type-facet">
-                <label>Costume Type</label>';
+                <div class="facet-title">Costume Type</div>';
                 foreach($type as $value3) {
                     if(!empty($value3))
                         echo '<li><input id="type_facet" name="type" type="radio" value="'.$value3.'"><label for="typefacet_'.$value3.'">'.$value3.'</label></li>';
@@ -138,7 +138,7 @@ function printFilter($age, $gender, $type, $group)
                 //<li><input id="typefacet_hat" type="radio" value="hat"><label for="typefacet_hat">hat</label></li>
             echo '</li>
             <li class="facet-category" id="group-facet">
-                <label>Costume Group</label>';
+                <div class="facet-title">Costume Group</div>';
                 foreach($group as $value4) {
                     if(!empty($value4))
                         echo '<li><input id="group_facet" name="group" type="radio" value="'.$value4.'"><label for="groupfacet_'.$value4.'">'.$value4.'</label></li>';
