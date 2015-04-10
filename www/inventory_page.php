@@ -1,10 +1,3 @@
-<?php
-    if(!isset($_SESSION['login_user'])){ //if login in session is not set
-        header("Location: ../index.php");
-    }
-    else        
-        session_start();
-?>
 <!DOCTYPE html>
 <html>
     <head>
