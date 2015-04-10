@@ -66,11 +66,14 @@
         </div>
 
         <div class="row">    
+<?php
 
-            <!-- Main Content Section -->
+            if(!empty($_GET['status'])){
+       echo  'YOU BEEN LOGGED OUT';
+}
+        ?>        
+                    <!-- Main Content Section -->
             <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
-
-
             <div class="large-10 push-2 columns">
                 <div class="row" id="search_results">
                     <p> no results </p>

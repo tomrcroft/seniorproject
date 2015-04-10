@@ -7,5 +7,6 @@
 
     session_start();
     unset($_SESSION['login_user']);
-    header('Location: ../www/search_page.php');
+    echo json_encode(array("error" => false));
+    // header('Location: ../www/search_page.php');
 ?>
