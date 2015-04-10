@@ -1,5 +1,6 @@
 <?php
 session_start();// the edit profile page should check for login
+include '../backend/checkIfLoggedIn.php';
 // connect to db first
 $serverName="cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433";
 $database="CMT";
