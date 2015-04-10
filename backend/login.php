@@ -33,9 +33,9 @@
     //echo $row['Username'] . $row['Password'];
     if($row === NULL || !password_verify($password, $row['Password']))
     {
-        echo $row['Password'];
+        // echo $row['Password'];
         $output = "Username or Password is incorrect!"; 
-        $json = json_encode($output);
+        $json = json_encode(array("error" => true));
         exit($json);
     }
     
@@ -43,5 +43,7 @@
     sqlsrv_close($link);
     
     $_SESSION['login_user'] = $username; // Initializing Session
-    header("Location: ../www/search_page.php");
+    $json = json_encode(array("error" => false));
+    exit($json);
+    // header("Location: ../www/search_page.php");
 ?>
