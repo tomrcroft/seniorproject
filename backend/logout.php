@@ -7,5 +7,5 @@
 
     session_start();
     session_destroy();
-    header('Location: ../backend/search_page.php');
+    header('Location: ../www/search_page.php');
 ?>
