@@ -34,7 +34,7 @@
     if($row === NULL || !password_verify($password, $row['Password']))
     {
         // echo $row['Password'];
-        $output = "Username or Password is incorrect!"; 
+        // $output = "Username or Password is incorrect!"; 
         $json = json_encode(array("error" => true));
         exit($json);
     }

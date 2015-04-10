@@ -99,7 +99,6 @@
                 <div class="row">
                     <div class="large-12 columns">
                     Login
-                        <form method="POST">
                             <div class="row">
                                 <div class="large-12 columns">
                                     <input type="text" name="username" id="login_username" placeholder="Username" />
@@ -115,14 +114,8 @@
                                     <input type="submit" class="button expand" id="login_button" value="Log In"/>
                                 </div>
                             </div>
-                        </form>
-                        <form action="forgot_password.php">
-                            <div class="row">
-                                <div class="large-12 large-centered columns">
-                                    <input type="submit" class="button expand" value="Forgot Password?"/>
-                                </div>
-                            </div>
-                        </form>
+                            <a href="forgot_password.php" class="button expand">Forgot Password?</a>
+
                     </div>
                 </div>
             </div>
