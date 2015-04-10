@@ -12,8 +12,8 @@ $connectionInfo = array( "UID"=>$username, "PWD"=>$password, "Database"=>$databa
 $conn = sqlsrv_connect( $serverName, $connectionInfo);
 
 $str = "UPDATE CMT..[User] ";
-// $user = $_SESSION['login_user'];
-$user = 'ag';
+$user = $_SESSION['login_user'];
+// $user = 'ag';
 $first_name = trim($_POST['first_name']);
 $last_name = trim($_POST['last_name']);
 $company = trim($_POST['company']);
@@ -56,6 +56,7 @@ if( $stmt === false )
     }
 sqlsrv_free_stmt($stmt);
 sqlsrv_close($conn);
+// echo json_encode(array("error" => true));
 
 function better_crypt($input, $rounds = 7)
 {
@@ -82,13 +83,15 @@ function fillBlanks($conn, $blanks)
     {
         if (trim($value) != '')
         {
-            echo 'i found a blank';
+            // echo 'i found a blank';
             $value = $row[$count];
         }
         $count ++;
     }
     sqlsrv_free_stmt($stmt);
+
     return $blanks;
+
 }
     
 ?>

@@ -65,6 +65,7 @@
             <div class="login-box">
                 <div class="row">
                     <div class="large-12 columns">
+                        <div id="edit_profile_success"></div>
                         <div class="form_title">Edit Profile</div>
                         <div class="account_info">
                             <div id="account_username">Username: </div>
