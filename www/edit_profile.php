@@ -16,7 +16,7 @@
 
         <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
         <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
-        <link rel="stylesheet" href="../lib/css/index.css" type="text/css">
+        <link rel="stylesheet" href="../lib/css/forms.css" type="text/css">
         <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
         <link rel="stylesheet" href="../lib/css/search_page.css" type="text/css">
 
@@ -68,6 +68,7 @@
                             <div id="account_first_name">First Name: </div>
                             <div id="account_last_name">Last Name: </div>
                             <div id="account_company">Company: </div>
+                            <div id="account_email">E-mail: </div>
                         </div>
 
                             <div class="row">
