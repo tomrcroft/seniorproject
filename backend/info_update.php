@@ -11,7 +11,8 @@ $connectionInfo = array( "UID"=>$username, "PWD"=>$password, "Database"=>$databa
 $conn = sqlsrv_connect( $serverName, $connectionInfo);
 
 $str = "UPDATE CMT..[User] ";
-$user = $_SESSION['login_user'];
+// $user = $_SESSION['login_user'];
+$user = 'ag';
 $first_name = trim($_POST['first_name']);
 $last_name = trim($_POST['last_name']);
 $company = trim($_POST['company']);

@@ -11,6 +11,7 @@
         <script src="../lib/foundation/js/vendor/modernizr.js" type="text/javascript"></script>
         <script src="../lib/foundation/js/foundation.min.js" type="text/javascript"></script>
         <script src="../lib/js/search.js" type="text/javascript"></script>
+        <script src="../lib/js/edit_profile.js" type="text/javascript"></script>
         <script src="../lib/js/logout.js" type="text/javascript"></script>
 
         <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
@@ -69,7 +70,6 @@
                             <div id="account_company">Company: </div>
                         </div>
 
-                        <form method="POST">
                             <div class="row">
                                 <div class="large-12 columns">
                                     <input type="text" name="firstname" id="update_firstname" placeholder="First Name" />
@@ -97,10 +97,10 @@
                             </div>
                             <div class="row">
                                 <div class="large-12 large-centered columns">
-                                    <input class="button expand" id="update_button" value="Update Profile"/>
+                                    <input type="submit" class="button expand" id="update_button" value="Update Profile"/>
                                 </div>
                             </div>
-                        </form>
+
                     </div>
                 </div>
             </div>
