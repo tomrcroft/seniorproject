@@ -1,5 +1,4 @@
 <?php
-    session_start();
     include '../backend/checkIfLoggedIn.php';
 ?>
 <!DOCTYPE html>
