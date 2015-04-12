@@ -1,7 +1,8 @@
 <?php
+    session_start();
+    makeUserAdmin($_SESSION['login_user'], $_POST['userEmail']);
     function makeUserAdmin($usernameGiving, $emailReceiving)
     {
-        session_start();
         include './checkAdmin.php';
         if(!checkIfAdmin($usernameGiving))
             header ("Location: ../www/index.php");
