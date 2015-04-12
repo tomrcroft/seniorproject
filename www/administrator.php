@@ -1,5 +1,8 @@
 <?php
     include '../backend/checkIfLoggedIn.php';
+    include '../backend/checkAdmin.php';
+    if(!checkIfAdmin($_SESSION['login_user']))
+        header ("Location: ../www/index.php");
 ?>
 <!DOCTYPE html>
 <html>

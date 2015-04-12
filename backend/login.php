@@ -33,9 +33,9 @@
     //echo $row['Username'] . $row['Password'];
     if($row === NULL || !password_verify($password, $row['Password']))
     {
-        // echo $row['Password'];
-        // $output = "Username or Password is incorrect!"; 
-        $json = json_encode(array("error" => true));
+        echo $row['Password'];
+        $output = "Username or Password is incorrect!"; 
+        $json = json_encode($output);
         exit($json);
     }
     
@@ -43,7 +43,9 @@
     sqlsrv_close($link);
     
     $_SESSION['login_user'] = $username; // Initializing Session
-    $json = json_encode(array("error" => false));
-    exit($json);
-    // header("Location: ../www/search_page.php");
+    include '../backend/checkAdmin.php';
+    if (checkIfAdmin($_SESSION['login_user']))
+        header ("Location: ../www/administrator.php");
+    else
+        header("Location: ../www/search_page.php");
 ?>
