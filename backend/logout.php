@@ -6,7 +6,7 @@
  */
 
     session_start();
-    unset($_SESSION['login_user']);
+    unset($_SESSION['login_user'],$_SESSION['shopping_cart']);
     echo json_encode(array("error" => false));
     // header('Location: ../www/search_page.php');
 ?>
