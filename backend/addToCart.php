@@ -10,8 +10,8 @@
     session_start();
     include '../backend/checkIfLoggedIn.php';
     $itemID = $_POST['itemID'];
-    
     $_SESSION['shopping_cart'][] = $itemID;
-    
-    
+    foreach ($_SESSION['shopping_cart'] as $value) {
+        echo $value;
+}
 ?>
