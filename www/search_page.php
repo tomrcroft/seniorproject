@@ -45,6 +45,16 @@
                         <a href="order_status.php">Current Order Status</a>
                     </li>
                     <li class="divider"></li>
+                    <li>
+                        <p>Hello, <?php session_start(); 
+                        if(isset($_SESSION['login_user']))
+                            echo $_SESSION['login_user'];
+                        else
+                            echo "Anonymous";
+                        ?> 
+
+                        </p>
+                    </li>
                 </ul>
 
                 <!-- Right Nav Section -->

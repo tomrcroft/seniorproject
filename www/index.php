@@ -16,6 +16,7 @@
         <script src="../lib/foundation/js/foundation.min.js" type="text/javascript"></script>
         <script src="../lib/js/login.js" type="text/javascript"></script>
         <script src="../lib/js/registration.js" type="text/javascript"></script>
+        <script src="../lib/js/index.js" type="text/javascript"></script>
 
         <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
         <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
@@ -33,13 +34,17 @@
                 </li>
             </ul>
 
-<!--             <section class="top-bar-section">
+            <section class="top-bar-section">
                 <ul class="right">
                     <li class="has-form">
-                        <a href="#" class="button">Login</a>
+                        <div id="login_tab" class="button">Login</div>
+                    </li>
+                    <li class="has-form">
+                        <div id="register_tab" class="button">Register</div>
                     </li>
                 </ul>
-            </section> -->
+
+            </section>
         </nav>
 
         <div class="welcome">
