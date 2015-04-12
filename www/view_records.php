@@ -79,7 +79,7 @@
 
 
             <div class="large-12 columns">
-                <h3>Add Administrator</h3>
+                <h3>VIEW MASTER RECORDS</h3>
                 <div class="row">
                     <div class="large-12 columns">
                         <div class="row collapse">

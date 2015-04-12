@@ -50,7 +50,7 @@
         exit($json);
     }
     else{
-        $json = json_encode(array("location"=>"index.php", "error" => false));
+        $json = json_encode(array("location"=>"search_page.php", "error" => false));
         exit($json);
     }
 ?>
