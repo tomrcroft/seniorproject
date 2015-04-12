@@ -3,6 +3,8 @@
     {
         session_start();
         include './checkAdmin.php';
+        if(!checkIfAdmin($usernameGiving))
+            header ("Location: ../www/index.php");
         $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
         $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
         $link = sqlsrv_connect($server, $connectionInfo);
