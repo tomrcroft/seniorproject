@@ -43,6 +43,7 @@
     sqlsrv_close($link);
     
     $_SESSION['login_user'] = $username; // Initializing Session
+    $_SESSION['shopping_cart'] = array();
     include '../backend/checkAdmin.php';
     if (checkIfAdmin($_SESSION['login_user'])){
         $json = json_encode(array("location"=>"administrator.php", "error" => false));
