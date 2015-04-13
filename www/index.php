@@ -37,10 +37,13 @@
             <section class="top-bar-section">
                 <ul class="right">
                     <li class="has-form">
-                        <div id="login_tab" class="button">Login</div>
+                        <a href="search_page.php" class="button alert">Search Inventory</a>
                     </li>
                     <li class="has-form">
                         <div id="register_tab" class="button">Register</div>
+                    </li>
+                    <li class="has-form">
+                        <div id="login_tab" class="button">Login</div>
                     </li>
                 </ul>
 
