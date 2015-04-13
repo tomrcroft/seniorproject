@@ -5,7 +5,6 @@
  * and open the template in the editor.
  */
     
-    //session_start();
     //if(!isset($_SESSION['shopping_cart']))
         //header ("Location: ../www/search_page.php");
     //$cart = $_SESSION['shopping_cart'];
@@ -56,7 +55,7 @@
         file_put_contents('../lib/images/temp/temp_photo.jpeg', $item['Costume_Image']);//changing from blob format
         $pic = '<img src="../lib/images/temp/temp_photo.jpeg" alt="Costume Image" class="thumbnail">';
         //what i pulled out <img src="http://placehold.it/250x300&text=Costume Image" alt="Costume Image" 
-        echo '<hr>
+        echo '
         </div>
         <div class="row ">
           <div class="large-2 columns">
@@ -93,6 +92,7 @@
                 </div>
               </div>
             </div>
+            <hr>
           </div>';
     }
 ?>

@@ -1,13 +1,16 @@
 <?php
 
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Show all pull requests the user has along with their status
  */
+
+    session_start();
+    //variables
     $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
     $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
     $link = sqlsrv_connect($server, $connectionInfo);
-
+    //$user = $_SESSION['login_user'];
+    $user = 'gurnit';
     //Checks connection
     if (!$link) {
         $output = "Problems with the database connection!"; 
@@ -16,44 +19,20 @@
     }        
     else
     {
-        //need image,name,type(join),color,size,group,fee
-        echo '<hr>
-        </div>
-        <div class="row ">
-          <div class="large-2 columns">
-            <a href="#"> <span> </span><img src="http://placehold.it/250x300&text=Costume Image" alt="Costume Image" class=" thumbnail"></a>
-          </div>
-          <div class="large-10 columns">
-            <div class="row">
-              <div class=" large-9 columns">
-                <h5><a href="#">Costume Name</a></h5>
-                <p>Costume Type</p>
-              </div>
-              <div class=" large-3 columns">
-                <div class="button expand medium remove_item">Remove Item</div>
-
-              </div>
-              <div class="row">
-                <div class=" large-12 columns">
-                  <ul class="large-block-grid-2">
-                    <li>
-                      <ul>
-                        <li><strong>Color:</strong> Black</li>
-                        <li><strong>Size:</strong> Large</li>
-                        <li><strong>Group:</strong> Star Wars</li>
-
-                      </ul>
-                    </li>
-                    <li>
-                      <ul>
-                        <li><strong>Rental Fee:</strong> $000.00</li>
-
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>';
+        //run query
+        $str = "SELECT * FROM cmt..Pull_Request_Hdr WHERE Created_By = ?";
+        $params = array($user);
+        $stmt = sqlsrv_query($link,$str,$params);
+        if( $stmt === false ) {
+            die( print_r( sqlsrv_errors(), true));
+        }
+        
+        //display results
+        while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
+            if($row === false) {
+                die( print_r( sqlsrv_errors(), true));
+            }
+            echo $row['Created_By'] . '---' . $row['Status'];
+        }
     }
 ?>

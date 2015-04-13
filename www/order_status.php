@@ -1,5 +1,5 @@
 <?php
-    //include '../backend/checkIfLoggedIn.php';
+    include '../backend/checkIfLoggedIn.php';
 ?>
 <!DOCTYPE html>
 <html>
