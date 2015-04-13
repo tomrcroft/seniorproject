@@ -97,7 +97,11 @@
         </select>
       </div> -->
     </div>
+    
+    
     <div class="pull-results">
+    <?php include '../backend/viewCart.php';?>    
+        <!--
       <div class="row ">
         <div class="image large-2 columns">
           <a href="#"><img src="http://placehold.it/250x300&text=Costume Image" alt="costume image" class="thumbnail"></a>
@@ -250,6 +254,7 @@
         </div>
         <hr>
       </div>
+    -->
     </div>
     <div id="send_pull_request" class="button right"> Send Pull Request</div>
     <div id="cancel_pull_request" class="button right"> Cancel Pull Request</div>
