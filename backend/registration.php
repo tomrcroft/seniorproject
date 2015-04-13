@@ -22,7 +22,9 @@
         exit($json);
     }        
     InsertIntoDB($link,$formvars);
-
+    $_SESSION['login_user'] = $formvars[3]; // Initializing Session
+    $json = json_encode(array("location"=>"search_page.php", "error" => false));
+    exit($json);
     //inserts into the database   
    function InsertIntoDB($link,$formvars)
     {
