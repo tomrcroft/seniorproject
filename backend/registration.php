@@ -10,15 +10,15 @@
     //checks if can be added to the database
     if(!IsUnique($link,'Email',array($formvars[4])))
     {
-        $output = "The email address '. $formvars[4].' has an account!"; 
-        $json = json_encode($output);
+        $output = "The email address ' $formvars[4] ' has an account!"; 
+        $json = json_encode(array("errormsg" => $output, "error" => true));
         exit($json);
     }
 
     if(!IsUnique($link,'Username',array($formvars[3])))
     {
-        $output = "The username '. $formvars[3].' is already taken!"; 
-        $json = json_encode($output);
+        $output = "The username ' $formvars[3] ' is already taken!"; 
+        $json = json_encode(array("errormsg" => $output, "error"=>true));
         exit($json);
     }        
     InsertIntoDB($link,$formvars);
