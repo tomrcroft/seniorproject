@@ -81,6 +81,13 @@
               <div id="send_pull_request" class="button right">Send Pull Request</div>
               <div id="cancel_pull_request" class="button right"> Cancel Pull Request</div>
 
+              <div class='reveal-modal' id='first-modal' data-reveal>
+              I'm the firstborn!
+              <a class='close'>Close modal</a>
+              </div>
+
+              
+
 <!--               <div id="cancel_confirmation" class="reveal-modal" data-reveal aria-labelledby="cancel_modal" aria-hidden="true" role="dialog">
                 <h2 id="cancel_modal">Are you sure you want to cancel your pull request?</h2>
                 <p>Reveal makes these very easy to summon and dismiss. The close button is simply an anchor with a unicode character icon and a class of. Clicking anywhere outside the modal will also dismiss it.</p>
