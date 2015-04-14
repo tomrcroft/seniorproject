@@ -81,12 +81,12 @@
               <div id="send_pull_request" class="button right">Send Pull Request</div>
               <div id="cancel_pull_request" class="button right"> Cancel Pull Request</div>
 
-              <div id="cancel_confirmation" class="reveal-modal" data-reveal aria-labelledby="cancel_modal" aria-hidden="true" role="dialog">
+<!--               <div id="cancel_confirmation" class="reveal-modal" data-reveal aria-labelledby="cancel_modal" aria-hidden="true" role="dialog">
                 <h2 id="cancel_modal">Are you sure you want to cancel your pull request?</h2>
                 <p>Reveal makes these very easy to summon and dismiss. The close button is simply an anchor with a unicode character icon and a class of. Clicking anywhere outside the modal will also dismiss it.</p>
                 <p>Finally, if your modal summons another Reveal modal, the plugin will handle that for you gracefully.</p>
                 <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-              </div>
+              </div> -->
     
           </div>
           <div class="large-2 pull-10 columns">
@@ -97,44 +97,6 @@
 
 
         <!--
-      <div class="row ">
-        <div class="image large-2 columns">
-          <a href="#"><img src="http://placehold.it/250x300&text=Costume Image" alt="costume image" class="thumbnail"></a>
-        </div>
-        <div class="large-10 columns">
-          <div class="row">
-            <div class=" large-9 columns">
-              <h5><a href="#">Costume Name</a></h5>
-              <p>Costume Type</p>
-            </div>
-            <div class=" large-3 columns">
-              <div class="button expand medium remove_item">Remove Item</div>
-               
-            </div>
-            <div class="row">
-              <div class=" large-12 columns">
-                <ul class="large-block-grid-2">
-                  <li>
-                    <ul>
-                      <li><strong>Color:</strong> Black</li>
-                      <li><strong>Size:</strong> Large</li>
-                      <li><strong>Group:</strong> Star Wars</li>
-                      
-                    </ul>
-                  </li>
-                  <li>
-                    <ul>
-                      <li><strong>Rental Fee:</strong> $000.00</li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr>
-      </div>
       <div class="row ">
         <div class="large-2 columns">
           <a href="#"> <span> </span><img src="http://placehold.it/250x300&text=Costume Image" alt="Costume Image" class=" thumbnail"></a>

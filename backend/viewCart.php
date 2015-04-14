@@ -35,7 +35,7 @@
         if (count($conditions) > 0) {
             $str .= " AND ( " . implode(' OR ', $conditions) . " )";
         }
-        
+        echo $str;
         //run query
         $stmt = sqlsrv_query($link,$str);
         if( $stmt === false ) {
@@ -55,7 +55,7 @@
         $pic = '<img src="../lib/images/temp/temp_photo.jpeg" alt="Costume Image" class="thumbnail">';
         //what i pulled out <img src="http://placehold.it/250x300&text=Costume Image" alt="Costume Image" 
         echo '
-        <div class="row ">
+        <div id='. $item['Costume_Key'] .' class="row">
           <div class="item_image large-2 columns">
             <a href="#"> '. $pic .'</a>
           </div>
@@ -65,9 +65,8 @@
                 <h5><a href="#">'. $item['Costume_Name'] .'</a></h5>
                 <p>'. $item['Costume_Type'] .'</p>
               </div>
-              <div class=" large-3 columns">
+              <div class="large-3 columns">
                 <div class="button expand medium remove_item">Remove Item</div>
-
               </div>
               <div class="row">
                 <div class=" large-12 columns">
@@ -92,6 +91,6 @@
             </div>
            </div>
            <hr>
-          </div>';
+        </div>';
     }
 ?>
