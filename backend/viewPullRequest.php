@@ -32,6 +32,7 @@
             if($row === false) {
                 die( print_r( sqlsrv_errors(), true));
             }
+            //display goes here
             echo $row['Created_By'] . '---' . $row['Status'];
         }
     }

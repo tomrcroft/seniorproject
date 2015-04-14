@@ -1,8 +1,7 @@
 <?php
 
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * Submits a Pull Request to the database
  */
     session_start();
     $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
