@@ -47,7 +47,11 @@
             }
             displayItem($row);
         }
+    sqlsrv_free_stmt($stmt);
+    sqlsrv_close($link);
     }
+
+
     function displayItem($item)
     {
         //convert photo to jpeg
