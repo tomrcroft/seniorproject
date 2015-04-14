@@ -79,11 +79,12 @@
 
               </div>
               <div id="send_pull_request" class="button right">Send Pull Request</div>
-              <div id="cancel_pull_request" class="button right"> Cancel Pull Request</div>
+              <div id="cancel_pull_request" class="button right">Cancel Pull Request</div>
 
-              <div class='reveal-modal' id='first-modal' data-reveal>
-              I'm the firstborn!
-              <a class='close'>Close modal</a>
+              <div class='reveal-modal' id='cancel-modal' data-reveal>
+              Are you sure you want to delete all items from your cart?
+              <div id="confirm_cancel" class="button right">Yes</div>
+              <div id="reject_cancel" class="button right">No</div>
               </div>
 
               
