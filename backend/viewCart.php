@@ -68,7 +68,7 @@
                 <p>'. $item['Costume_Type'] .'</p>
               </div>
               <div class=" large-3 columns">
-                <div class="button expand medium remove_item">Remove Item</div>
+                <div class="button right remove_item">Remove Item</div>
 
               </div>
               <div class="row">

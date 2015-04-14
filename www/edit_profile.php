@@ -39,7 +39,7 @@
                 <ul class="left">
                     <li class="divider"></li>
                     <li>
-                        <a href="#">Make a Pull Request</a>
+                        <a href="pull_request_cart.php">Pull Request Cart</a>
                     </li>
                     <li class="divider"></li>
                     <li>
@@ -47,7 +47,7 @@
                     </li>
                     <li class="divider"></li>
                     <li>
-                        <a href="order_status.php">Current Order Status</a>
+                        <a href="#">Current Order Status</a>
                     </li>
                     <li class="divider"></li>
                 </ul>

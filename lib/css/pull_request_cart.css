@@ -11,3 +11,11 @@
   margin-right: auto;
   margin-bottom: 10px;
 }
+
+#send_pull_request {
+   margin-left: 1em;
+}
+
+.remove_item {
+   vertical-align: bottom;
+}

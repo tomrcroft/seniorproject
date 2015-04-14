@@ -17,9 +17,31 @@ h3 small {
 .top-bar-section li:not(.has-form) a:not(.button) {
     background: #000000;
 }
+
+.top-bar-section .dropdown li:not(.has-form):not(.active) > a:not(.button) {
+  background: #000000;
+}
+
+#anonymous_login {
+  background: #000000;
+  padding: 0 0.9375rem;
+  line-height: 2.8125rem;
+}
+
 .top-bar-section .has-form {
     background-color: #000000;
 }
+
+.top-bar-section ul li > #anonymous_login {
+      display: block;
+      width: 100%;
+      color: #FFFFFF;
+      /*padding: 12px 0 12px 0;*/
+      /*padding-left: 0.9375rem;*/
+      font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+      font-size: 0.8125rem;
+      font-weight: normal;
+      text-transform: none; }
 
 .row{
    max-width: 100%;
@@ -29,7 +51,6 @@ h3 small {
   font-size: 40px;
 }
 
-/*.search {
-   padding: 8px;
-   border-width: 1px;
-}*/
+.main-content {
+  margin-top: 1em;
+}
