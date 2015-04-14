@@ -34,6 +34,8 @@
             }
             //display goes here
             echo $row['Created_By'] . '---' . $row['Status'];
+            //show the pull request id, status, and date?
+            //show each item
         }
     }
 ?>

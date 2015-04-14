@@ -58,7 +58,7 @@
         $pic = '<img src="../lib/images/temp/temp_photo.jpeg" alt="Costume Image" class="thumbnail">';
         //what i pulled out <img src="http://placehold.it/250x300&text=Costume Image" alt="Costume Image" 
         echo '
-        <div class="row ">
+        <div id='. $item['Costume_Key'] .' class="row">
           <div class="large-2 columns">
             <a href="#"> <span> </span> '. $pic .'</a>
           </div>
