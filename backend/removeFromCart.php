@@ -12,5 +12,6 @@
         if ($value != $item)
             $newCart[] = $value;
     }
+    unset($_SESSION['shopping_cart']);
     $_SESSION['shopping_cart'] = $newCart;
 ?>
