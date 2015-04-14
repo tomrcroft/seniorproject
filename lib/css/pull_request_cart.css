@@ -16,6 +16,10 @@
    margin-left: 1em;
 }
 
+#confirm_cancel {
+   margin-left: 1em;
+}
+
 .remove_item {
    vertical-align: bottom;
 }
@@ -24,3 +28,6 @@
    margin-bottom: 1em;
 }
 
+#cancel-modal {
+   color: #000000;
+}
