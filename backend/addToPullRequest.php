@@ -4,10 +4,13 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
+    session_start();
     $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
     $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
     $link = sqlsrv_connect($server, $connectionInfo);
-    $formvars = array($_POST['costumeList'],$_POST['production'],$_POST['code'],$_POST['billAddress'],$_POST['billCity'],
+    //converted costume array Costume_Key-Quantity
+    $list = formatList($_SESSION['shopping_cart']);
+    $formvars = array($list,$_POST['production'],$_POST['code'],$_POST['billAddress'],$_POST['billCity'],
         $_POST['billState'],$_POST['billAreaCode'],$_POST['billCountry'],$_POST['billAttn'],$_POST['shipAddress'],$_POST['shipCity'],
         $_POST['shipState'],$_POST['shipAreaCode'],$_POST['shipCountry'],$_POST['shipAttn'],$_POST['pickupDate'],$_POST['returnDate'],
         $_POST['contactName'],$_POST['contactEmail'],$_POST['contactPhone'],$_POST['contactFax'],$_POST['production'],
@@ -27,6 +30,15 @@
             }
             sqlsrv_free_stmt($stmt);
             sqlsrv_close($link);
+            unset($_SESSION['shopping_cart']);
             //add confirmation
+    }
+    function formatList($costumes)
+    {
+        foreach ($costumes as $item) {
+            $list[] = $item . '-1';//will have to account for quality 
+        }
+        $formatList = implode(',', $list);
+        return $formatList;
     }
 ?>
