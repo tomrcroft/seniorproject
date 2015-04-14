@@ -17,6 +17,21 @@ h3 small {
 .top-bar-section li:not(.has-form) a:not(.button) {
     background: #000000;
 }
+
+.top-bar-section .dropdown li:not(.has-form):not(.active) > a:not(.button) {
+  background: #000000;
+}
+
+#anonymous_login {
+  background: #000000;
+  padding: 0 0.9375rem;
+  line-height: 2.8125rem;
+}
+
+/*.top-bar-section ul .has-dropdown {
+  background: #000000;
+}*/
+
 .top-bar-section .has-form {
     background-color: #000000;
 }

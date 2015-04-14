@@ -19,6 +19,10 @@ label {
    color: #FFFFFF;
 }
 
+#search_num_results {
+   margin-top: 0.5rem;
+}
+
 [class*="column"] + [class*="column"]:last-child {
    float: left;
 }
