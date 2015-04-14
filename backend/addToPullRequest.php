@@ -8,8 +8,8 @@
     $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
     $link = sqlsrv_connect($server, $connectionInfo);
     //converted costume array Costume_Key-Quantity
-    $list = formatList(array(40,42));
-    //echo $list;
+    //$list = formatList(array(40,42));
+    $list = $_SESSION['shopping_cart'];
     $formvars = array($list,$_POST['production'],$_POST['code'],$_POST['billAddress'],$_POST['billCity'],
         $_POST['billState'],$_POST['billAreaCode'],$_POST['billCountry'],$_POST['billAttn'],$_POST['shipAddress'],$_POST['shipCity'],
         $_POST['shipState'],$_POST['shipAreaCode'],$_POST['shipCountry'],$_POST['shipAttn'],$_POST['pickupDate'],$_POST['returnDate'],
@@ -41,7 +41,7 @@
     function formatList($costumes)
     {
         foreach ($costumes as $item) {
-            $list[] = $item . '-1';//will have to account for quality 
+            $list[] = $item . '-1';//will have to account for quantity 
         }
         $formatList = implode(',', $list);
         return $formatList;
