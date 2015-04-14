@@ -14,6 +14,7 @@
         <script src="../lib/foundation/js/vendor/jquery.js" type="text/javascript"></script>
         <script src="../lib/foundation/js/vendor/modernizr.js" type="text/javascript"></script>
         <script src="../lib/foundation/js/foundation.min.js" type="text/javascript"></script>
+        <script src="../lib/js/shipping_info.js" type="text/javascript"></script>
 
         <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
         <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
@@ -147,6 +148,16 @@
                         Enter your Contact information: 
                             <div class="row">
                                 <div class="large-12 columns">
+                                    <input type="text" name="contactproduction" id="contact_production" placeholder="Production" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <input type="text" name="contactcode" id="contact_code" placeholder="Code" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="large-12 columns">
                                     <input type="text" name="contactname" id="contact_name" placeholder="Name" />
                                 </div>
                             </div>
@@ -182,8 +193,14 @@
                             </div>
 
                             <div class="row">
+                                <div class="large-12 columns">
+                                    <input type="text" name="rentalfee" id="rental_fee" placeholder="Rental Fee" />
+                                </div>
+                            </div>
+
+                            <div class="row">
                                 <div class="large-12 large-centered columns">
-                                    <input class="button expand" id="submit_info_button" value="Submit Shipping Information"/>
+                                    <input class="button expand" id="submit_info_button" value="Submit Information"/>
                                 </div>
                             </div>
                     </div>
