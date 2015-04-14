@@ -15,7 +15,7 @@
     $formvars = array($list,$_POST['production'],$_POST['code'],$_POST['billAddress'],$_POST['billCity'],
         $_POST['billState'],$_POST['billAreaCode'],$_POST['billCountry'],$_POST['billAttn'],$_POST['shipAddress'],$_POST['shipCity'],
         $_POST['shipState'],$_POST['shipAreaCode'],$_POST['shipCountry'],$_POST['shipAttn'],$_POST['pickupDate'],$_POST['returnDate'],
-        $_POST['contactName'],$_POST['contactEmail'],$_POST['contactPhone'],$_POST['contactFax'],$_POST['company'],
+        $_POST['contactName'],$_POST['contactEmail'],$_POST['contactPhone'],$_POST['contactFax'],$_POST['billing'],
         $_POST['paymentType'],$_POST['description'],$_POST['salesperson'],$_POST['rentalFee'],$_SESSION['login_user']);
     /*$formvars = array('40-1,42-1','Watts Industries','test purchase','123 cossa blvd','sac town',
         'CA',95831,'US','MR. Watts','123 cossa blvd','sac town',
