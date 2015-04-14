@@ -5,10 +5,10 @@
  * and open the template in the editor.
  */
     
-    //if(!isset($_SESSION['shopping_cart']))
-        //header ("Location: ../www/search_page.php");
-    //$cart = $_SESSION['shopping_cart'];
-    $cart = array(17,19,22);
+    if(!isset($_SESSION['shopping_cart']))
+        header ("Location: ../www/search_page.php");
+    $cart = $_SESSION['shopping_cart'];
+    //$cart = array(17,19,22);
     $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
     $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
     $link = sqlsrv_connect($server, $connectionInfo);
@@ -56,7 +56,6 @@
         $pic = '<img src="../lib/images/temp/temp_photo.jpeg" alt="Costume Image" class="thumbnail">';
         //what i pulled out <img src="http://placehold.it/250x300&text=Costume Image" alt="Costume Image" 
         echo '
-        </div>
         <div class="row ">
           <div class="large-2 columns">
             <a href="#"> <span> </span> '. $pic .'</a>
@@ -68,7 +67,7 @@
                 <p>'. $item['Costume_Type'] .'</p>
               </div>
               <div class=" large-3 columns">
-                <div class="button right remove_item">Remove Item</div>
+                <div class="button expand medium remove_item">Remove Item</div>
 
               </div>
               <div class="row">
@@ -92,7 +91,8 @@
                 </div>
               </div>
             </div>
-            <hr>
+           </div>
+           <hr>
           </div>';
     }
 ?>

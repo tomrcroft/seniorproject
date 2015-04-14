@@ -9,7 +9,9 @@
     $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
     $link = sqlsrv_connect($server, $connectionInfo);
     //figure out what to do with price
-    $formvars = array($_POST['pullId'],$_POST['costumeId'],new price,$_SESSION['login_user']);
+    //$newPrice = calculateNewPrice();
+    $newPrice = 0;
+    $formvars = array($_POST['pullId'],$_POST['costumeId'],$newPrice,$_SESSION['login_user']);
     //$formvars = array(2,40,0,'jdub9108');
     //Checks connection
     if (!$link) {
