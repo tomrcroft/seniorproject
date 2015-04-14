@@ -4,6 +4,8 @@
  * Submits a Pull Request to the database
  */
     session_start();
+    if(!isset($_SESSION['shopping_cart']))
+        header ("Location: ../www/search_page.php");
     $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
     $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
     $link = sqlsrv_connect($server, $connectionInfo);
