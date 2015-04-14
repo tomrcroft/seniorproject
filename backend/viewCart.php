@@ -57,8 +57,8 @@
         //what i pulled out <img src="http://placehold.it/250x300&text=Costume Image" alt="Costume Image" 
         echo '
         <div class="row ">
-          <div class="large-2 columns">
-            <a href="#"> <span> </span> '. $pic .'</a>
+          <div class="item_image large-2 columns">
+            <a href="#"> '. $pic .'</a>
           </div>
           <div class="large-10 columns">
             <div class="row">

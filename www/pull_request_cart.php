@@ -74,12 +74,19 @@
                 If you would like to restart your pull request, click <b>Cancel Pull Request</b>
               </p>
               <div class="pull-results">
-                
+
               <?php include '../backend/viewCart.php';?>
 
               </div>
               <div id="send_pull_request" class="button right">Send Pull Request</div>
               <div id="cancel_pull_request" class="button right"> Cancel Pull Request</div>
+
+              <div id="cancel_confirmation" class="reveal-modal" data-reveal aria-labelledby="cancel_modal" aria-hidden="true" role="dialog">
+                <h2 id="cancel_modal">Are you sure you want to cancel your pull request?</h2>
+                <p>Reveal makes these very easy to summon and dismiss. The close button is simply an anchor with a unicode character icon and a class of. Clicking anywhere outside the modal will also dismiss it.</p>
+                <p>Finally, if your modal summons another Reveal modal, the plugin will handle that for you gracefully.</p>
+                <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+              </div>
     
           </div>
           <div class="large-2 pull-10 columns">

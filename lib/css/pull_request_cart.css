@@ -19,3 +19,7 @@
 .remove_item {
    vertical-align: bottom;
 }
+
+.item_image img {
+   margin-bottom: 1em;
+}
