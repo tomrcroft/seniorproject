@@ -40,12 +40,12 @@ function itemView()
             <div class="large-9 push-3 columns">
                 <h3>'. $row['Costume_Name'] .'          <small>'. $row['Costume_Type'] .'</small></h3>
                     <div class="row">
-                        <div class="large-12 columns">
-                            <div class="left inventory_image">
+                        <div id='. $row['Costume_Key'] .' class="large-12 columns">
+                            <div  class="left inventory_image">
                                 '. $pic .'
                             </div>
                             '. $row['Costume_Description'] .'
-                            <div class="button">Add Item</div>
+                            <div class="add_item button">Add Item</div>
                         </div>
                     </div>
 
