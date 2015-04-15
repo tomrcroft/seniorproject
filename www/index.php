@@ -56,7 +56,7 @@
         </div>
 
         <div class="registration large-3 large-centered columns">
-            <div class="login-box">
+            <div class="form-box">
                 <div class="row">
                     <div class="large-12 columns">
                         Registration
@@ -103,7 +103,7 @@
         </div>
 
         <div class="login large-3 large-centered columns">
-            <div class="login-box">
+            <div class="form-box">
                 <div class="row">
                     <div class="large-12 columns">
                     Login

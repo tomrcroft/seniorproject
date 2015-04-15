@@ -49,7 +49,7 @@
     <div class="row">
 
         <div class="large-4 columns">
-            <div class="login-box">
+            <div class="form-box">
                 <div class="row">
                     <div class="large-12 columns">
                         Enter your Billing information: 
@@ -90,7 +90,7 @@
         </div>
 
         <div class="large-4 columns">
-            <div class="login-box">
+            <div class="form-box">
                 <div class="row">
                     <div class="large-12 columns">
                         Enter your Shipping information: 
@@ -142,7 +142,7 @@
         </div>
 
         <div class="large-4 columns">
-            <div class="login-box">
+            <div class="form-box">
                 <div class="row">
                     <div class="large-12 columns">
                         Enter your Contact information: 
@@ -178,6 +178,11 @@
                             </div>
                             <div class="row">
                                 <div class="large-12 columns">
+                                    <input type="text" name="contactbilling" id="contact_billing" placeholder="Billing" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="large-12 columns">
                                     <input type="text" name="paymenttype" id="payment_type" placeholder="Payment Type" />
                                 </div>
                             </div>
@@ -200,7 +205,7 @@
 
                             <div class="row">
                                 <div class="large-12 large-centered columns">
-                                    <input class="button expand" id="submit_info_button" value="Submit Information"/>
+                                    <div class="button expand" id="submit_info_button">Submit Information</div>
                                 </div>
                             </div>
                     </div>
