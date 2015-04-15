@@ -49,7 +49,7 @@
     <div class="row">
 
         <div class="large-4 columns">
-            <div class="login-box">
+            <div class="form-box">
                 <div class="row">
                     <div class="large-12 columns">
                         Enter your Billing information: 
@@ -90,7 +90,7 @@
         </div>
 
         <div class="large-4 columns">
-            <div class="login-box">
+            <div class="form-box">
                 <div class="row">
                     <div class="large-12 columns">
                         Enter your Shipping information: 
@@ -142,7 +142,7 @@
         </div>
 
         <div class="large-4 columns">
-            <div class="login-box">
+            <div class="form-box">
                 <div class="row">
                     <div class="large-12 columns">
                         Enter your Contact information: 
@@ -174,6 +174,11 @@
                             <div class="row">
                                 <div class="large-12 columns">
                                     <input type="text" name="contactfax" id="contact_fax" placeholder="Fax" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <input type="text" name="contactbilling" id="contact_billing" placeholder="Billing" />
                                 </div>
                             </div>
                             <div class="row">
