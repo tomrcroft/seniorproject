@@ -81,9 +81,25 @@
                         </div>
                     </div>
                     </li>
+                    <?php
+                        if(isset($_SESSION['login_user'])) { 
+                    ?>
                     <li class="has-form">
                         <div class="button" id="logout_button" value="Logout">Logout</div>
                     </li>
+                    <?php 
+                    }
+                        else { 
+                    ?>
+                    <li class="has-form">
+                        <a href="index.php" class="button">Register</a>
+                    </li>
+                    <li class="has-form">
+                        <a href="index.php" class="button">Login</a>
+                    </li>
+                    <?php 
+                        }
+                    ?>
                 </ul>
             </section>
         </nav>
@@ -108,7 +124,10 @@
                         echo  'You have been logged out';
                     }
                     ?>   
-                    <p> There are no results to display. </p>
+                    <p> 
+                        There are no results to display.<br>
+                        You may search costumes by name in the <b>Search Form</b> in the top bar.
+                    </p>
 <!--                     <div class="inventory_image large-4 small-6 columns">
                             <img src="../lib/images/costumes/18.jpg">
                         <div class="panel clearfix centered">
@@ -126,28 +145,6 @@
                         <div class="panel">
                             <h5>Item Name</h5>
                             <h5>Rental Status: Unavailable</h5>
-                            <h6 class="subheader">$000.00</h6>
-                            <div class="add_item button">Add Item</div>
-                        </div>
-                    </div>
-
-                    <div class="inventory_image large-4 small-6 columns">
-                        <img src="http://placehold.it/320x240&text=Item">
-
-                        <div class="panel">
-                            <h5>Item Name</h5>
-                            <h5>Rental Status: Available</h5>
-                            <h6 class="subheader">$000.00</h6>
-                            <div class="add_item button">Add Item</div>
-                        </div>
-                    </div>
-
-                    <div class="inventory_image large-4 small-6 columns">
-                        <img src="../lib/images/costumes/costume8.jpg">
-
-                        <div class="panel">
-                            <h5>Item Name</h5>
-                            <h5>Rental Status: Available</h5>
                             <h6 class="subheader">$000.00</h6>
                             <div class="add_item button">Add Item</div>
                         </div>

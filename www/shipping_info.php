@@ -126,12 +126,12 @@
                             </div>
                             <div class="row">
                                 <div class="large-12 columns">
-                                    <input type="text" name="pickupdate" id="pickup_date" placeholder="Pickup Date" />
+                                    <input type="text" name="pickupdate" id="pickup_date" placeholder="Pickup Date YYYY-MM-DD" />
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="large-12 columns">
-                                    <input type="text" name="returndate" id="return_date" placeholder="Expected Return Date" />
+                                    <input type="text" name="returndate" id="return_date" placeholder="Expected Return Date YYYY-MM-DD" />
                                 </div>
                             </div>
 
