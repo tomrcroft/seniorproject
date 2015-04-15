@@ -4,7 +4,7 @@
  * Creates the view of all the items currently in your shopping cart
  */
     
-    if(!isset($_SESSION['shopping_cart']))
+    if(!isset($_SESSION['shopping_cart']) && isset($_SESSION['login_user']))
         header ("Location: ../www/search_page.php");
     $cart = $_SESSION['shopping_cart'];
     //$cart = array(17,19,22);
@@ -59,8 +59,8 @@
         //what i pulled out <img src="http://placehold.it/250x300&text=Costume Image" alt="Costume Image" 
         echo '
         <div id='. $item['Costume_Key'] .' class="row">
-          <div class="cart_item_image large-2 columns">
-            <a href="#"> '. $pic .'</a>
+          <div class="large-2 columns">
+            <a href="#"> <span> </span> '. $pic .'</a>
           </div>
           <div class="large-10 columns">
             <div class="row">
