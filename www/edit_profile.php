@@ -38,6 +38,26 @@
                     <!-- Left Nav Section -->
                 <ul class="left">
                     <li class="divider"></li>
+                    <?php
+                        if(isset($_SESSION['login_user'])) { 
+                    ?>
+                        <li class="has-dropdown">
+                            <a href="#">Welcome, <?=$_SESSION['login_user']?>!</a>
+                        <ul class="dropdown">
+                            <li><a href="edit_profile.php">Edit Profile</a></li>
+                        </ul>
+                        </li>
+                    <?php 
+                        }
+                        else { 
+                    ?>
+                        <li>
+                            <div id="anonymous_login">Welcome, Anonymous!</div>
+                        </li>
+                    <?php 
+                        }
+                    ?>
+                    <li class="divider"></li>
                     <li>
                         <a href="pull_request_cart.php">Pull Request Cart</a>
                     </li>
@@ -47,7 +67,7 @@
                     </li>
                     <li class="divider"></li>
                     <li>
-                        <a href="#">Current Order Status</a>
+                        <a href="order_status.php">Current Order Status</a>
                     </li>
                     <li class="divider"></li>
                 </ul>
@@ -64,7 +84,7 @@
         <div class="registration large-3 large-centered columns">
             <div class="form-box">
                 <div class="row">
-                    <div class="large-12 columns">
+                    <div class="edit_profile_box large-12 columns">
                         <div id="edit_profile_success" class="hide">Editted!</div>
                         <div class="form_title">Edit Profile</div>
                         <div class="account_info">
