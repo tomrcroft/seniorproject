@@ -39,9 +39,10 @@
             sqlsrv_close($link);
             unset($_SESSION['shopping_cart']);
 
-            $output = "Pull Request Created!"; 
-            $json = json_encode(array("status"=> $output));
-            echo $json;
+            echo "Pull Request Created!";
+            // $output = "Pull Request Created!"; 
+            // $json = json_encode(array("status"=> $output));
+            // echo $json;
             //add confirmation
     }
     function formatList($costumes)

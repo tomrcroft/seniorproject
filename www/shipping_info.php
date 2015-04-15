@@ -205,7 +205,7 @@
 
                             <div class="row">
                                 <div class="large-12 large-centered columns">
-                                    <input class="button expand" id="submit_info_button" value="Submit Information"/>
+                                    <div class="button expand" id="submit_info_button">Submit Information</div>
                                 </div>
                             </div>
                     </div>
