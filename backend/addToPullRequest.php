@@ -11,7 +11,7 @@
     $link = sqlsrv_connect($server, $connectionInfo);
     //converted costume array Costume_Key-Quantity
     //$list = formatList(array(40,42));
-    $list = $_SESSION['shopping_cart'];
+    $list = formatList($_SESSION['shopping_cart']);
     $formvars = array($list,$_POST['production'],$_POST['code'],$_POST['billAddress'],$_POST['billCity'],
         $_POST['billState'],$_POST['billAreaCode'],$_POST['billCountry'],$_POST['billAttn'],$_POST['shipAddress'],$_POST['shipCity'],
         $_POST['shipState'],$_POST['shipAreaCode'],$_POST['shipCountry'],$_POST['shipAttn'],$_POST['pickupDate'],$_POST['returnDate'],
@@ -38,11 +38,6 @@
             sqlsrv_free_stmt($stmt);
             sqlsrv_close($link);
             unset($_SESSION['shopping_cart']);
-
-            echo "Pull Request Created!";
-            // $output = "Pull Request Created!"; 
-            // $json = json_encode(array("status"=> $output));
-            // echo $json;
             //add confirmation
     }
     function formatList($costumes)
