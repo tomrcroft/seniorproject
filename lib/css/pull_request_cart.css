@@ -32,6 +32,13 @@
    color: #000000;
 }
 
+#send-modal {
+   color: #000000;
+}
+
+#confirm_send {
+   margin-left: 1em;
+}
 .cart_item_image {
   margin-bottom: 1em;
 }

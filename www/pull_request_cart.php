@@ -82,9 +82,15 @@
               <div id="cancel_pull_request" class="button right">Cancel Pull Request</div>
 
               <div class='reveal-modal' id='cancel-modal' data-reveal>
-              Are you sure you want to delete all items from your cart?
-              <div id="confirm_cancel" class="button right">Yes</div>
-              <div id="reject_cancel" class="button right">No</div>
+                Are you sure you want to delete all items from your cart?
+                <div id="confirm_cancel" class="button right">Yes</div>
+                <div id="reject_cancel" class="button right">No</div>
+              </div>
+
+              <div class='reveal-modal' id='send-modal' data-reveal>
+                Are you sure you want to send a pull request for all items from your cart?
+                <div id="confirm_send" class="button right">Yes</div>
+                <div id="reject_send" class="button right">No</div>
               </div>
 
               

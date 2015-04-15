@@ -11,7 +11,8 @@ h3 small {
 }
 
 .top-bar {
-    background: #000000;
+  margin-bottom: 1em;
+  background: #000000;
 }
 
 .top-bar-section li:not(.has-form) a:not(.button) {

@@ -33,8 +33,28 @@
                     <!-- Left Nav Section -->
                 <ul class="left">
                     <li class="divider"></li>
+                    <?php session_start();
+                        if(isset($_SESSION['login_user'])) { 
+                    ?>
+                        <li class="has-dropdown">
+                            <a href="#">Welcome, <?=$_SESSION['login_user']?>!</a>
+                        <ul class="dropdown">
+                            <li><a href="edit_profile.php">Edit Profile</a></li>
+                        </ul>
+                        </li>
+                    <?php 
+                        }
+                        else { 
+                    ?>
+                        <li>
+                            <div id="anonymous_login">Welcome, Anonymous!</div>
+                        </li>
+                    <?php 
+                        }
+                    ?>
+                    <li class="divider"></li>
                     <li>
-                        <a href="#">Make a Pull Request</a>
+                        <a href="pull_request_cart.php">Pull Request Cart</a>
                     </li>
                     <li class="divider"></li>
                     <li>
@@ -45,31 +65,39 @@
                         <a href="order_status.php">Current Order Status</a>
                     </li>
                     <li class="divider"></li>
-                    <li>
-                        <a href="search_page.php">Search</a>
-                    </li>
-                    <li class="divider"></li>
                 </ul>
 
                 <!-- Right Nav Section -->
                 <ul class="right">
                     <li class="has-form">
+                        <div class="row collapse">
+                            <li class="has-form">
+                                <a href="search_page.php" class="button alert">Search Inventory</a>
+                            </li>
+                        </div>
+                    </li>
+                    <?php
+                        if(isset($_SESSION['login_user'])) { 
+                    ?>
+                    <li class="has-form">
                         <div class="button" id="logout_button" value="Logout">Logout</div>
                     </li>
+                    <?php 
+                    }
+                        else { 
+                    ?>
+                    <li class="has-form">
+                        <a href="index.php" class="button">Register</a>
+                    </li>
+                    <li class="has-form">
+                        <a href="index.php" class="button">Login</a>
+                    </li>
+                    <?php 
+                        }
+                    ?>
                 </ul>
             </section>
         </nav>
-
-
-
-        <div class="row collapse">
-            <div class="large-8 small-9 columns">
-                <input type="text" id="search_term" placeholder="Search Inventory Database">
-            </div>
-            <div class="large-4 small-3 columns">
-                <input class="alert button expand postfix" id="search_page_form" value="Search"></input>
-            </div>
-        </div>
 
         <div class="row">    
 
@@ -80,15 +108,6 @@
             <!-- Nav Sidebar -->
             <!-- This is source ordered to be pulled to the left on larger screens -->
             <div class="large-3 pull-9 columns">
-
-            <ul class="side-nav">
-                <li><a href="#">Section 1</a></li>
-                <li><a href="#">Section 2</a></li>
-                <li><a href="#">Section 3</a></li>
-                <li><a href="#">Section 4</a></li>
-                <li><a href="#">Section 5</a></li>
-                <li><a href="#">Section 6</a></li>
-            </ul>
 
             <p><img src="http://placehold.it/320x240&text=Ad" /></p>
 
