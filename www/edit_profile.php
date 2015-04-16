@@ -175,12 +175,7 @@
                             <div id="edit_profile_success" class="hide">Editted!</div>
                                 <div class="form_title">Edit Shipping</div>
                                 <div class="account_info">
-                                    <div id="account_shipping_username">Shipping Attn: </div>
-                                    <div id="account_shipping_first_name">Shipping Address: </div>
-                                    <div id="account_shipping_last_name">Shipping City: </div>
-                                    <div id="account_shipping_company">Shipping State: </div>
-                                    <div id="account_shipping_email">Shipping Zip: </div>
-                                    <div id="account_shipping_phone">Shipping Country: </div>
+                                    <?php include '../backend/DisplayShippingAddress.php'; ?>
                                 </div>
                         </div>
                     </div>
