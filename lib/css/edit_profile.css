@@ -5,3 +5,7 @@
 .tab-title {
    border: 1px solid black; 
 }
+
+[class*="column"] + [class*="column"]:last-child {
+   float: left;
+}

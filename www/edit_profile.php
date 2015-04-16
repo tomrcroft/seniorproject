@@ -21,7 +21,6 @@
         <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
         <link rel="stylesheet" href="../lib/css/forms.css" type="text/css">
         <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
-        <link rel="stylesheet" href="../lib/css/search_page.css" type="text/css">
         <link rel="stylesheet" href="../lib/css/edit_profile.css" type="text/css">
 
     </head>
@@ -289,59 +288,8 @@
                         </div>
                 </div>
 
-        </div>
-        </div>
-
-<!--         <div class="registration large-3 large-centered columns">
-            <div class="form-box">
-                <div class="row">
-                    <div class="edit_profile_box large-12 columns">
-                        <div id="edit_profile_success" class="hide">Editted!</div>
-                        <div class="form_title">Edit Profile</div>
-                        <div class="account_info">
-                            <div id="account_username">Username: </div>
-                            <div id="account_first_name">First Name: </div>
-                            <div id="account_last_name">Last Name: </div>
-                            <div id="account_email">E-mail: </div>
-                            <div id="account_company">Company: </div>
-                            
-                        </div>
-
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="firstname" id="update_firstname" placeholder="First Name" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="lastname" id="update_lastname" placeholder="Last Name" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="Company" id="update_company" placeholder="Company" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="email" id="update_email" placeholder="E-mail" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="password" name="password" id="update_password" placeholder="Password" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 large-centered columns">
-                                    <input type="submit" class="button expand" id="update_button" value="Update Profile"/>
-                                </div>
-                            </div>
-
-                    </div>
-                </div>
             </div>
-        </div> -->
+        </div>
 
     <script>
         $(document).foundation();
