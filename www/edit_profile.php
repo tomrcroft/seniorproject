@@ -83,6 +83,7 @@
         </nav>
 
         <div class="row">
+
             <ul class="tabs vertical" data-tab>
                 <li class="tab-title active"><a href="#edit_profile_panel">Edit Profile Information</a></li>
                 <li class="tab-title"><a href="#edit_shipping_panel">Edit Shipping Information</a></li>
@@ -90,6 +91,16 @@
             </ul>
             <div class="tabs-content">
                 <div class="content active" id="edit_profile_panel">
+
+                    <div class="large-3 large-offset-1 columns">
+                        <div class="form-box">
+                            <div id="edit_profile_success" class="hide">Editted!</div>
+                                <div class="form_title">Edit Profile</div>
+                                <div class="account_info">
+                                    <?php include '../backend/DisplayProfile.php';?>
+                                </div>
+                        </div>
+                    </div>
 
 <!--                 <div class="large-3 large-offset-1 columns">
                         <div class="form-box">

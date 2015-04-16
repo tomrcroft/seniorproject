@@ -27,9 +27,15 @@
         if($row === false) {
             die( print_r( sqlsrv_errors(), true));
         }
-//        echo $row['First_Name'] . $row['Last_Name'] . $row['Company'] 
-//                . $row['Email'] . $row['Phone_Number'] . $row['Fax_Number'];
         sqlsrv_free_stmt($stmt);
         sqlsrv_close($link);
+        
+        echo '<div id="account_username">Username: ' . $row['Username']. '</div>
+                <div id="account_first_name">First Name: ' . $row['First_Name']. '</div>
+                <div id="account_last_name">Last Name: ' . $row['Last_Name']. '</div>
+                <div id="account_company">Company: ' . $row['Company']. '</div>
+                <div id="account_email">E-mail: ' . $row['Email']. '</div>
+                <div id="account_email">Phone: ' . $row['Phone_Number']. '</div>
+                <div id="account_email">Fax: ' . $row['Fax_Number']. '</div>';
     }
 ?>
