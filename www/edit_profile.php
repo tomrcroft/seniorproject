@@ -22,6 +22,7 @@
         <link rel="stylesheet" href="../lib/css/forms.css" type="text/css">
         <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
         <link rel="stylesheet" href="../lib/css/search_page.css" type="text/css">
+        <link rel="stylesheet" href="../lib/css/edit_profile.css" type="text/css">
 
     </head>
 
@@ -81,7 +82,138 @@
             </section>
         </nav>
 
-        <div class="registration large-3 large-centered columns">
+        <div class="row">
+        <ul class="tabs vertical" data-tab>
+            <li class="tab-title active"><a href="#edit_profile_panel">Edit Profile Information</a></li>
+            <li class="tab-title"><a href="#edit_shipping_panel">Edit Shipping Information</a></li>
+            <li class="tab-title"><a href="#edit_billing_panel">Edit Billing Information</a></li>
+        </ul>
+        <div class="tabs-content">
+            <div class="content active" id="edit_profile_panel">
+
+                <div class="large-3 large-offset-1 columns">
+                    <div class="form-box">
+                        <div id="edit_profile_success" class="hide">Editted!</div>
+                            <div class="form_title">Edit Profile</div>
+                            <div class="account_info">
+                                <div id="account_username">Username: </div>
+                                <div id="account_first_name">First Name: </div>
+                                <div id="account_last_name">Last Name: </div>
+                                <div id="account_company">Company: </div>
+                                <div id="account_email">E-mail: </div>
+                                <div id="account_email">Phone: </div>
+                                <div id="account_email">Fax: </div>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="large-3 columns">
+                    <div class="form-box">
+                        <div class="row">
+                            <div class="edit_profile_box large-12 columns">
+
+
+                                <div class="row">
+                                    <div class="large-12 columns">
+                                        <input type="text" name="firstname" id="update_firstname" placeholder="First Name" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="large-12 columns">
+                                        <input type="text" name="lastname" id="update_lastname" placeholder="Last Name" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="large-12 columns">
+                                        <input type="text" name="Company" id="update_company" placeholder="Company" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="large-12 columns">
+                                        <input type="text" name="email" id="update_email" placeholder="E-mail" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="large-12 columns">
+                                        <input type="text" name="phone" id="update_phone" placeholder="Phone" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="large-12 columns">
+                                        <input type="text" name="fax" id="update_fax" placeholder="Fax" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="large-12 columns">
+                                        <input type="password" name="password" id="update_password" placeholder="Password" />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="large-12 large-centered columns">
+                                        <input type="submit" class="button expand" id="update_profile" value="Update Profile"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content" id="edit_shipping_panel">
+                <p>This is the third panel of the basic tab example. This is the third panel of the basic tab example.</p>
+            </div>
+            <div class="content" id="edit_billing_panel">
+                        <div class="row">
+                            <div class="large-3 large-centered columns">
+                                <div id="update_billing" class="form-box">
+                                    <div class="row">
+                                        <div class="large-12 columns">
+                                            <div class="row">
+                                                <div class="large-12 columns">
+                                                    <input type="text" name="updatebillingname" id="update_billing_name" placeholder="Billing Attn" />
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="large-12 columns">
+                                                    <input type="text" name="updatebillingaddress" id="update_billing_address" placeholder="Billing Address" />
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="large-12 columns">
+                                                    <input type="text" name="updatebillingcity" id="update_billing_city" placeholder="Billing City" />
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="large-12 columns">
+                                                    <input type="text" name="updatebillingstate" id="update_billing_state" placeholder="Billing State" />
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="large-12 columns">
+                                                    <input type="text" name="updatebillingzip" id="update_billing_zip" placeholder="Billing Zip Code" />
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="large-12 columns">
+                                                    <input type="text" name="updatebillingcountry" id="update_billing_country" placeholder="Billing Country" />
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="large-12 large-centered columns">
+                                                    <div class="button expand" id="update_billing_info_button">Update Billing Information</div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+
+        </div>
+        </div>
+
+<!--         <div class="registration large-3 large-centered columns">
             <div class="form-box">
                 <div class="row">
                     <div class="edit_profile_box large-12 columns">
@@ -130,7 +262,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
     <script>
         $(document).foundation();
