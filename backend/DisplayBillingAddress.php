@@ -31,5 +31,7 @@
 //                . $row['Billing_Postal_Code'] . $row['Billing_Country'] . $row['Billing_Attn'];
         sqlsrv_free_stmt($stmt);
         sqlsrv_close($link);
+        $json = json_encode(array("location"=>"search_page.php", "error" => false));
+        exit($json);
     }
 ?>

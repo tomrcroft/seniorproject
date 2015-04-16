@@ -23,7 +23,7 @@
     }        
     InsertIntoDB($link,$formvars);
     $_SESSION['login_user'] = $formvars[3]; // Initializing Session
-    $json = json_encode(array("location"=>"search_page.php", "error" => false));
+    $json = json_encode(array("location"=>"registration_shipping.php", "error" => false));
     exit($json);
     //inserts into the database   
    function InsertIntoDB($link,$formvars)
