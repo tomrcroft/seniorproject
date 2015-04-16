@@ -61,11 +61,10 @@
         </div>
 
         <div class="registration large-3 large-centered columns">
-            <div class="form-box">
+            <div id="registration_box" class="form-box">
                 <div class="row">
                     <div class="large-12 columns">
                         Registration
-                        <form method="POST">
                             <div class="row">
                                 <div class="large-12 columns">
                                     <input type="text" name="firstname" id="signup_firstname" placeholder="First Name" />
@@ -88,6 +87,16 @@
                             </div>
                             <div class="row">
                                 <div class="large-12 columns">
+                                    <input type="text" name="phone" id="signup_phone" placeholder="Phone" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="large-12 columns">
+                                    <input type="text" name="fax" id="signup_fax" placeholder="Fax" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="large-12 columns">
                                     <input type="text" name="username" id="signup_username" placeholder="Username" />
                                 </div>
                             </div>
@@ -101,7 +110,6 @@
                                     <input type="submit" class="button expand" id="register_button" value="Register"/>
                                 </div>
                             </div>
-                        </form>
                     </div>
                 </div>
             </div>
