@@ -17,7 +17,7 @@
     }        
     else
     {
-        $str = "SELECT * FROM cmt..SHIPPING WHERE Username = ?";
+        $str = "SELECT * FROM cmt..[user] WHERE Username = ?";
         $stmt = sqlsrv_query($link,$str,$formvars);//runs statement
         if( $stmt === false ) {
             die( print_r( sqlsrv_errors(), true));
@@ -27,11 +27,9 @@
         if($row === false) {
             die( print_r( sqlsrv_errors(), true));
         }
-//        echo $row['Shipping_Street_Address'] . $row['Shipping_City'] . $row['Shipping_State_Province'] 
-//                . $row['Shipping_Postal_Code'] . $row['Shipping_Country'] . $row['Shipping_Attn'];
+//        echo $row['First_Name'] . $row['Last_Name'] . $row['Company'] 
+//                . $row['Email'] . $row['Phone_Number'] . $row['Fax_Number'];
         sqlsrv_free_stmt($stmt);
         sqlsrv_close($link);
-        $json = json_encode(array("location"=>"registration_billing.php", "error" => false));
-        exit($json);
     }
 ?>

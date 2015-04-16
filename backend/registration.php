@@ -1,7 +1,7 @@
 <?php
     session_start();
     $crypt = better_crypt($_POST['password']);
-    $formvars = array($_POST['firstname'],$_POST['lastname'],$_POST['company'],$_POST['username'],$_POST['email'], $crypt);
+    $formvars = array($_POST['firstname'],$_POST['lastname'],$_POST['company'],$_POST['username'],$_POST['email'], $crypt);//$_POST['phone'],$_POST['fax']);
 
     $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';//remember to change the server
     $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
@@ -37,7 +37,7 @@
         else
         {
             //Insert data
-            $str = "{call dbo.Add_Or_Update_User(?, ?, ?, ?, ?, ?)}";
+            $str = "{call dbo.Add_Or_Update_User(?, ?, ?, ?, ?, ?)}";//, ?, ?)}";
 
             $stmt = sqlsrv_query($link,$str,$formvars);//runs statement
             if( $stmt === false ) {
