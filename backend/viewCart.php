@@ -54,8 +54,10 @@
     function displayItem($item)
     {
         //convert photo to jpeg
-        file_put_contents('../lib/images/temp/temp_photo'. $item['Costume_Key'] .'.jpeg', $item['Costume_Image']);//changing from blob format
-        $pic = '<img src="../lib/images/temp/temp_photo'. $item['Costume_Key'] .'.jpeg" alt="Costume Image" class="thumbnail">';
+        $dir = '../lib/images/temp/item'.$item['Costume_Key'].'.jpeg';
+        if (!file_exists($dir))
+            file_put_contents($dir, $item['Costume_Image']);//changing from blob format
+        $pic = '<img src="'.$dir.'" alt="Costume Image" class="thumbnail">';
         //what i pulled out <img src="http://placehold.it/250x300&text=Costume Image" alt="Costume Image" 
         echo '
         <div id='. $item['Costume_Key'] .' class="row">
