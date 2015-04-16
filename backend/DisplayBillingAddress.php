@@ -29,7 +29,11 @@
         }
         sqlsrv_free_stmt($stmt);
         sqlsrv_close($link);
-        //echo $row['Billing_Street_Address'] . $row['Billing_City'] . $row['Billing_State_Province'] 
-//                . $row['Billing_Postal_Code'] . $row['Billing_Country'] . $row['Billing_Attn'];
+        echo '<div id="account_billing_username">Billing Attn: '. $row['Billing_Attn'] .'</div>
+                <div id="account_billing_first_name">Billing Address: '. $row['Billing_Street_Address'] .'</div>
+                <div id="account_billing_last_name">Billing City: '. $row['Billing_City'] .'</div>
+                <div id="account_billing_company">Billing State: '. $row['Billing_State_Province'] .'</div>
+                <div id="account_billing_email">Billing Zip: '. $row['Billing_Postal_Code'] .'</div>
+                <div id="account_billing_phone">Billing Country: '. $row['Billing_Country'] .'</div>';
     }
 ?>
