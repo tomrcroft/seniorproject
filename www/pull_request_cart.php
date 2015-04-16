@@ -38,7 +38,7 @@
                 <ul class="left">
                     <li class="divider"></li>
                     <li>
-                        <a href="pull_request_cart.php">Pull Request Cart</a>
+                        <a href="pull_request_cart.php">Pull Request Cart<?php include '../backend/cartSize.php';?></a>
                     </li>
                     <li class="divider"></li>
                     <li>
