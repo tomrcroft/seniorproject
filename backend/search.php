@@ -23,7 +23,6 @@ $find = trim($_POST['searchterm']);
 
 $rows = array();
 $num_items_returned = 0;
-$dir = '../lib/images/temp/test';
 
 if (empty($find))
 {
@@ -39,9 +38,11 @@ while($result = sqlsrv_fetch_array( $query , SQLSRV_FETCH_ASSOC ))
 {
 // display results however we wan
 $rows[] = $result;
-$dir = '../lib/images/temp/item'.$rows['Costume_Key'].'.jpeg';
+$dir = '../lib/images/temp/item'.$result['Costume_Key'].'.jpeg';
+if (!file_exists($dir)){
     $temp = $rows[$num_items_returned]['Costume_Image'];
     file_put_contents($dir, $temp);
+}
 $rows[$num_items_returned]['Costume_Image'] = $dir;
 
 // echo $rows[$num_items_returned]['Costume_Image'];
