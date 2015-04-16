@@ -224,12 +224,7 @@
                             <div id="edit_profile_success" class="hide">Editted!</div>
                                 <div class="form_title">Edit Billing</div>
                                 <div class="account_info">
-                                    <div id="account_billing_username">Billing Attn: </div>
-                                    <div id="account_billing_first_name">Billing Address: </div>
-                                    <div id="account_billing_last_name">Billing City: </div>
-                                    <div id="account_billing_company">Billing State: </div>
-                                    <div id="account_billing_email">Billing Zip: </div>
-                                    <div id="account_billing_phone">Billing Country: </div>
+                                    <?php include '../backend/DisplayBillingAddress.php'; ?>
                                 </div>
                         </div>
                     </div>
