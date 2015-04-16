@@ -96,13 +96,7 @@
                         <div id="edit_profile_success" class="hide">Editted!</div>
                             <div class="form_title">Edit Profile</div>
                             <div class="account_info">
-                                <div id="account_username">Username: </div>
-                                <div id="account_first_name">First Name: </div>
-                                <div id="account_last_name">Last Name: </div>
-                                <div id="account_company">Company: </div>
-                                <div id="account_email">E-mail: </div>
-                                <div id="account_email">Phone: </div>
-                                <div id="account_email">Fax: </div>
+                                <?php include '../backend/DisplayProfile.php';?>
                             </div>
                     </div>
                 </div>
