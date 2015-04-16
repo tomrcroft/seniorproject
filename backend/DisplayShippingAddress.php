@@ -27,5 +27,7 @@
 //                . $row['Shipping_Postal_Code'] . $row['Shipping_Country'] . $row['Shipping_Attn'];
         sqlsrv_free_stmt($stmt);
         sqlsrv_close($link);
+        $json = json_encode(array("location"=>"registration_billing.php", "error" => false));
+        exit($json);
     }
 ?>
