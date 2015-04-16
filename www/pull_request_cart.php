@@ -38,7 +38,11 @@
                 <ul class="left">
                     <li class="divider"></li>
                     <li>
-                        <a href="pull_request_cart.php">Pull Request Cart</a>
+                        <a href="pull_request_cart.php">Pull Request Cart
+                        <?php 
+                        if(count($_SESSION['shopping_cart']) > 0)
+                            echo '(' . count($_SESSION['shopping_cart']) . ')';
+                        ?></a>
                     </li>
                     <li class="divider"></li>
                     <li>
