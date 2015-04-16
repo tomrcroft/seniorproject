@@ -14,9 +14,7 @@
         <script src="../lib/foundation/js/vendor/jquery.js" type="text/javascript"></script>
         <script src="../lib/foundation/js/vendor/modernizr.js" type="text/javascript"></script>
         <script src="../lib/foundation/js/foundation.min.js" type="text/javascript"></script>
-        <script src="../lib/js/login.js" type="text/javascript"></script>
         <script src="../lib/js/registration.js" type="text/javascript"></script>
-        <script src="../lib/js/index.js" type="text/javascript"></script>
 
         <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
         <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
@@ -53,6 +51,7 @@
         <div class="welcome">
             Costume Inventory<br>
             Welcome to the California Musical Theatre Inventory System.<br>
+            <h2 class="text-center">Billing Information</h2>
             <p class="text-center">
             Please <b>continue your registration</b> be entering your <b>Billing information:</b> <br>
             <i>This information may be editted later.</i> 
@@ -61,43 +60,43 @@
 
         <div class="row">
             <div class="large-3 large-centered columns">
-                <div class="form-box">
+                <div id="registration_billing" class="form-box">
                     <div class="row">
                         <div class="large-12 columns">
                             <div class="row">
                                 <div class="large-12 columns">
-                                    <input type="text" name="billingname" id="billing_name" placeholder="Shipping Attn" />
+                                    <input type="text" name="billingname" id="billing_name" placeholder="Billing Attn" />
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="large-12 columns">
-                                    <input type="text" name="billingaddress" id="billing_address" placeholder="Shipping Address" />
+                                    <input type="text" name="billingaddress" id="billing_address" placeholder="Billing Address" />
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="large-12 columns">
-                                    <input type="text" name="billingcity" id="billing_city" placeholder="Shipping City" />
+                                    <input type="text" name="billingcity" id="billing_city" placeholder="Billing City" />
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="large-12 columns">
-                                    <input type="text" name="billingstate" id="billing_state" placeholder="Shipping State" />
+                                    <input type="text" name="billingstate" id="billing_state" placeholder="Billing State" />
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="large-12 columns">
-                                    <input type="text" name="billingzip" id="billing_zip" placeholder="Shipping Zip Code" />
+                                    <input type="text" name="billingzip" id="billing_zip" placeholder="Billing Zip Code" />
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="large-12 columns">
-                                    <input type="text" name="billingcountry" id="billing_country" placeholder="Shipping Country" />
+                                    <input type="text" name="billingcountry" id="billing_country" placeholder="Billing Country" />
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="large-12 large-centered columns">
-                                    <div class="button expand" id="submit_biling_info_button">Submit Billing Information</div>
+                                    <div class="button expand" id="submit_billing_info_button">Submit Billing Information</div>
                                 </div>
                             </div>
 

@@ -14,9 +14,7 @@
         <script src="../lib/foundation/js/vendor/jquery.js" type="text/javascript"></script>
         <script src="../lib/foundation/js/vendor/modernizr.js" type="text/javascript"></script>
         <script src="../lib/foundation/js/foundation.min.js" type="text/javascript"></script>
-        <script src="../lib/js/login.js" type="text/javascript"></script>
         <script src="../lib/js/registration.js" type="text/javascript"></script>
-        <script src="../lib/js/index.js" type="text/javascript"></script>
 
         <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
         <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
@@ -63,7 +61,7 @@
 
         <div class="row">
             <div class="large-3 large-centered columns">
-                <div class="form-box">
+                <div id="registration_shipping" class="form-box">
                     <div class="row">
                         <div class="large-12 columns">
                             <div class="row">
