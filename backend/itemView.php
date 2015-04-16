@@ -31,21 +31,22 @@ function itemView()
             $availability = '<span style="color: green">Available</span>';
         else 
             $availability = '<span style="color: red">Not Available</span>';
-        
-        file_put_contents('../lib/images/temp/temp_photo.jpeg', $row['Costume_Image']);//changing from blob format
-        $pic = '<img src="../lib/images/temp/temp_photo.jpeg" alt="Temp Photo">';
+        $filename = '../lib/images/temp/item'.$row['Costume_Key'].'.jpeg';
+        if (!file_exists($filename))
+            file_put_contents($filename, $row['Costume_Image']);//changing from blob format
+        $pic = '<img src="'.$filename.'" alt="Temp Photo">';
         //print item      
         echo'<!-- Main Content Section -->
             <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
             <div class="large-9 push-3 columns">
                 <h3>'. $row['Costume_Name'] .'          <small>'. $row['Costume_Type'] .'</small></h3>
                     <div class="row">
-                        <div id='. $row['Costume_Key'] .' class="large-12 columns">
-                            <div  class="left inventory_image">
+                        <div class="large-12 columns">
+                            <div class="left inventory_image">
                                 '. $pic .'
                             </div>
                             '. $row['Costume_Description'] .'
-                            <div class="add_item button">Add Item</div>
+                            <div class="button">Add Item</div>
                         </div>
                     </div>
 
