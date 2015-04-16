@@ -27,9 +27,9 @@
         if($row === false) {
             die( print_r( sqlsrv_errors(), true));
         }
-//        echo $row['First_Name'] . $row['Last_Name'] . $row['Company'] 
-//                . $row['Email'] . $row['Phone_Number'] . $row['Fax_Number'];
         sqlsrv_free_stmt($stmt);
         sqlsrv_close($link);
+//        echo $row['First_Name'] . $row['Last_Name'] . $row['Company'] 
+//                . $row['Email'] . $row['Phone_Number'] . $row['Fax_Number'];
     }
 ?>

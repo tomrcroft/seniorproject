@@ -27,11 +27,9 @@
         if($row === false) {
             die( print_r( sqlsrv_errors(), true));
         }
-        //echo $row['Billing_Street_Address'] . $row['Billing_City'] . $row['Billing_State_Province'] 
-//                . $row['Billing_Postal_Code'] . $row['Billing_Country'] . $row['Billing_Attn'];
         sqlsrv_free_stmt($stmt);
         sqlsrv_close($link);
-        $json = json_encode(array("location"=>"search_page.php", "error" => false));
-        exit($json);
+        //echo $row['Billing_Street_Address'] . $row['Billing_City'] . $row['Billing_State_Province'] 
+//                . $row['Billing_Postal_Code'] . $row['Billing_Country'] . $row['Billing_Attn'];
     }
 ?>
