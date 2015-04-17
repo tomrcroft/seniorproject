@@ -29,7 +29,11 @@
         }
         sqlsrv_free_stmt($stmt);
         sqlsrv_close($link);
-//        echo $row['Shipping_Street_Address'] . $row['Shipping_City'] . $row['Shipping_State_Province'] 
-//                . $row['Shipping_Postal_Code'] . $row['Shipping_Country'] . $row['Shipping_Attn'];
+        echo '<div id="account_shipping_attn">Shipping Attn: '. $row['Shipping_Attn'] .'</div>
+                <div id="account_shipping_address">Shipping Address: '. $row['Shipping_Street_Address'] .'</div>
+                <div id="account_shipping_city">Shipping City: '. $row['Shipping_City'] .'</div>
+                <div id="account_shipping_state">Shipping State: '. $row['Shipping_State_Province'] .'</div>
+                <div id="account_shipping_zip">Shipping Zip: '. $row['Shipping_Postal_Code'] .'</div>
+                <div id="account_shipping_country">Shipping Country: '. $row['Shipping_Country'] .'</div>'; 
     }
 ?>
