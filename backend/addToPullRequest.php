@@ -12,11 +12,15 @@
     //converted costume array Costume_Key-Quantity
     //$list = formatList(array(40,42));
     $list = formatList($_SESSION['shopping_cart']);
+    //new variables production, deliveryDate, productionOpenDate, productionCloseDate, returnDate, notes
     $formvars = array($list,$_POST['production'],$_POST['code'],$_POST['billAddress'],$_POST['billCity'],
         $_POST['billState'],$_POST['billAreaCode'],$_POST['billCountry'],$_POST['billAttn'],$_POST['shipAddress'],$_POST['shipCity'],
         $_POST['shipState'],$_POST['shipAreaCode'],$_POST['shipCountry'],$_POST['shipAttn'],$_POST['pickupDate'],$_POST['returnDate'],
         $_POST['contactName'],$_POST['contactEmail'],$_POST['contactPhone'],$_POST['contactFax'],$_POST['billing'],
         $_POST['paymentType'],$_POST['description'],$_POST['salesperson'],$_POST['rentalFee'],$_SESSION['login_user']);
+    /*foreach ($_SESSION['bill_and_ship_info'] as $value) {
+        $formvars[] = $value;
+    }*/
     /*$formvars = array('40-1,42-1','Watts Industries','test purchase','123 cossa blvd','sac town',
         'CA',95831,'US','MR. Watts','123 cossa blvd','sac town',
         'CA',95831,'US','MR. Watts','2015-06-25 00:00:00.000','2015-06-27 00:00:00.000',
@@ -32,16 +36,13 @@
     {
         $str = '{call dbo.Create_Pull_Request(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}';
         $stmt = sqlsrv_query($link,$str,$formvars);//runs statement
-            if( $stmt === false ) {
-                die( print_r( sqlsrv_errors(), true));
-            }
-            sqlsrv_free_stmt($stmt);
-            sqlsrv_close($link);
-            unset($_SESSION['shopping_cart']);
-            //add confirmation
-            $output = "Pull Request Created!"; 
-            $json = json_encode(array("error" => false, "msg" => $output));
-            echo $json;
+        if( $stmt === false ) {
+            die( print_r( sqlsrv_errors(), true));
+        }
+        sqlsrv_free_stmt($stmt);
+        sqlsrv_close($link);
+        unset($_SESSION['shopping_cart']);//and $_SESSION['bill_and_ship_info']
+        //add confirmation
     }
     function formatList($costumes)
     {
