@@ -81,7 +81,7 @@
             </section>
         </nav>
 
-        <div class="row">
+        <div class="tabs-row row">
 
             <ul class="tabs vertical" data-tab>
                 <li class="tab-title active"><a href="#edit_profile_panel">Edit Profile Information</a></li>
