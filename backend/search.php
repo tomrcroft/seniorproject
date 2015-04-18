@@ -24,13 +24,22 @@ $find = trim($_POST['searchterm']);
 $rows = array();
 $num_items_returned = 0;
 
+$formvars = array ($_POST['searchterm']);
+$str = "{call dbo.Search_Costume(?)}";
+
+
 if (empty($find))
 {
 	$query = sqlsrv_query( $conn, "SELECT TOP 100 FROM cmt..costume");
 }
 else
 {
-	$query = sqlsrv_query( $conn, "SELECT * FROM cmt..costume WHERE costume_name LIKE '%$find%'"); // need to fix to find $find
+	$stmt = sqlsrv_query($conn, $str, $formvars);
+	if( $stmt === false ) {
+                die( print_r( sqlsrv_errors(), true));
+            }
+            sqlsrv_free_stmt($stmt);
+	//$query = sqlsrv_query( $conn, "SELECT * FROM cmt..costume WHERE costume_name LIKE '%$find%'"); // need to fix to find $find
 }
 
 
