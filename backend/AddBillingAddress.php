@@ -21,13 +21,16 @@
     else
     {
         $str = 'UPDATE CMT..[User_Address]
-                SET 
-                WHERE';
+                SET Billing_Street_Address = ?, Billing_City = ?, Billing_State_Province = ?, 
+                Billing_Postal_Code = ?, Billing_Country = ?, Billing_Attn = ?
+                WHERE User_Key = ?';
         $stmt = sqlsrv_query($link,$str,$formvars);//runs statement
-            if( $stmt === false ) {
-                die( print_r( sqlsrv_errors(), true));
-            }
-            sqlsrv_free_stmt($stmt);
-            sqlsrv_close($link);
+        if( $stmt === false ) {
+            die( print_r( sqlsrv_errors(), true));
+        }
+        sqlsrv_free_stmt($stmt);
+        sqlsrv_close($link);
+        $json = json_encode(array("location"=>"search_page.php", "error" => false));
+        exit($json);   
     }
 ?>
