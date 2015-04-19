@@ -38,7 +38,7 @@ else
 	if( $stmt === false ) {
                 die( print_r( sqlsrv_errors(), true));
             }
-            sqlsrv_free_stmt($stmt);
+            //sqlsrv_free_stmt($stmt);
 	//$query = sqlsrv_query( $conn, "SELECT * FROM cmt..costume WHERE costume_name LIKE '%$find%'"); // need to fix to find $find
 }
 
