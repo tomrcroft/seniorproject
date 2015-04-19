@@ -6,7 +6,8 @@
     </head>
     <body>
         <?php
-        echo $_SESSION['login_user'];
+            $phone = preg_replace('~[^0-9]~','','(916)213-10 0');
+            echo $phone;
         ?>
     </body>
 </html>

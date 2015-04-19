@@ -3,14 +3,10 @@
 /*
  * Adds the shipping address to the database
  */
-    session_start();
-    if(!isset($_SESSION['user_id']))
-        include '../backend/getUserId.php';
     $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
     $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
     $link = sqlsrv_connect($server, $connectionInfo);
-    $formvars = array($_SESSION['user_id'],$_POST['shipAddress'],$_POST['shipCity'],$_POST['shipState'],
-        $_POST['shipAreaCode'],$_POST['shipCountry'],$_POST['shipAttn']);
+    $formvars = array($_SESSION['login_user']);
     /*$formvars = array('jdub9108''123 cossa blvd','sac town','CA',95831,'US','MR. Watts');*/
     //Checks connection
     if (!$link) {
@@ -20,16 +16,17 @@
     }        
     else
     {
-        $str = 'INSERT INTO CMT..[User_Address] (User_Key,Shipping_Street_Address,Shipping_City,
-            Shipping_State_Province,Shipping_Postal_Code,Shipping_Country,Shipping_Attn)
-            VALUES (?,?,?,?,?,?,?)';
+        $str = 'SELECT User_Key FROM CMT..[User] WHERE Username = ?';
         $stmt = sqlsrv_query($link,$str,$formvars);//runs statement
         if( $stmt === false ) {
             die( print_r( sqlsrv_errors(), true));
         }
+        $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC);
+        if($row === false) {
+            die( print_r( sqlsrv_errors(), true));
+        }
+        $_SESSION['user_id'] = $row['User_Key'];
         sqlsrv_free_stmt($stmt);
         sqlsrv_close($link);
-        $json = json_encode(array("location"=>"registration_billing.php", "error" => false));
-        exit($json);    
     }
 ?>
