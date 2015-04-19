@@ -8,7 +8,9 @@
     $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
     $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
     $link = sqlsrv_connect($server, $connectionInfo);
-    $formvars = array($_SESSION['login_user']);
+    if(!isset($_SESSION['user_id']))
+        include '../backend/getUserId.php';
+    $formvars = array($_SESSION['user_id']);
     //Checks connection
     if (!$link) {
         $output = "Problems with the database connection!"; 
@@ -17,7 +19,7 @@
     }        
     else
     {
-        $str = "SELECT * FROM cmt..BILLING WHERE Username = ?";
+        $str = "SELECT * FROM cmt..[User_Address] WHERE User_Key = ?";
         $stmt = sqlsrv_query($link,$str,$formvars);//runs statement
         if( $stmt === false ) {
             die( print_r( sqlsrv_errors(), true));
