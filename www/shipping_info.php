@@ -72,14 +72,14 @@ session_start();
             <div class="form-box">
                 <div class="row">
                     <div class="large-12 columns">
-                        Enter your Billing information: 
+                        Enter your Billing information: <br> 
 
-                        Billing Attn:
-                        Billing Address:
-                        Billing City:
-                        Billing State
-                        Billing Zip Code:
-                        Billing Country:
+                        Billing Attn: <br> 
+                        Billing Address: <br> 
+                        Billing City: <br> 
+                        Billing State: <br> 
+                        Billing Zip Code: <br> 
+                        Billing Country: 
                             
                     </div>
                 </div>
@@ -90,55 +90,14 @@ session_start();
             <div class="form-box">
                 <div class="row">
                     <div class="large-12 columns">
-                        Enter your Shipping information: 
+                        Enter your Shipping information: <br> 
 
-                        Shipping Attn:
-                        Shipping Address:
-                        Shipping City:
-                        Shipping State:
-                        Shipping Zip Code:
+                        Shipping Attn: <br> 
+                        Shipping Address: <br> 
+                        Shipping City: <br> 
+                        Shipping State: <br> 
+                        Shipping Zip Code: <br> 
                         Shipping Country: 
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="shippingname" id="shipping_name" placeholder="Shipping Attn" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="shippingaddress" id="shipping_address" placeholder="Shipping Address" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="shippingcity" id="shipping_city" placeholder="Shipping City" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="shippingstate" id="shipping_state" placeholder="Shipping State" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="shippingzip" id="shipping_zip" placeholder="Shipping Zip Code" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="shippingcountry" id="shipping_country" placeholder="Shipping Country" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="pickupdate" id="pickup_date" placeholder="Pickup Date YYYY-MM-DD" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="returndate" id="return_date" placeholder="Expected Return Date YYYY-MM-DD" />
-                                </div>
-                            </div>
-
 
                     </div>
                 </div>
