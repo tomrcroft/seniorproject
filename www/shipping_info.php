@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php 
+session_start();
 // require_once '../backend/login.php'; 
 ?>
 
@@ -33,12 +34,31 @@
             </ul>
 
             <section class="top-bar-section">
+                    <!-- Left Nav Section -->
+                <ul class="left">
+                    <li class="divider"></li>
+                    <li>
+                        <a href="pull_request_cart.php">Pull Request Cart<?php include '../backend/cartSize.php';?></a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="#1">Pull an entire set</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="order_status.php">Current Order Status</a>
+                    </li>
+                </ul>
+
+                <!-- Right Nav Section -->
                 <ul class="right">
                     <li class="has-form">
                         <a href="search_page.php" class="button alert">Search Inventory</a>
                     </li>
+                    <li class="has-form">
+                        <div class="button" id="logout_button" value="Logout">Logout</div>
+                    </li>
                 </ul>
-
             </section>
         </nav>
 
@@ -53,37 +73,14 @@
                 <div class="row">
                     <div class="large-12 columns">
                         Enter your Billing information: 
+
+                        Billing Attn:
+                        Billing Address:
+                        Billing City:
+                        Billing State
+                        Billing Zip Code:
+                        Billing Country:
                             
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="billingname" id="billing_name" placeholder="Billing Attn" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="billingaddress" id="billing_address" placeholder="Billing Address" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="billingcity" id="billing_city" placeholder="Billing City" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="billingstate" id="billing_state" placeholder="Billing State" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="billingzip" id="billing_zip" placeholder="Billing Zip Code" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="billingcountry" id="billing_country" placeholder="Billing Country" />
-                                </div>
-                            </div>
                     </div>
                 </div>
             </div>
@@ -94,6 +91,13 @@
                 <div class="row">
                     <div class="large-12 columns">
                         Enter your Shipping information: 
+
+                        Shipping Attn:
+                        Shipping Address:
+                        Shipping City:
+                        Shipping State:
+                        Shipping Zip Code:
+                        Shipping Country: 
                             <div class="row">
                                 <div class="large-12 columns">
                                     <input type="text" name="shippingname" id="shipping_name" placeholder="Shipping Attn" />
