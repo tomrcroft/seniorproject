@@ -120,6 +120,13 @@ session_start();
 
     </div>
 
+    <div class="row">
+        <div class="large-8 large-centered columns">
+            <div class="button right" id="submit_pull_request_button">Submit Pull Request</div>
+            <div class="button right" id="go_back">Go Back</div>
+        </div>
+    </div>
+
     <div class='reveal-modal' id='shipping-modal' data-reveal>
         Edit Shipping Information:
         <div class="update_shipping_box large-12 columns">
@@ -208,33 +215,6 @@ session_start();
 
         </div>
     </div>
-
-<!--         <div class="login large-3 large-centered columns">
-            <div class="login-box">
-                <div class="row">
-                    <div class="large-12 columns">
-                    Login
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="username" id="login_username" placeholder="Username" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="password" name="password" id="login_password" placeholder="Password" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 large-centered columns">
-                                    <input type="submit" class="button expand" id="login_button" value="Log In"/>
-                                </div>
-                            </div>
-                            <a href="forgot_password.php" class="button expand">Forgot Password?</a>
-
-                    </div>
-                </div>
-            </div>
-        </div> -->
     
 
     <script>
