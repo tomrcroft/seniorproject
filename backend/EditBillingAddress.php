@@ -18,7 +18,7 @@
     else
     {
         $str = "UPDATE CMT..[User_Address] ";
-        $userId = $_SESSION['userId'];
+        $userId = $_SESSION['user_id'];
         // $user = 'ag';
         $address = trim($_POST['billAddress']);
         $city = trim($_POST['billCity']);
@@ -26,6 +26,14 @@
         $zip = trim($_POST['billAreaCode']);
         $country = $_POST['billCountry'];
         $attn = $_POST['billAttn'];
+        /*$userId = 25;
+        $address = '168 S 11th st';
+        $city = 'San Jose';
+        $state = '';
+        $zip = 95112;
+        $country = '';
+        $attn = 'Mr. Watts';*/
+        
         $contains = array();
         $formvars = array();
         if ($address != '')
@@ -40,7 +48,7 @@
         }
         if ($state != '')
         {
-            $contains[] = "Billing_State_Province = ?'";
+            $contains[] = "Billing_State_Province = ?";
             $formvars[] = $state;
         }
         if ($zip != '')
