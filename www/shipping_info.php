@@ -21,6 +21,8 @@ session_start();
         <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
         <link rel="stylesheet" href="../lib/css/forms.css" type="text/css">
         <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
+        <link rel="stylesheet" href="../lib/css/shipping_info.css" type="text/css">
+
 
     </head>
 
@@ -68,7 +70,7 @@ session_start();
         </div>
     <div class="row">
 
-        <div class="large-4 columns">
+        <div class="large-4 large-offset-2 columns">
             <div class="form-box">
                 <div class="row">
                     <div class="large-12 columns">
@@ -104,81 +106,6 @@ session_start();
             </div>
         </div>
 
-        <div class="large-4 columns">
-            <div class="form-box">
-                <div class="row">
-                    <div class="large-12 columns">
-                        Enter your Contact information: 
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="contactproduction" id="contact_production" placeholder="Production" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="contactcode" id="contact_code" placeholder="Code" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="contactname" id="contact_name" placeholder="Name" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="contactemail" id="contact_email" placeholder="E-mail" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="contactphone" id="contact_phone" placeholder="Phone" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="contactfax" id="contact_fax" placeholder="Fax" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="contactbilling" id="contact_billing" placeholder="Billing" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="paymenttype" id="payment_type" placeholder="Payment Type" />
-                                </div>
-                            </div>
-                           <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="contactdescription" id="contact_description" placeholder="Description" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="contactsalesperson" id="contact_salesperson" placeholder="Salesperson" />
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="rentalfee" id="rental_fee" placeholder="Rental Fee" />
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="large-12 large-centered columns">
-                                    <div class="button expand" id="submit_info_button">Submit Information</div>
-                                </div>
-                            </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
- 
     </div>
 
 <!--         <div class="login large-3 large-centered columns">

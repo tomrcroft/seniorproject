@@ -36,6 +36,27 @@
             <section class="top-bar-section">
                     <!-- Left Nav Section -->
                 <ul class="left">
+
+                    <li class="divider"></li>
+                    <?php 
+                        if(isset($_SESSION['login_user'])) { 
+                    ?>
+                        <li class="has-dropdown">
+                            <a href="#">Welcome, <?=$_SESSION['login_user']?>!</a>
+                        <ul class="dropdown">
+                            <li><a href="edit_profile.php">Edit Profile</a></li>
+                        </ul>
+                        </li>
+                    <?php 
+                        }
+                        else { 
+                    ?>
+                        <li>
+                            <div id="anonymous_login">Welcome, Anonymous!</div>
+                        </li>
+                    <?php 
+                        }
+                    ?>
                     <li class="divider"></li>
                     <li>
                         <a href="pull_request_cart.php">Pull Request Cart<?php include '../backend/cartSize.php';?></a>
