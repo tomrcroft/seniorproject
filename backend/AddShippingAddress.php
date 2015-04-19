@@ -18,7 +18,9 @@
     }        
     else
     {
-        $str = '{call dbo.Add_or_Update_Shipping(?,?,?,?,?,?,?)}';
+        $str = 'INSERT INTO CMT..[User_Address] (User_Key,Shipping_Street_Address,Shipping_City,
+            Shipping_State_Province,Shipping_Postal_Code,Shipping_Country,Shipping_Attn)
+            VALUES (?,?,?,?,?,?,?)';
         $stmt = sqlsrv_query($link,$str,$formvars);//runs statement
             if( $stmt === false ) {
                 die( print_r( sqlsrv_errors(), true));

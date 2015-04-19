@@ -18,7 +18,9 @@
     }        
     else
     {
-        $str = '{call dbo.Add_or_Update_Billing(?,?,?,?,?,?,?)}';
+        $str = 'UPDATE CMT..[User_Address]
+                SET 
+                WHERE';
         $stmt = sqlsrv_query($link,$str,$formvars);//runs statement
             if( $stmt === false ) {
                 die( print_r( sqlsrv_errors(), true));
