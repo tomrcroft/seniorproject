@@ -21,6 +21,7 @@
         <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
         <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
         <link rel="stylesheet" href="../lib/css/pull_request_cart.css" type="text/css">
+        <link rel="stylesheet" href="../lib/css/order_status.css" type="text/css">
 
     </head>
 
@@ -36,6 +37,26 @@
             <section class="top-bar-section">
                     <!-- Left Nav Section -->
                 <ul class="left">
+                  <li class="divider"></li>
+                    <?php 
+                        if(isset($_SESSION['login_user'])) { 
+                    ?>
+                        <li class="has-dropdown">
+                            <a href="#">Welcome, <?=$_SESSION['login_user']?>!</a>
+                        <ul class="dropdown">
+                            <li><a href="edit_profile.php">Edit Profile</a></li>
+                        </ul>
+                        </li>
+                    <?php 
+                        }
+                        else { 
+                    ?>
+                        <li>
+                            <div id="anonymous_login">Welcome, Anonymous!</div>
+                        </li>
+                    <?php 
+                        }
+                    ?>
                     <li class="divider"></li>
                     <li>
                         <a href="pull_request_cart.php">Pull Request Cart<?php include '../backend/cartSize.php';?></a>
@@ -69,32 +90,38 @@
 
           <div class="large-10 push-2 columns">
               <p>
-                Items in your Pull Request<br>
-                If you would like to rent these items and checkout, click <b>Send Pull Request.</b><br>
-                If you would like to restart your pull request, click <b>Cancel Pull Request</b>
+                Here is the status of your pull requests.<br>
               </p>
-              <div class="pull-results">
-
+              <div class="pull_request_results">
+                <ul class="accordion" data-accordion>
+                  <li class="accordion-navigation">
+                    <a href="#pull_request_1">
+                      <div class="pull_request_name">PULL REQUEST NAME <div class="availability right">STATUS</div></div>
+                    </a>
+                    <div id="pull_request_1" class="content active">
+                      Panel 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
+                  </li>
+                  <li class="accordion-navigation">
+                    <a href="#pull_request_2">
+                      <div class="pull_request_name">PULL REQUEST NAME <div class="availability right">STATUS</div></div>
+                    </a>
+                    <div id="pull_request_2" class="content">
+                      Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
+                  </li>
+                  <li class="accordion-navigation">
+                    <a href="#pull_request_3">
+                      <div class="pull_request_name">PULL REQUEST NAME <div class="availability right">STATUS</div></div>
+                    </a>
+                    <div id="pull_request_3" class="content">
+                      Panel 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </div>
+                  </li>
+                </ul>
               </div>
-              <div id="send_pull_request" class="button right">Send Pull Request</div>
-              <div id="cancel_pull_request" class="button right">Cancel Pull Request</div>
-
-              <div class='reveal-modal' id='cancel-modal' data-reveal>
-              Are you sure you want to delete all items from your cart?
-              <div id="confirm_cancel" class="button right">Yes</div>
-              <div id="reject_cancel" class="button right">No</div>
-              </div>
-
-              
-
-<!--               <div id="cancel_confirmation" class="reveal-modal" data-reveal aria-labelledby="cancel_modal" aria-hidden="true" role="dialog">
-                <h2 id="cancel_modal">Are you sure you want to cancel your pull request?</h2>
-                <p>Reveal makes these very easy to summon and dismiss. The close button is simply an anchor with a unicode character icon and a class of. Clicking anywhere outside the modal will also dismiss it.</p>
-                <p>Finally, if your modal summons another Reveal modal, the plugin will handle that for you gracefully.</p>
-                <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-              </div> -->
-    
           </div>
+    
           <div class="large-2 pull-10 columns">
               <p><img src="http://placehold.it/250x300&text=Ad" /></p>
           </div>

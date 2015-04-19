@@ -79,14 +79,14 @@ session_start();
                     <div class="large-12 columns">
                         <div class="form_title">Shipping Information</div>
                         <div class="account_info">
-                            <?php //include '../backend/DisplayShippingAddress.php'; ?>
+                            <?php include '../backend/DisplayShippingAddress.php'; ?>
                         </div>
-                        Shipping Attn: <br> 
+<!--                         Shipping Attn: <br> 
                         Shipping Address: <br> 
                         Shipping City: <br> 
                         Shipping State: <br> 
                         Shipping Zip Code: <br> 
-                        Shipping Country: <br>
+                        Shipping Country: <br> -->
 
                         <div id="update_shipping_modal_button" class="button right">Update Shipping Information</div>
 
@@ -101,14 +101,14 @@ session_start();
                     <div class="large-12 columns">
                         <div class="form_title">Billing Information</div>
                         <div class="account_info">
-                            <?php //include '../backend/DisplayBillingAddress.php'; ?>
+                            <?php include '../backend/DisplayBillingAddress.php'; ?>
                         </div>
-                        Billing Attn: <br> 
+<!--                         Billing Attn: <br> 
                         Billing Address: <br> 
                         Billing City: <br> 
                         Billing State: <br> 
                         Billing Zip Code: <br> 
-                        Billing Country: <br>
+                        Billing Country: <br> -->
 
                         <div id="update_billing_modal_button" class="button right">Update Billing Information</div>
                         

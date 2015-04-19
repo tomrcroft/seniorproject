@@ -94,7 +94,7 @@
                 If you would like to rent these items and checkout, click <b>Send Pull Request.</b><br>
                 If you would like to restart your pull request, click <b>Cancel Pull Request</b>
               </p>
-              <div class="pull-results">
+              <div class="cart_results">
 
               <?php include '../backend/viewCart.php';?>
 
