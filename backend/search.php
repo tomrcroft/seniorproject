@@ -30,7 +30,7 @@ $str = "{call dbo.Search_Costume(?)}";
 
 if (empty($find))
 {
-	$query = sqlsrv_query( $conn, "SELECT TOP 100 FROM cmt..costume");
+	$stmt = sqlsrv_query( $conn, "SELECT TOP 100 FROM cmt..costume");
 }
 else
 {
@@ -43,7 +43,7 @@ else
 }
 
 
-while($result = sqlsrv_fetch_array( $query , SQLSRV_FETCH_ASSOC ))
+while($result = sqlsrv_fetch_array( $stmt , SQLSRV_FETCH_ASSOC ))
 {
 // display results however we wan
 $rows[] = $result;
