@@ -15,13 +15,16 @@ session_start();
         <script src="../lib/foundation/js/vendor/jquery.js" type="text/javascript"></script>
         <script src="../lib/foundation/js/vendor/modernizr.js" type="text/javascript"></script>
         <script src="../lib/foundation/js/foundation.min.js" type="text/javascript"></script>
+        <script src="../lib/js/edit_profile.js" type="text/javascript"></script>
         <script src="../lib/js/shipping_info.js" type="text/javascript"></script>
 
         <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
         <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
         <link rel="stylesheet" href="../lib/css/forms.css" type="text/css">
         <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
+        
         <link rel="stylesheet" href="../lib/css/shipping_info.css" type="text/css">
+        <link rel="stylesheet" href="../lib/css/edit_profile.css" type="text/css">
 
 
     </head>
@@ -74,15 +77,19 @@ session_start();
             <div class="form-box">
                 <div class="row">
                     <div class="large-12 columns">
-                        Enter your Billing information: <br> 
+                        <div class="form_title">Shipping Information</div>
+                        <div class="account_info">
+                            <?php //include '../backend/DisplayShippingAddress.php'; ?>
+                        </div>
+                        Shipping Attn: <br> 
+                        Shipping Address: <br> 
+                        Shipping City: <br> 
+                        Shipping State: <br> 
+                        Shipping Zip Code: <br> 
+                        Shipping Country: <br>
 
-                        Billing Attn: <br> 
-                        Billing Address: <br> 
-                        Billing City: <br> 
-                        Billing State: <br> 
-                        Billing Zip Code: <br> 
-                        Billing Country: 
-                            
+                        <div id="update_shipping_modal_button" class="button right">Update Shipping Information</div>
+
                     </div>
                 </div>
             </div>
@@ -92,20 +99,114 @@ session_start();
             <div class="form-box">
                 <div class="row">
                     <div class="large-12 columns">
-                        Enter your Shipping information: <br> 
+                        <div class="form_title">Billing Information</div>
+                        <div class="account_info">
+                            <?php //include '../backend/DisplayBillingAddress.php'; ?>
+                        </div>
+                        Billing Attn: <br> 
+                        Billing Address: <br> 
+                        Billing City: <br> 
+                        Billing State: <br> 
+                        Billing Zip Code: <br> 
+                        Billing Country: <br>
 
-                        Shipping Attn: <br> 
-                        Shipping Address: <br> 
-                        Shipping City: <br> 
-                        Shipping State: <br> 
-                        Shipping Zip Code: <br> 
-                        Shipping Country: 
-
+                        <div id="update_billing_modal_button" class="button right">Update Billing Information</div>
+                        
+                            
                     </div>
                 </div>
             </div>
         </div>
 
+    </div>
+
+    <div class='reveal-modal' id='shipping-modal' data-reveal>
+        Edit Shipping Information:
+        <div class="update_shipping_box large-12 columns">
+            <div class="row">
+                <div class="large-12 columns">
+                    <input type="text" name="updateshippingname" id="update_shipping_name" placeholder="Shipping Attn" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <input type="text" name="updateshippingaddress" id="update_shipping_address" placeholder="Shipping Address" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <input type="text" name="updateshippingcity" id="update_shipping_city" placeholder="Shipping City" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <input type="text" name="updateshippingstate" id="update_shipping_state" placeholder="Shipping State" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <input type="text" name="updateshippingzip" id="update_shipping_zip" placeholder="Shipping Zip Code" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <input type="text" name="updateshippingcountry" id="update_shipping_country" placeholder="Shipping Country" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <div class="button right" id="update_shipping_button">Update Shipping Information</div>
+
+                    <div class="button right cancel_update">Cancel</div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class='reveal-modal' id='billing-modal' data-reveal>
+        Edit Billing Information:
+        <div class="update_billing_box large-12 columns">
+            <div class="row">
+                <div class="large-12 columns">
+                    <input type="text" name="updatebillingname" id="update_billing_name" placeholder="Billing Attn" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <input type="text" name="updatebillingaddress" id="update_billing_address" placeholder="Billing Address" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <input type="text" name="updatebillingcity" id="update_billing_city" placeholder="Billing City" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <input type="text" name="updatebillingstate" id="update_billing_state" placeholder="Billing State" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <input type="text" name="updatebillingzip" id="update_billing_zip" placeholder="Billing Zip Code" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <input type="text" name="updatebillingcountry" id="update_billing_country" placeholder="Billing Country" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-12 columns">
+                    <div class="button right" id="update_billing_button">Update Billing Information</div>
+
+                    <div class="button right cancel_update">Cancel</div>
+                </div>
+            </div>
+
+        </div>
     </div>
 
 <!--         <div class="login large-3 large-centered columns">

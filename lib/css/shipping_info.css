@@ -1,3 +1,19 @@
 [class*="column"] + [class*="column"]:last-child {
    float: left;
 }
+
+#shipping-modal {
+   color: #000000;
+}
+
+#billing-modal {
+   color: #000000;
+}
+
+#update_shipping_button {
+   margin-left: 1em;
+}
+
+#update_billing_button {
+   margin-left: 1em;
+}

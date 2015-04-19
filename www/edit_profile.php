@@ -230,10 +230,10 @@
                     <div class="large-3 large-offset-1 columns">
                         <div class="form-box">
                             <div id="edit_profile_success" class="hide">Editted!</div>
-                                <div class="form_title">Edit Billing</div>
-                                <div class="account_info">
-                                    <?php include '../backend/DisplayBillingAddress.php'; ?>
-                                </div>
+                            <div class="form_title">Edit Billing</div>
+                            <div class="account_info">
+                                <?php include '../backend/DisplayBillingAddress.php'; ?>
+                            </div>
                         </div>
                     </div>
 
