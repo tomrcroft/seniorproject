@@ -18,7 +18,7 @@
     else
     {
         $str = "UPDATE CMT..[User_Address] ";
-        $userId = $_SESSION['userId'];
+        $userId = $_SESSION['user_id'];
         // $user = 'ag';
         $address = $_POST['shipAddress'];
         $city = $_POST['shipCity'];
@@ -26,6 +26,14 @@
         $zip = $_POST['shipAreaCode'];
         $country = $_POST['shipCountry'];
         $attn = $_POST['shipAttn'];
+        /*$userId = 25;
+        $address = '168 S 11th st';
+        $city = 'San Jose';
+        $state = '';
+        $zip = 95112;
+        $country = '';
+        $attn = 'Mr. Watts';*/
+        
         $contains = array();
         $formvars = array();
         if ($address != '')
@@ -40,7 +48,7 @@
         }
         if ($state != '')
         {
-            $contains[] = "Shipping_State_Province = ?'";
+            $contains[] = "Shipping_State_Province = ?";
             $formvars[] = $state;
         }
         if ($zip != '')
@@ -66,6 +74,9 @@
         $query .= " WHERE User_Key = ?";
         $formvars[] = $userId;
         echo $query;
+        foreach ($formvars as $value) {
+            echo $value;
+        }
 
         $stmt = sqlsrv_query($link,$query,$formvars);//runs statement
         if( $stmt === false ) 
