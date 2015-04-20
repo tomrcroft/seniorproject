@@ -6,6 +6,10 @@
     session_start();
     if(!isset($_SESSION['shopping_cart']))
         header ("Location: ../www/search_page.php");
+    include '../backend/GetUserInfo.php';
+    $profileInfo = getUserInfo();
+    include '../backend/GetShipAndBillInfo';
+    $addressInfo = getAddressInfo($profileInfo['User_Key']);
     $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
     $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
     $link = sqlsrv_connect($server, $connectionInfo);
@@ -13,19 +17,22 @@
     //$list = formatList(array(40,42));
     $list = formatList($_SESSION['shopping_cart']);
     //new variables production, deliveryDate, productionOpenDate, productionCloseDate, returnDate, notes
-    $formvars = array($list,$_POST['production'],$_POST['code'],$_POST['billAddress'],$_POST['billCity'],
-        $_POST['billState'],$_POST['billAreaCode'],$_POST['billCountry'],$_POST['billAttn'],$_POST['shipAddress'],$_POST['shipCity'],
-        $_POST['shipState'],$_POST['shipAreaCode'],$_POST['shipCountry'],$_POST['shipAttn'],$_POST['pickupDate'],$_POST['returnDate'],
-        $_POST['contactName'],$_POST['contactEmail'],$_POST['contactPhone'],$_POST['contactFax'],$_POST['billing'],
-        $_POST['paymentType'],$_POST['description'],$_POST['salesperson'],$_POST['rentalFee'],$_SESSION['login_user']);
-    /*foreach ($_SESSION['bill_and_ship_info'] as $value) {
-        $formvars[] = $value;
-    }*/
-    /*$formvars = array('40-1,42-1','Watts Industries','test purchase','123 cossa blvd','sac town',
-        'CA',95831,'US','MR. Watts','123 cossa blvd','sac town',
-        'CA',95831,'US','MR. Watts','2015-06-25 00:00:00.000','2015-06-27 00:00:00.000',
-        'Watts','jdub9108@yahoo.com','9162131010','9162131010','Watts Industries',
-        'check','test pull','da homie',12,'jdub9108');*/
+    $formvars = array($list,$_POST['production']);
+    foreach ($addressInfo as $key => $value) {
+        if($key != 'User_Key')
+            $formvars[] = $value;
+    }
+    //$formvars[] = $_POST['deliveryDate'];
+    //$formvars[] = $_POST['returnDate'];
+    $formvars[] = $profileInfo['First_Name'] . ' ' . $profileInfo['Last_Name'];
+    $formvars[] = $profileInfo['Email'];
+    $formvars[] = $profileInfo['Phone_Number'];
+    $formvars[] = $profileInfo['Fax_Number'];
+    //$formvars[] = $_POST['productionOpenDate'];
+    //$formvars[] = $_POST['productionCloseDate'];
+    //$formvars[] = $_POST['notes'];
+    $formvars[] = $_SESSION['login_user'];
+    
     //Checks connection
     if (!$link) {
         $output = "Problems with the database connection!"; 
@@ -34,14 +41,17 @@
     }        
     else
     {
-        $str = '{call dbo.Create_Pull_Request(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}';
+        $str = '{call dbo.Create_Pull_Request(?,,,?,?,?,?,?,?,?,?,?,?,?,?,,,?,?,,,,,,,,?)}';
+        //from new form yet to be added
+        //2-production name,16-delivery date,17-return date,26-production open date,27-production close date,28-notes
+        //not needed 3,22,23,24,25
         $stmt = sqlsrv_query($link,$str,$formvars);//runs statement
         if( $stmt === false ) {
             die( print_r( sqlsrv_errors(), true));
         }
         sqlsrv_free_stmt($stmt);
         sqlsrv_close($link);
-        unset($_SESSION['shopping_cart']);//and $_SESSION['bill_and_ship_info']
+        unset($_SESSION['shopping_cart']);
         //add confirmation
     }
     function formatList($costumes)
