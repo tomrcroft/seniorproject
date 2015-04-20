@@ -8,16 +8,14 @@
         header ("Location: ../www/search_page.php");
     include '../backend/GetUserInfo.php';
     $profileInfo = getUserInfo();
-    include '../backend/GetShipAndBillInfo';
+    include '../backend/GetShipAndBillInfo.php';
     $addressInfo = getAddressInfo($profileInfo['User_Key']);
     $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
     $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
     $link = sqlsrv_connect($server, $connectionInfo);
     //converted costume array Costume_Key-Quantity
-    //$list = formatList(array(40,42));
     $list = formatList($_SESSION['shopping_cart']);
-    //new variables production, deliveryDate, productionOpenDate, productionCloseDate, returnDate, notes
-    $formvars = array($list,$_POST['production']);
+    $formvars = array($list);//,$_POST['production']);
     foreach ($addressInfo as $key => $value) {
         if($key != 'User_Key')
             $formvars[] = $value;
@@ -32,7 +30,11 @@
     //$formvars[] = $_POST['productionCloseDate'];
     //$formvars[] = $_POST['notes'];
     $formvars[] = $_SESSION['login_user'];
-    
+    $count = 1;
+    foreach ($formvars as $value) {
+        echo $count. ': ' . $value . ' ';
+        $count ++;
+    }
     //Checks connection
     if (!$link) {
         $output = "Problems with the database connection!"; 
@@ -41,7 +43,8 @@
     }        
     else
     {
-        $str = '{call dbo.Create_Pull_Request(?,,,?,?,?,?,?,?,?,?,?,?,?,?,,,?,?,,,,,,,,?)}';
+        $str = "{call dbo.Create_Pull_Request(?,'test','',?,?,?,?,?,?,?,?,?,?,?,?,'06-25-2015','07-25-2015',
+            ?,?,?,?,'','','','','06-30-2015','07-20-2015','blah',?)}";
         //from new form yet to be added
         //2-production name,16-delivery date,17-return date,26-production open date,27-production close date,28-notes
         //not needed 3,22,23,24,25
