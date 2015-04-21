@@ -66,17 +66,11 @@
           </div>
           <div class="large-10 columns">
             <div class="row">
-              <div class=" large-9 columns">
+              <div class=" large-12 columns">
                 <h5><a href="#">'. $item['Costume_Name'] .'</a></h5>
                 <p>'. $item['Costume_Type'] .'</p>
-              </div>
-              <div class=" large-3 columns">
-                <div class="button expand medium remove_item">Remove Item</div>
 
-              </div>
-              <div class="row">
-                <div class=" large-12 columns">
-                  <ul class="large-block-grid-2">
+                                <ul class="large-block-grid-2">
                     <li>
                       <ul>
                         <li><strong>Color:</strong> '. $item['Costume_Color'] .'</li>
@@ -88,15 +82,14 @@
                     <li>
                       <ul>
                         <li><strong>Rental Fee:</strong> $000.00</li>
-
                       </ul>
                     </li>
                   </ul>
-                </div>
+                  <div class="button right remove_item">Remove Item</div>
               </div>
             </div>
-           </div>
-           <hr>
-          </div>';
+          </div>
+          <hr>
+        </div>';
     }
 ?>

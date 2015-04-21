@@ -14,6 +14,7 @@
 
 #send_pull_request {
    margin-left: 1em;
+   margin-right: 1em;
 }
 
 #confirm_cancel {
@@ -41,4 +42,8 @@
 }
 .cart_item_image {
   margin-bottom: 1em;
+}
+
+.cart_results {
+   margin-right: 2em;
 }
