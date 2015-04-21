@@ -19,6 +19,8 @@ $last_name = trim($_POST['last_name']);
 $company = trim($_POST['company']);
 $email = trim($_POST['email']);
 $pass = $_POST['password'];
+$phone = preg_replace('~[^0-9]~','',$_POST['phone']);
+$fax = preg_replace('~[^0-9]~','',$_POST['fax']);
 $contains = array();
 
 if ($first_name != '')
