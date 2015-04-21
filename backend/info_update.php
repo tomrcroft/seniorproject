@@ -42,6 +42,14 @@ if ($pass != '')
     $crypt = better_crypt($_POST['password']);
     $contains[] = "Password = '$crypt'";
 }
+if ($phone != '')
+{
+    $contains[] = "Phone_Number = '$phone'";
+}
+if ($fax != '')
+{
+    $contains[] = "Fax_Number = '$fax'";
+}
 $query = $str;
 if (count($contains) > 0) {
       $query .= " SET " . implode(', ', $contains);
