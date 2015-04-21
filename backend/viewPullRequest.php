@@ -20,7 +20,7 @@
     else
     {
         //run query
-        $str = "SELECT * FROM cmt..[Pull_Request_Hdr] WHERE Created_By = ? ORDER BY Status DESC";
+        $str = "SELECT * FROM cmt..[Pull_Request_Hdr] WHERE Created_By = ? AND Status = 'Pending'";
         $params = array($user);
         $stmt = sqlsrv_query($link,$str,$params);
         if( $stmt === false ) {
