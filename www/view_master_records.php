@@ -35,29 +35,26 @@
             </ul>
 
             <section class="top-bar-section">
-                    <!-- Left Nav Section -->
                 <ul class="left">
                     <li class="divider"></li>
                     <li>
-                        <a href="#">Make a Pull Request</a>
+                        <a href="add_administrator.php">Add Administrator</a>
                     </li>
                     <li class="divider"></li>
                     <li>
-                        <a href="view_records.php">View Master Records</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#2">Current Order Status</a>
+                        <a href="view_master_records.php">View Master Records</a>
                     </li>
                     <li class="divider"></li>
                 </ul>
 
                 <!-- Right Nav Section -->
+
                 <ul class="right">
                     <li class="has-form">
-                        <form method="GET">
-                            <input type="submit" class="button" id="logout_button" value="Logout"></input>
-                        </form>
+                        <a href="search_page.php" class="button alert">Search Inventory</a>
+                    </li>
+                    <li class="has-form">
+                        <div class="button" id="logout_button" value="Logout">Logout</div>
                     </li>
                 </ul>
             </section>

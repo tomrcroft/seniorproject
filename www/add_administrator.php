@@ -49,24 +49,17 @@
                 </ul>
 
                 <!-- Right Nav Section -->
+
                 <ul class="right">
                     <li class="has-form">
-                        <form method="GET">
-                            <input type="submit" class="button" id="logout_button" value="Logout"></input>
-                        </form>
+                        <a href="search_page.php" class="button alert">Search Inventory</a>
+                    </li>
+                    <li class="has-form">
+                        <div class="button" id="logout_button" value="Logout">Logout</div>
                     </li>
                 </ul>
             </section>
         </nav>
-
-        <div class="row collapse">
-                <div class="large-8 small-9 columns">
-                    <input type="text" placeholder="Search Inventory Database">
-                </div>
-                <div class="large-4 small-3 columns">
-                    <a href="#" class="alert button expand postfix">Search</a>
-                </div>
-            </div>
 
         <div class="row">    
 
