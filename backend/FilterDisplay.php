@@ -48,7 +48,7 @@ function filterDisplay()
     }
     else//run queries for each of the 4 with the search term
     {
-        $search = trim($_POST['searchterm']);//the value in the search box
+        $search = array($_POST['searchterm']);//the value in the search box
         $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
         $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
         $link = sqlsrv_connect($server, $connectionInfo);
@@ -61,48 +61,47 @@ function filterDisplay()
         }        
         else
         {
-            // add parameters and call stored procedure
-            $query = "SELECT DISTINCT Adult_or_Child FROM dbo.[Costume] WHERE Costume_Name LIKE '%$search%' ORDER BY Adult_or_Child";
-            $stmt = sqlsrv_query($link,$query);//runs first query
+            //displays the age
+            $query = "{call dbo.Search_Costume(?)}";
+            $stmt = sqlsrv_query($link,$query,$search);//runs first query
             if( $stmt === false ) {
                 die( print_r( sqlsrv_errors(), true));
             }
-            while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_NUMERIC) ) {//change to assoc Adult_or_Child
-                $filterAge[] = $row[0];
+            while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
+                $filterAge[] = $row['Adult_or_Child'];
             }
             sqlsrv_free_stmt($stmt);
             
-            // add parameters and call stored procedure
-            $query2 = "SELECT DISTINCT Costume_Gender FROM dbo.[Costume] WHERE Costume_Name LIKE '%$search%' ORDER BY Costume_Gender";
-            $stmt2 = sqlsrv_query($link,$query2);//runs first query
+            //displays the genders
+            $query2 = "{call dbo.Search_Costume(?)}";
+            $stmt2 = sqlsrv_query($link,$query2,$search);//runs first query
             if( $stmt2 === false ) {
                 die( print_r( sqlsrv_errors(), true));
             }
-            while( $row2 = sqlsrv_fetch_array( $stmt2, SQLSRV_FETCH_NUMERIC) ) {//change to assoc Costume_Gender
-                $filterGender[] = $row2[0];
+            while( $row2 = sqlsrv_fetch_array( $stmt2, SQLSRV_FETCH_ASSOC) ) {
+                $filterGender[] = $row2['Costume_Gender'];
             }
             sqlsrv_free_stmt($stmt2);
             
-            // add parameters and call stored procedure
-            $query3 = "SELECT DISTINCT Costume_Type FROM dbo.[Dic_Costume_Type], dbo.[Costume] 
-                WHERE Costume_Name LIKE '%$search%' AND dbo.[Costume].Costume_Type_Key = dbo.[Dic_Costume_Type].Costume_Type_Key ORDER BY Costume_Type";
-            $stmt3 = sqlsrv_query($link,$query3);//runs first query
+            //displays the type
+            $query3 = "{call dbo.Search_Costume(?)}";
+            $stmt3 = sqlsrv_query($link,$query3,$search);//runs first query
             if( $stmt3 === false ) {
                 die( print_r( sqlsrv_errors(), true));
             }
-            while( $row3 = sqlsrv_fetch_array( $stmt3, SQLSRV_FETCH_NUMERIC) ) {//change to assoc Costume_Type
-                $filterType[] = $row3[0];
+            while( $row3 = sqlsrv_fetch_array( $stmt3, SQLSRV_FETCH_ASSOC) ) {
+                $filterType[] = $row3['Costume_Type'];
             }
             sqlsrv_free_stmt($stmt3);
             
-            // add parameters and call stored procedure
-            $query4 = "SELECT DISTINCT Costume_Group FROM dbo.[Costume] WHERE Costume_Name LIKE '%$search%' ORDER BY Costume_Group";
-            $stmt4 = sqlsrv_query($link,$query4);//runs second query
+            //displays the group
+            $query4 = "{call dbo.Search_Costume(?)}";
+            $stmt4 = sqlsrv_query($link,$query4,$search);//runs second query
             if( $stmt4 === false ) {
                 die( print_r( sqlsrv_errors(), true));
             }
-            while( $row4 = sqlsrv_fetch_array( $stmt4, SQLSRV_FETCH_NUMERIC) ) {//change to assoc Costume_Group
-                $filterGroup[] = $row4[0];
+            while( $row4 = sqlsrv_fetch_array( $stmt4, SQLSRV_FETCH_ASSOC) ) {
+                $filterGroup[] = $row4['Costume_Group'];
             }
             sqlsrv_free_stmt($stmt4);
             
