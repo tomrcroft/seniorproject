@@ -16,7 +16,10 @@ function getAddressInfo($id){
     }        
     else
     {
-        $str = 'SELECT * FROM cmt..[User_Address] WHERE User_Key = ?';
+        $str = 'SELECT Billing_Street_Address, Billing_City, Billing_State_Province,
+            Billing_Postal_Code, Billing_Country, Billing_Attn, Shipping_Street_Address,
+            Shipping_City, Shipping_State_Province, Shipping_Postal_Code, Shipping_Country
+            , Shipping_Attn FROM cmt..[User_Address] WHERE User_Key = ?';
         $userID = array($id);
         
         $stmt = sqlsrv_query($link,$str,$userID);//runs statement

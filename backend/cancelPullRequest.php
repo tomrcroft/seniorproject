@@ -10,7 +10,7 @@
     $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
     $link = sqlsrv_connect($server, $connectionInfo);
     //$formvars = array($_POST['pullId'],'Canceled',$_SESSION['login_user']);
-    $formvars = array(7,'Canceled','jdub9108');
+    $formvars = array(9,'Canceled','jdub9108');
     //Checks connection
     if (!$link) {
         $output = "Problems with the database connection!"; 

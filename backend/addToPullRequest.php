@@ -21,7 +21,9 @@
             $formvars[] = $value;
     }
     $formvars[] = $_POST['deliveryDate'];
+    //$formvars[] = '06-25-2015';
     $formvars[] = $_POST['returnDate'];
+    //$formvars[] = '07-25-2015';
     $formvars[] = $profileInfo['First_Name'] . ' ' . $profileInfo['Last_Name'];
     $formvars[] = $profileInfo['Email'];
     $formvars[] = $profileInfo['Phone_Number'];
@@ -31,14 +33,13 @@
     $formvars[] = 'n/a';
     $formvars[] = 'n/a';
     $formvars[] = $_POST['productionOpenDate'];
+    //$formvars[] = '06-30-2015';
     $formvars[] = $_POST['productionCloseDate'];
+    //$formvars[] = '07-10-2015';
     $formvars[] = $_POST['notes'];
+    //$formvars[] = 'n/a';
     $formvars[] = $_SESSION['login_user'];
-    $count = 1;
-    foreach ($formvars as $value) {
-        echo $count. ': ' . $value . ' ';
-        $count ++;
-    }
+    
     //Checks connection
     if (!$link) {
         $output = "Problems with the database connection!"; 
