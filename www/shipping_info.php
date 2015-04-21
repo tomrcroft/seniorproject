@@ -68,8 +68,8 @@ session_start();
         </nav>
 
         <div class="welcome">
-            Please enter your billing information, shipping information, and contact information.<br>
-            After this step, you must confirm your pull request order and information that you entered before the pull request is sent.
+            Please confirm your billing information and shipping information. <br>
+            After this step, you must enter your production information before submitting your pull request.
         </div>
     <div class="row">
 
@@ -122,7 +122,7 @@ session_start();
 
     <div class="row">
         <div class="large-8 large-centered columns">
-            <div class="button right" id="submit_pull_request_button">Submit Pull Request</div>
+            <div class="button right" id="submit_info_button">Confirm Information</div>
             <div class="button right" id="go_back">Go Back</div>
         </div>
     </div>

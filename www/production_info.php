@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php 
+    session_start();
 // require_once '../backend/login.php'; 
 ?>
 
@@ -20,6 +21,7 @@
         <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
         <link rel="stylesheet" href="../lib/css/forms.css" type="text/css">
         <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
+        <link rel="stylesheet" href="../lib/css/production_info.css" type="text/css">
 
     </head>
 
@@ -30,21 +32,81 @@
                 <li class="name">
                     <h1><a href="index.php">Costume Inventory System</a></h1>
                 </li>
+                <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
             </ul>
 
             <section class="top-bar-section">
-                <ul class="right">
-                    <li class="has-form">
-                        <a href="search_page.php" class="button alert">Search Inventory</a>
+                <!-- Left Nav Section -->
+                <ul class="left">
+                    <li class="divider"></li>
+                    <?php 
+                        if(isset($_SESSION['login_user'])) { 
+                    ?>
+                        <li class="has-dropdown">
+                            <a href="#">Welcome, <?=$_SESSION['login_user']?>!</a>
+                        <ul class="dropdown">
+                            <li><a href="edit_profile.php">Edit Profile</a></li>
+                        </ul>
+                        </li>
+                    <?php 
+                        }
+                        else { 
+                    ?>
+                        <li>
+                            <div id="anonymous_login">Welcome, Anonymous!</div>
+                        </li>
+                    <?php 
+                        }
+                    ?>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="pull_request_cart.php">Pull Request Cart<?php include '../backend/cartSize.php';?></a>
                     </li>
-                    <li class="has-form">
-                        <div id="register_tab" class="button">Register</div>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="#1">Pull an entire set</a>
                     </li>
-                    <li class="has-form">
-                        <div id="login_tab" class="button">Login</div>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="order_status.php">Current Order Status</a>
                     </li>
+                    <li class="divider"></li>
+
+
                 </ul>
 
+                <!-- Right Nav Section -->
+                <ul class="right">
+                    <li class="has-form">
+                    <div class="row collapse">
+                        <div class="large-8 small-9 columns">
+                            <input type="text" id="search_term" placeholder="Search Inventory Database">
+                        </div>
+                        <div class="large-4 small-3 columns">
+                            <input class="alert button expand" id="search_page_form" value="Search"></input>
+                        </div>
+                    </div>
+                    </li>
+                    <?php
+                        if(isset($_SESSION['login_user'])) { 
+                    ?>
+                    <li class="has-form">
+                        <div class="button" id="logout_button" value="Logout">Logout</div>
+                    </li>
+                    <?php 
+                    }
+                        else { 
+                    ?>
+                    <li class="has-form">
+                        <a href="index.php" class="button">Register</a>
+                    </li>
+                    <li class="has-form">
+                        <a href="index.php" class="button">Login</a>
+                    </li>
+                    <?php 
+                        }
+                    ?>
+                </ul>
             </section>
         </nav>
 
@@ -87,11 +149,18 @@
                                     <input type="text" name="dateofreturn" id="date_of_return" placeholder="Expected Date of Return" />
                                 </div>
                             </div>
+
                             <div class="row">
+                                <div class="large-12 columns">
+                                        <textarea id="notes" placeholder="Notes (Optional)"></textarea>
+
+                                </div>
+                            </div>
+<!--                             <div class="row">
                                 <div class="large-12 columns">
                                     <input type="text" name="notes" id="notes" placeholder="Notes" />
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="row">
                                 <div class="large-12 large-centered columns">
