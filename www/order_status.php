@@ -15,12 +15,11 @@
         <script src="../lib/foundation/js/foundation.min.js" type="text/javascript"></script>
         <script src="../lib/js/logout.js" type="text/javascript"></script>
         <script src="../lib/js/search.js" type="text/javascript"></script>
-        <script src="../lib/js/pull_request_cart.js" type="text/javascript"></script>
+        <script src="../lib/js/order_status.js" type="text/javascript"></script>
 
         <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
         <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
         <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
-        <link rel="stylesheet" href="../lib/css/pull_request_cart.css" type="text/css">
         <link rel="stylesheet" href="../lib/css/order_status.css" type="text/css">
 
     </head>
@@ -96,7 +95,7 @@
                 <ul class="accordion" data-accordion>
                   <li class="accordion-navigation">
                     <a href="#pull_request_1">
-                      <div class="pull_request_name">PULL REQUEST NAME <div class="availability right">STATUS</div></div>
+                      <div class="pull_request_name">PULL REQUEST NAME - DATE SUBMITTED: 05-05-2015 <div class="availability right">Pending</div></div>
                     </a>
                     <div id="pull_request_1" class="content active">
                       Panel 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -104,18 +103,19 @@
                   </li>
                   <li class="accordion-navigation">
                     <a href="#pull_request_2">
-                      <div class="pull_request_name">PULL REQUEST NAME <div class="availability right">STATUS</div></div>
+                      <div class="pull_request_name">PULL REQUEST NAME - DATE SUBMITTED: 05-05-2015 <div class="availability right">Rejected</div></div>
                     </a>
                     <div id="pull_request_2" class="content">
                       Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </div>
                   </li>
                   <li class="accordion-navigation">
+                    <!-- If approved, a href should link to view invoice page. -->
                     <a href="#pull_request_3">
-                      <div class="pull_request_name">PULL REQUEST NAME <div class="availability right">STATUS</div></div>
+                      <div class="pull_request_name">PULL REQUEST NAME - DATE SUBMITTED: 05-05-2015 <div class="availability right">Approved</div></div>
                     </a>
                     <div id="pull_request_3" class="content">
-                      Panel 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      This pull request is approved, <a href="view_invoice.php">View Invoice Here</a>!
                     </div>
                   </li>
                 </ul>
@@ -206,47 +206,7 @@
         </div>
         <hr>
       </div>
-      <div class="row ">
-        <div class="large-2 columns">
-          <a href="#"> <span> </span><img src="http://placehold.it/250x300&text=Costume Image" alt="Costume Image" class=" thumbnail"></a>
-        </div>
-        <div class="large-10 columns">
-          <div class="row">
-            <div class=" large-9 columns">
-              <h5><a href="#">Costume Name</a></h5>
-              <p>Costume Type</p>
-            </div>
-            <div class=" large-3 columns">
-              <div class="button expand medium remove_item">Remove Item</div>
-               
-            </div>
-            <div class="row">
-              <div class=" large-12 columns">
-                <ul class="large-block-grid-2">
-                  <li>
-                    <ul>
-                      <li><strong>Color:</strong> Black</li>
-                      <li><strong>Size:</strong> Large</li>
-                      <li><strong>Group:</strong> Star Wars</li>
-                      
-                    </ul>
-                  </li>
-                  <li>
-                    <ul>
-                      <li><strong>Rental Fee:</strong> $000.00</li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr>
-      </div>
     -->
-
-
 
     <script>
         $(document).foundation();
