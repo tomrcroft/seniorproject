@@ -40,7 +40,7 @@
                     <a href="#pull_request_'. $row['Pull_Request_ID'] .'">
                       <div class="pull_request_name">'. $row['Pull_Request_ID'] . $row['Production'] .' - DATE SUBMITTED: '. $row['Created_Date'] .'<div class="availability right">'. $row['Status'] .'</div></div>
                     </a>
-                    <div id="pull_request_'. $row['Pull_Request_ID'] .'" class="content active">';
+                    <div id="pull_request_'. $row['Pull_Request_ID'] .'" class="content">';
             if ($row['Status'] != 'Accepted')
                 getItems($row['Pull_Request_ID'],$row['Created_By']);
             else 
