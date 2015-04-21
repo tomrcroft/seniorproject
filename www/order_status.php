@@ -14,7 +14,6 @@
         <script src="../lib/foundation/js/vendor/modernizr.js" type="text/javascript"></script>
         <script src="../lib/foundation/js/foundation.min.js" type="text/javascript"></script>
         <script src="../lib/js/logout.js" type="text/javascript"></script>
-        <script src="../lib/js/search.js" type="text/javascript"></script>
         <script src="../lib/js/order_status.js" type="text/javascript"></script>
 
         <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
@@ -98,7 +97,29 @@
                       <div class="pull_request_name">PULL REQUEST NAME - DATE SUBMITTED: 05-05-2015 <div class="availability right">Pending</div></div>
                     </a>
                     <div id="pull_request_1" class="content active">
-                      Panel 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      <div class="row">
+                        <h5 class="item_name"><a href="inventory_page.php?idnumber=15">Name of Item</a></h5>
+                        <div class="large-2 columns">
+                          
+                          Group: <br>
+                          Type: 
+                        </div>
+                        <div class="large-10 columns">
+                          Description
+                        </div>
+                      </div>
+                        <hr>
+                      <div class="row">
+                        <h5 class="item_name"><a href="inventory_page.php?idnumber=15">Name of Item</a></h5>
+                        <div class="large-2 columns">
+                          
+                          Group: <br>
+                          Type: 
+                        </div>
+                        <div class="large-10 columns">
+                          Description
+                        </div>
+                      </div>
                     </div>
                   </li>
                   <li class="accordion-navigation">
@@ -106,7 +127,29 @@
                       <div class="pull_request_name">PULL REQUEST NAME - DATE SUBMITTED: 05-05-2015 <div class="availability right">Rejected</div></div>
                     </a>
                     <div id="pull_request_2" class="content">
-                      Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                      <div class="row">
+                        <h5 class="item_name"><a href="inventory_page.php?idnumber=15">Name of Item</a></h5>
+                        <div class="large-2 columns">
+                          
+                          Group: <br>
+                          Type: 
+                        </div>
+                        <div class="large-10 columns">
+                          Description
+                        </div>
+                      </div>
+                        <hr>
+                      <div class="row">
+                        <h5 class="item_name"><a href="inventory_page.php?idnumber=15">Name of Item</a></h5>
+                        <div class="large-2 columns">
+                          
+                          Group: <br>
+                          Type: 
+                        </div>
+                        <div class="large-10 columns">
+                          Description
+                        </div>
+                      </div>
                     </div>
                   </li>
                   <li class="accordion-navigation">

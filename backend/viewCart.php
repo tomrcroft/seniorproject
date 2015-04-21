@@ -70,7 +70,7 @@
                 <h5><a href="#">'. $item['Costume_Name'] .'</a></h5>
                 <p>'. $item['Costume_Type'] .'</p>
 
-                                <ul class="large-block-grid-2">
+                  <ul class="large-block-grid-2">
                     <li>
                       <ul>
                         <li><strong>Color:</strong> '. $item['Costume_Color'] .'</li>
