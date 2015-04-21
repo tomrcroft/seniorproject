@@ -92,7 +92,8 @@
               </p>
               <div class="pull_request_results">
                 <ul class="accordion" data-accordion>
-                  <li class="accordion-navigation">
+                    <?php include '../backend/viewPullRequest.php';?>
+    <!--              <li class="accordion-navigation">
                     <a href="#pull_request_1">
                       <div class="pull_request_name">PULL REQUEST NAME - DATE SUBMITTED: 05-05-2015 <div class="availability right">Pending</div></div>
                     </a>
@@ -154,13 +155,13 @@
                   </li>
                   <li class="accordion-navigation">
                     <!-- If approved, a href should link to view invoice page. -->
-                    <a href="#pull_request_3">
+                    <!--<a href="#pull_request_3">
                       <div class="pull_request_name">PULL REQUEST NAME - DATE SUBMITTED: 05-05-2015 <div class="availability right">Approved</div></div>
                     </a>
                     <div id="pull_request_3" class="content">
                       This pull request is approved, <a href="view_invoice.php">View Invoice Here</a>!
                     </div>
-                  </li>
+                  </li>-->
                 </ul>
               </div>
           </div>

@@ -4,13 +4,13 @@
  * Show all pull requests the user has along with their status
  */
 
-    session_start();
+    //session_start();
     //variables
     $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
-    $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
+    $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195", "ReturnDatesAsStrings"=>"true");
     $link = sqlsrv_connect($server, $connectionInfo);
-    //$user = $_SESSION['login_user'];
-    $user = 'gurnit';
+    $user = $_SESSION['login_user'];
+    //$user = 'BBB';
     //Checks connection
     if (!$link) {
         $output = "Problems with the database connection!"; 
@@ -35,15 +35,18 @@
             }
             //display goes here
             //show the pull request id, status, and date?
-            //show each item id, name, description
+            //need to convert to string '. $row['Created_Date'] .'
             echo '<li class="accordion-navigation">
                     <a href="#pull_request_'. $row['Pull_Request_ID'] .'">
-                      <div class="pull_request_name">'. $row['Production'] .' - '. $row['Created_Date'] .' 
-                          <div class="availability right">'. $row['Status'] .'</div>
-                          </div>
-                    </a>';
-            getItems($row['Pull_Request_ID']);
-            echo '</li>';
+                      <div class="pull_request_name">'. $row['Pull_Request_ID'] . $row['Production'] .' - DATE SUBMITTED: '. $row['Created_Date'] .'<div class="availability right">'. $row['Status'] .'</div></div>
+                    </a>
+                    <div id="pull_request_'. $row['Pull_Request_ID'] .'" class="content active">';
+            if ($row['Status'] != 'Accepted')
+                getItems($row['Pull_Request_ID'],$row['Created_By']);
+            else 
+                echo 'This pull request is approved, <a href="view_invoice.php">View Invoice Here</a>!';
+            echo   '</div>
+                  </li>';
         }
     }
 ?>
