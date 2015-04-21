@@ -15,7 +15,7 @@
     $link = sqlsrv_connect($server, $connectionInfo);
     //converted costume array Costume_Key-Quantity
     $list = formatList($_SESSION['shopping_cart']);
-    $formvars = array($list,$_POST['productionName']);
+    $formvars = array($list,$_POST['productionName'],'n/a');
     foreach ($addressInfo as $key => $value) {
         if($key != 'User_Key')
             $formvars[] = $value;
@@ -26,6 +26,10 @@
     $formvars[] = $profileInfo['Email'];
     $formvars[] = $profileInfo['Phone_Number'];
     $formvars[] = $profileInfo['Fax_Number'];
+    $formvars[] = 'n/a';
+    $formvars[] = 'n/a';
+    $formvars[] = 'n/a';
+    $formvars[] = 'n/a';
     $formvars[] = $_POST['productionOpenDate'];
     $formvars[] = $_POST['productionCloseDate'];
     $formvars[] = $_POST['notes'];
@@ -43,10 +47,9 @@
     }        
     else
     {
-        $str = "{call dbo.Create_Pull_Request(?,?,'',?,?,?,?,?,?,?,?,?,?,?,?,?,?,
-            ?,?,?,?,'','','','',?,?,?,?)}";
+        $str = "{call dbo.Create_Pull_Request(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,
+            ?,?,?,?,?,?,?,?,?,?,?,?)}";
         //from new form yet to be added
-        //2-production name,16-delivery date,17-return date,26-production open date,27-production close date,28-notes
         //not needed 3,22,23,24,25
         $stmt = sqlsrv_query($link,$str,$formvars);//runs statement
         if( $stmt === false ) {
@@ -55,7 +58,8 @@
         sqlsrv_free_stmt($stmt);
         sqlsrv_close($link);
         unset($_SESSION['shopping_cart']);
-        //add confirmation
+        $json = json_encode(array("location"=>"order_status.php", "error" => false));
+        exit($json);
     }
     function formatList($costumes)
     {
