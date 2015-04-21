@@ -17,11 +17,11 @@
         <script src="../lib/foundation/js/vendor/modernizr.js" type="text/javascript"></script>
         <script src="../lib/foundation/js/foundation.min.js" type="text/javascript"></script>
         <script src="../lib/js/logout.js" type="text/javascript"></script>
-        <script src="../lib/js/add_administrator.js" type="text/javascript"></script>
 
         <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
         <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
         <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
+        <link rel="stylesheet" href="../lib/css/view_master_records.css" type="text/css">
 
     </head>
 
@@ -60,36 +60,58 @@
             </section>
         </nav>
 
-        <div class="row collapse">
-                <div class="large-8 small-9 columns">
-                    <input type="text" placeholder="Search Inventory Database">
-                </div>
-                <div class="large-4 small-3 columns">
-                    <a href="#" class="alert button expand postfix">Search</a>
-                </div>
-            </div>
-
         <div class="row">    
 
             <!-- Main Content Section -->
-            <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
-
-
             <div class="large-12 columns">
-                <h3>VIEW MASTER RECORDS</h3>
+                
+                <!-- 
+                Search Records Form
+                Consider Putting Search form in line with text. Do not have time to put that there now 
+                -->
                 <div class="row">
-                    <div class="large-12 columns">
+                    <div class="large-12 columns" id="search_user_form">
+                        <h3 class="text-center">Search records by <b>Company</b> name</h3>
                         <div class="row collapse">
-                            <div class="small-10 columns">
-                                <input type="text" name="email" id="add_admin_email" placeholder="Email of User to Add" />
+                            <div class="large-6 small-10 large-offset-2 columns">
+                                <input type="text" name="email" id="search_company" placeholder="Search for records by Company" />
                             </div>
-                            <div class="small-2 columns">
-                                <div id="add_admin_button"class="button postfix">Add Administrator</div>
+                            <div class="large-2 small-2 columns left">
+                                <div id="find_records_button" class="button postfix">Search</div>
                             </div>
                         </div>
-                        <div id="add_admin_success"></div>
                     </div>
                 </div>
+
+                <!-- Records Results Section -->
+                <div class="row">
+                    <div class="large-4 large-offset-1 columns" id="records_results">
+                        <h5>COMPANYNAME Pull Request Records for USER (2 Results)</h5>
+                        <div class="admin_pull_results panel" id="pull_request_1">
+                            <h5>PULL REQUEST NAME</h5> 
+                            DATE MODIFIED: MM-DD-YYYY
+                        </div>
+                        <div class="admin_pull_results panel" id="pull_request_2">
+                            <h5>PULL REQUEST NAME</h5> 
+                            DATE MODIFIED: MM-DD-YYYY
+                        </div>
+
+                    </div>
+                    <div class="large-4 large-offset-2 columns left" id="records_results">
+                        <h5>COMPANYNAME View Invoice Records for USER (2 Results)</h5>
+                        <div class="admin_invoice_results panel" id="pull_request_1">
+                            <h5>INVOICE NAME</h5> 
+                            DATE MODIFIED: MM-DD-YYYY
+                        </div>
+                        <div class="admin_invoice_results panel" id="pull_request_2">
+                            <h5>INVOICE NAME</h5> 
+                            DATE MODIFIED: MM-DD-YYYY
+                        </div>
+
+                    </div>
+                </div>
+
+
             </div>
 
     <script>
