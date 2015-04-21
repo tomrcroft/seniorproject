@@ -15,20 +15,20 @@
     $link = sqlsrv_connect($server, $connectionInfo);
     //converted costume array Costume_Key-Quantity
     $list = formatList($_SESSION['shopping_cart']);
-    $formvars = array($list);//,$_POST['production']);
+    $formvars = array($list,$_POST['productionName']);
     foreach ($addressInfo as $key => $value) {
         if($key != 'User_Key')
             $formvars[] = $value;
     }
-    //$formvars[] = $_POST['deliveryDate'];
-    //$formvars[] = $_POST['returnDate'];
+    $formvars[] = $_POST['deliveryDate'];
+    $formvars[] = $_POST['returnDate'];
     $formvars[] = $profileInfo['First_Name'] . ' ' . $profileInfo['Last_Name'];
     $formvars[] = $profileInfo['Email'];
     $formvars[] = $profileInfo['Phone_Number'];
     $formvars[] = $profileInfo['Fax_Number'];
-    //$formvars[] = $_POST['productionOpenDate'];
-    //$formvars[] = $_POST['productionCloseDate'];
-    //$formvars[] = $_POST['notes'];
+    $formvars[] = $_POST['productionOpenDate'];
+    $formvars[] = $_POST['productionCloseDate'];
+    $formvars[] = $_POST['notes'];
     $formvars[] = $_SESSION['login_user'];
     $count = 1;
     foreach ($formvars as $value) {
@@ -43,8 +43,8 @@
     }        
     else
     {
-        $str = "{call dbo.Create_Pull_Request(?,'test','',?,?,?,?,?,?,?,?,?,?,?,?,'06-25-2015','07-25-2015',
-            ?,?,?,?,'','','','','06-30-2015','07-20-2015','blah',?)}";
+        $str = "{call dbo.Create_Pull_Request(?,?,'',?,?,?,?,?,?,?,?,?,?,?,?,?,?,
+            ?,?,?,?,'','','','',?,?,?,?)}";
         //from new form yet to be added
         //2-production name,16-delivery date,17-return date,26-production open date,27-production close date,28-notes
         //not needed 3,22,23,24,25

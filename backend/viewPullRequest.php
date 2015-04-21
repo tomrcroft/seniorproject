@@ -20,7 +20,7 @@
     else
     {
         //run query
-        $str = "SELECT * FROM cmt..Pull_Request_Hdr WHERE Created_By = ?";
+        $str = "SELECT * FROM cmt..[Pull_Request_Hdr] WHERE Created_By = ? ORDER BY Status DESC";
         $params = array($user);
         $stmt = sqlsrv_query($link,$str,$params);
         if( $stmt === false ) {
@@ -28,14 +28,22 @@
         }
         
         //display results
+        include '../backend/GetPullRequestItems.php';
         while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
             if($row === false) {
                 die( print_r( sqlsrv_errors(), true));
             }
             //display goes here
-            echo $row['Created_By'] . '---' . $row['Status'];
             //show the pull request id, status, and date?
-            //show each item
+            //show each item id, name, description
+            echo '<li class="accordion-navigation">
+                    <a href="#pull_request_'. $row['Pull_Request_ID'] .'">
+                      <div class="pull_request_name">'. $row['Production'] .' - '. $row['Created_Date'] .' 
+                          <div class="availability right">'. $row['Status'] .'</div>
+                          </div>
+                    </a>';
+            getItems($row['Pull_Request_ID']);
+            echo '</li>';
         }
     }
 ?>
