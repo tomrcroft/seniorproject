@@ -115,7 +115,7 @@
             Welcome to the California Musical Theatre Inventory System.<br>
             <h2 class="text-center">Production Information</h2>
             <p class="text-center">
-            Please <b>continue your pull request</b> by entering your <b>Production Information:</b> <br>
+            Please <b>finish your pull request</b> by entering your <b>Production Information:</b> <br>
             </p>
         </div>
 
@@ -164,7 +164,7 @@
 
                             <div class="row">
                                 <div class="large-12 large-centered columns">
-                                    <div class="button expand" id="submit_production_info_button">Submit Production Information</div>
+                                    <div class="button expand" id="submit_pull_request_button">Submit Pull Request</div>
                                 </div>
                             </div>
 
