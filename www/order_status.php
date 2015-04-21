@@ -87,9 +87,7 @@
             <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
 
           <div class="large-10 push-2 columns">
-              <p>
-                Here is the status of your pull requests.<br>
-              </p>
+              <h3>Status of your Pull Requests</h3>
               <div class="pull_request_results">
                 <ul class="accordion" data-accordion>
                     <?php include '../backend/viewPullRequest.php';?>

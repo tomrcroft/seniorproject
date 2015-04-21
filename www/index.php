@@ -51,8 +51,7 @@
         </nav>
 
         <div class="welcome">
-            Costume Inventory<br>
-            Welcome to the California Musical Theatre Inventory System.<br>
+            <h1 class="text-center">Welcome to the California Musical Theatre Inventory System!</h1>
             <p class="text-center">
             You may <b>Log In</b> here.<br>
             Click on <b>Register</b> to create an account.<br>
