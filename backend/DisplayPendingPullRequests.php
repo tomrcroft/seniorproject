@@ -35,7 +35,7 @@ if (!$conn) {
 			echo '<div class="admin_pull_results panel clearfix" id="pull_request_idnumber" data-pull-id='. $row['Pull_Request_ID'].'>
                             <div class="left pull_request_title"><b>'. $row['Production'] .'</b>
                                 <div class="date_created">DATE CREATED: '. $datecreated .'</div>
-                                <div class="delivery_date">DELIVERY DATE:'. $datedelivery .'</div>
+                                <div class="delivery_date">DELIVERY DATE: '. $datedelivery .'</div>
                             </div>
                             <div class="left notes"> '. $row['Notes'] .' NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES </div>
                             

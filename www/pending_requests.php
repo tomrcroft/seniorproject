@@ -80,7 +80,7 @@
                 
                 <div class="row">
                     <div class="large-10 large-offset-1 columns" id="pending_pull_results">
-                        <?php include '../backend/DisplayPendingPullRequests'; ?>
+                        <?php include '../backend/DisplayPendingPullRequests.php'; ?>
                         <div class="admin_pull_results panel clearfix" id="pull_request_idnumber" data-pull-id="xx">
                             <div class="left pull_request_title"><b>PULL REQUEST NAME</b>
                                 <div class="date_created">DATE CREATED: MM-DD-YYYY</div>

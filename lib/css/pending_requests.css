@@ -16,7 +16,7 @@
 }
 
 .pull_request_title {
-   display: inline-block;
+   display: block;
    width: 20%;
 }
 .notes {
@@ -26,7 +26,7 @@
 
 .date_created {
    width: 80%;
-   display: inline-block;
+   display: block;
 }
 
 #accept_pull_request_button {
