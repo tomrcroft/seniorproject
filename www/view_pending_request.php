@@ -81,33 +81,27 @@
                     <div class="large-10 large-offset-1 columns" id="pending_pull_results">
 
                         <div class="admin_pull_results panel clearfix" id="pull_request_idnumber" data-pull-id="xx">
-                            <div class="left pull_request_title"><b>PULL REQUEST NAME</b>
+                            <div class="left" id="pull_request_title"><b>PULL REQUEST NAME</b>
                                 <div class="date_created">DATE CREATED: MM-DD-YYYY</div>
-                                <div class="delivery_date">DELIVERY DATE: MM-DD-YYYY</div>
                             </div>
-                            <div class="left notes">NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES </div>
                             
                             <div id="accept_pull_request_button" class="button right">Accept</div>
                             <div id="reject_pull_request_button" class="button right">Reject</div>
                         </div>
 
                         <div class="admin_pull_results panel clearfix" id="pull_request_idnumber" data-pull-id="xx">
-                            <div class="left pull_request_title"><b>PULL REQUEST NAME</b>
+                            <div class="left" id="pull_request_title"><b>PULL REQUEST NAME</b>
                                 <div class="date_created">DATE CREATED: MM-DD-YYYY</div>
-                                <div class="delivery_date">DELIVERY DATE: MM-DD-YYYY</div>
                             </div>
-                            <div class="left notes">NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES </div>
                             
                             <div id="accept_pull_request_button" class="button right">Accept</div>
                             <div id="reject_pull_request_button" class="button right">Reject</div>
                         </div>
 
                         <div class="admin_pull_results panel clearfix" id="pull_request_idnumber" data-pull-id="xx">
-                            <div class="left pull_request_title"><b>PULL REQUEST NAME</b>
+                            <div class="left" id="pull_request_title"><b>PULL REQUEST NAME</b>
                                 <div class="date_created">DATE CREATED: MM-DD-YYYY</div>
-                                <div class="delivery_date">DELIVERY DATE: MM-DD-YYYY</div>
                             </div>
-                            <div class="left notes">NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES </div>
                             
                             <div id="accept_pull_request_button" class="button right">Accept</div>
                             <div id="reject_pull_request_button" class="button right">Reject</div>

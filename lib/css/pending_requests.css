@@ -15,7 +15,21 @@
    padding-left: 1.875rem;
 }
 
+.pull_request_title {
+   display: inline-block;
+   width: 20%;
+}
+.notes {
+   display: inline-block;
+   width: 60%;
+}
+
+.date_created {
+   width: 80%;
+   display: inline-block;
+}
+
 #accept_pull_request_button {
-   margin-bottom: 0;
+   display: inline-block;
    margin-left: 0.5em;
 }
