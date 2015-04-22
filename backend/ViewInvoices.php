@@ -29,7 +29,7 @@
                 die( print_r( sqlsrv_errors(), true));
             }
             //invoice display goes here
-            //data of importance: cost, date approved, status
+            //data of importance: cost-$row['Total'], date approved-$row['Created_Date'], status-$row['Status']
             //should have link to the individual invoice view
         }
     }
