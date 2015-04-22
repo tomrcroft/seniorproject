@@ -185,27 +185,6 @@
                         </div>
                     </div>
 
-                    <div class="inventory_image large-4 small-6 columns">
-                        <img src="../lib/images/costumes/costume12.jpg">
-
-                        <div class="panel">
-                            <h5>Item Name</h5>
-                            <h5>Rental Status: Available</h5>
-                            <h6 class="subheader">$000.00</h6>
-                            <div class="add_item button">Add Item</div>
-                        </div>
-                    </div>
-
-                    <div class="inventory_image large-4 small-6 columns">
-                        <img src="http://placehold.it/320x240&text=Item">
-
-                        <div class="panel">
-                            <h5>Item Name</h5>
-                            <h5>Rental Status: Available</h5>
-                            <h6 class="subheader">$000.00</h6>
-                            <div class="add_item button">Add Item</div>
-                        </div>
-                    </div> -->
                 </div>
             </div> 
             
