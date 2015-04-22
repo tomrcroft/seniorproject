@@ -91,19 +91,19 @@
                     <tbody>
                         <tr>
                             <td>Content Goes Here</td>
-                            <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
-                            <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
-                            <td>Content Goes Here</td>
-                        </tr>
-                        <tr>
-                            <td>Content Goes Here</td>
-                            <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+                            <td><h4><a href="inventory_page.php?idnumber=xx">Item Name</a></h4></td>
                             <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
                             <td>Content Goes Here</td>
                         </tr>
-                        <tr>
+                         <tr>
                             <td>Content Goes Here</td>
-                            <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
+                            <td><h4><a href="inventory_page.php?idnumber=xx">Item Name</a></h4></td>
+                            <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
+                            <td>Content Goes Here</td>
+                        </tr>
+                         <tr>
+                            <td>Content Goes Here</td>
+                            <td><h4><a href="inventory_page.php?idnumber=xx">Item Name</a></h4></td>
                             <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
                             <td>Content Goes Here</td>
                         </tr>
