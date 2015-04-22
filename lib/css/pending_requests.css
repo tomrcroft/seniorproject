@@ -1,0 +1,24 @@
+#pending_requests_title {
+
+}
+
+.panel:hover {
+   background: #e3e3e3;
+}
+
+.panel {
+   background: #EFEFEF;
+}
+
+.admin_pull_results {
+   margin-bottom: 0;
+}
+
+.pull_request_date {
+   padding-left: 1.875rem;
+}
+
+#accept_pull_request_button {
+   margin-bottom: 0;
+   margin-left: 0.5em;
+}

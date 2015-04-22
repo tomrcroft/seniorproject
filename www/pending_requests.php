@@ -17,11 +17,12 @@
         <script src="../lib/foundation/js/vendor/modernizr.js" type="text/javascript"></script>
         <script src="../lib/foundation/js/foundation.min.js" type="text/javascript"></script>
         <script src="../lib/js/logout.js" type="text/javascript"></script>
+        <script src="../lib/js/pending_requests.js" type="text/javascript"></script>
 
         <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
         <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
         <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
-        <link rel="stylesheet" href="../lib/css/view_master_records.css" type="text/css">
+        <link rel="stylesheet" href="../lib/css/pending_requests.css" type="text/css">
 
     </head>
 
@@ -68,49 +69,47 @@
 
             <!-- Main Content Section -->
             <div class="large-12 columns">
-                
-                <!-- 
-                Search Records Form
-                Consider Putting Search form in line with text. Do not have time to put that there now 
-                -->
+
+                <!-- Pending Pull Requests View -->
                 <div class="row">
-                    <div class="large-12 columns" id="search_user_form">
-                        <h3 class="text-center">Search records by <b>Company</b> name</h3>
-                        <div class="row collapse">
-                            <div class="large-6 small-10 large-offset-2 columns">
-                                <input type="text" name="email" id="search_company" placeholder="Search for records by Company" />
-                            </div>
-                            <div class="large-2 small-2 columns left">
-                                <div id="find_records_button" class="button postfix">Search</div>
-                            </div>
-                        </div>
+                    <div class="large-10 large-offset-1 columns">
+                        <h3># Pending Pull Requests</h3>
                     </div>
                 </div>
 
                 <!-- Records Results Section -->
                 <div class="row">
-                    <div class="large-4 large-offset-1 columns" id="records_results">
-                        <h5>COMPANYNAME Pull Request Records for USER (2 Results)</h5>
-                        <div class="admin_pull_results panel" id="pull_request_1">
-                            <h5>PULL REQUEST NAME</h5> 
-                            DATE MODIFIED: MM-DD-YYYY
-                        </div>
-                        <div class="admin_pull_results panel" id="pull_request_2">
-                            <h5>PULL REQUEST NAME</h5> 
-                            DATE MODIFIED: MM-DD-YYYY
-                        </div>
+                    <div class="large-10 large-offset-1 columns" id="pending_pull_results">
 
-                    </div>
-                    <div class="large-4 large-offset-2 columns left" id="records_results">
-                        <h5>COMPANYNAME View Invoice Records for USER (2 Results)</h5>
-                        <div class="admin_invoice_results panel" id="pull_request_1">
-                            <h5>INVOICE NAME</h5> 
-                            DATE MODIFIED: MM-DD-YYYY
-                        </div>
-                        <div class="admin_invoice_results panel" id="pull_request_2">
-                            <h5>INVOICE NAME</h5> 
-                            DATE MODIFIED: MM-DD-YYYY
-                        </div>
+                        <a href="view_pending_request.php?idnumber=xx">
+                            <div class="admin_pull_results panel clearfix" id="pull_request_idnumber">
+                                <div class="left" id="pull_request_title">PULL REQUEST NAME
+                                    <div class="date_created">DATE CREATED: MM-DD-YYYY</div></div>
+                                
+                                <div id="accept_pull_request_button" class="button right">Accept</div>
+                                <div id="reject_pull_request_button" class="button right">Reject</div>
+                            </div>
+                        </a>
+
+                        <a href="view_pending_request.php?idnumber=xx">
+                            <div class="admin_pull_results panel clearfix" id="pull_request_idnumber">
+                                <div class="left" id="pull_request_title">PULL REQUEST NAME
+                                    <div class="date_created">DATE CREATED: MM-DD-YYYY</div></div>
+                                
+                                <div id="accept_pull_request_button" class="button right">Accept</div>
+                                <div id="reject_pull_request_button" class="button right">Reject</div>
+                            </div>
+                        </a>
+
+                        <a href="view_pending_request.php?idnumber=xx">
+                            <div class="admin_pull_results panel clearfix" id="pull_request_idnumber">
+                                <div class="left" id="pull_request_title">PULL REQUEST NAME
+                                    <div class="date_created">DATE CREATED: MM-DD-YYYY</div></div>
+                                
+                                <div id="accept_pull_request_button" class="button right">Accept</div>
+                                <div id="reject_pull_request_button" class="button right">Reject</div>
+                            </div>
+                        </a>
 
                     </div>
                 </div>
