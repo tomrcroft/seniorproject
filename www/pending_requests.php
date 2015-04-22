@@ -81,15 +81,16 @@
                 <div class="row">
                     <div class="large-10 large-offset-1 columns" id="pending_pull_results">
 
-                        <a href="view_pending_request.php?idnumber=xx">
-                            <div class="admin_pull_results panel clearfix" id="pull_request_idnumber">
+                        <!-- <a href="view_pending_request.php?idnumber=xx"> -->
+                            <div class="admin_pull_results panel clearfix" id="pull_request_idnumber" data-href="view_pending_request.php?idnumber=xx">
                                 <div class="left" id="pull_request_title">PULL REQUEST NAME
-                                    <div class="date_created">DATE CREATED: MM-DD-YYYY</div></div>
+                                    <div class="date_created">DATE CREATED: MM-DD-YYYY</div>
+                                </div>
                                 
                                 <div id="accept_pull_request_button" class="button right">Accept</div>
                                 <div id="reject_pull_request_button" class="button right">Reject</div>
                             </div>
-                        </a>
+                        <!-- </a> -->
 
                         <a href="view_pending_request.php?idnumber=xx">
                             <div class="admin_pull_results panel clearfix" id="pull_request_idnumber">
