@@ -101,12 +101,10 @@
 
         <div class="row">    
 
-            <!-- Main Content Section -->
-            <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
+            <!-- Item View PHP -->
             <?php include '../backend/itemView.php';?>
             
-            <!-- Nav Sidebar -->
-            <!-- This is source ordered to be pulled to the left on larger screens -->
+            <!-- Ad Area -->
             <div class="large-3 pull-9 columns">
 
             <p><img src="http://placehold.it/320x240&text=Ad" /></p>

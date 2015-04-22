@@ -17,12 +17,12 @@
         <script src="../lib/foundation/js/vendor/modernizr.js" type="text/javascript"></script>
         <script src="../lib/foundation/js/foundation.min.js" type="text/javascript"></script>
         <script src="../lib/js/logout.js" type="text/javascript"></script>
-        <script src="../lib/js/pending_requests.js" type="text/javascript"></script>
+        <script src="../lib/js/view_pending_request.js" type="text/javascript"></script>
 
         <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
         <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
         <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
-        <link rel="stylesheet" href="../lib/css/pending_requests.css" type="text/css">
+        <link rel="stylesheet" href="../lib/css/view_pending_request.css" type="text/css">
 
     </head>
 
@@ -67,53 +67,48 @@
 
         <div class="row">    
 
-            <!-- Pending Pull Requests View -->
+            <!-- Pull Request View -->
             <div class="large-12 columns">
 
                 <div class="row">
                     <div class="large-10 large-offset-1 columns">
-                        <h3># Pending Pull Requests</h3>
+                        <h3>Pull Request for Company (ID #)?</h3>
                     </div>
                 </div>
 
-                <!-- Records Results Section -->
-                
+                <!-- Pull Request Items IMAGE, NAME, DESCRIPTION, LOCATION-->
                 <div class="row">
                     <div class="large-10 large-offset-1 columns" id="pending_pull_results">
-                        <?php include '../backend/DisplayPendingPullRequests.php'; ?>
-                        <div class="admin_pull_results panel clearfix" id="pull_request_idnumber" data-pull-id="xx">
-                            <div class="left pull_request_title"><b>PULL REQUEST NAME</b>
-                                <div class="date_created">DATE CREATED: MM-DD-YYYY</div>
-                                <div class="delivery_date">DELIVERY DATE: MM-DD-YYYY</div>
-                            </div>
-                            <div class="left notes">NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES </div>
-                            
-                            <div id="accept_pull_request_button" class="button right">Accept</div>
-                            <div id="reject_pull_request_button" class="button right">Reject</div>
-                        </div>
-
-                        <div class="admin_pull_results panel clearfix" id="pull_request_idnumber" data-pull-id="xx">
-                            <div class="left pull_request_title"><b>PULL REQUEST NAME</b>
-                                <div class="date_created">DATE CREATED: MM-DD-YYYY</div>
-                                <div class="delivery_date">DELIVERY DATE: MM-DD-YYYY</div>
-                            </div>
-                            <div class="left notes">NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES </div>
-                            
-                            <div id="accept_pull_request_button" class="button right">Accept</div>
-                            <div id="reject_pull_request_button" class="button right">Reject</div>
-                        </div>
-
-                        <div class="admin_pull_results panel clearfix" id="pull_request_idnumber" data-pull-id="xx">
-                            <div class="left pull_request_title"><b>PULL REQUEST NAME</b>
-                                <div class="date_created">DATE CREATED: MM-DD-YYYY</div>
-                                <div class="delivery_date">DELIVERY DATE: MM-DD-YYYY</div>
-                            </div>
-                            <div class="left notes">NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES </div>
-                            
-                            <div id="accept_pull_request_button" class="button right">Accept</div>
-                            <div id="reject_pull_request_button" class="button right">Reject</div>
-                        </div>
-
+                <table>
+                    <thead>
+                        <tr>
+                        <th width="25%">Item Image</th>
+                        <th width="25%">Item Name</th>
+                        <th width="30%">Item Description</th>
+                        <th width="20%">Item Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Content Goes Here</td>
+                            <td><h4><a href="inventory_page.php?idnumber=xx">Item Name</a></h4></td>
+                            <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
+                            <td>Content Goes Here</td>
+                        </tr>
+                         <tr>
+                            <td>Content Goes Here</td>
+                            <td><h4><a href="inventory_page.php?idnumber=xx">Item Name</a></h4></td>
+                            <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
+                            <td>Content Goes Here</td>
+                        </tr>
+                         <tr>
+                            <td>Content Goes Here</td>
+                            <td><h4><a href="inventory_page.php?idnumber=xx">Item Name</a></h4></td>
+                            <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
+                            <td>Content Goes Here</td>
+                        </tr>
+                    </tbody>
+                </table>
                     </div>
                 </div>
 
