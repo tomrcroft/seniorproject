@@ -1,8 +1,5 @@
-#pending_requests_title {
-
-}
-
 .panel:hover {
+   cursor: pointer;
    background: #e3e3e3;
 }
 

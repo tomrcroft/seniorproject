@@ -67,10 +67,9 @@
 
         <div class="row">    
 
-            <!-- Main Content Section -->
+            <!-- Pending Pull Requests View -->
             <div class="large-12 columns">
 
-                <!-- Pending Pull Requests View -->
                 <div class="row">
                     <div class="large-10 large-offset-1 columns">
                         <h3># Pending Pull Requests</h3>
@@ -81,36 +80,32 @@
                 <div class="row">
                     <div class="large-10 large-offset-1 columns" id="pending_pull_results">
 
-                        <!-- <a href="view_pending_request.php?idnumber=xx"> -->
-                            <div class="admin_pull_results panel clearfix" id="pull_request_idnumber" data-href="view_pending_request.php?idnumber=xx">
-                                <div class="left" id="pull_request_title">PULL REQUEST NAME
-                                    <div class="date_created">DATE CREATED: MM-DD-YYYY</div>
-                                </div>
-                                
-                                <div id="accept_pull_request_button" class="button right">Accept</div>
-                                <div id="reject_pull_request_button" class="button right">Reject</div>
+                        <div class="admin_pull_results panel clearfix" id="pull_request_idnumber" data-pull-id="xx">
+                            <div class="left" id="pull_request_title">PULL REQUEST NAME
+                                <div class="date_created">DATE CREATED: MM-DD-YYYY</div>
                             </div>
-                        <!-- </a> -->
+                            
+                            <div id="accept_pull_request_button" class="button right">Accept</div>
+                            <div id="reject_pull_request_button" class="button right">Reject</div>
+                        </div>
 
-                        <a href="view_pending_request.php?idnumber=xx">
-                            <div class="admin_pull_results panel clearfix" id="pull_request_idnumber">
-                                <div class="left" id="pull_request_title">PULL REQUEST NAME
-                                    <div class="date_created">DATE CREATED: MM-DD-YYYY</div></div>
-                                
-                                <div id="accept_pull_request_button" class="button right">Accept</div>
-                                <div id="reject_pull_request_button" class="button right">Reject</div>
+                        <div class="admin_pull_results panel clearfix" id="pull_request_idnumber" data-href="view_pending_request.php?idnumber=xx">
+                            <div class="left" id="pull_request_title">PULL REQUEST NAME
+                                <div class="date_created">DATE CREATED: MM-DD-YYYY</div>
                             </div>
-                        </a>
+                            
+                            <div id="accept_pull_request_button" class="button right">Accept</div>
+                            <div id="reject_pull_request_button" class="button right">Reject</div>
+                        </div>
 
-                        <a href="view_pending_request.php?idnumber=xx">
-                            <div class="admin_pull_results panel clearfix" id="pull_request_idnumber">
-                                <div class="left" id="pull_request_title">PULL REQUEST NAME
-                                    <div class="date_created">DATE CREATED: MM-DD-YYYY</div></div>
-                                
-                                <div id="accept_pull_request_button" class="button right">Accept</div>
-                                <div id="reject_pull_request_button" class="button right">Reject</div>
+                        <div class="admin_pull_results panel clearfix" id="pull_request_idnumber" data-href="view_pending_request.php?idnumber=xx">
+                            <div class="left" id="pull_request_title">PULL REQUEST NAME
+                                <div class="date_created">DATE CREATED: MM-DD-YYYY</div>
                             </div>
-                        </a>
+                            
+                            <div id="accept_pull_request_button" class="button right">Accept</div>
+                            <div id="reject_pull_request_button" class="button right">Reject</div>
+                        </div>
 
                     </div>
                 </div>
