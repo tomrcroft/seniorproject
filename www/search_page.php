@@ -184,18 +184,19 @@
                             <div class="add_item button">Add Item</div>
                         </div>
                     </div>
-
+                    -->
                 </div>
             </div> 
-            
-            <div class="filter-facets large-2 pull-10 columns">
-                <!-- include search filter php file -->
+        <div class="filter-facets large-2 pull-10 columns">
+                
+                <!-- include search filter php file
                 <!-- <div class="button" id="filter_button">Filter</div> -->
                 <!-- where php ends -->
                 <p><img src="http://placehold.it/320x240&text=Ad" /></p>
             </div>
             
         </div>
+
 
     <script>
         $(document).foundation();

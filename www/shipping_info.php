@@ -73,6 +73,7 @@ session_start();
         </div>
     <div class="row">
 
+        <!--User Shipping Information Panel -->
         <div class="large-4 large-offset-2 columns">
             <div class="form-box">
                 <div class="row">
@@ -81,12 +82,6 @@ session_start();
                         <div class="account_info">
                             <?php include '../backend/DisplayShippingAddress.php'; ?>
                         </div>
-<!--                         Shipping Attn: <br> 
-                        Shipping Address: <br> 
-                        Shipping City: <br> 
-                        Shipping State: <br> 
-                        Shipping Zip Code: <br> 
-                        Shipping Country: <br> -->
 
                         <div id="update_shipping_modal_button" class="button right">Update Shipping Information</div>
 
@@ -94,7 +89,9 @@ session_start();
                 </div>
             </div>
         </div>
+        <!--End User Shipping Information Panel -->
 
+        <!--User Billing Information Panel -->
         <div class="large-4 columns">
             <div class="form-box">
                 <div class="row">
@@ -103,20 +100,14 @@ session_start();
                         <div class="account_info">
                             <?php include '../backend/DisplayBillingAddress.php'; ?>
                         </div>
-<!--                         Billing Attn: <br> 
-                        Billing Address: <br> 
-                        Billing City: <br> 
-                        Billing State: <br> 
-                        Billing Zip Code: <br> 
-                        Billing Country: <br> -->
 
-                        <div id="update_billing_modal_button" class="button right">Update Billing Information</div>
-                        
+                        <div id="update_billing_modal_button" class="button right">Update Billing Information</div>                        
                             
                     </div>
                 </div>
             </div>
         </div>
+        <!--End User Billing Information Panel -->
 
     </div>
 
@@ -130,6 +121,7 @@ session_start();
     <div class='reveal-modal' id='shipping-modal' data-reveal>
         Edit Shipping Information:
         <div class="update_shipping_box large-12 columns">
+            
             <div class="row">
                 <div class="large-12 columns">
                     <input type="text" name="updateshippingname" id="update_shipping_name" placeholder="Shipping Attn" />
@@ -167,7 +159,6 @@ session_start();
                     <div class="button right cancel_update">Cancel</div>
                 </div>
             </div>
-
 
         </div>
     </div>

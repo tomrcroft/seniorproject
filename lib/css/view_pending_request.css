@@ -1,0 +1,13 @@
+
+#accept_pull_request_button {
+   margin-left: 1em;
+   margin-right: 0.5rem;
+}
+
+#accept-request-modal {
+   color: #000000;
+}
+
+#reject-request-modal {
+   color: #000000;
+}

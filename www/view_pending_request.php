@@ -79,41 +79,100 @@
                 <!-- Pull Request Items IMAGE, NAME, DESCRIPTION, LOCATION-->
                 <div class="row">
                     <div class="large-10 large-offset-1 columns" id="pending_pull_results">
-                <table>
-                    <thead>
-                        <tr>
-                        <th width="25%">Item Image</th>
-                        <th width="25%">Item Name</th>
-                        <th width="30%">Item Description</th>
-                        <th width="20%">Item Location</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Content Goes Here</td>
-                            <td><h4><a href="inventory_page.php?idnumber=xx">Item Name</a></h4></td>
-                            <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
-                            <td>Content Goes Here</td>
-                        </tr>
-                         <tr>
-                            <td>Content Goes Here</td>
-                            <td><h4><a href="inventory_page.php?idnumber=xx">Item Name</a></h4></td>
-                            <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
-                            <td>Content Goes Here</td>
-                        </tr>
-                         <tr>
-                            <td>Content Goes Here</td>
-                            <td><h4><a href="inventory_page.php?idnumber=xx">Item Name</a></h4></td>
-                            <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
-                            <td>Content Goes Here</td>
-                        </tr>
-                    </tbody>
-                </table>
+                        <table>
+                            <thead>
+                                <tr>
+                                <th width="25%">Item Image</th>
+                                <th width="25%">Item Name</th>
+                                <th width="30%">Item Description</th>
+                                <th width="25%">Item Location</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Content Goes Here</td>
+                                    <td><h4><a href="inventory_page.php?idnumber=xx">Item Name</a></h4></td>
+                                    <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
+                                    <td>Content Goes Here</td>
+                                </tr>
+                                 <tr>
+                                    <td>Content Goes Here</td>
+                                    <td><h4><a href="inventory_page.php?idnumber=xx">Item Name</a></h4></td>
+                                    <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
+                                    <td>Content Goes Here</td>
+                                </tr>
+                                 <tr>
+                                    <td>Content Goes Here</td>
+                                    <td><h4><a href="inventory_page.php?idnumber=xx">Item Name</a></h4></td>
+                                    <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
+                                    <td>Content Goes Here</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- End Display of Pull Request Items -->
+
+                <!-- Pull Request Options -->
+                <div class="row">
+                    <div class="large-10 large-offset-1 columns" id="pending_pull_results">
+
+                        <div class="button left" id="go_back">Go Back</div>
+                        <div class="button success right" id="accept_pull_request_button">Accept</div>
+                        <div class="button alert right" id="reject_pull_request_button">Reject</div>
+
+                    </div>
+                </div>
+                <!-- End Pull Request Options -->
+
+            </div>
+
+        </div>
+
+        <div class='reveal-modal' id='accept-request-modal' data-reveal>
+            Enter the rental fee for these items and any notes before
+            <div class="accept_request_box large-12 columns">
+                
+                <div class="row">
+                    <div class="large-12 columns">
+                        <input type="text" name="updateshippingname" id="update_shipping_name" placeholder="Rental Fee" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <input type="text" name="updateshippingaddress" id="update_shipping_address" placeholder="Shipping Address" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <input type="text" name="updateshippingcity" id="update_shipping_city" placeholder="Shipping City" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <input type="text" name="updateshippingstate" id="update_shipping_state" placeholder="Shipping State" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <input type="text" name="updateshippingzip" id="update_shipping_zip" placeholder="Shipping Zip Code" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <input type="text" name="updateshippingcountry" id="update_shipping_country" placeholder="Shipping Country" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-12 columns">
+                        <div class="button right" id="update_shipping_button">Update Shipping Information</div>
+
+                        <div class="button right cancel_button">Cancel</div>
                     </div>
                 </div>
 
-
             </div>
+        </div>
 
     <script>
         $(document).foundation();
