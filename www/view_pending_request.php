@@ -136,8 +136,8 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php //include "../backend/AdminViewPullRequest.php"; ?>
-                                <tr>
+                                <?php include "../backend/AdminViewPullRequest.php"; ?>
+<!--                                 <tr>
                                     <td><img src="http://placehold.it/320x240&text=Ad" /></td>
                                     <td><h4><a href="inventory_page.php?idnumber=xx">Item Name</a></h4></td>
                                     <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
@@ -154,7 +154,7 @@
                                     <td><h4><a href="inventory_page.php?idnumber=xx">Item Name</a></h4></td>
                                     <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
                                     <td>Content Goes Here</td>
-                                </tr>
+                                </tr> -->
                             </tbody>
                         </table>
                     </div>

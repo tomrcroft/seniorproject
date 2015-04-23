@@ -17,13 +17,13 @@ if (!$conn) {
     }        
     else
     {
-    	$formvars = array($_POST['idnumber']);
+    	$formvars = array($_GET['idnumber']);
 
     	//need picture, name, description, location
     	$query = "SELECT Costume_Image, Costume_Name, Costume_Description, Storage_Location 
     	FROM CMT..[Pull_Request_Line], CMT..[Costume]
     	WHERE CMT..[Pull_Request_Line].Pull_Request_ID = ?
-    	AND CMT..[Pull_Request_Line].Costume_Key = CMT..[Costume].Costume_Key "
+    	AND CMT..[Pull_Request_Line].Costume_Key = CMT..[Costume].Costume_Key";
 
 
     	//run query
