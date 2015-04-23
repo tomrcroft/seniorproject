@@ -1,5 +1,9 @@
+/*
+   CSS for view_pending_request.php
+*/
 
-#accept_pull_request_button {
+
+#accept_pull_request_modal_button {
    margin-left: 1em;
    margin-right: 0.5rem;
 }
@@ -10,4 +14,26 @@
 
 #reject-request-modal {
    color: #000000;
+}
+
+
+/*
+   Modal CSS
+*/
+.reveal-modal {
+   max-width: 40em;
+}
+
+.modal_instructions {
+   padding-left: 0.9375rem;
+   padding-right: 0.9375rem;
+   margin-bottom: 1em;
+}
+
+#pull_request_notes {
+   margin-bottom: 1rem;
+}
+
+#accept_pull_request_button {
+   margin-left: 1em;
 }

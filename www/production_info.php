@@ -153,7 +153,6 @@
                             <div class="row">
                                 <div class="large-12 columns">
                                         <textarea id="notes" placeholder="Notes (Optional)"></textarea>
-
                                 </div>
                             </div>
 <!--                             <div class="row">
