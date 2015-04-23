@@ -39,8 +39,8 @@ if (!$conn) {
                             </div>
                             <div class="left notes"> '. $row['Notes'] .' NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES </div>
                             
-                            <div id="accept_pull_request_button" class="button right">Accept</div>
-                            <div id="reject_pull_request_button" class="button right">Reject</div>
+                            <div id="accept_pull_request_modal_button" class="button success right">Accept</div>
+                            <div id="reject_pull_request_modal_button" class="button alert right">Reject</div>
                         </div>';
 
 

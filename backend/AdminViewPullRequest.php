@@ -27,8 +27,8 @@ if (!$conn) {
 
 
     	//run query
-    	$str = $query;
-		$stmt = sqlsrv_query($conn, $str, $pullrequestID);
+    	//$str = $query;
+		$stmt = sqlsrv_query($conn, $query, $pullrequestID);
 		if( $stmt === false ) {
                 die( print_r( sqlsrv_errors(), true));
             }

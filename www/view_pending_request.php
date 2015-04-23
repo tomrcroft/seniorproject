@@ -10,7 +10,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Costume Inventory System | Administrator | Pending Pull Requests</title>
+        <title>Costume Inventory System | Administrator | Accept/Reject Pull Request</title>
 
         <!-- Required header files -->
         <script src="../lib/foundation/js/vendor/jquery.js" type="text/javascript"></script>
@@ -93,7 +93,7 @@
                     <li>
                         <a href="order_status.php">Current Order Status</a>
                     </li>
-                    
+
                     <li class="divider"></li>
                     
                 </ul>
@@ -119,7 +119,7 @@
 
                 <div class="row">
                     <div class="large-10 large-offset-1 columns">
-                        <h3>Pull Request for Company (ID #)?</h3>
+                        <h3>Pull Request for Company (<span class="pull_number" data-pull-id="xx">ID: xx</span>)</h3>
                     </div>
                 </div>
 
@@ -136,6 +136,7 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php //include "../backend/AdminViewPullRequest.php"; ?>
                                 <tr>
                                     <td><img src="http://placehold.it/320x240&text=Ad" /></td>
                                     <td><h4><a href="inventory_page.php?idnumber=xx">Item Name</a></h4></td>
