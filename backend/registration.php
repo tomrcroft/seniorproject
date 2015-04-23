@@ -4,6 +4,7 @@
     $formvars = array($_POST['firstname'],$_POST['lastname'],$_POST['company'],$_POST['username'],
         $_POST['email'],$crypt,preg_replace('~[^0-9]~','',$_POST['phone']),preg_replace('~[^0-9]~','',$_POST['fax']));
 
+    //$formvars = array('lkdjfl','kdjfkdh','dfdfd','dfdfdfdfd','dfdfdfdfdfdfd','dfdfdf',312434,34132423);
     $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';//remember to change the server
     $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
     $link = sqlsrv_connect($server, $connectionInfo);
