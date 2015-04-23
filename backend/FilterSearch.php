@@ -42,6 +42,7 @@
         $group_flag = 1;
     }
 
+    //echo $age_flag . '-' . $sex_flag . '-' . $type_flag . '-' . $group_flag;
     /*$sql = $query;
     if (count($conditions) > 1) {
       $sql .= " WHERE " . implode(' AND ', $conditions);//destroy
@@ -53,6 +54,9 @@
     $link = sqlsrv_connect($server, $connectionInfo);
     $sql = "{call dbo.Filter_Search(?,?,?,?,?,?,?,?,?)}";
     $params = array($search,$age_flag,$by_age,$sex_flag,$by_sex,$type_flag,$by_type,$group_flag,$by_group);
+    foreach ($params as $value) {
+        echo $value . '-';
+    }
     //Checks connection
     if (!$link) {
         $output = "Problems with the database connection!"; 
