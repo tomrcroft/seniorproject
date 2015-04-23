@@ -116,7 +116,7 @@
             <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
 
 
-            <div class="large-12 columns">
+            <div class="large-8 large-offset-2 columns">
                 <h3>Add Administrator</h3>
                 <div class="row">
                     <div class="large-12 columns">

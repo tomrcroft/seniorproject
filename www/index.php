@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
    <head>
       <meta charset="utf-8" />
@@ -14,7 +13,6 @@
       <script src="../lib/foundation/js/vendor/modernizr.js" type="text/javascript"></script>
       <script src="../lib/foundation/js/foundation.min.js" type="text/javascript"></script>
       <!-- End Foundation Javascript-->
-
       <script src="../lib/js/login.js" type="text/javascript"></script>
       <script src="../lib/js/registration.js" type="text/javascript"></script>
       <script src="../lib/js/index.js" type="text/javascript"></script>
@@ -23,7 +21,6 @@
       <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
       <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
       <!-- End Foundation CSS -->
-
       <link rel="stylesheet" href="../lib/css/forms.css" type="text/css">
       <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
 
@@ -42,6 +39,8 @@
          </ul>
 
          <section class="top-bar-section">
+
+            <!-- Right Nav Section -->
             <ul class="right">
                <li class="has-form">
                   <a href="search_page.php" class="button alert">Search Inventory</a>
@@ -53,6 +52,7 @@
                   <div id="login_tab" class="button">Login</div>
                </li>
             </ul>
+            <!-- End Right Nav Section -->
          </section>
 
       </nav>
