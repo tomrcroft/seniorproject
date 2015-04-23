@@ -31,7 +31,8 @@ if (!$conn) {
 		if( $stmt === false ) {
             die( print_r( sqlsrv_errors(), true));
             }
-
+        $json = json_encode(array("location" => "pending_requests.php", "error" => false));
+        exit($json);
     }
 
 
