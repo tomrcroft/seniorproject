@@ -17,7 +17,7 @@ if (!$conn) {
     }        
     else
     {
-    	$pullrequestID = array($_POST['pullrequestID']);
+    	$formvars = array($_POST['pullrequestID']);
 
     	//need picture, name, description, location
     	$query = "SELECT Costume_Image, Costume_Name, Costume_Description, Storage_Location 
@@ -27,8 +27,8 @@ if (!$conn) {
 
 
     	//run query
-    	$str = $query;
-		$stmt = sqlsrv_query($conn, $str, $pullrequestID);
+    	//$str = $query;
+		$stmt = sqlsrv_query($conn, $query, $formvars);
 		if( $stmt === false ) {
                 die( print_r( sqlsrv_errors(), true));
             }
