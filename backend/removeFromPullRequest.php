@@ -1,13 +1,11 @@
 <?php
-
+include '../backend/DBConnection.php';
 /*
  * Deletes an individual item from a pull request
  */
 
     session_start();
-    $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
-    $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
-    $link = sqlsrv_connect($server, $connectionInfo);
+    $link = connect();
     //figure out what to do with price
     //$newPrice = calculateNewPrice();
     $newPrice = 0;

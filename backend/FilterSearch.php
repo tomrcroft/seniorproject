@@ -1,4 +1,5 @@
 <?php
+include '../backend/DBConnection.php';
 /*
  * Filter Search will take in the categories selected field and narrow the search
  * results based on the filter
@@ -48,9 +49,7 @@
     }*/
     // echo $sql;
     
-    $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
-    $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
-    $link = sqlsrv_connect($server, $connectionInfo);
+    $link = connect();
     $sql = "{call dbo.Filter_Search(?,?,?,?,?,?,?,?,?)}";
     $params = array($search,$age_flag,$by_age,$sex_flag,$by_sex,$type_flag,$by_type,$group_flag,$by_group);
     

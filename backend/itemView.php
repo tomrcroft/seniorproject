@@ -1,13 +1,12 @@
-<?php itemView();
+<?php 
+include '../backend/DBConnection.php';
+itemView();
 
 function itemView()
 {
     // $id = array(17);
     $id = array($_GET['idnumber']);
-    $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
-    $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
-    $link = sqlsrv_connect($server, $connectionInfo);
-
+    $link = connect();
     //Checks connection
     if (!$link) {
         $output = "Problems with the database connection!"; 

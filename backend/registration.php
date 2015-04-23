@@ -1,13 +1,12 @@
 <?php
+    include '../backend/DBConnection.php';
     session_start();
     $crypt = better_crypt($_POST['password']);
     $formvars = array($_POST['firstname'],$_POST['lastname'],$_POST['company'],$_POST['username'],
         $_POST['email'],$crypt,preg_replace('~[^0-9]~','',$_POST['phone']),preg_replace('~[^0-9]~','',$_POST['fax']));
 
     //$formvars = array('lkdjfl','kdjfkdh','dfdfd','dfdfdfdfd','dfdfdfdfdfdfd','dfdfdf',312434,34132423);
-    $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';//remember to change the server
-    $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
-    $link = sqlsrv_connect($server, $connectionInfo);
+    $link = connect();
             
     //checks if can be added to the database
     if(!IsUnique($link,'Email',array($formvars[4])))
@@ -25,9 +24,8 @@
     }        
     InsertIntoDB($link,$formvars);
     $_SESSION['login_user'] = $formvars[3]; // Initializing Session
-    $json = json_encode(array("location" => "registration_shipping.php", "error" => false));
+    $json = json_encode(array("location"=>"registration_shipping.php", "error" => false));
     exit($json);
-
     //inserts into the database   
    function InsertIntoDB($link,$formvars)
     {

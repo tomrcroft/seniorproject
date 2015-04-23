@@ -1,14 +1,12 @@
 <?php
-
+include '../backend/DBConnection.php';
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
 
     session_start();
-    $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
-    $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
-    $link = sqlsrv_connect($server, $connectionInfo);
+    $link = connect();
     //$formvars = array($_POST['pullId'],'Canceled',$_SESSION['login_user']);
     $formvars = array(9,'Canceled','jdub9108');
     //Checks connection

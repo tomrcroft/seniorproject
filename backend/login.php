@@ -1,5 +1,5 @@
 <?php
-
+include '../backend/DBConnection.php';
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -10,9 +10,7 @@
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
     
-    $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';//remember to change the server
-    $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
-    $link = sqlsrv_connect($server, $connectionInfo);
+    $link = connect();
     if (!$link) {
         $output = "Something went wrong with connecting to the database!"; 
         $json = json_encode($output);
@@ -46,7 +44,7 @@
     //$_SESSION['shopping_cart'];
     include '../backend/checkAdmin.php';
     if (checkIfAdmin($_SESSION['login_user'])){
-        $json = json_encode(array("location"=>"view_master_records.php", "error" => false));
+        $json = json_encode(array("location"=>"administrator.php", "error" => false));
         exit($json);
     }
     else{

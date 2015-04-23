@@ -1,5 +1,5 @@
 <?php
-
+include '../backend/DBConnection.php';
 /*
  * Submits a Pull Request to the database
  */
@@ -10,9 +10,7 @@
     $profileInfo = getUserInfo();
     include '../backend/GetShipAndBillInfo.php';
     $addressInfo = getAddressInfo($profileInfo['User_Key']);
-    $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
-    $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
-    $link = sqlsrv_connect($server, $connectionInfo);
+    $link = connect();
     //converted costume array Costume_Key-Quantity
     $list = formatList($_SESSION['shopping_cart']);
     $formvars = array($list,$_POST['productionName'],'n/a');
