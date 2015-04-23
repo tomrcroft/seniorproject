@@ -29,7 +29,7 @@
    display: block;
 }
 
-#accept_pull_request_button {
+#accept_pull_request_modal_button {
    display: inline-block;
    margin-left: 0.5em;
 }
