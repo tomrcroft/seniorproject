@@ -1,6 +1,4 @@
-<?php 
-include '../backend/DBConnection.php';
-filterDisplay();
+<?php filterDisplay();
 
 /*
  * filterDisplay will take a search term if one exists and display a filter by categories with the current results
@@ -10,7 +8,10 @@ function filterDisplay()
     //if empty have the filter show all filter possibilities
     if(!isset($_POST['searchterm']))
     {
-        $link = connect();        
+        $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
+        $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
+        $link = sqlsrv_connect($server, $connectionInfo);
+        
         //Checks connection
         if (!$link) {
             $output = "Problems with the database connection!"; 
@@ -47,7 +48,10 @@ function filterDisplay()
     else//run queries for each of the 4 with the search term
     {
         $search = array($_POST['searchterm']);//the value in the search box
-        $link = connect();
+        $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
+        $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
+        $link = sqlsrv_connect($server, $connectionInfo);
+        
         //Checks connection
         if (!$link) {
             $output = "Problems with the database connection!"; 

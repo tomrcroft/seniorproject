@@ -1,11 +1,13 @@
 <?php
-include '../backend/DBConnection.php';
+
 /*
  * This will display all the invoices a user has had sent to them
  */
-    $link = connect();
-    //$user = $_SESSION['login_user'];
-    $user = 'gurnit';
+    $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
+    $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195", "ReturnDatesAsStrings"=>"true");
+    $link = sqlsrv_connect($server, $connectionInfo);
+    $user = $_SESSION['login_user'];
+    //$user = 'gurnit';
     //Checks connection
     if (!$link) {
         $output = "Problems with the database connection!"; 

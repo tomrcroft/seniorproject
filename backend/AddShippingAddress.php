@@ -1,12 +1,14 @@
 <?php
-include '../backend/DBConnection.php';
+
 /*
  * Adds the shipping address to the database
  */
     session_start();
     if(!isset($_SESSION['user_id']))
         include '../backend/getUserId.php';
-    $link = connect();
+    $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
+    $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
+    $link = sqlsrv_connect($server, $connectionInfo);
     $formvars = array($_SESSION['user_id'],$_POST['shipAddress'],$_POST['shipCity'],$_POST['shipState'],
         $_POST['shipAreaCode'],$_POST['shipCountry'],$_POST['shipAttn']);
     /*$formvars = array('jdub9108''123 cossa blvd','sac town','CA',95831,'US','MR. Watts');*/

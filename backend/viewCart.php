@@ -1,5 +1,5 @@
 <?php
-include '../backend/DBConnection.php';
+
 /*
  * Creates the view of all the items currently in your shopping cart
  */
@@ -8,7 +8,9 @@ include '../backend/DBConnection.php';
         header ("Location: ../www/search_page.php");
     $cart = $_SESSION['shopping_cart'];
     //$cart = array(17,19,22);
-    $link = connect();
+    $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
+    $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
+    $link = sqlsrv_connect($server, $connectionInfo);
 
     //make query array from cart
     foreach ($cart as $value) {
@@ -59,21 +61,15 @@ include '../backend/DBConnection.php';
         //what i pulled out <img src="http://placehold.it/250x300&text=Costume Image" alt="Costume Image" 
         echo '
         <div id='. $item['Costume_Key'] .' class="row">
-          <div class="large-2 columns">
-            <a href="#"> <span> </span> '. $pic .'</a>
+          <div class="cart_item_image large-2 columns">
+            <a href="#"> '. $pic .'</a>
           </div>
           <div class="large-10 columns">
             <div class="row">
-              <div class=" large-9 columns">
+              <div class=" large-12 columns">
                 <h5><a href="#">'. $item['Costume_Name'] .'</a></h5>
                 <p>'. $item['Costume_Type'] .'</p>
-              </div>
-              <div class=" large-3 columns">
-                <div class="button expand medium remove_item">Remove Item</div>
 
-              </div>
-              <div class="row">
-                <div class=" large-12 columns">
                   <ul class="large-block-grid-2">
                     <li>
                       <ul>
@@ -86,15 +82,14 @@ include '../backend/DBConnection.php';
                     <li>
                       <ul>
                         <li><strong>Rental Fee:</strong> $000.00</li>
-
                       </ul>
                     </li>
                   </ul>
-                </div>
+                  <div class="button right remove_item">Remove Item</div>
               </div>
             </div>
-           </div>
-           <hr>
-          </div>';
+          </div>
+          <hr>
+        </div>';
     }
 ?>
