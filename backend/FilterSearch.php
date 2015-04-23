@@ -3,20 +3,20 @@
  * Filter Search will take in the categories selected field and narrow the search
  * results based on the filter
  */    
-     $search = 'nun';
+     /*$search = 'nun';
      $by_age = 'Adult';
      $by_sex = 'F';
      $by_type = 'Hat';
-     $by_group = '';
+     $by_group = '';*/
 
-    //$search = trim($_POST['searchterm']);
-    //$by_age = trim($_POST['age_facet']);
+    $search = trim($_POST['searchterm']);
+    $by_age = trim($_POST['age_facet']);
     $age_flag = 0;
-    //$by_sex = trim($_POST['gender_facet']);
+    $by_sex = trim($_POST['gender_facet']);
     $sex_flag = 0;
-    //$by_type = trim($_POST['type_facet']);
+    $by_type = trim($_POST['type_facet']);
     $type_flag = 0;
-    //$by_group = trim($_POST['group_facet']);
+    $by_group = trim($_POST['group_facet']);
     $group_flag = 0;
     
     //$query = "SELECT * FROM dbo.[Costume], dbo.[Dic_Costume_Type]";//destroy
@@ -42,7 +42,6 @@
         $group_flag = 1;
     }
 
-    //echo $age_flag . '-' . $sex_flag . '-' . $type_flag . '-' . $group_flag;
     /*$sql = $query;
     if (count($conditions) > 1) {
       $sql .= " WHERE " . implode(' AND ', $conditions);//destroy
@@ -54,9 +53,7 @@
     $link = sqlsrv_connect($server, $connectionInfo);
     $sql = "{call dbo.Filter_Search(?,?,?,?,?,?,?,?,?)}";
     $params = array($search,$age_flag,$by_age,$sex_flag,$by_sex,$type_flag,$by_type,$group_flag,$by_group);
-    foreach ($params as $value) {
-        echo $value . '-';
-    }
+    
     //Checks connection
     if (!$link) {
         $output = "Problems with the database connection!"; 
