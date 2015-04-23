@@ -1,4 +1,7 @@
-<?php session_start();?>
+<?php 
+    session_start();
+    include '../backend/checkAdmin.php';
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -35,6 +38,7 @@
                 <!-- Left Nav Section -->
                 <ul class="left">
                     <li class="divider"></li>
+                    <!-- Welcome User Section -->
                     <?php 
                         if(isset($_SESSION['login_user'])) { 
                     ?>
@@ -54,6 +58,33 @@
                     <?php 
                         }
                     ?>
+                    <!-- End Welcome User Section -->
+
+                    <!-- Admin Navigation -->
+                    <?php
+                        if(checkIfAdmin($_SESSION['login_user'])) {
+                    ?>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="add_administrator.php">Add Administrator</a>
+                        </li>
+
+                        <li class="divider"></li>
+                        <li>
+                            <a href="pending_requests.php">Pending Pull Requests
+                                (<?php include '../backend/GetPendingPullRequestCount.php'; ?>)
+                            </a>
+                        </li>
+
+                        <li class="divider"></li>
+                        <li>
+                            <a href="view_master_records.php">View Master Records</a>
+                        </li>
+                    <?php 
+                        }
+                    ?>
+                    <!-- End Admin Navigation -->
+
                     <li class="divider"></li>
                     <li>
                         <a href="pull_request_cart.php">Pull Request Cart<?php include '../backend/cartSize.php';?></a>
