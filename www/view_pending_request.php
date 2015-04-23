@@ -44,7 +44,7 @@
                     <li class="divider"></li>
                     <li>
                         <a href="pending_requests.php">Pending Pull Requests
-                            <?php include '../backend/GetPendingPullRequestCount'; ?>
+                            (<?php include '../backend/GetPendingPullRequestCount.php'; ?>)
                          </a>
                     </li>
                     <li class="divider"></li>
