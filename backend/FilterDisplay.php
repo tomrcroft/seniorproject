@@ -1,8 +1,7 @@
 <?php filterDisplay();
 
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+ * filterDisplay will take a search term if one exists and display a filter by categories with the current results
  */
 function filterDisplay()
 {
