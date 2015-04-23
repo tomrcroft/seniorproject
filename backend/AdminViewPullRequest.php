@@ -20,7 +20,7 @@ if (!$conn) {
     	$formvars = array($_GET['idnumber']);
 
     	//need picture, name, description, location
-    	$query = "SELECT Costume_Image, Costume_Name, Costume_Description, Storage_Location 
+    	$query = "SELECT Costume_Key, Costume_Image, Costume_Name, Costume_Description, Storage_Location 
     	FROM CMT..[Pull_Request_Line], CMT..[Costume]
     	WHERE CMT..[Pull_Request_Line].Pull_Request_ID = ?
     	AND CMT..[Pull_Request_Line].Costume_Key = CMT..[Costume].Costume_Key";
