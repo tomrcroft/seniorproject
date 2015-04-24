@@ -20,7 +20,7 @@ if (!$conn) {
     	$formvars = array($_GET['idnumber']);
 
     	//need picture, name, description, location
-    	$query = "SELECT Costume_Key, Costume_Image, Costume_Name, Costume_Description, Storage_Location 
+    	$query = "SELECT CMT..[Pull_Request_Line].Costume_Key, Costume_Image, Costume_Name, Costume_Description, Storage_Location 
     	FROM CMT..[Pull_Request_Line], CMT..[Costume]
     	WHERE CMT..[Pull_Request_Line].Pull_Request_ID = ?
     	AND CMT..[Pull_Request_Line].Costume_Key = CMT..[Costume].Costume_Key";
@@ -57,7 +57,7 @@ function displayItem($item)
         echo '
 					<tr>
                     <td>'. $pic .'</td>
-                                    <td><h4><a href="inventory_page.php?idnumber='. $PullRequestID .'">'. $item['Costume_Name'] .'</a></h4></td>
+                                    <td><h4><a href="inventory_page.php?idnumber='.$item['Costume_Key'].'">'. $item['Costume_Name'] .'</a></h4></td>
                                     <td> '. $item['Costume_Description'] .'</td>
                                     <td> '. $item['Storage_Location'] .'</td>
                                 </tr>

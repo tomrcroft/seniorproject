@@ -119,7 +119,7 @@
 
                 <div class="row">
                     <div class="large-10 large-offset-1 columns">
-                        <h3>Pull Request for Company (<span class="pull_number" data-pull-id="xx">ID: xx</span>)</h3>
+                        <h3>Pull Request for Company (<span class="pull_number" data-pull-id="<?php echo htmlspecialchars($_GET['idnumber']) ?>">ID: <?php echo htmlspecialchars($_GET['idnumber']) ?></span>)</h3>
                     </div>
                 </div>
 
