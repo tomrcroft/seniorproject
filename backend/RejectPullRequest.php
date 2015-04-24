@@ -16,7 +16,7 @@ $pullrequestID = $_POST['pullid'];
 $status = 'Rejected';
 $user = $_SESSION['login_user'];
 $fee = 0;
-$instructions = $_POST['notes'];
+$instructions = $_POST['reason'];
 $formvars = array($pullrequestID, $status, $fee, $instructions, $user);
 $str = "{call dbo.Accept_Reject_Pull_Request(?,?,?,?,?)}";
 
@@ -31,7 +31,8 @@ if (!$conn) {
 		if( $stmt === false ) {
             die( print_r( sqlsrv_errors(), true));
             }
-
+        $json = json_encode(array("location" => "pending_requests.php", "error" => false));
+        exit($json);
     }
 
 
