@@ -17,7 +17,7 @@ $status = 'Rejected';
 $user = $_SESSION['login_user'];
 $fee = 0;
 $instructions = $_POST['notes'];
-$formvars = array($pullrequestID, $status, $fee, $instructions, $username);
+$formvars = array($pullrequestID, $status, $fee, $instructions, $user);
 $str = "{call dbo.Accept_Reject_Pull_Request(?,?,?,?,?)}";
 
 if (!$conn) {
