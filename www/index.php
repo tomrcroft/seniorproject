@@ -1,3 +1,7 @@
+<?php
+    include '../backend/checkLoginAtIndex.php';
+?>
+
 <!DOCTYPE html>
 <html>
    <head>
