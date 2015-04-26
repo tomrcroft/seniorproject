@@ -1,5 +1,6 @@
 <?php
 require('fpdf.php');
+include '../backend/GetInvoiceInfo.php';
 
 class PDF extends FPDF
 {
@@ -32,6 +33,58 @@ class PDF extends FPDF
         $this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
     }
 
+    // All the invoice information
+    function InvoiceInfo($data)
+    {
+        // Colors, line width and bold font
+        $this->SetFillColor(144,144,144);
+        $this->SetTextColor(0);
+        $this->SetDrawColor(0,0,0);
+        $this->SetLineWidth(.3);
+        $this->SetFont('','B');
+        
+        // Date info
+        $this->Cell(30,7,'Date Created: ','LTB',0,'C',true);
+        $this->SetFont('');
+        $this->Cell(25,7,substr($data['Created_Date'],0,strrpos($data['Created_Date'], " ") + 1),'TB',0,'C',true);
+        $this->SetFont('','B');
+        $this->Cell(85,7,'Date Range: ','TB',0,'R',true);
+        $this->SetFont('');
+        $this->Cell(0,7,str_replace('-', '/', $data['Delivery_Date']) . ' - ' . 
+                str_replace('-', '/', $data['Expected_Return_Date']),'RTB',1,'C',true);
+        
+        // Billing and Shipping info
+        $this->Ln(3);
+        $this->SetFont('','B');
+        $this->Cell(35,10,'Production: ','LT',0,'L',true);
+        $this->SetFont('');
+        $this->Cell(0,10,$data['Production'],'TR',1,'L',true);
+        $this->SetFont('','B');
+        $this->Cell(35,7,'Billing Address: ','L',0,'L',true);
+        $this->SetFont('');
+        $this->Cell(60,7,'Attn: ' . $data['Billing_Attn'],'',0,'L',true);
+        $this->SetFont('','B');
+        $this->Cell(40,7,'Shipping Address: ','',0,'L',true);
+        $this->SetFont('');
+        $this->Cell(0,7,'Attn: ' . $data['Shipping_Attn'],'R',1,'L',true);
+        $this->Cell(35,7,'','L',0,'C',true);//blank cell
+        $this->Cell(100,7,$data['Billing_Street_Address'],'',0,'L',true);
+        $this->Cell(0,7,$data['Shipping_Street_Address'],'R',1,'L',true);
+        $this->Cell(35,7,'','L',0,'C',true);//blank cell
+        $this->Cell(100,7,$data['Billing_City'] . ', ' . $data['Billing_State_Province'] . ' ' . 
+                $data['Billing_Postal_Code'],'',0,'L',true);
+        $this->Cell(0,7,$data['Shipping_City'] . ', ' . $data['Shipping_State_Province'] . ' ' . 
+                $data['Shipping_Postal_Code'],'R',1,'L',true);
+        $this->Cell(0,3,'','LBR',1,'C',true);//blank cell
+        
+        // Contact info
+        $this->Ln(3);
+        
+        // Line break
+        $this->Ln(15);
+        
+    }
+    
     // Colored table
     function FancyTable($header, $data)
     {
@@ -68,8 +121,9 @@ class PDF extends FPDF
 
 //db connection
 $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
-$connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
+$connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195", "ReturnDatesAsStrings"=>"true");
 $link = sqlsrv_connect($server, $connectionInfo);
+
 //Checks connection
 if (!$link) {
     $output = "Problems with the database connection!"; 
@@ -83,7 +137,8 @@ else
         cmt..[Invoice_Line].Created_By = ? AND Invoice_ID = ?";
     //$params = array($_Post['user'], $_POST['ID']);
     $params = array('bigwatts',16);//needs user id
-    //run query
+    //run queries
+    $invoice = getInfo($link,$params[0],$params[1]);
     $stmt = sqlsrv_query($link,$str,$params);
     if( $stmt === false ) {
         die( print_r( sqlsrv_errors(), true));
@@ -99,7 +154,8 @@ else
     // Instanciation of inherited class
     $pdf = new PDF();
     $pdf->AliasNbPages();
-    $pdf->AddPage();
+    $pdf->AddPage();    
+    $pdf->InvoiceInfo($invoice);
     $header = array('Item ID', 'Description', 'Unit Replace.', 'Cost');
     $pdf->FancyTable($header,$data);
     $pdf->Output();
