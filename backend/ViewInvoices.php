@@ -17,7 +17,7 @@
     else
     {
         //run query
-        $str = "SELECT * FROM cmt..[Invoice_Hdr] WHERE Created_By = ? ORDER BY Status ASC";
+        $str = "SELECT * FROM cmt..[Invoice_Hdr] WHERE Username = ? ORDER BY Status,Created_Date ASC";
         $params = array($user);
         $stmt = sqlsrv_query($link,$str,$params);
         if( $stmt === false ) {
