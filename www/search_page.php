@@ -97,7 +97,7 @@
 
                <li class="divider"></li>
                <li>
-                  <a href="pull_request_cart.php">Pull Request Cart<?php include '../backend/cartSize.php';?></a>
+                  <a href="pull_request_cart.php">Pull Request Cart <span id="cart_size"><?php include '../backend/cartSize.php';?></span></a>
                </li>
 
                <li class="divider"></li>
