@@ -77,7 +77,7 @@ class PDF extends FPDF
                 $data['Shipping_Postal_Code'],'R',1,'L',true);
         $this->Cell(0,3,'','LBR',1,'C',true);//blank cell
         
-        // Convert phone and fax to string -- implement
+        // Convert phone and fax to string
         $phone = strval($data['Contact_Phone']);
         $fax = strval($data['Contact_Fax']);
         $formattedPhone = '(' . substr($phone, 0, 3) . ')' . substr($phone, 3, 3) . '-' . substr($phone, 6);
