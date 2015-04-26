@@ -62,13 +62,14 @@
         echo '
         <div id='. $item['Costume_Key'] .' class="row">
           <div class="cart_item_image large-2 columns">
-            <a href="#"> '. $pic .'</a>
+            <a href="inventory_page.php?idnumber=' . $item['Costume_Key'] . '"> '. $pic .'</a>
           </div>
           <div class="large-10 columns">
             <div class="row">
-              <div class=" large-12 columns">
-                <h5><a href="#">'. $item['Costume_Name'] .'</a></h5>
-                <p>'. $item['Costume_Type'] .'</p>
+              <div class="large-12 columns">
+                <h5 class="item_name"><a href="inventory_page.php?idnumber=' . $item['Costume_Key'] . '">'. $item['Costume_Name'] .'</a></h5>
+                <h6 class="item_type">'. $item['Costume_Type'] .'</h6>
+                <p class=".item_description"> ITEM DESCRIPTION HERE </p>
 
                   <ul class="large-block-grid-2">
                     <li>
@@ -77,11 +78,6 @@
                         <li><strong>Size:</strong> '. $item['Costume_Size'] .'</li>
                         <li><strong>Group:</strong> '. $item['Costume_Group'] .'</li>
 
-                      </ul>
-                    </li>
-                    <li>
-                      <ul>
-                        <li><strong>Rental Fee:</strong> $000.00</li>
                       </ul>
                     </li>
                   </ul>

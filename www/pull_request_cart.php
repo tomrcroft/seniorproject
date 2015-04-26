@@ -4,30 +4,33 @@
 ?>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>CMT | Costume Inventory System | Dashboard</title>
+      <title>CMT | Costume Inventory System | Dashboard</title>
 
-        <!-- Required header files -->
-        <script src="../lib/foundation/js/vendor/jquery.js" type="text/javascript"></script>
-        <script src="../lib/foundation/js/vendor/modernizr.js" type="text/javascript"></script>
-        <script src="../lib/foundation/js/foundation.min.js" type="text/javascript"></script>
-        <script src="../lib/js/logout.js" type="text/javascript"></script>
-        <script src="../lib/js/search.js" type="text/javascript"></script>
-        <script src="../lib/js/pull_request_cart.js" type="text/javascript"></script>
+      <!-- Required header files -->
+      <!-- Foundation Javascript -->
+      <script src="../lib/foundation/js/vendor/jquery.js" type="text/javascript"></script>
+      <script src="../lib/foundation/js/vendor/modernizr.js" type="text/javascript"></script>
+      <script src="../lib/foundation/js/foundation.min.js" type="text/javascript"></script>
+      <!-- End Foundation Javascript-->
+      <script src="../lib/js/logout.js" type="text/javascript"></script>
+      <script src="../lib/js/pull_request_cart.js" type="text/javascript"></script>
 
-        <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
-        <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
-        <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
-        <link rel="stylesheet" href="../lib/css/pull_request_cart.css" type="text/css">
+      <!-- Foundation CSS -->
+      <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
+      <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
+      <!-- End Foundation CSS -->
+      <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
+      <link rel="stylesheet" href="../lib/css/pull_request_cart.css" type="text/css">
 
-    </head>
+      <!-- End header files -->
+   </head>
 
-    <body>
-      
-<nav class="top-bar" data-topbar role="navigation">
+   <body>
+      <nav class="top-bar" data-topbar role="navigation">
 
          <ul class="title-area">
             <!-- <img src="../lib/images/smallCMTlogo.jpg" alt="CMT" style="width:100px;height:110px">-->
@@ -74,25 +77,26 @@
 
                <!-- Admin Navigation -->
                <?php
-                  if(checkIfAdmin($_SESSION['login_user'])) {
+                  if(isset($_SESSION['login_user']))
+                     if(checkIfAdmin($_SESSION['login_user'])) {
                ?>
-                  <li class="divider"></li>
-                  <li>
-                     <a href="pending_requests.php">Pending Pull Requests (<?php include '../backend/GetPendingPullRequestCount.php'; ?>)</a>
-                  </li>
+                     <li class="divider"></li>
+                     <li>
+                        <a href="pending_requests.php">Pending Pull Requests (<?php include '../backend/GetPendingPullRequestCount.php'; ?>)</a>
+                     </li>
 
-                  <li class="divider"></li>
-                  <li>
-                     <a href="view_master_records.php">View Master Records</a>
-                  </li>
+                     <li class="divider"></li>
+                     <li>
+                        <a href="view_master_records.php">View Master Records</a>
+                     </li>
                <?php 
-                  }
+                     }
                ?>
                <!-- End Admin Navigation -->
 
                <li class="divider"></li>
                <li>
-                  <a href="pull_request_cart.php">Pull Request Cart<?php include '../backend/cartSize.php';?></a>
+                  <a href="pull_request_cart.php">Pull Request Cart <span id="cart_size"><?php include '../backend/cartSize.php';?></span></a>
                </li>
 
                <li class="divider"></li>
@@ -101,14 +105,19 @@
                </li>
 
                <li class="divider"></li>
+               <li>
+                  <a href="view_invoices.php">View Invoices</a>
+               </li>
+
+               <li class="divider"></li>
             </ul>
             <!-- End Left Nav Section -->
 
             <!-- Right Nav Section -->
             <ul class="right">
-               <li class="has-form">
+              <li class="has-form">
                   <a href="search_page.php" class="button alert">Search Inventory</a>
-               </li>
+              </li>
                <?php
                   if(isset($_SESSION['login_user'])) { 
                ?>
@@ -120,7 +129,7 @@
                   else { 
                ?>
                   <li class="has-form">
-                     <a href="index.php" class="button">Register</a>
+                     <a href="index.php?form=register" class="button">Register</a>
                   </li>
                   <li class="has-form">
                      <a href="index.php" class="button">Login</a>
@@ -130,168 +139,48 @@
                ?>
             </ul>
             <!-- End Right Nav Section -->
-
          </section>
       </nav>
 
-        <div class="main-content row">    
+      <div class="row">    
 
-            <!-- Main Content Section -->
-            <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
+         <!-- Main Content Section -->
+         <div class="large-10 push-2 columns">
+            <p>
+            Items in your Pull Request<br>
+            If you would like to rent these items and checkout, click <b>Send Pull Request.</b><br>
+            If you would like to restart your pull request, click <b>Cancel Pull Request</b>
+            </p>
 
-          <div class="large-10 push-2 columns">
-              <p>
-                Items in your Pull Request<br>
-                If you would like to rent these items and checkout, click <b>Send Pull Request.</b><br>
-                If you would like to restart your pull request, click <b>Cancel Pull Request</b>
-              </p>
-              <div class="cart_results">
-
-              <?php include '../backend/viewCart.php';?>
-
-              </div>
-              <div id="send_pull_request" class="button right">Send Pull Request</div>
-              <div id="cancel_pull_request" class="button right">Cancel Pull Request</div>
-
-              <div class='reveal-modal' id='cancel-modal' data-reveal>
-                Are you sure you want to delete all items from your cart?
-                <div id="confirm_cancel" class="button right">Yes</div>
-                <div id="reject_cancel" class="button right">No</div>
-              </div>
-
-              <div class='reveal-modal' id='send-modal' data-reveal>
-                Are you sure you want to send a pull request for all items from your cart?
-                <div id="confirm_send" class="button right">Yes</div>
-                <div id="reject_send" class="button right">No</div>
-              </div>
-
-    
-          </div>
-          <div class="large-2 pull-10 columns">
-              <p><img src="http://placehold.it/250x300&text=Ad" /></p>
-          </div>
-        </div>
-
-
-
-        <!--
-      <div class="row ">
-        <div class="large-2 columns">
-          <a href="#"> <span> </span><img src="http://placehold.it/250x300&text=Costume Image" alt="Costume Image" class=" thumbnail"></a>
-        </div>
-        <div class="large-10 columns">
-          <div class="row">
-            <div class=" large-9 columns">
-              <h5><a href="#">Costume Name</a></h5>
-              <p>Costume Type</p>
+            <!-- List of Items in Cart Section -->
+            <div class="cart_results">
+               <?php include '../backend/viewCart.php';?>
             </div>
-            <div class=" large-3 columns">
-              <div class="button expand medium remove_item">Remove Item</div>
-               
+            <!-- End List of Items in Cart Section -->
+
+            <!-- Confirmation Modals -->
+            <div id="send_pull_request" class="button success right">Send Pull Request</div>
+            <div id="cancel_pull_request" class="button alert right">Cancel Pull Request</div>
+
+            <div class='reveal-modal' id='cancel-modal' data-reveal>
+               Are you sure you want to delete all items from your cart?
+               <div id="confirm_cancel" class="button right">Yes</div>
+               <div id="reject_cancel" class="button right">No</div>
             </div>
-            <div class="row">
-              <div class=" large-12 columns">
-                <ul class="large-block-grid-2">
-                  <li>
-                    <ul>
-                      <li><strong>Color:</strong> Black</li>
-                      <li><strong>Size:</strong> Large</li>
-                      <li><strong>Group:</strong> Star Wars</li>
-                      
-                    </ul>
-                  </li>
-                  <li>
-                    <ul>
-                      <li><strong>Rental Fee:</strong> $000.00</li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              </div>
+
+            <div class='reveal-modal' id='send-modal' data-reveal>
+               Are you sure you want to send a pull request for all items from your cart?
+               <div id="confirm_send" class="button right">Yes</div>
+               <div id="reject_send" class="button right">No</div>
             </div>
-          </div>
-        </div>
-        <hr>
+            <!-- End Confirmation Modals -->
+
+         </div>
+
+         <div class="large-2 pull-10 columns">
+            <p><img src="http://placehold.it/250x300&text=Ad" /></p>
+         </div>
       </div>
-      <div class="row ">
-        <div class="large-2 columns">
-          <a href="#"> <span> </span><img src="http://placehold.it/250x300&text=Costume Image" alt="Costume Image" class=" thumbnail"></a>
-        </div>
-        <div class="large-10 columns">
-          <div class="row">
-            <div class=" large-9 columns">
-              <h5><a href="#">Costume Name</a></h5>
-              <p>Costume Type</p>
-            </div>
-            <div class=" large-3 columns">
-              <div class="button expand medium remove_item">Remove Item</div>
-               
-            </div>
-            <div class="row">
-              <div class=" large-12 columns">
-                <ul class="large-block-grid-2">
-                  <li>
-                    <ul>
-                      <li><strong>Color:</strong> Black</li>
-                      <li><strong>Size:</strong> Large</li>
-                      <li><strong>Group:</strong> Star Wars</li>
-                      
-                    </ul>
-                  </li>
-                  <li>
-                    <ul>
-                      <li><strong>Rental Fee:</strong> $000.00</li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr>
-      </div>
-      <div class="row ">
-        <div class="large-2 columns">
-          <a href="#"> <span> </span><img src="http://placehold.it/250x300&text=Costume Image" alt="Costume Image" class=" thumbnail"></a>
-        </div>
-        <div class="large-10 columns">
-          <div class="row">
-            <div class=" large-9 columns">
-              <h5><a href="#">Costume Name</a></h5>
-              <p>Costume Type</p>
-            </div>
-            <div class=" large-3 columns">
-              <div class="button expand medium remove_item">Remove Item</div>
-               
-            </div>
-            <div class="row">
-              <div class=" large-12 columns">
-                <ul class="large-block-grid-2">
-                  <li>
-                    <ul>
-                      <li><strong>Color:</strong> Black</li>
-                      <li><strong>Size:</strong> Large</li>
-                      <li><strong>Group:</strong> Star Wars</li>
-                      
-                    </ul>
-                  </li>
-                  <li>
-                    <ul>
-                      <li><strong>Rental Fee:</strong> $000.00</li>
-                      
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <hr>
-      </div>
-    -->
-
-
 
     <script>
         $(document).foundation();

@@ -106,6 +106,11 @@
                </li>
 
                <li class="divider"></li>
+               <li>
+                  <a href="view_invoices.php">View Invoices</a>
+               </li>
+
+               <li class="divider"></li>
             </ul>
             <!-- End Left Nav Section -->
 
@@ -163,7 +168,7 @@
                   You may search costumes by name in the <b>Search Form</b> in the top bar.
                </p>
                <!-- Dummy data for search results DELETE THIS BEFORE INSTALLATION -->             
-<!--              <div class="inventory_image large-4 small-6 columns">
+            <!--  <div class="inventory_image large-4 small-6 columns">
                      <img src="../lib/images/costumes/18.jpg">
                      <div class="panel clearfix centered">
                         <h5>Item Name</h5>

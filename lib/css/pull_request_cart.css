@@ -47,3 +47,12 @@
 .cart_results {
    margin-right: 2em;
 }
+
+.item_name {
+  margin-bottom: 0;
+}
+
+.item_type {
+  margin-top: 0;
+  margin-bottom: 0;
+}
