@@ -26,6 +26,7 @@
     </head>
 
     <body>
+      
 <nav class="top-bar" data-topbar role="navigation">
 
          <ul class="title-area">
@@ -96,12 +97,7 @@
 
                <li class="divider"></li>
                <li>
-                  <a href="#1">Pull an entire set</a>
-               </li>
-
-               <li class="divider"></li>
-               <li>
-                  <a href="order_status.php">Current Order Status</a>
+                  <a href="order_status.php">Order Status</a>
                </li>
 
                <li class="divider"></li>
