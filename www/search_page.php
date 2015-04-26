@@ -78,19 +78,20 @@
 
                <!-- Admin Navigation -->
                <?php
-                  if(checkIfAdmin($_SESSION['login_user'])) {
+                  if(isset($_SESSION['login_user']))
+                     if(checkIfAdmin($_SESSION['login_user'])) {
                ?>
-                  <li class="divider"></li>
-                  <li>
-                     <a href="pending_requests.php">Pending Pull Requests (<?php include '../backend/GetPendingPullRequestCount.php'; ?>)</a>
-                  </li>
+                     <li class="divider"></li>
+                     <li>
+                        <a href="pending_requests.php">Pending Pull Requests (<?php include '../backend/GetPendingPullRequestCount.php'; ?>)</a>
+                     </li>
 
-                  <li class="divider"></li>
-                  <li>
-                     <a href="view_master_records.php">View Master Records</a>
-                  </li>
+                     <li class="divider"></li>
+                     <li>
+                        <a href="view_master_records.php">View Master Records</a>
+                     </li>
                <?php 
-                  }
+                     }
                ?>
                <!-- End Admin Navigation -->
 
@@ -101,12 +102,7 @@
 
                <li class="divider"></li>
                <li>
-                  <a href="#1">Pull an entire set</a>
-               </li>
-
-               <li class="divider"></li>
-               <li>
-                  <a href="order_status.php">Current Order Status</a>
+                  <a href="order_status.php">Order Status</a>
                </li>
 
                <li class="divider"></li>
@@ -136,7 +132,7 @@
                   else { 
                ?>
                   <li class="has-form">
-                     <a href="index.php" class="button">Register</a>
+                     <a href="index.php?form=register" class="button">Register</a>
                   </li>
                   <li class="has-form">
                      <a href="index.php" class="button">Login</a>
@@ -156,9 +152,10 @@
          <div class="large-10 push-2 columns">
             <div class="row" id="search_results">
                <?php
-                  if(!empty($_GET['status'])){
-                     echo  'You have been logged out';
-                  }
+                  if(!empty($_GET['status']))
+                     if($_GET['status'] == "LoggedOut")
+                        echo  'You have been logged out';
+                  
                ?>   
                <p> 
                   There are no results to display.<br>
