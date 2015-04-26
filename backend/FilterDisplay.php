@@ -61,7 +61,7 @@ function filterDisplay()
         else
         {
             //displays the age
-            $query = "{call dbo.Search_Costume(?)}";
+            $query = "{call dbo.Distinct_Search_Filter(?, 'Adult_or_Child')}";
             $stmt = sqlsrv_query($link,$query,$search);//runs first query
             if( $stmt === false ) {
                 die( print_r( sqlsrv_errors(), true));
@@ -72,7 +72,7 @@ function filterDisplay()
             sqlsrv_free_stmt($stmt);
             
             //displays the genders
-            $query2 = "{call dbo.Search_Costume(?)}";
+            $query2 = "{call dbo.Distinct_Search_Filter(?, 'Costume_Gender')}";
             $stmt2 = sqlsrv_query($link,$query2,$search);//runs first query
             if( $stmt2 === false ) {
                 die( print_r( sqlsrv_errors(), true));
@@ -83,7 +83,7 @@ function filterDisplay()
             sqlsrv_free_stmt($stmt2);
             
             //displays the type
-            $query3 = "{call dbo.Search_Costume(?)}";
+            $query3 = "{call dbo.Distinct_Search_Filter(?, 'Costume_Type')}";
             $stmt3 = sqlsrv_query($link,$query3,$search);//runs first query
             if( $stmt3 === false ) {
                 die( print_r( sqlsrv_errors(), true));
@@ -94,7 +94,7 @@ function filterDisplay()
             sqlsrv_free_stmt($stmt3);
             
             //displays the group
-            $query4 = "{call dbo.Search_Costume(?)}";
+            $query4 = "{call dbo.Distinct_Search_Filter(?, 'Costume_Group')}";
             $stmt4 = sqlsrv_query($link,$query4,$search);//runs second query
             if( $stmt4 === false ) {
                 die( print_r( sqlsrv_errors(), true));

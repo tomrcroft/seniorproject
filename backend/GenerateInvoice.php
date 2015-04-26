@@ -78,6 +78,10 @@ class PDF extends FPDF
         $this->Cell(0,3,'','LBR',1,'C',true);//blank cell
         
         // Convert phone and fax to string -- implement
+        $phone = strval($data['Contact_Phone']);
+        $fax = strval($data['Contact_Fax']);
+        $formattedPhone = '(' . substr($phone, 0, 3) . ')' . substr($phone, 3, 3) . '-' . substr($phone, 6);
+        $formattedFax = '(' . substr($fax, 0, 3) . ')' . substr($fax, 3, 3) . '-' . substr($fax, 6);
         
         
         // Contact info
@@ -89,9 +93,9 @@ class PDF extends FPDF
         $this->Cell(35,7,'','L',0,'C',true);//blank cell
         $this->Cell(0,7,$data['Contact_Email'],'R',1,'L',true);
         $this->Cell(35,7,'','L',0,'C',true);//blank cell
-        $this->Cell(0,7,$data['Contact_Phone'],'R',1,'L',true);
+        $this->Cell(0,7,$formattedPhone,'R',1,'L',true);
         $this->Cell(35,7,'','L',0,'C',true);//blank cell
-        $this->Cell(0,7,$data['Contact_Fax'],'R',1,'L',true);
+        $this->Cell(0,7,$formattedFax,'R',1,'L',true);
         $this->Cell(0,3,'','LBR',1,'C',true);//blank cell
         
         // Special Instructions
