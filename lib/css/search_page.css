@@ -19,10 +19,18 @@
    background: #f2f2f2;
 }
 
+.panel_image:hover {
+   cursor: pointer;
+}
+
 #search_num_results {
    margin-top: 0.5rem;
 }
 
 [class*="column"] + [class*="column"]:last-child {
    float: left;
+}
+
+label {
+   color: #FFFFFF;
 }

@@ -97,7 +97,7 @@
 
                <li class="divider"></li>
                <li>
-                  <a href="pull_request_cart.php">Pull Request Cart<?php include '../backend/cartSize.php';?></a>
+                  <a href="pull_request_cart.php">Pull Request Cart <span id="cart_size"><?php include '../backend/cartSize.php';?></span></a>
                </li>
 
                <li class="divider"></li>
@@ -156,7 +156,8 @@
                      if($_GET['status'] == "LoggedOut")
                         echo  'You have been logged out';
                   
-               ?>   
+               ?>
+               <div class="hide" id="add_item_text"> added to your cart!</div>   
                <p> 
                   There are no results to display.<br>
                   You may search costumes by name in the <b>Search Form</b> in the top bar.
