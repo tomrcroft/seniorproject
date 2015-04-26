@@ -1,4 +1,6 @@
-/* Styles for search results */
+/*
+   This is the CSS file for pull_request_cart.php.
+*/
 .results {
   margin-top: 50px;
 }
@@ -12,34 +14,6 @@
   margin-bottom: 10px;
 }
 
-#send_pull_request {
-   margin-left: 1em;
-   margin-right: 1em;
-}
-
-#confirm_cancel {
-   margin-left: 1em;
-}
-
-.remove_item {
-   vertical-align: bottom;
-}
-
-.item_image img {
-   margin-bottom: 1em;
-}
-
-#cancel-modal {
-   color: #000000;
-}
-
-#send-modal {
-   color: #000000;
-}
-
-#confirm_send {
-   margin-left: 1em;
-}
 .cart_item_image {
   margin-bottom: 1em;
 }
@@ -55,4 +29,34 @@
 .item_type {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.cart_item_image a img {
+   margin: auto;
+   display: block;
+}
+
+.remove_item {
+   vertical-align: bottom;
+}
+
+/*
+  Buttons and modals CSS
+*/
+#cancel-modal {
+   color: #000000;
+}
+#confirm_cancel {
+   margin-left: 1em;
+}
+
+#send_pull_request {
+   margin-left: 1em;
+   margin-right: 1em;
+}
+#send-modal {
+   color: #000000;
+}
+#confirm_send {
+   margin-left: 1em;
 }

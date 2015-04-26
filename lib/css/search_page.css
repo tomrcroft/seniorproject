@@ -1,5 +1,5 @@
 /*
-   This is the CSS file for search_page.css.
+   This is the CSS file for search_page.php.
 */
 
 .inventory_item {
@@ -23,10 +23,6 @@
    cursor: pointer;
 }
 
-.panel_image{
-   
-}
-
 #search_num_results {
    margin-top: 0.5rem;
 }
@@ -35,6 +31,9 @@
    float: left;
 }
 
+/*
+   Filter text color is white
+*/
 label {
    color: #FFFFFF;
 }

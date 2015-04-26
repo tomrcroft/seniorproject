@@ -170,8 +170,8 @@
 
             <div class='reveal-modal' id='send-modal' data-reveal>
                Are you sure you want to send a pull request for all items from your cart?
-               <div id="confirm_send" class="button right">Yes</div>
-               <div id="reject_send" class="button right">No</div>
+               <div id="confirm_send" class="button success right">Yes</div>
+               <div id="reject_send" class="button alert right">No</div>
             </div>
             <!-- End Confirmation Modals -->
 
