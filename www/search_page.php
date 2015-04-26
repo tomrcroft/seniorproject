@@ -156,7 +156,8 @@
                      if($_GET['status'] == "LoggedOut")
                         echo  'You have been logged out';
                   
-               ?>   
+               ?>
+               <div class="hide" id="add_item_text"> added to your cart!</div>   
                <p> 
                   There are no results to display.<br>
                   You may search costumes by name in the <b>Search Form</b> in the top bar.

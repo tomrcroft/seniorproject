@@ -11,7 +11,9 @@
     include '../backend/checkIfLoggedIn.php';
     $itemID = $_POST['itemID'];
     $_SESSION['shopping_cart'][] = $itemID;
+
+    //for debugging
     foreach ($_SESSION['shopping_cart'] as $value) {
         echo $value;
-}
+   }
 ?>
