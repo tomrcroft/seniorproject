@@ -155,7 +155,7 @@
      
          <!-- Search Results Section -->
          <div class="large-10 push-2 columns">
-            <div class="row" id="search_results">
+            <div class="row" id="search_results" data-equalizer="foo">
                <?php
                   if(!empty($_GET['status']))
                      if($_GET['status'] == "LoggedOut")
