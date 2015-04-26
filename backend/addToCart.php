@@ -13,7 +13,7 @@
     $_SESSION['shopping_cart'][] = $itemID;
 
     //for debugging
-    foreach ($_SESSION['shopping_cart'] as $value) {
-        echo $value;
-   }
+   //  foreach ($_SESSION['shopping_cart'] as $value) {
+   //      echo $value;
+   // }
 ?>
