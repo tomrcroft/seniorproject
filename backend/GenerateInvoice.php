@@ -19,7 +19,7 @@ class PDF extends FPDF
         $this->MultiCell(50,5,"1510 J Street, Suite 200 \n Sacramento, CA 95814 \n (916)446-5880 \n Fax# (916)446-1370",
                 0,'C');
         // Line break
-        $this->Ln(20);
+        $this->Ln(10);
     }
 
     // Page footer
@@ -77,11 +77,33 @@ class PDF extends FPDF
                 $data['Shipping_Postal_Code'],'R',1,'L',true);
         $this->Cell(0,3,'','LBR',1,'C',true);//blank cell
         
+        // Convert phone and fax to string -- implement
+        
+        
         // Contact info
         $this->Ln(3);
+        $this->SetFont('','B');
+        $this->Cell(35,7,'Contact: ','TL',0,'L',true);
+        $this->SetFont('');
+        $this->Cell(0,7,$data['Contact_Name'],'TR',1,'L',true);
+        $this->Cell(35,7,'','L',0,'C',true);//blank cell
+        $this->Cell(0,7,$data['Contact_Email'],'R',1,'L',true);
+        $this->Cell(35,7,'','L',0,'C',true);//blank cell
+        $this->Cell(0,7,$data['Contact_Phone'],'R',1,'L',true);
+        $this->Cell(35,7,'','L',0,'C',true);//blank cell
+        $this->Cell(0,7,$data['Contact_Fax'],'R',1,'L',true);
+        $this->Cell(0,3,'','LBR',1,'C',true);//blank cell
+        
+        // Special Instructions
+        $this->Ln(3);
+        $this->SetFont('','B');
+        $this->Cell(0,7,'Special Instructions: ','TLR',1,'L',true);
+        $this->SetFont('');
+        $this->MultiCell(0,7,$data['Special_Instructions'],'LRB','L',true);
+        $this->Cell(0,3,'','LBR',1,'C',true);//blank cell
         
         // Line break
-        $this->Ln(15);
+        $this->Ln(10);
         
     }
     
@@ -109,13 +131,19 @@ class PDF extends FPDF
         {
             $this->Cell($w[0],6,$row['Costume_Key'],'LR',0,'L',$fill);
             $this->Cell($w[1],6,$row['Costume_Description'],'LR',0,'L',$fill);
-            $this->Cell($w[2],6,'$' . number_format($row['Replacement_Cost']),'LR',0,'R',$fill);
-            $this->Cell($w[3],6,'$' . number_format($row['Rental_Fee']),'LR',0,'R',$fill);
+            $this->Cell($w[2],6,'$' . number_format($row['Replacement_Cost'], 2),'LR',0,'R',$fill);
+            $this->Cell($w[3],6,'$' . number_format($row['Rental_Fee'], 2),'LR',0,'R',$fill);
             $this->Ln();
             $fill = !$fill;
         }
         // Closing line
         $this->Cell(array_sum($w),0,'','T');
+    }
+    
+    // Total Cost
+    function Total()
+    {
+        
     }
 }
 
