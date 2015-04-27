@@ -8,7 +8,7 @@
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <title>CMT | Costume Inventory System | Dashboard</title>
+      <title>Costume Inventory System | Pull Request Cart</title>
 
       <!-- Required header files -->
       <!-- Foundation Javascript -->

@@ -1,8 +1,6 @@
 <?php
-    include '../backend/checkIfLoggedIn.php';
-    include '../backend/checkAdmin.php';
-    if(!checkIfAdmin($_SESSION['login_user']))
-        header ("Location: ../www/index.php");
+   include '../backend/checkIfLoggedIn.php';
+   include '../backend/checkAdmin.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,12 +15,12 @@
         <script src="../lib/foundation/js/vendor/modernizr.js" type="text/javascript"></script>
         <script src="../lib/foundation/js/foundation.min.js" type="text/javascript"></script>
         <script src="../lib/js/logout.js" type="text/javascript"></script>
-        <script src="../lib/js/pending_requests.js" type="text/javascript"></script>
+        <script src="../lib/js/view_invoices.js" type="text/javascript"></script>
 
         <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
         <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
         <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
-        <link rel="stylesheet" href="../lib/css/pending_requests.css" type="text/css">
+        <link rel="stylesheet" href="../lib/css/view_invoices.css" type="text/css">
 
     </head>
 
@@ -142,43 +140,59 @@
       </nav>
       <!-- End Top Navigation -->
 
-        <div class="row">    
+      <div class="row">    
 
-            <!-- Pending Pull Requests View -->
-            <div class="large-12 columns">
+         <!-- View Invoices View -->
+         <div class="large-12 columns">
 
-                <div class="row">
-                    <div class="large-10 large-offset-1 columns">
-                        <h3>Pending Pull Requests (<?php include '../backend/GetPendingPullRequestCount.php'; ?>)</h3>
-                    </div>
-                </div>
-
-                <!-- View of Pending Pull Requests Section -->
-                
-                <div class="row">
-                    <div class="large-10 large-offset-1 columns" id="pending_pull_results">
-                        <?php include '../backend/DisplayPendingPullRequests.php'; ?>
-
-                        <!-- Dummy Data -->
-                        <div class="admin_pull_results panel clearfix" id="pull_request_idnumber" data-pull-id="xx">
-                            <div class="left pull_request_title"><b>PULL REQUEST NAME</b>
-                                <div class="date_created">DATE CREATED: MM-DD-YYYY</div>
-                                <div class="delivery_date">DELIVERY DATE: MM-DD-YYYY</div>
-                            </div>
-                            <div class="left notes">NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES </div>
-                            
-                            <div id="accept_pull_request_button" class="button right">Accept</div>
-                            <div id="reject_pull_request_button" class="button right">Reject</div>
-                        </div>
-                        <!-- End Dummy Data -->
-
-                    </div>
-                </div>
-                <!-- End View of Pending Pull Requests Section -->
-
-
+            <div class="row">
+               <div class="large-10 large-offset-1 columns">
+                  <h3>Your Invoices</h3>
+               </div>
             </div>
-        </div>
+
+            <!-- View Invoices Section -->
+            <div class="row">
+               <div class="large-10 large-offset-1 columns" id="invoice_results">
+
+                  <!-- Dummy Data EXPECTED DELIVERY AND RETURN DATE?-->
+                  <div class="user_invoice_results panel clearfix" data-invoice-id="xx">
+                     <div class="left invoice_title">
+                        <div class="invoice_name"><b>NAME</b></div>
+                        <div class="production_name">PRODUCTION</div>
+                     </div>
+                     <div class="left dates text-center">
+                        <div class="delivery_date">Expected Delivery Date: MM-DD-YYYY</div>
+                        <div class="return_date">Expected Return Date: MM-DD-YYYY</div>
+                     </div>
+                     <div class="right">
+                        <div class="invoice_total"><b>TOTAL:</b> $5000.00</div>
+                        <div id="accept_invoice_modal_button" class="button success right">Accept</div>
+                        <div id="reject_invoice_modal_button" class="button alert right">Reject</div>
+                     </div>
+                  </div>
+                  <div class="user_invoice_results panel clearfix" data-invoice-id="xx">
+                     <div class="left invoice_title">
+                        <div class="invoice_name"><b>NAME</b></div>
+                        <div class="production_name">PRODUCTION</div>
+                     </div>
+                     <div class="left dates text-center">
+                        <div class="delivery_date">Expected Delivery Date: MM-DD-YYYY</div>
+                        <div class="return_date">Expected Return Date: MM-DD-YYYY</div>
+                     </div>
+                     <div class="right">
+                        <div class="invoice_total"><b>TOTAL:</b> $5000.00</div>
+                        <div id="accept_invoice_modal_button" class="button success right">Accept</div>
+                        <div id="reject_invoice_modal_button" class="button alert right">Reject</div>
+                     </div>
+                  </div>
+                  <!-- End Dummy Data -->
+
+               </div>
+            </div>
+            <!-- End View Invoices Section -->
+         </div>
+      </div>
 
         <!-- Accept Pull Request Modal -->
         <div class='reveal-modal' id='accept-request-modal' data-reveal>

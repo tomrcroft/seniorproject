@@ -43,20 +43,14 @@
 /*
   Buttons and modals CSS
 */
-#cancel-modal {
+#cancel-modal, #send-modal {
    color: #000000;
 }
-#confirm_cancel {
+#confirm_cancel, #confirm_send {
    margin-left: 1em;
 }
 
 #send_pull_request {
    margin-left: 1em;
    margin-right: 1em;
-}
-#send-modal {
-   color: #000000;
-}
-#confirm_send {
-   margin-left: 1em;
 }

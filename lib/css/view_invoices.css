@@ -1,0 +1,69 @@
+/*
+   Invoice Panel CSS
+*/
+.panel:hover {
+   cursor: pointer;
+   background: #e3e3e3;
+}
+
+.panel {
+   padding-top: 1em;
+   background: #EFEFEF;
+}
+.user_invoice_results {
+   margin-bottom: 0;
+   padding-bottom: 0;
+}
+.invoice_title {
+   display: block;
+   width: 20%;
+}
+.invoice_name {
+   font-size: 125%;
+}
+.dates {
+   display: inline-block;
+   width: 60%;
+   vertical-align: middle;
+}
+.delivery_date, .return_date {
+   font-size: 120%;
+}
+.delivery_date {
+   margin-bottom: 1.5em;
+}
+.invoice_total {
+   font-size: 150%;
+   margin-bottom: 0.5em;
+}
+/*
+   Modal CSS STILL NEED TO MODIFY
+*/
+#accept_pull_request_modal_button {
+   margin-left: 1em;
+   margin-right: 0.5rem;
+}
+
+#accept-request-modal {
+   color: #000000;
+}
+
+#reject-request-modal {
+   color: #000000;
+}
+
+.reveal-modal {
+   max-width: 40em;
+}
+
+.modal_instructions {
+   padding-left: 0.9375rem;
+   padding-right: 0.9375rem;
+   margin-bottom: 1em;
+}
+
+#accept_invoice_modal_button {
+   margin-left: 1em;
+}
+
+
