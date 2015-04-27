@@ -8,7 +8,7 @@
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-      <title>Costume Inventory System | Pull Request Cart</title>
+      <title>Costume Inventory System | Invoice View</title>
 
       <!-- Required header files -->
       <!-- Foundation Javascript -->
@@ -146,9 +146,7 @@
 
          <!-- Main Content Section -->
          <div class="large-10 large-offset-1 columns">
-            <!-- <div> -->
              <iframe src="BeersAroundTheWorld.pdf" width="100%" height="800em"></iframe>
-            <!-- </div> -->
          </div>
          <!-- End Main Content Section -->
 
