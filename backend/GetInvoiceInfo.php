@@ -15,9 +15,8 @@ function getInfo($link,$user,$id)
     }        
     else
     {
-        $str = "SELECT * FROM cmt..[Invoice_Hdr] WHERE Username = ? 
-            AND Invoice_ID = ?";
-        $params = array($user,$id);
+        $str = "SELECT * FROM cmt..[Invoice_Hdr] WHERE Invoice_ID = ?";
+        $params = array($id);
         $stmt = sqlsrv_query($link,$str,$params);
         if( $stmt === false ) {
             die( print_r( sqlsrv_errors(), true));
