@@ -21,3 +21,11 @@
 #submit_info_button {
    margin-left: 1em;
 }
+
+.instructions {
+   font-size: 130%;
+   margin-bottom: 1em;
+}
+#step_one {
+   font-size: 120%;
+}

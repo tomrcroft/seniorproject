@@ -1,3 +1,11 @@
 #notes {
    margin-bottom: 1rem;
 }
+
+.instructions {
+   font-size: 130%;
+   margin-bottom: 1em;
+}
+#step_two {
+   font-size: 120%;
+}

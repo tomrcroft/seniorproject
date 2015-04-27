@@ -30,6 +30,7 @@
    </head>
 
    <body>
+      <!-- Top Navigation -->
       <nav class="top-bar" data-topbar role="navigation">
 
          <ul class="title-area">
@@ -141,7 +142,8 @@
             <!-- End Right Nav Section -->
          </section>
       </nav>
-
+      <!-- End Top Navigation -->
+      
       <div class="row">    
 
          <!-- Main Content Section -->

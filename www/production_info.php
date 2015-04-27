@@ -110,14 +110,17 @@
             </section>
         </nav>
 
-        <div class="welcome">
-            Costume Inventory<br>
-            Welcome to the California Musical Theatre Inventory System.<br>
-            <h2 class="text-center">Production Information</h2>
-            <p class="text-center">
-            Please <b>finish your pull request</b> by entering your <b>Production Information:</b> <br>
-            </p>
-        </div>
+      <div class="row">
+         <div class="large-6 large-offset-3 columns">
+      <div class="instructions text-center">
+         <div id="step_one">1. Please confirm your <b>billing information</b> and <b>shipping information</b>.</div>
+         <div id="step_two">2. Enter your <b>production information</b> before submitting your pull request.</div>
+      </div>
+      <div class="progress large-8 large-offset-2 success round">
+         <span class="meter" style="width: 70%"></span>
+      </div>
+   </div>
+   </div>
 
         <div class="row">
             <div class="large-3 large-centered columns">
