@@ -156,6 +156,8 @@
                <div class="large-10 large-offset-1 columns" id="invoice_results">
 
                   <!-- Dummy Data EXPECTED DELIVERY AND RETURN DATE?-->
+                  <?php include '../backend/ViewInvoices.php'; ?>
+                  <!--
                   <div class="user_invoice_result panel clearfix" data-invoice-id="xx">
                      <div class="left invoice_title">
                         <div class="invoice_name"><b>NAME</b></div>
@@ -213,7 +215,7 @@
                         <div class="invoice_total"><b>TOTAL:</b> $5000.00</div>
                         <div class="invoice_status"><b>Rejected</b></div>
                      </div>
-                  </div>
+                  </div>-->
                   <!-- End Dummy Data -->
 
                </div>

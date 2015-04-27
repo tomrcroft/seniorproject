@@ -31,6 +31,26 @@
             //invoice display goes here
             //data of importance: cost-$row['Total'], date approved-$row['Created_Date'], status-$row['Status']
             //should have link to the individual invoice view
+            echo '<div class="user_invoice_result panel clearfix" data-invoice-id="xx">
+                <div class="left invoice_title">
+                   <div class="production_name"><b>'. $row['Production'] .'</b></div>
+                   <div class="created_date">'. substr($row['Created_Date'],0,strrpos($row['Created_Date'], " ") + 1) .'</div>
+                </div>
+                <div class="left dates text-center">
+                   <div class="delivery_date">Expected Delivery Date: '. $row['Delivery_Date'] .'</div>
+                   <div class="return_date">Expected Return Date: '. $row['Expected_Return_Date'] .'</div>
+                </div>
+                <div class="right">
+                   <div class="invoice_total"><b>TOTAL:</b> $'. number_format($row['Invoice_Total'], 2) .'</div>';
+             if($row['Status'] == 'Pending'){
+             echo  '<div id="accept_invoice_modal_button" class="accept_invoice_modal_button button success right">Accept</div>
+                    <div id="reject_invoice_modal_button" class="reject_invoice_modal_button button alert right">Reject</div>';}
+            else
+            {
+                echo '<div class="invoice_status"><b>'. $row['Status'] .'</b></div>';
+            }
+             echo   '</div>
+             </div>';
         }
     }
 ?>
