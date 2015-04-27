@@ -4,7 +4,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-
+session_start();
 // server connection
 $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
 $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
@@ -17,8 +17,8 @@ if (!$link) {
 }        
 else
 {
-    $str = "{call dbo.Accept_Reject_Invoive(?,'Accepted',?)}";
-    $params = array($_POST['invoiceID'], $_SESSION['login_user']);
+    $str = "{call dbo.Accept_Reject_Invoice(?,'Accepted',?)}";
+    $params = array($_POST['invoiceid'], $_SESSION['login_user']);
     $stmt = sqlsrv_query($link,$str,$params);
     if( $stmt === false ) {
         die( print_r( sqlsrv_errors(), true));

@@ -16,18 +16,20 @@ $password="SJSUcmpe195";
 $connectionInfo = array( "UID"=>$username, "PWD"=>$password, "Database"=>$database);
 $conn = sqlsrv_connect( $serverName, $connectionInfo);
 
- $find = "gurnit";
-//all pull requests minus accepted
+ $find = $_POST['created_by'];;
+//all pull requests
+ $num_items_returned = 0;
 
-$query = sqlsrv_query( $conn, "SELECT * FROM cmt..Pull_Request_Hdr WHERE created_by LIKE '%$find%' AND status !='Accepted'");
+$query = sqlsrv_query( $conn, "SELECT * FROM cmt..[Pull_Request_Hdr] WHERE created_by LIKE '%$find%' ORDER BY Status ASC");
 
 while($result = sqlsrv_fetch_array( $query, SQLSRV_FETCH_ASSOC ))
 {
 
 $rows_pulls[] = $result;
+$num_items_returned++;
 }
 
-$query = sqlsrv_query( $conn, "SELECT * FROM cmt..Invoice WHERE username LIKE '%$find%'");
+$query = sqlsrv_query( $conn, "SELECT * FROM cmt..[Invoice_Hdr] WHERE username LIKE '%$find%'");
 
 while($result = sqlsrv_fetch_array( $query, SQLSRV_FETCH_ASSOC ));
 {
