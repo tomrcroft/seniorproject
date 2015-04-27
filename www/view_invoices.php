@@ -197,7 +197,7 @@
                      </div>
                      <div class="invoice_status_info right">
                         <div class="invoice_total"><b>TOTAL:</b> $5000.00</div>
-                        <div class="invoice_status">Approved</div>
+                        <div class="invoice_status"><b>Approved</b></div>
                      </div>
                   </div>
                   <div class="user_invoice_result panel clearfix" data-invoice-id="yx">
@@ -211,7 +211,7 @@
                      </div>
                      <div class="invoice_status_info right">
                         <div class="invoice_total"><b>TOTAL:</b> $5000.00</div>
-                        <div class="invoice_status">Rejected</div>
+                        <div class="invoice_status"><b>Rejected</b></div>
                      </div>
                   </div>
                   <!-- End Dummy Data -->
@@ -235,36 +235,19 @@
       </div>
       <!-- End Accept Invoice Modal -->
 
-        <!-- Reject Pull Request Modal -->
-        <div class='reveal-modal' id='reject-invoice-modal' data-reveal>
+      <!-- Reject Pull Request Modal -->
+      <div class='reveal-modal' id='reject-invoice-modal' data-reveal>
 
-            <div class="modal_instructions">
-                <b>To Reject the Pull Request</b> <br>
-                Enter the reason for rejection
-            </div>
+         <div class="modal_instructions">
+            Are you sure?<br> 
+            You will still pay the restocking fee of $<span class="restocking_fee"></span>.
+         </div>
 
-            <div class="row">
-                <div class="reject_request_box large-12 columns">
+         <div class="button alert right" id="reject_invoice_button">Reject Invoice</div>
+         <div class="button right cancel_modal_button">Cancel</div>
 
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <input type="text" name="rejectreason" id="reject_reason" placeholder="Reason" />
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <div class="button alert right" id="reject_pull_request_button">Reject Pull Request</div>
-
-                            <div class="button right cancel_modal_button">Cancel</div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-        <!-- End Accept Pull Request Modal -->
+      </div>
+      <!-- End Accept Pull Request Modal -->
 
     <script>
         $(document).foundation();

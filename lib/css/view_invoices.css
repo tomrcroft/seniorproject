@@ -44,7 +44,6 @@
 }
 .invoice_status {
    font-size: 150%;
-
 }
 .invoice_status_info {
    margin-right: 3em;
@@ -65,6 +64,6 @@
    margin-bottom: 1em;
 }
 
-#accept_invoice_button{
+#accept_invoice_button, #reject_invoice_button {
    margin-left: 1em;
 }
