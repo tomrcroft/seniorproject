@@ -166,11 +166,12 @@ else
 {
     $str = "SELECT * FROM cmt..[Costume], cmt..[Invoice_Line]
         WHERE cmt..[Costume].Costume_Key = cmt..[Invoice_Line].Costume_Key AND
-        cmt..[Invoice_Line].Created_By = ? AND Invoice_ID = ?";
-    //$params = array($_Post['user'], $_POST['ID']);
-    $params = array('bigwatts',16);//needs user id
+        Invoice_ID = ?";
+    //$params = array($_POST['invoiceID']);
+    $params = array(16);//needs user id
     //run queries
-    $invoice = getInfo($link,$params[0],$params[1]);
+    $invoice = getInfo($link,16);
+    //$invoice = getInfo($link,$_POST['invoiceID']);
     $stmt = sqlsrv_query($link,$str,$params);
     if( $stmt === false ) {
         die( print_r( sqlsrv_errors(), true));
