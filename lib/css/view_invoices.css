@@ -29,10 +29,7 @@
 .delivery_date, .return_date {
    font-size: 120%;
 }
-.delivery_date {
-   margin-bottom: 1.5em;
-}
-.return_date {
+.delivery_date, .return_date {
    margin-bottom: 1.5em;
 }
 .invoice_total {
@@ -54,16 +51,13 @@
 .reveal-modal {
    max-width: 40em;
 }
-
 #accept-invoice-modal, #reject-invoice-modal {
    color: #000000;
 }
-
 .modal_instructions {
    font-size: 125%;
    margin-bottom: 1em;
 }
-
 #accept_invoice_button, #reject_invoice_button {
    margin-left: 1em;
 }

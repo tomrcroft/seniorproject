@@ -8,7 +8,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Costume Inventory System | Administrator | Pending Pull Requests</title>
+        <title>Costume Inventory System | View Invoices</title>
 
         <!-- Required header files -->
         <script src="../lib/foundation/js/vendor/jquery.js" type="text/javascript"></script>
