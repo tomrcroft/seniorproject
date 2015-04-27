@@ -32,6 +32,7 @@
    </head>
 
    <body>
+      <!-- Top Navigation -->
       <nav class="top-bar" data-topbar role="navigation">
 
          <ul class="title-area">
@@ -143,6 +144,8 @@
             <!-- End Right Nav Section -->
          </section>
       </nav>
+      <!-- End Top Navigation -->
+      
       <div class="row">
          <div class="large-6 large-offset-3 columns">
       <div class="instructions text-center">

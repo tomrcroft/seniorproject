@@ -1,25 +1,9 @@
+/*
+   This is the CSS file for shipping_info.php.
+*/
+
 [class*="column"] + [class*="column"]:last-child {
    float: left;
-}
-
-#shipping-modal {
-   color: #000000;
-}
-
-#billing-modal {
-   color: #000000;
-}
-
-#update_shipping_button {
-   margin-left: 1em;
-}
-
-#update_billing_button {
-   margin-left: 1em;
-}
-
-#submit_info_button {
-   margin-left: 1em;
 }
 
 .instructions {
@@ -28,4 +12,15 @@
 }
 #step_one {
    font-size: 120%;
+}
+
+#shipping-modal, #billing-modal{
+   color: #000000;
+}
+#update_shipping_button, #update_billing_button {
+   margin-left: 1em;
+}
+
+#submit_info_button {
+   margin-left: 1em;
 }
