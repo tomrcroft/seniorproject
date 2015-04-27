@@ -146,7 +146,7 @@
 
          <!-- Main Content Section -->
          <div class="large-10 large-offset-1 columns">
-             <iframe src="BeersAroundTheWorld.pdf" width="100%" height="800em"></iframe>
+             <iframe src="../backend/GenerateInvoice.php?invoiceID=<?=$_GET['invoiceID']?>" width="100%" height="800em"></iframe>
          </div>
          <!-- End Main Content Section -->
 

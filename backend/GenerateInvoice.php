@@ -167,11 +167,11 @@ else
     $str = "SELECT * FROM cmt..[Costume], cmt..[Invoice_Line]
         WHERE cmt..[Costume].Costume_Key = cmt..[Invoice_Line].Costume_Key AND
         Invoice_ID = ?";
-    //$params = array($_POST['invoiceID']);
-    $params = array(16);//needs user id
+    $params = array($_GET['invoiceID']);
+    // $params = array(16);//needs user id
     //run queries
-    $invoice = getInfo($link,16);
-    //$invoice = getInfo($link,$_POST['invoiceID']);
+    // $invoice = getInfo($link,16);
+    $invoice = getInfo($link,$_GET['invoiceID']);
     $stmt = sqlsrv_query($link,$str,$params);
     if( $stmt === false ) {
         die( print_r( sqlsrv_errors(), true));
