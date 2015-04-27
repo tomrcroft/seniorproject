@@ -31,7 +31,7 @@
             //invoice display goes here
             //data of importance: cost-$row['Total'], date approved-$row['Created_Date'], status-$row['Status']
             //should have link to the individual invoice view
-            echo '<div class="user_invoice_result panel clearfix" data-invoice-id="xx">
+            echo '<div class="user_invoice_result panel clearfix" data-invoice-id="'. $row['Invoice_ID'] .'">
                 <div class="left invoice_title">
                    <div class="production_name"><b>'. $row['Production'] .'</b></div>
                    <div class="created_date">'. substr($row['Created_Date'],0,strrpos($row['Created_Date'], " ") + 1) .'</div>
