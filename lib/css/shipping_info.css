@@ -24,3 +24,8 @@
 #submit_info_button {
    margin-left: 1em;
 }
+
+.modal_title {
+   font-size: 125%;
+   padding-left: 1.5em;
+}

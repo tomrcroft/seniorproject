@@ -145,153 +145,171 @@
          </section>
       </nav>
       <!-- End Top Navigation -->
-      
+
+      <!-- Instruction Section -->
       <div class="row">
          <div class="large-6 large-offset-3 columns">
-      <div class="instructions text-center">
-         <div id="step_one">1. Please confirm your <b>billing information</b> and <b>shipping information</b>.</div>
-         <div id="step_two">2. Enter your production information before submitting your pull request.</div>
-      </div>
-      <div class="progress large-8 large-offset-2 success round">
-         <span class="meter" style="width: 35%"></span>
-      </div>
-   </div>
-   </div>
-    <div class="row">
-
-        <!--User Shipping Information Panel -->
-        <div class="large-4 large-offset-2 columns">
-            <div class="form-box">
-                <div class="row">
-                    <div class="large-12 columns">
-                        <div class="form_title">Shipping Information</div>
-                        <div class="account_info">
-                            <?php include '../backend/DisplayShippingAddress.php'; ?>
-                        </div>
-
-                        <div id="update_shipping_modal_button" class="button right">Update Shipping Information</div>
-
-                    </div>
-                </div>
+            <div class="instructions text-center">
+               <div id="step_one">1. Please confirm your <b>billing information</b> and <b>shipping information</b>.</div>
+               <div id="step_two">2. Enter your production information before submitting your pull request.</div>
             </div>
-        </div>
-        <!--End User Shipping Information Panel -->
-
-        <!--User Billing Information Panel -->
-        <div class="large-4 columns">
-            <div class="form-box">
-                <div class="row">
-                    <div class="large-12 columns">
-                        <div class="form_title">Billing Information</div>
-                        <div class="account_info">
-                            <?php include '../backend/DisplayBillingAddress.php'; ?>
-                        </div>
-
-                        <div id="update_billing_modal_button" class="button right">Update Billing Information</div>                        
-                            
-                    </div>
-                </div>
+            <div class="progress large-8 large-offset-2 success round">
+               <span class="meter" style="width: 35%"></span>
             </div>
-        </div>
-        <!--End User Billing Information Panel -->
+         </div>
+      </div>
+      <!-- End Instruction Section -->
 
-    </div>
+      <div class="row">
+
+         <!--User Shipping Information Panel -->
+         <div class="large-4 large-offset-2 columns">
+            <div class="form-box">
+               <div class="row">
+                  <div class="large-12 columns">
+                     <div class="form_title">Shipping Information</div>
+                     <div class="account_info">
+                        <?php include '../backend/DisplayShippingAddress.php'; ?>
+                     </div>
+
+                     <div id="update_shipping_modal_button" class="button right">Update Shipping Information</div>
+
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!--End User Shipping Information Panel -->
+
+         <!--User Billing Information Panel -->
+         <div class="large-4 columns">
+            <div class="form-box">
+               <div class="row">
+                  <div class="large-12 columns">
+                     <div class="form_title">Billing Information</div>
+                     <div class="account_info">
+                        <?php include '../backend/DisplayBillingAddress.php'; ?>
+                     </div>
+
+                     <div id="update_billing_modal_button" class="button right">Update Billing Information</div>                        
+
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!--End User Billing Information Panel -->
+
+      </div>
 
     <div class="row">
         <div class="large-8 large-centered columns">
-            <div class="button right" id="submit_info_button">Confirm Information</div>
-            <div class="button right" id="go_back">Go Back</div>
+            <div class="button success right" id="submit_info_button">Confirm Information</div>
+            <div class="button alert right" id="go_back">Go Back</div>
         </div>
     </div>
 
-    <div class='reveal-modal' id='shipping-modal' data-reveal>
-        Edit Shipping Information:
-        <div class="update_shipping_box large-12 columns">
+   <!-- Edit Shipping Modal -->
+   <div class='reveal-modal' id='shipping-modal' data-reveal>
+      <div class="modal_title">Edit Shipping Information:</div>
+      <div class="update_shipping_box large-12 columns">
+            
+         <div class="row">
+            <div class="large-12 columns">
+               <input type="text" name="updateshippingname" id="update_shipping_name" placeholder="Shipping Attn" />
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="large-12 columns">
+               <input type="text" name="updateshippingaddress" id="update_shipping_address" placeholder="Shipping Address" />
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="large-12 columns">
+               <input type="text" name="updateshippingcity" id="update_shipping_city" placeholder="Shipping City" />
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="large-12 columns">
+               <input type="text" name="updateshippingstate" id="update_shipping_state" placeholder="Shipping State" />
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="large-12 columns">
+               <input type="text" name="updateshippingzip" id="update_shipping_zip" placeholder="Shipping Zip Code" />
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="large-12 columns">
+               <input type="text" name="updateshippingcountry" id="update_shipping_country" placeholder="Shipping Country" />
+            </div>
+         </div>
+
+         <div class="row">
+            <div class="large-12 columns">
+               <div class="button success right" id="update_shipping_button">Update Shipping Information</div>
+               <div class="button alert right cancel_update">Cancel</div>
+            </div>
+         </div>
+
+      </div>
+   </div>
+   <!-- End Edit Shipping Modal -->
+
+   <!-- Edit Billing Modal -->
+   <div class='reveal-modal' id='billing-modal' data-reveal>
+      <div class="modal_title">Edit Billing Information:</div>
+         <div class="update_billing_box large-12 columns">
+
+            <div class="row">
+               <div class="large-12 columns">
+                  <input type="text" name="updatebillingname" id="update_billing_name" placeholder="Billing Attn" />
+               </div>
+            </div>
+
+            <div class="row">
+               <div class="large-12 columns">
+                  <input type="text" name="updatebillingaddress" id="update_billing_address" placeholder="Billing Address" />
+               </div>
+            </div>
+
+            <div class="row">
+               <div class="large-12 columns">
+                  <input type="text" name="updatebillingcity" id="update_billing_city" placeholder="Billing City" />
+               </div>
+            </div>
+
+            <div class="row">
+               <div class="large-12 columns">
+                  <input type="text" name="updatebillingstate" id="update_billing_state" placeholder="Billing State" />
+               </div>
+            </div>
+
+            <div class="row">
+               <div class="large-12 columns">
+                  <input type="text" name="updatebillingzip" id="update_billing_zip" placeholder="Billing Zip Code" />
+               </div>
+            </div>
+
+            <div class="row">
+               <div class="large-12 columns">
+                  <input type="text" name="updatebillingcountry" id="update_billing_country" placeholder="Billing Country" />
+               </div>
+            </div>
             
             <div class="row">
-                <div class="large-12 columns">
-                    <input type="text" name="updateshippingname" id="update_shipping_name" placeholder="Shipping Attn" />
-                </div>
+               <div class="large-12 columns">
+                  <div class="button success right" id="update_billing_button">Update Billing Information</div>
+                  <div class="button alert right cancel_update">Cancel</div>
             </div>
-            <div class="row">
-                <div class="large-12 columns">
-                    <input type="text" name="updateshippingaddress" id="update_shipping_address" placeholder="Shipping Address" />
-                </div>
-            </div>
-            <div class="row">
-                <div class="large-12 columns">
-                    <input type="text" name="updateshippingcity" id="update_shipping_city" placeholder="Shipping City" />
-                </div>
-            </div>
-            <div class="row">
-                <div class="large-12 columns">
-                    <input type="text" name="updateshippingstate" id="update_shipping_state" placeholder="Shipping State" />
-                </div>
-            </div>
-            <div class="row">
-                <div class="large-12 columns">
-                    <input type="text" name="updateshippingzip" id="update_shipping_zip" placeholder="Shipping Zip Code" />
-                </div>
-            </div>
-            <div class="row">
-                <div class="large-12 columns">
-                    <input type="text" name="updateshippingcountry" id="update_shipping_country" placeholder="Shipping Country" />
-                </div>
-            </div>
-            <div class="row">
-                <div class="large-12 columns">
-                    <div class="button right" id="update_shipping_button">Update Shipping Information</div>
+         </div>
 
-                    <div class="button right cancel_update">Cancel</div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <div class='reveal-modal' id='billing-modal' data-reveal>
-        Edit Billing Information:
-        <div class="update_billing_box large-12 columns">
-            <div class="row">
-                <div class="large-12 columns">
-                    <input type="text" name="updatebillingname" id="update_billing_name" placeholder="Billing Attn" />
-                </div>
-            </div>
-            <div class="row">
-                <div class="large-12 columns">
-                    <input type="text" name="updatebillingaddress" id="update_billing_address" placeholder="Billing Address" />
-                </div>
-            </div>
-            <div class="row">
-                <div class="large-12 columns">
-                    <input type="text" name="updatebillingcity" id="update_billing_city" placeholder="Billing City" />
-                </div>
-            </div>
-            <div class="row">
-                <div class="large-12 columns">
-                    <input type="text" name="updatebillingstate" id="update_billing_state" placeholder="Billing State" />
-                </div>
-            </div>
-            <div class="row">
-                <div class="large-12 columns">
-                    <input type="text" name="updatebillingzip" id="update_billing_zip" placeholder="Billing Zip Code" />
-                </div>
-            </div>
-            <div class="row">
-                <div class="large-12 columns">
-                    <input type="text" name="updatebillingcountry" id="update_billing_country" placeholder="Billing Country" />
-                </div>
-            </div>
-            <div class="row">
-                <div class="large-12 columns">
-                    <div class="button right" id="update_billing_button">Update Billing Information</div>
-
-                    <div class="button right cancel_update">Cancel</div>
-                </div>
-            </div>
-
-        </div>
-    </div>
+      </div>
+   </div>
+   <!-- End Edit Billing Modal -->
     
 
     <script>
