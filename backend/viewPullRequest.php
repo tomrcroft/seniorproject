@@ -44,7 +44,7 @@
             if ($row['Status'] != 'Accepted')
                 getItems($row['Pull_Request_ID'],$row['Created_By']);
             else 
-                echo 'This pull request is approved, <a href="view_invoice.php">View Invoice Here</a>!';
+                echo 'This pull request is approved, <a href="view_invoices.php">View Invoice Here</a>!';
             echo   '</div>
                   </li>';
         }
