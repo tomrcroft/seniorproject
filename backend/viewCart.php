@@ -26,7 +26,7 @@
     else
     {
         //need id,image,name,type(join),color,size,group,fee
-        $query = "SELECT Costume_Key,Costume_Image,Costume_Name,Costume_Type,Costume_Color,Costume_Size,Costume_Group,Rental_Fee 
+        $query = "SELECT Costume_Key,Costume_Image,Costume_Name,Costume_Description,Costume_Type,Costume_Color,Costume_Size,Costume_Group,Rental_Fee 
                     FROM CMT..[Costume], CMT..[Dic_Costume_Type], CMT..[Dic_Costume_Color] 
                     WHERE CMT..[Costume].Costume_Type_Key = CMT..[Dic_Costume_Type].Costume_Type_Key 
                     AND CMT..[Costume].Costume_Color_Key = CMT..[Dic_Costume_Color].Costume_Color_Key";
@@ -69,7 +69,7 @@
               <div class="large-12 columns">
                 <h5 class="item_name"><a href="inventory_page.php?idnumber=' . $item['Costume_Key'] . '">'. $item['Costume_Name'] .'</a></h5>
                 <h6 class="item_type">'. $item['Costume_Type'] .'</h6>
-                <p class=".item_description"> ITEM DESCRIPTION HERE </p>
+                <p class=".item_description"> '. $item['Costume_Description'] .' </p>
 
                   <ul class="large-block-grid-2">
                     <li>
