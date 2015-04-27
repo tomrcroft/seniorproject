@@ -17,8 +17,8 @@ if (!$link) {
 }        
 else
 {
-    $str = "";
-    $params = array();//needs to be filled
+    $str = "{call dbo.Accept_Reject_Invoive(?,'Accepted',?)}";
+    $params = array($_POST['invoiceID'], $_SESSION['login_user']);
     $stmt = sqlsrv_query($link,$str,$params);
     if( $stmt === false ) {
         die( print_r( sqlsrv_errors(), true));

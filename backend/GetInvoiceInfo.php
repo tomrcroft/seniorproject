@@ -5,7 +5,7 @@
  * and open the template in the editor.
  */
 
-function getInfo($link,$user,$id)
+function getInfo($link,$id)
 {
     //Checks connection
     if (!$link) {
