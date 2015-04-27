@@ -156,7 +156,7 @@
                <div class="large-10 large-offset-1 columns" id="invoice_results">
 
                   <!-- Dummy Data EXPECTED DELIVERY AND RETURN DATE?-->
-                  <div class="user_invoice_results panel clearfix" data-invoice-id="xx">
+                  <div class="user_invoice_result panel clearfix" data-invoice-id="xx">
                      <div class="left invoice_title">
                         <div class="invoice_name"><b>NAME</b></div>
                         <div class="production_name">PRODUCTION</div>
@@ -167,11 +167,11 @@
                      </div>
                      <div class="right">
                         <div class="invoice_total"><b>TOTAL:</b> $5000.00</div>
-                        <div id="accept_invoice_modal_button" class="button success right">Accept</div>
-                        <div id="reject_invoice_modal_button" class="button alert right">Reject</div>
+                        <div id="accept_invoice_modal_button" class="accept_invoice_modal_button button success right">Accept</div>
+                        <div id="reject_invoice_modal_button" class="reject_invoice_modal_button button alert right">Reject</div>
                      </div>
                   </div>
-                  <div class="user_invoice_results panel clearfix" data-invoice-id="xx">
+                  <div class="user_invoice_result panel clearfix" data-invoice-id="xy">
                      <div class="left invoice_title">
                         <div class="invoice_name"><b>NAME</b></div>
                         <div class="production_name">PRODUCTION</div>
@@ -182,8 +182,36 @@
                      </div>
                      <div class="right">
                         <div class="invoice_total"><b>TOTAL:</b> $5000.00</div>
-                        <div id="accept_invoice_modal_button" class="button success right">Accept</div>
-                        <div id="reject_invoice_modal_button" class="button alert right">Reject</div>
+                        <div id="accept_invoice_modal_button" class="accept_invoice_modal_button button success right">Accept</div>
+                        <div id="reject_invoice_modal_button" class="reject_invoice_modal_button button alert right">Reject</div>
+                     </div>
+                  </div>
+                  <div class="user_invoice_result panel clearfix" data-invoice-id="xz">
+                     <div class="left invoice_title">
+                        <div class="invoice_name"><b>NAME</b></div>
+                        <div class="production_name">PRODUCTION</div>
+                     </div>
+                     <div class="left dates text-center">
+                        <div class="delivery_date">Expected Delivery Date: MM-DD-YYYY</div>
+                        <div class="return_date">Expected Return Date: MM-DD-YYYY</div>
+                     </div>
+                     <div class="invoice_status_info right">
+                        <div class="invoice_total"><b>TOTAL:</b> $5000.00</div>
+                        <div class="invoice_status">Approved</div>
+                     </div>
+                  </div>
+                  <div class="user_invoice_result panel clearfix" data-invoice-id="yx">
+                     <div class="left invoice_title">
+                        <div class="invoice_name"><b>NAME</b></div>
+                        <div class="production_name">PRODUCTION</div>
+                     </div>
+                     <div class="left dates text-center">
+                        <div class="delivery_date">Expected Delivery Date: MM-DD-YYYY</div>
+                        <div class="return_date">Expected Return Date: MM-DD-YYYY</div>
+                     </div>
+                     <div class="invoice_status_info right">
+                        <div class="invoice_total"><b>TOTAL:</b> $5000.00</div>
+                        <div class="invoice_status">Rejected</div>
                      </div>
                   </div>
                   <!-- End Dummy Data -->
@@ -194,45 +222,21 @@
          </div>
       </div>
 
-        <!-- Accept Pull Request Modal -->
-        <div class='reveal-modal' id='accept-request-modal' data-reveal>
+      <!-- Accept Invoice Modal -->
+      <div class='reveal-modal' id='accept-invoice-modal' data-reveal>
 
-            <div class="modal_instructions">
-                <b>To Accept the Pull Request</b> <br>
-                Enter the rental fee for these items and any notes
-            </div>
+         <div class="modal_instructions">
+            Are you sure you want to <b>accept the invoice</b>?
+         </div>
 
-            <div class="row">
-                <div class="accept_request_box large-12 columns">
+         <div class="button success right" id="accept_invoice_button">Accept Invoice</div>
+         <div class="button alert right cancel_modal_button">Cancel</div>
 
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <input type="text" name="rentalfee" id="rental_fee" placeholder="Rental Fee" />
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <textarea id="pull_request_notes" placeholder="Notes (Optional)"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <div class="button success right" id="accept_pull_request_button">Accept Pull Request</div>
-
-                            <div class="button alert right cancel_modal_button">Cancel</div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-        <!-- End Accept Pull Request Modal -->
+      </div>
+      <!-- End Accept Invoice Modal -->
 
         <!-- Reject Pull Request Modal -->
-        <div class='reveal-modal' id='reject-request-modal' data-reveal>
+        <div class='reveal-modal' id='reject-invoice-modal' data-reveal>
 
             <div class="modal_instructions">
                 <b>To Reject the Pull Request</b> <br>
