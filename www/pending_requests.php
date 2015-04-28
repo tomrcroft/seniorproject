@@ -1,33 +1,37 @@
 <?php
-    include '../backend/checkIfLoggedIn.php';
-    include '../backend/checkAdmin.php';
-    if(!checkIfAdmin($_SESSION['login_user']))
-        header ("Location: ../www/index.php");
+   include '../backend/checkIfLoggedIn.php';
+   include '../backend/checkAdmin.php';
+   if(!checkIfAdmin($_SESSION['login_user']))
+      header ("Location: ../www/index.php");
 ?>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Costume Inventory System | Administrator | Pending Pull Requests</title>
+      <title>Costume Inventory System | Administrator | Pending Pull Requests</title>
 
-        <!-- Required header files -->
-        <script src="../lib/foundation/js/vendor/jquery.js" type="text/javascript"></script>
-        <script src="../lib/foundation/js/vendor/modernizr.js" type="text/javascript"></script>
-        <script src="../lib/foundation/js/foundation.min.js" type="text/javascript"></script>
-        <script src="../lib/js/logout.js" type="text/javascript"></script>
-        <script src="../lib/js/pending_requests.js" type="text/javascript"></script>
+      <!-- Required header files -->
+      <!-- Foundation Javascript -->
+      <script src="../lib/foundation/js/vendor/jquery.js" type="text/javascript"></script>
+      <script src="../lib/foundation/js/vendor/modernizr.js" type="text/javascript"></script>
+      <script src="../lib/foundation/js/foundation.min.js" type="text/javascript"></script>
+      <!-- End Foundation Javascript-->
+      <script src="../lib/js/logout.js" type="text/javascript"></script>
+      <script src="../lib/js/pending_requests.js" type="text/javascript"></script>
 
-        <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
-        <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
-        <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
-        <link rel="stylesheet" href="../lib/css/pending_requests.css" type="text/css">
+      <!-- Foundation CSS -->
+      <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
+      <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
+      <!-- End Foundation CSS -->
+      <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
+      <link rel="stylesheet" href="../lib/css/pending_requests.css" type="text/css">
 
-    </head>
+      <!-- End header files -->
+   </head>
 
    <body>
-
       <!-- Top Navigation -->
       <nav class="top-bar" data-topbar role="navigation">
 
@@ -142,80 +146,64 @@
       </nav>
       <!-- End Top Navigation -->
 
-        <div class="row">    
+      <div class="row">    
 
-            <!-- Pending Pull Requests View -->
-            <div class="large-12 columns">
-
-                <div class="row">
-                    <div class="large-10 large-offset-1 columns">
-                        <h3>Pending Pull Requests (<?php include '../backend/GetPendingPullRequestCount.php'; ?>)</h3>
-                    </div>
-                </div>
-
-                <!-- View of Pending Pull Requests Section -->
-                
-                <div class="row">
-                    <div class="large-10 large-offset-1 columns" id="pending_pull_results">
-                        <?php include '../backend/DisplayPendingPullRequests.php'; ?>
-
-                        <!-- Dummy Data -->
-<!--                         <div class="admin_pull_results panel clearfix" id="pull_request_idnumber" data-pull-id="xx">
-                            <div class="left pull_request_title"><b>PULL REQUEST NAME</b>
-                                <div class="date_created">DATE CREATED: MM-DD-YYYY</div>
-                                <div class="delivery_date">DELIVERY DATE: MM-DD-YYYY</div>
-                            </div>
-                            <div class="left notes">NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES </div>
-                            
-                            <div id="accept_pull_request_button" class="button right">Accept</div>
-                            <div id="reject_pull_request_button" class="button right">Reject</div>
-                        </div> -->
-                        <!-- End Dummy Data -->
-
-                    </div>
-                </div>
-                <!-- End View of Pending Pull Requests Section -->
-
-
-            </div>
-        </div>
-
-        <!-- Accept Pull Request Modal -->
-        <div class='reveal-modal' id='accept-request-modal' data-reveal>
-
-            <div class="modal_instructions">
-                <b>To Accept the Pull Request</b> <br>
-                Enter the rental fee for these items and any notes
-            </div>
-
+         <!-- Pending Pull Requests View -->
+         <div class="large-12 columns">
             <div class="row">
-                <div class="accept_request_box large-12 columns">
-
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <input type="text" name="rentalfee" id="rental_fee" placeholder="Rental Fee" />
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <textarea id="pull_request_notes" placeholder="Notes (Optional)"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <div class="button success right" id="accept_pull_request_button">Accept Pull Request</div>
-
-                            <div class="button alert right cancel_modal_button">Cancel</div>
-                        </div>
-                    </div>
-
-                </div>
+               <div class="large-10 large-offset-1 columns">
+                  <h3>Pending Pull Requests (<?php include '../backend/GetPendingPullRequestCount.php'; ?>)</h3>
+               </div>
             </div>
 
-        </div>
-        <!-- End Accept Pull Request Modal -->
+            <!-- View of Pending Pull Requests Section -->
+            <div class="row">
+               <div class="large-10 large-offset-1 columns" id="pending_pull_results">
+                  <?php include '../backend/DisplayPendingPullRequests.php'; ?>
+               </div>
+            </div>
+            <!-- End View of Pending Pull Requests Section -->
+
+         </div>
+      </div>
+
+      <!-- Accept Pull Request Modal -->
+      <div class='reveal-modal' id='accept-request-modal' data-reveal>
+
+         <div class="modal_instructions">
+            <b>To Accept the Pull Request</b> <br>
+            If you wish change the price of the pull request, enter a new rental fee.<br>
+            Current Total Rental Fee $<span class="current_rental_fee"></span>
+         </div>
+
+         <div class="row">
+            <div class="accept_request_box large-12 columns">
+
+               <div class="row">
+                  <div class="large-12 columns">
+                     <input type="text" name="rentalfee" id="rental_fee" placeholder="Rental Fee" />
+                  </div>
+               </div>
+
+               <div class="row">
+                  <div class="large-12 columns">
+                     <textarea rows="3" id="pull_request_notes" placeholder="Notes (Optional)"></textarea>
+                  </div>
+               </div>
+
+               <div class="row">
+                  <div class="large-12 columns">
+                     <div class="button success right" id="accept_pull_request_button">Accept Pull Request</div>
+
+                     <div class="button alert right cancel_modal_button">Cancel</div>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+
+      </div>
+      <!-- End Accept Pull Request Modal -->
 
         <!-- Reject Pull Request Modal -->
         <div class='reveal-modal' id='reject-request-modal' data-reveal>
