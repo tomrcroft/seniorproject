@@ -207,7 +207,7 @@ else
     $str = "SELECT * FROM cmt..[Costume], cmt..[Invoice_Line]
         WHERE cmt..[Costume].Costume_Key = cmt..[Invoice_Line].Costume_Key AND
         Invoice_ID = ?";
-    //$params = array($_POST['ID']);
+    //$params = array($_POST['invoiceID']);
     $params = array(19);//needs user id
     //run queries
     $invoice = getInfo($link,$params[0]);
