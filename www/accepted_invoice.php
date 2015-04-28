@@ -24,7 +24,6 @@
       <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
       <!-- End Foundation CSS -->
       <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
-      <link rel="stylesheet" href="../lib/css/accepted_invoice.css" type="text/css">
 
       <!-- End header files -->
    </head>
@@ -144,11 +143,11 @@
 
       <div class="row">    
 
-         <!-- Main Content Section -->
+         <!-- PDF iFrame Section -->
          <div class="large-10 large-offset-1 columns">
              <iframe src="../backend/GenerateInvoice.php?invoiceID=<?=$_GET['invoiceID']?>" width="100%" height="800em"></iframe>
          </div>
-         <!-- End Main Content Section -->
+         <!-- End PDF iFrame Section -->
 
       </div>
 

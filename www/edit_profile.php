@@ -224,62 +224,67 @@
             </div>
             <!-- End Edit Profile Content -->
 
+            <!-- Edit Shipping Content -->
             <div class="content" id="edit_shipping_panel">
-                    <div class="large-3 large-offset-1 columns">
-                        <div class="form-box">
-                            <div id="edit_profile_success" class="hide">Editted!</div>
-                                <div class="form_title">Edit Shipping</div>
-                                <div class="account_info">
-                                    <?php include '../backend/DisplayShippingAddress.php'; ?>
-                                </div>
-                        </div>
-                    </div>
+               <div class="large-3 large-offset-1 columns">
+                  <!-- Display User Shipping Information -->
+                  <div class="form-box">
+                     <div id="edit_profile_success" class="hide">Editted!</div>
+                     <div class="form_title">Edit Shipping</div>
+                     <div class="account_info">
+                        <?php include '../backend/DisplayShippingAddress.php'; ?>
+                     </div>
+                  </div>
+                  <!-- End Display User Shipping Information -->
+               </div>
 
-                    <div class="large-3 columns">
-                        <div class="form-box">
-                            <div class="row">
-                                <div class="update_shipping_box large-12 columns">
-                                    <div class="row">
-                                        <div class="large-12 columns">
-                                            <input type="text" name="updateshippingname" id="update_shipping_name" placeholder="Shipping Attn" />
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="large-12 columns">
-                                            <input type="text" name="updateshippingaddress" id="update_shipping_address" placeholder="Shipping Address" />
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="large-12 columns">
-                                            <input type="text" name="updateshippingcity" id="update_shipping_city" placeholder="Shipping City" />
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="large-12 columns">
-                                            <input type="text" name="updateshippingstate" id="update_shipping_state" placeholder="Shipping State" />
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="large-12 columns">
-                                            <input type="text" name="updateshippingzip" id="update_shipping_zip" placeholder="Shipping Zip Code" />
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="large-12 columns">
-                                            <input type="text" name="updateshippingcountry" id="update_shipping_country" placeholder="Shipping Country" />
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="large-12 large-centered columns">
-                                            <div class="button expand" id="update_shipping_button">Update Shipping Information</div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
+               <!-- Edit Shipping Information Form -->
+               <div class="large-3 columns">
+                  <div class="form-box">
+                     <div class="row">
+                        <div class="update_shipping_box large-12 columns">
+                           <div class="row">
+                              <div class="large-12 columns">
+                                 <input type="text" name="updateshippingname" id="update_shipping_name" placeholder="Shipping Attn" />
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="large-12 columns">
+                                 <input type="text" name="updateshippingaddress" id="update_shipping_address" placeholder="Shipping Address" />
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="large-12 columns">
+                                 <input type="text" name="updateshippingcity" id="update_shipping_city" placeholder="Shipping City" />
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="large-12 columns">
+                                 <input type="text" name="updateshippingstate" id="update_shipping_state" placeholder="Shipping State" />
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="large-12 columns">
+                                 <input type="text" name="updateshippingzip" id="update_shipping_zip" placeholder="Shipping Zip Code" />
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="large-12 columns">
+                                 <input type="text" name="updateshippingcountry" id="update_shipping_country" placeholder="Shipping Country" />
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="large-12 large-centered columns">
+                                 <div class="button expand" id="update_shipping_button">Update Shipping Information</div>
+                              </div>
+                           </div>
                         </div>
-                    </div>
-                </div>
+                     </div>
+                  </div>
+               </div>
+               <!-- End Edit Shipping Information Form -->
+            </div>
+            <!-- End Edit Shipping Content -->
 
                 <div class="content" id="edit_billing_panel">
 
