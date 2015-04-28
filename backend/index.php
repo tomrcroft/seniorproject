@@ -1,7 +1,8 @@
 <?php
 require('fpdf.php');
 include '../backend/GetInvoiceInfo.php';
-
+include '../backend/checkAdmin.php';
+session_start();
 class PDF extends FPDF
 {
     // Page header
@@ -37,7 +38,7 @@ class PDF extends FPDF
     function InvoiceInfo($data)
     {
         // Colors, line width and bold font
-        $this->SetFillColor(144,144,144);
+        $this->SetFillColor(168,168,168);
         $this->SetTextColor(0);
         $this->SetDrawColor(0,0,0);
         $this->SetLineWidth(.3);
@@ -115,7 +116,7 @@ class PDF extends FPDF
     function FancyTable($header, $data)
     {
         // Colors, line width and bold font
-        $this->SetFillColor(144,144,144);
+        $this->SetFillColor(168,168,168);
         $this->SetTextColor(0);
         $this->SetDrawColor(0,0,0);
         $this->SetLineWidth(.3);
@@ -149,7 +150,7 @@ class PDF extends FPDF
     function Total($invoice)
     {
         // Colors, line width and bold font
-        $this->SetFillColor(144,144,144);
+        $this->SetFillColor(168,168,168);
         $this->SetTextColor(0);
         $this->SetDrawColor(0,0,0);
         $this->SetLineWidth(.3);
@@ -172,7 +173,7 @@ class PDF extends FPDF
             $this->Cell(45,7,'Restocking Fee',1,0,'L');
             $this->Cell(25,7,'$'.number_format($invoice['Total_Restocking_Fee'],2),1,1,'R');
         }
-        //price change
+        //price change have if statement to see if rent total is different than overall total
         $this->Ln(10);
         
         if ($invoice['Status'] == 'Accepted' || $invoice['Status'] == 'Pending')
@@ -208,9 +209,10 @@ else
         WHERE cmt..[Costume].Costume_Key = cmt..[Invoice_Line].Costume_Key AND
         Invoice_ID = ?";
     //$params = array($_GET['invoiceID']);
-    $params = array(19);//needs user id
+    $params = array(17);//needs user id
     //run queries
     $invoice = getInfo($link,$params[0]);
+    
     $stmt = sqlsrv_query($link,$str,$params);
     if( $stmt === false ) {
         die( print_r( sqlsrv_errors(), true));
@@ -223,16 +225,18 @@ else
         if ($row['Source_Deleted'] == 0)
             $data[] = $row;
     }
-    
-    // Instanciation of inherited class
-    $pdf = new PDF();
-    $pdf->AliasNbPages();
-    $pdf->AddPage();    
-    $pdf->InvoiceInfo($invoice);
-    $header = array('Item ID', 'Description', 'Unit Replace.', 'Cost');
-    $pdf->FancyTable($header,$data);
-    $pdf->Total($invoice);
-    $pdf->Output();
+    if($_SESSION['login_user'] == $invoice['Username'] || checkIfAdmin($_SESSION['login_user']))
+    {
+        // Instanciation of inherited class
+        $pdf = new PDF();
+        $pdf->AliasNbPages();
+        $pdf->AddPage();    
+        $pdf->InvoiceInfo($invoice);
+        $header = array('Item ID', 'Description', 'Unit Replace.', 'Cost');
+        $pdf->FancyTable($header,$data);
+        $pdf->Total($invoice);
+        $pdf->Output();
+    }
     sqlsrv_free_stmt($stmt);
     sqlsrv_close($link);
 }
