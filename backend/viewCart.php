@@ -6,50 +6,53 @@
     
     if(!isset($_SESSION['shopping_cart']) && isset($_SESSION['login_user']))
         header ("Location: ../www/search_page.php");
-    $cart = $_SESSION['shopping_cart'];
-    //$cart = array(17,19,22);
-    $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
-    $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
-    $link = sqlsrv_connect($server, $connectionInfo);
-
-    //make query array from cart
-    foreach ($cart as $value) {
-        $conditions[] = "Costume_Key = $value";
-    }
-    
-    //Checks connection
-    if (!$link) {
-        $output = "Problems with the database connection!"; 
-        $json = json_encode($output);
-        echo $json;
-    }        
     else
     {
-        //need id,image,name,type(join),color,size,group,fee
-        $query = "SELECT Costume_Key,Costume_Image,Costume_Name,Costume_Description,Costume_Type,Costume_Color,Costume_Size,Costume_Group,Rental_Fee 
-                    FROM CMT..[Costume], CMT..[Dic_Costume_Type], CMT..[Dic_Costume_Color] 
-                    WHERE CMT..[Costume].Costume_Type_Key = CMT..[Dic_Costume_Type].Costume_Type_Key 
-                    AND CMT..[Costume].Costume_Color_Key = CMT..[Dic_Costume_Color].Costume_Color_Key";
-        //add str to query
-        $str = $query;
-        if (count($conditions) > 0) {
-            $str .= " AND ( " . implode(' OR ', $conditions) . " )";
+        $cart = $_SESSION['shopping_cart'];
+        //$cart = array(17,19,22);
+        $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
+        $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
+        $link = sqlsrv_connect($server, $connectionInfo);
+
+        //make query array from cart
+        foreach ($cart as $value) {
+            $conditions[] = "Costume_Key = $value";
         }
-        
-        //run query
-        $stmt = sqlsrv_query($link,$str);
-        if( $stmt === false ) {
-            die( print_r( sqlsrv_errors(), true));
-        }
-        while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
-            if($row === false) {
+
+        //Checks connection
+        if (!$link) {
+            $output = "Problems with the database connection!"; 
+            $json = json_encode($output);
+            echo $json;
+        }        
+        else
+        {
+            //need id,image,name,type(join),color,size,group,fee
+            $query = "SELECT Costume_Key,Costume_Image,Costume_Name,Costume_Description,Costume_Type,Costume_Color,Costume_Size,Costume_Group,Rental_Fee 
+                        FROM CMT..[Costume], CMT..[Dic_Costume_Type], CMT..[Dic_Costume_Color] 
+                        WHERE CMT..[Costume].Costume_Type_Key = CMT..[Dic_Costume_Type].Costume_Type_Key 
+                        AND CMT..[Costume].Costume_Color_Key = CMT..[Dic_Costume_Color].Costume_Color_Key";
+            //add str to query
+            $str = $query;
+            if (count($conditions) > 0) {
+                $str .= " AND ( " . implode(' OR ', $conditions) . " )";
+            }
+
+            //run query
+            $stmt = sqlsrv_query($link,$str);
+            if( $stmt === false ) {
                 die( print_r( sqlsrv_errors(), true));
             }
-            displayItem($row);
+            while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
+                if($row === false) {
+                    die( print_r( sqlsrv_errors(), true));
+                }
+                displayItem($row);
+            }
+            sqlsrv_free_stmt($stmt);
+            sqlsrv_close($link);
+            unset($conditions);
         }
-        sqlsrv_free_stmt($stmt);
-        sqlsrv_close($link);
-        unset($conditions);
     }
     function displayItem($item)
     {
