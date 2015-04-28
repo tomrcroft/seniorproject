@@ -1,6 +1,8 @@
 <?php
     include '../backend/checkIfLoggedIn.php';
     include '../backend/checkAdmin.php';
+    if(!isset($_SESSION['shopping_cart']))
+        header ("Location: ../www/search_page.php");
 ?>
 <!DOCTYPE html>
 <html>
