@@ -160,7 +160,7 @@
                                 <small class="error">Alphanumeric characters only.</small>
                             </div>
                             <div class="large-2 small-2 columns left">
-                              <button type="submit" class="button postfix">Search</button>
+                              <button type="submit" name="companySearch" class="button postfix">Search</button>
                                 <!-- <div id="find_records_button" class="button postfix">Search</div> -->
                             </div>
                         </div>
