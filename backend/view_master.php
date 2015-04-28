@@ -16,11 +16,14 @@ $password="SJSUcmpe195";
 $connectionInfo = array( "UID"=>$username, "PWD"=>$password, "Database"=>$database);
 $conn = sqlsrv_connect( $serverName, $connectionInfo);
 
- $find = $_POST['created_by'];
+$formvars = array($_POST['company']);
 //all pull requests
  $num_items_returned = 0;
 
-$query = sqlsrv_query( $conn, "SELECT * FROM cmt..[Pull_Request_Hdr] WHERE created_by LIKE '%$find%' ORDER BY Status ASC");
+$query = sqlsrv_query( $conn, "SELECT * FROM cmt..[Pull_Request_Hdr], cmt..[User]
+							   WHERE cmt..[User].Company = ?
+							   AND cmt..[User].Username = cmt..[Pull_Request_Hdr].Created_By
+							   ORDER BY Status ASC", $formvars);
 
 while($result = sqlsrv_fetch_array( $query, SQLSRV_FETCH_ASSOC ))
 {
@@ -29,9 +32,11 @@ $rows_pulls[] = $result;
 $num_items_returned++;
 }
 
-$query = sqlsrv_query( $conn, "SELECT * FROM cmt..[Invoice_Hdr] WHERE username LIKE '%$find%'");
+$query = sqlsrv_query( $conn, "SELECT * FROM cmt..[Invoice_Hdr], cnt..[User]
+                               WHERE cmt.[User].Company = ?
+                               AND cmt.[User].Username = cmt..[Invoice_Hdr].Username", $formvars);
 
-while($result = sqlsrv_fetch_array( $query, SQLSRV_FETCH_ASSOC ));
+while($results = sqlsrv_fetch_array( $query, SQLSRV_FETCH_ASSOC ));
 {
 $rows_invoice[] = $results;
 }
