@@ -155,72 +155,76 @@
          </ul>
          <!-- End Side navigation of Tabs -->
 
+         <!-- Edit Profile Content -->
          <div class="tabs-content">
             <div class="content active" id="edit_profile_panel">
                <div class="large-3 large-offset-1 columns">
                   <!-- Display Profile Information -->
                   <div class="form-box">
                      <div id="edit_profile_success" class="hide">Editted!</div>
-                        <div class="form_title">Edit Profile</div>
-                        <div class="account_info">
-                           <?php include '../backend/DisplayProfile.php';?>
-                        </div>
+                     <div class="form_title">Edit Profile</div>
+                     <div class="account_info">
+                        <?php include '../backend/DisplayProfile.php';?>
                      </div>
                   </div>
                   <!-- End Display Profile Information -->
+               </div>
 
-                    <div class="large-3 columns">
-                        <div class="form-box">
-                            <div class="row">
-                                <div class="edit_profile_box large-12 columns">
+               <!-- Edit Profile Information Form -->
+               <div class="large-3 columns">
+                  <div class="form-box">
+                     <div class="row">
+                        <div class="edit_profile_box large-12 columns">
 
-                                    <div class="row">
-                                        <div class="large-12 columns">
-                                            <input type="text" name="firstname" id="update_firstname" placeholder="First Name" />
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="large-12 columns">
-                                            <input type="text" name="lastname" id="update_lastname" placeholder="Last Name" />
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="large-12 columns">
-                                            <input type="text" name="Company" id="update_company" placeholder="Company" />
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="large-12 columns">
-                                            <input type="text" name="email" id="update_email" placeholder="E-mail" />
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="large-12 columns">
-                                            <input type="text" name="phone" id="update_phone" placeholder="Phone" />
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="large-12 columns">
-                                            <input type="text" name="fax" id="update_fax" placeholder="Fax" />
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="large-12 columns">
-                                            <input type="password" name="password" id="update_password" placeholder="Password" />
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="large-12 large-centered columns">
-                                            <input type="submit" class="button expand" id="update_profile" value="Update Profile"/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                           <div class="row">
+                              <div class="large-12 columns">
+                                 <input type="text" name="firstname" id="update_firstname" placeholder="First Name" />
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="large-12 columns">
+                                 <input type="text" name="lastname" id="update_lastname" placeholder="Last Name" />
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="large-12 columns">
+                                 <input type="text" name="Company" id="update_company" placeholder="Company" />
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="large-12 columns">
+                                 <input type="text" name="email" id="update_email" placeholder="E-mail" />
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="large-12 columns">
+                                 <input type="text" name="phone" id="update_phone" placeholder="Phone" />
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="large-12 columns">
+                                 <input type="text" name="fax" id="update_fax" placeholder="Fax" />
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="large-12 columns">
+                                 <input type="password" name="password" id="update_password" placeholder="Password" />
+                              </div>
+                           </div>
+                           <div class="row">
+                              <div class="large-12 large-centered columns">
+                                 <input type="submit" class="button expand" id="update_profile" value="Update Profile"/>
+                              </div>
+                           </div>
                         </div>
-                    </div>
-                </div>
-                <div class="content" id="edit_shipping_panel">
+                     </div>
+                  </div>
+               </div>
+               <!-- End Edit Profile Information Form -->
+            </div>
+            <!-- End Edit Profile Content -->
 
+            <div class="content" id="edit_shipping_panel">
                     <div class="large-3 large-offset-1 columns">
                         <div class="form-box">
                             <div id="edit_profile_success" class="hide">Editted!</div>
