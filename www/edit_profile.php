@@ -1,121 +1,173 @@
 <?php
     include '../backend/checkIfLoggedIn.php';
+    include '../backend/checkAdmin.php';
 ?>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Costume Inventory System | Dashboard</title>
+      <title>Costume Inventory System | Edit Profile</title>
 
-        <!-- Required header files -->
-        <script src="../lib/foundation/js/vendor/jquery.js" type="text/javascript"></script>
-        <script src="../lib/foundation/js/vendor/modernizr.js" type="text/javascript"></script>
-        <script src="../lib/foundation/js/foundation.min.js" type="text/javascript"></script>
-        <script src="../lib/js/search.js" type="text/javascript"></script>
-        <script src="../lib/js/edit_profile.js" type="text/javascript"></script>
-        <script src="../lib/js/logout.js" type="text/javascript"></script>
+      <!-- Required header files -->
+      <!-- Foundation Javascript -->
+      <script src="../lib/foundation/js/vendor/jquery.js" type="text/javascript"></script>
+      <script src="../lib/foundation/js/vendor/modernizr.js" type="text/javascript"></script>
+      <script src="../lib/foundation/js/foundation.min.js" type="text/javascript"></script>
+      <!-- End Foundation Javascript-->
+      <script src="../lib/js/logout.js" type="text/javascript"></script>
+      <script src="../lib/js/edit_profile.js" type="text/javascript"></script>
 
-        <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
-        <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
-        <link rel="stylesheet" href="../lib/css/forms.css" type="text/css">
-        <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
-        <link rel="stylesheet" href="../lib/css/edit_profile.css" type="text/css">
+      <!-- Foundation CSS -->
+      <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
+      <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
+      <!-- End Foundation CSS -->
+      <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
+      <link rel="stylesheet" href="../lib/css/forms.css" type="text/css">
+      <link rel="stylesheet" href="../lib/css/edit_profile.css" type="text/css">
 
-    </head>
+      <!-- End header files -->
+   </head>
 
-    <body>
-        <nav class="top-bar" data-topbar role="navigation">
-            <ul class="title-area">
-                <!-- <img src="../lib/images/smallCMTlogo.jpg" alt="CMT" style="width:100px;height:110px">-->
-                <li class="name">
-                    <h1><a href="index.php">Costume Inventory System</a></h1>
-                </li>
+   <body>
+      <!-- Top Navigation -->
+      <nav class="top-bar" data-topbar role="navigation">
+
+         <ul class="title-area">
+            <!-- <img src="../lib/images/smallCMTlogo.jpg" alt="CMT" style="width:100px;height:110px">-->
+            <li class="name">
+               <h1><a href="index.php">Costume Inventory System</a></h1>
+            </li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+         </ul>
+
+         <section class="top-bar-section">
+            <!-- Left Nav Section -->
+            <ul class="left">
+
+               <li class="divider"></li>
+
+               <!-- Welcome User Section -->
+               <?php 
+                  if(isset($_SESSION['login_user'])) { 
+               ?>
+                  <li class="has-dropdown">
+                     <a href="#">Welcome, <?=$_SESSION['login_user']?>!</a>
+                     <ul class="dropdown">
+                        <li><a href="edit_profile.php">Edit Profile</a></li>
+               <?php
+                  if(checkIfAdmin($_SESSION['login_user'])) {
+               ?>
+                  <li><a href="add_administrator.php">Add Administrator</a></li>
+               <?php 
+                  }
+               ?>
+                     </ul>
+                  </li>
+               <?php 
+                  }
+                  else { 
+               ?>
+                  <li>
+                     <div id="anonymous_login">Welcome, Anonymous!</div>
+                  </li>
+               <?php 
+                  }
+               ?>
+               <!-- End Welcome User Section -->
+
+               <!-- Admin Navigation -->
+               <?php
+                  if(isset($_SESSION['login_user']))
+                     if(checkIfAdmin($_SESSION['login_user'])) {
+               ?>
+                     <li class="divider"></li>
+                     <li>
+                        <a href="pending_requests.php">Pending Pull Requests (<?php include '../backend/GetPendingPullRequestCount.php'; ?>)</a>
+                     </li>
+
+                     <li class="divider"></li>
+                     <li>
+                        <a href="view_master_records.php">View Master Records</a>
+                     </li>
+               <?php 
+                     }
+               ?>
+               <!-- End Admin Navigation -->
+
+               <li class="divider"></li>
+               <li>
+                  <a href="pull_request_cart.php">Pull Request Cart <span id="cart_size"><?php include '../backend/cartSize.php';?></span></a>
+               </li>
+
+               <li class="divider"></li>
+               <li>
+                  <a href="order_status.php">Order Status</a>
+               </li>
+
+               <li class="divider"></li>
+               <li>
+                  <a href="view_invoices.php">View Invoices</a>
+               </li>
+
+               <li class="divider"></li>
             </ul>
+            <!-- End Left Nav Section -->
 
-            <section class="top-bar-section">
-                    <!-- Left Nav Section -->
-                <ul class="left">
-                    <li class="divider"></li>
-                    <?php
-                        if(isset($_SESSION['login_user'])) { 
-                    ?>
-                        <li class="has-dropdown">
-                            <a href="#">Welcome, <?=$_SESSION['login_user']?>!</a>
-                        <ul class="dropdown">
-                            <li><a href="edit_profile.php">Edit Profile</a></li>
-                        </ul>
-                        </li>
-                    <?php 
-                        }
-                        else { 
-                    ?>
-                        <li>
-                            <div id="anonymous_login">Welcome, Anonymous!</div>
-                        </li>
-                    <?php 
-                        }
-                    ?>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="pull_request_cart.php">Pull Request Cart<?php include '../backend/cartSize.php';?></a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#1">Pull an entire set</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="order_status.php">Current Order Status</a>
-                    </li>
-                    <li class="divider"></li>
-                </ul>
-
-                <!-- Right Nav Section -->
-                <ul class="right">
-                    <li class="has-form">
-                        <div class="button" id="logout_button" value="Logout">Logout</div>
-                    </li>
-                </ul>
-            </section>
-        </nav>
-
-        <div class="tabs-row row">
-
-            <ul class="tabs vertical" data-tab>
-                <li class="tab-title active"><a href="#edit_profile_panel">Edit Profile Information</a></li>
-                <li class="tab-title"><a href="#edit_shipping_panel">Edit Shipping Information</a></li>
-                <li class="tab-title"><a href="#edit_billing_panel">Edit Billing Information</a></li>
+            <!-- Right Nav Section -->
+            <ul class="right">
+              <li class="has-form">
+                  <a href="search_page.php" class="button alert">Search Inventory</a>
+              </li>
+               <?php
+                  if(isset($_SESSION['login_user'])) { 
+               ?>
+                  <li class="has-form">
+                     <div class="button" id="logout_button" value="Logout">Logout</div>
+                  </li>
+               <?php 
+                  }
+                  else { 
+               ?>
+                  <li class="has-form">
+                     <a href="index.php?form=register" class="button">Register</a>
+                  </li>
+                  <li class="has-form">
+                     <a href="index.php" class="button">Login</a>
+                  </li>
+               <?php 
+                  }
+               ?>
             </ul>
-            <div class="tabs-content">
-                <div class="content active" id="edit_profile_panel">
+            <!-- End Right Nav Section -->
+         </section>
+      </nav>
+      <!-- End Top Navigation -->
 
-                    <div class="large-3 large-offset-1 columns">
-                        <div class="form-box">
-                            <div id="edit_profile_success" class="hide">Editted!</div>
-                                <div class="form_title">Edit Profile</div>
-                                <div class="account_info">
-                                    <?php include '../backend/DisplayProfile.php';?>
-                                </div>
-                        </div>
-                    </div>
+      <div class="tabs-row row">
 
-<!--                 <div class="large-3 large-offset-1 columns">
-                        <div class="form-box">
-                            <div id="edit_profile_success" class="hide">Editted!</div>
-                                <div class="form_title">Edit Profile</div>
-                                <div class="account_info">
-                                    <div id="account_username">Username: </div>
-                                    <div id="account_first_name">First Name: </div>
-                                    <div id="account_last_name">Last Name: </div>
-                                    <div id="account_company">Company: </div>
-                                    <div id="account_email">E-mail: </div>
-                                    <div id="account_phone">Phone: </div>
-                                    <div id="account_fax">Fax: </div>
-                                </div>
+         <!-- Side navigation of Tabs -->
+         <ul class="tabs vertical" data-tab>
+            <li class="tab-title active"><a href="#edit_profile_panel">Edit Profile Information</a></li>
+            <li class="tab-title"><a href="#edit_shipping_panel">Edit Shipping Information</a></li>
+            <li class="tab-title"><a href="#edit_billing_panel">Edit Billing Information</a></li>
+         </ul>
+         <!-- End Side navigation of Tabs -->
+
+         <div class="tabs-content">
+            <div class="content active" id="edit_profile_panel">
+               <div class="large-3 large-offset-1 columns">
+                  <!-- Display Profile Information -->
+                  <div class="form-box">
+                     <div id="edit_profile_success" class="hide">Editted!</div>
+                        <div class="form_title">Edit Profile</div>
+                        <div class="account_info">
+                           <?php include '../backend/DisplayProfile.php';?>
                         </div>
-                    </div> -->
+                     </div>
+                  </div>
+                  <!-- End Display Profile Information -->
 
                     <div class="large-3 columns">
                         <div class="form-box">

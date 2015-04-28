@@ -1,23 +1,19 @@
 /*
-   This is the CSS file for shipping_info.php, AND MORE.
+   This is the CSS file for edit_profile, shipping_info.php.
 */
-
-.tabs-content {
-   background-color: #3A3A3A;
-}
-
-.tab-title {
-   border: 1px solid black; 
-}
 
 [class*="column"] + [class*="column"]:last-child {
    float: left;
 }
-
+.tabs-content {
+   background-color: #3A3A3A;
+}
+.tab-title {
+   border: 1px solid black; 
+}
 .tabs-row {
    margin-top: 3em;
 }
-
 .form_title {
   font-size: 40px;
 }

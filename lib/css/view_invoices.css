@@ -18,7 +18,7 @@
    display: block;
    width: 20%;
 }
-.invoice_name {
+.production_name {
    font-size: 125%;
 }
 .dates {
@@ -36,7 +36,7 @@
    font-size: 150%;
    margin-bottom: 0.5em;
 }
-#accept_invoice_modal_button {
+.accept_invoice_modal_button {
    margin-left: 1em;
 }
 .invoice_status {
