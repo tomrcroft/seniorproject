@@ -67,6 +67,9 @@ function filterDisplay()
                 die( print_r( sqlsrv_errors(), true));
             }
             while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC) ) {
+                if($row === NULL) {
+                    exit("No results from search.");
+                }
                 $filterAge[] = $row['Adult_or_Child'];
             }
             sqlsrv_free_stmt($stmt);
@@ -78,6 +81,9 @@ function filterDisplay()
                 die( print_r( sqlsrv_errors(), true));
             }
             while( $row2 = sqlsrv_fetch_array( $stmt2, SQLSRV_FETCH_ASSOC) ) {
+                if($row2 === NULL) {
+                    exit("No results from search.");
+                }
                 $filterGender[] = $row2['Costume_Gender'];
             }
             sqlsrv_free_stmt($stmt2);
@@ -89,6 +95,9 @@ function filterDisplay()
                 die( print_r( sqlsrv_errors(), true));
             }
             while( $row3 = sqlsrv_fetch_array( $stmt3, SQLSRV_FETCH_ASSOC) ) {
+                if($row3 === NULL) {
+                    exit("No results from search.");
+                }
                 $filterType[] = $row3['Costume_Type'];
             }
             sqlsrv_free_stmt($stmt3);
@@ -100,13 +109,17 @@ function filterDisplay()
                 die( print_r( sqlsrv_errors(), true));
             }
             while( $row4 = sqlsrv_fetch_array( $stmt4, SQLSRV_FETCH_ASSOC) ) {
+                if($row4 === NULL) {
+                    exit("No results from search.");
+                }
                 $filterGroup[] = $row4['Costume_Group'];
             }
             sqlsrv_free_stmt($stmt4);
             
         }
     }
-    printFilter($filterAge, $filterGender, $filterType, $filterGroup);
+    if(!empty($filterAge) || !empty($filterGender) || !empty($filterGroup) || !empty($filterType))
+        printFilter($filterAge, $filterGender, $filterType, $filterGroup);
 }
 
 function printFilter($age, $gender, $type, $group)
