@@ -113,19 +113,19 @@
                            </div>
                            <div class="row">
                               <div class="large-12 columns">
-                                 <input type="text" name="email" id="signup_email" placeholder="E-mail" required pattern="email" />
+                                 <input type="text" name="email" id="signup_email" placeholder="E-mail" required/>
                                  <small class="error">Valid email is required.</small>
                               </div>
                            </div>
                            <div class="row">
                               <div class="large-12 columns">
-                                 <input type="text" name="phone" id="signup_phone" placeholder="Phone" required pattern="usa_phone" />
+                                 <input type="text" name="phone" id="signup_phone" placeholder="Phone" required/>
                                  <small class="error">Valid 10 digit phone number is required.</small>
                               </div>
                            </div>
                            <div class="row">
                               <div class="large-12 columns">
-                                 <input type="text" name="fax" id="signup_fax" placeholder="Fax" required pattern="usa_phone" />
+                                 <input type="text" name="fax" id="signup_fax" placeholder="Fax" required/>
                                  <small class="error">Valid 10 digit fax is required.</small>
                               </div>
                            </div>
