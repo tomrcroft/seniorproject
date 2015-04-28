@@ -185,6 +185,7 @@
          <!-- Filter Sidebar -->   
          <div class="filter-facets large-2 pull-10 columns">
             <!-- INCLUDE FILE HERE SORRY IT GOT DELETED -->
+            <?php //include "../backend/FilterDisplay.php"; ?>
             <!-- <div class="button" id="filter_button">Filter</div> -->
             <p><img src="http://placehold.it/320x240&text=Ad" /></p>
          </div>
