@@ -16,7 +16,7 @@ $password="SJSUcmpe195";
 $connectionInfo = array( "UID"=>$username, "PWD"=>$password, "Database"=>$database);
 $conn = sqlsrv_connect( $serverName, $connectionInfo);
 
- $find = $_POST['created_by'];;
+ $find = $_POST['created_by'];
 //all pull requests
  $num_items_returned = 0;
 

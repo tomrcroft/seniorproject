@@ -142,12 +142,52 @@ class PDF extends FPDF
         }
         // Closing line
         $this->Cell(array_sum($w),0,'','T');
+        $this->Ln(10);
     }
     
     // Total Cost
-    function Total()
+    function Total($invoice)
     {
+        // Colors, line width and bold font
+        $this->SetFillColor(144,144,144);
+        $this->SetTextColor(0);
+        $this->SetDrawColor(0,0,0);
+        $this->SetLineWidth(.3);
+        $this->SetFont('','B');
         
+        $this->Cell(120,7,'',0,0,'C');
+        $this->Cell(45,7,'Description',1,0,'C',true);
+        $this->Cell(25,7,'Total',1,1,'C',true);
+        
+        $this->SetFont('');
+        //rental cost
+        if ($invoice['Status'] == 'Pending' || $invoice['Status'] == 'Accepted'){
+            $this->Cell(120,7,'',0,0,'C');
+            $this->Cell(45,7,'Rentals',1,0,'L');
+            $this->Cell(25,7,'$'.number_format($invoice['Total_Rental_Fee'],2),1,1,'R');
+        }
+        //restocking cost
+        if ($invoice['Status'] == 'Rejected' || $invoice['Status'] == 'Pending'){
+            $this->Cell(120,7,'',0,0,'C');
+            $this->Cell(45,7,'Restocking Fee',1,0,'L');
+            $this->Cell(25,7,'$'.number_format($invoice['Total_Restocking_Fee'],2),1,1,'R');
+        }
+        //price change
+        $this->Ln(10);
+        
+        if ($invoice['Status'] == 'Accepted' || $invoice['Status'] == 'Pending')
+        {
+            $total = $invoice['Invoice_Total'];
+        }
+        else
+        {
+            $total = $invoice['Total_Restocking_Fee'];
+        }
+        $this->SetFont('','B');
+        $this->Cell(150,7,'',0,0,'C');
+        $this->Cell(15,7,'Total','LTB',0,'R',true);
+        $this->SetFont('');
+        $this->Cell(25,7,'= $' . $total,'RTB',1,'L',true);
     }
 }
 
@@ -167,11 +207,10 @@ else
     $str = "SELECT * FROM cmt..[Costume], cmt..[Invoice_Line]
         WHERE cmt..[Costume].Costume_Key = cmt..[Invoice_Line].Costume_Key AND
         Invoice_ID = ?";
-    $params = array($_GET['invoiceID']);
-    // $params = array(16);//needs user id
+    $params = array($_POST['ID']);
+    //$params = array(19);//needs user id
     //run queries
-    // $invoice = getInfo($link,16);
-    $invoice = getInfo($link,$_GET['invoiceID']);
+    $invoice = getInfo($link,$params[0]);
     $stmt = sqlsrv_query($link,$str,$params);
     if( $stmt === false ) {
         die( print_r( sqlsrv_errors(), true));
@@ -181,7 +220,8 @@ else
         if($row === false) {
             die( print_r( sqlsrv_errors(), true));
         }
-        $data[] = $row;
+        if ($row['Source_Deleted'] == 0)
+            $data[] = $row;
     }
     
     // Instanciation of inherited class
@@ -191,6 +231,7 @@ else
     $pdf->InvoiceInfo($invoice);
     $header = array('Item ID', 'Description', 'Unit Replace.', 'Cost');
     $pdf->FancyTable($header,$data);
+    $pdf->Total($invoice);
     $pdf->Output();
     sqlsrv_free_stmt($stmt);
     sqlsrv_close($link);
