@@ -36,10 +36,11 @@
             //display goes here
             //show the pull request id, status, and date?
             //need to convert to string '. $row['Created_Date'] .'
+            $date = substr($row['Created_Date'],0,strrpos($row['Created_Date'], " ") + 1);
             echo '<li class="accordion-navigation">
                     <a href="#pull_request_'. $row['Pull_Request_ID'] .'">
                       <div class="pull_request_name"><b>'. $row['Production'] .'</b></div>
-                      <span class="date_submitted">Date Submitted: '. $row['Created_Date'] .'</span>
+                      <span class="date_submitted">Date Submitted: '. $date .'</span>
                       <div class="availability right">'. $row['Status'] .'</div>
                     </a>
                     <div id="pull_request_'. $row['Pull_Request_ID'] .'" class="content">';
