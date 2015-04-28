@@ -46,7 +46,7 @@
     //$_SESSION['shopping_cart'];
     include '../backend/checkAdmin.php';
     if (checkIfAdmin($_SESSION['login_user'])){
-        $json = json_encode(array("location"=>"view_master_records.php", "error" => false));
+        $json = json_encode(array("location"=>"pending_requests.php", "error" => false));
         exit($json);
     }
     else{
