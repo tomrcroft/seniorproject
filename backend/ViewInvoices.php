@@ -43,8 +43,8 @@
                 <div class="right">
                    <div class="invoice_total"><b>TOTAL:</b> $'. number_format($row['Invoice_Total'], 2) .'</div>';
              if($row['Status'] == 'Pending'){
-             echo  '<div id="accept_invoice_modal_button" class="accept_invoice_modal_button button success right">Accept</div>
-                    <div id="reject_invoice_modal_button" class="reject_invoice_modal_button button alert right">Reject</div>';}
+             echo  '<div class="accept_invoice_modal_button button success right">Accept</div>
+                    <div class="reject_invoice_modal_button button alert right">Reject</div>';}
             else
             {
                 echo '<div class="invoice_status"><b>'. $row['Status'] .'</b></div>';

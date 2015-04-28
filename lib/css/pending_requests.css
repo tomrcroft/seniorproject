@@ -1,46 +1,37 @@
+/*
+   Pull Request Panel CSS
+*/
 .panel:hover {
    cursor: pointer;
    background: #e3e3e3;
 }
-
 .panel {
    background: #EFEFEF;
 }
-
-.admin_pull_results {
+.admin_pull_result {
    margin-bottom: 0;
 }
-
-.pull_request_date {
-   padding-left: 1.875rem;
-}
-
 .pull_request_title {
    display: block;
    width: 20%;
 }
 .notes {
    display: inline-block;
-   width: 60%;
+   width: 50%;
+   margin-left: 1em;
 }
 
-.date_created {
+/*.date_created {
    width: 80%;
    display: block;
-}
-
-#accept_pull_request_modal_button {
-   display: inline-block;
+}*/
+.accept_pull_request_modal_button {
    margin-left: 0.5em;
 }
 
 /*
    Modal CSS
 */
-#accept_pull_request_modal_button {
-   margin-left: 1em;
-   margin-right: 0.5rem;
-}
 
 #accept-request-modal {
    color: #000000;

@@ -32,15 +32,16 @@ if (!$conn) {
             $datecreated = date_format($row['Created_Date'], 'Y-m-d H:i:s');
             $datedelivery = date_format($row['Delivery_Date'], 'Y-m-d H:i:s');
 
-			echo '<div class="admin_pull_results panel clearfix" id="pull_request_idnumber" data-pull-id='. $row['Pull_Request_ID'].'>
+			echo '<div class="admin_pull_result panel clearfix" id="pull_request_idnumber" data-pull-id='. $row['Pull_Request_ID'].'>
                             <div class="left pull_request_title"><b>'. $row['Production'] .'</b>
                                 <div class="date_created">DATE CREATED: '. $datecreated .'</div>
                                 <div class="delivery_date">DELIVERY DATE: '. $datedelivery .'</div>
                             </div>
                             <div class="left notes"> '. $row['Notes'] .' NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES </div>
-                            
-                            <div id="accept_pull_request_modal_button" class="button success right">Accept</div>
-                            <div id="reject_pull_request_modal_button" class="button alert right">Reject</div>
+                            <div class="right">
+                                <div class="accept_pull_request_modal_button button success right">Accept</div>
+                                <div class="reject_pull_request_modal_button button alert right">Reject</div>
+                            </div>
                         </div>';
 
 
