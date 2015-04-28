@@ -16,6 +16,7 @@
       <script src="../lib/foundation/js/vendor/jquery.js" type="text/javascript"></script>
       <script src="../lib/foundation/js/vendor/modernizr.js" type="text/javascript"></script>
       <script src="../lib/foundation/js/foundation.min.js" type="text/javascript"></script>
+      <script src="../lib/foundation/js/foundation/foundation.equalizer.js"></script>
       <!-- End Foundation Javascript-->
       <script src="../lib/js/search.js" type="text/javascript"></script>
       <script src="../lib/js/logout.js" type="text/javascript"></script>
@@ -155,7 +156,7 @@
      
          <!-- Search Results Section -->
          <div class="large-10 push-2 columns">
-            <div class="row" id="search_results" data-equalizer="image">
+            <div class="row" id="search_results" data-equalizer>
                <?php
                   if(!empty($_GET['status']))
                      if($_GET['status'] == "LoggedOut")
