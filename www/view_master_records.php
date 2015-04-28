@@ -150,7 +150,7 @@
                 Search Records Form
                 Consider Putting Search form in line with text. Do not have time to put that there now 
                 -->
-                <form action="hi.php" method="POST" data-abide>
+                <form action="view_master_records.php" method="POST" data-abide>
                 <div class="row">
                     <div class="large-12 columns" id="search_user_form">
                         <h3 class="text-center">Search records by <b>Company</b> name</h3>
@@ -169,10 +169,12 @@
               </form>
 
                 <!-- Records Results Section -->
+                <?php if(isset($_POST['companySearch'])){?>
                 <div class="row">
                     <div class="large-4 large-offset-1 columns" id="records_results">
                         <h5>COMPANYNAME Pull Request Records for USER (2 Results)</h5>
-                        <div class="admin_pull_results panel" id="pull_request_1">
+                        <?php include '../backend/view_master.php';}?>
+                        <!--<div class="admin_pull_results panel" id="pull_request_1">
                             <h5>PULL REQUEST NAME</h5> 
                             DATE MODIFIED: MM-DD-YYYY
                         </div>
@@ -191,7 +193,7 @@
                         <div class="admin_invoice_results panel" id="pull_request_2">
                             <h5>INVOICE NAME</h5> 
                             DATE MODIFIED: MM-DD-YYYY
-                        </div>
+                        </div>-->
 
                     </div>
                 </div>
