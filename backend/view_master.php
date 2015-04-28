@@ -1,11 +1,5 @@
 <?php
 
-// check to make sure admin
- include '../backend/checkIfLoggedIn.php';
-    include '../backend/checkAdmin.php';
-    if(!checkIfAdmin($_SESSION['login_user']))
-        header ("Location: ../www/index.php");
-
 // connect to db first
 $serverName="cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433";
 $database="CMT";
@@ -16,7 +10,7 @@ $password="SJSUcmpe195";
 $connectionInfo = array( "UID"=>$username, "PWD"=>$password, "Database"=>$database);
 $conn = sqlsrv_connect( $serverName, $connectionInfo);
 
-$formvars = array($_POST['company']);
+$formvars = array($_POST['companySearch']);
 //all pull requests
  $num_items_returned = 0;
 

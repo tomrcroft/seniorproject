@@ -150,7 +150,7 @@
                 Search Records Form
                 Consider Putting Search form in line with text. Do not have time to put that there now 
                 -->
-                <form action="hi.php" method="POST" data-abide>
+                <form action="view_master_records.php" method="POST" data-abide>
                 <div class="row">
                     <div class="large-12 columns" id="search_user_form">
                         <h3 class="text-center">Search records by <b>Company</b> name</h3>
