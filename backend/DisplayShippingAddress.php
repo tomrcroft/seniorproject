@@ -7,12 +7,12 @@
     //declare variables
     $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
     $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
-    $link = sqlsrv_connect($server, $connectionInfo);
+    $link2 = sqlsrv_connect($server, $connectionInfo);
     if(!isset($_SESSION['user_id']))
         include '../backend/getUserId.php';
     $formvars = array($_SESSION['user_id']);
     //Checks connection
-    if (!$link) {
+    if (!$link2) {
         $output = "Problems with the database connection!"; 
         $json = json_encode($output);
         echo $json;
@@ -20,7 +20,7 @@
     else
     {
         $str = "SELECT * FROM cmt..[User_Address] WHERE User_Key = ?";
-        $stmt = sqlsrv_query($link,$str,$formvars);//runs statement
+        $stmt = sqlsrv_query($link2,$str,$formvars);//runs statement
         if( $stmt === false ) {
             die( print_r( sqlsrv_errors(), true));
         }
@@ -30,7 +30,7 @@
             die( print_r( sqlsrv_errors(), true));
         }
         sqlsrv_free_stmt($stmt);
-        sqlsrv_close($link);
+        sqlsrv_close($link2);
         echo '<div id="account_shipping_attn">Shipping Attn: '. $row['Shipping_Attn'] .'</div>
                 <div id="account_shipping_address">Shipping Address: '. $row['Shipping_Street_Address'] .'</div>
                 <div id="account_shipping_city">Shipping City: '. $row['Shipping_City'] .'</div>
