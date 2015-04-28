@@ -1,177 +1,167 @@
 <?php
     include '../backend/checkIfLoggedIn.php';
+    include '../backend/checkAdmin.php';
 ?>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>CMT | Costume Inventory System | Dashboard</title>
+      <title>Costume Inventory System | Order Status</title>
 
-        <!-- Required header files -->
-        <script src="../lib/foundation/js/vendor/jquery.js" type="text/javascript"></script>
-        <script src="../lib/foundation/js/vendor/modernizr.js" type="text/javascript"></script>
-        <script src="../lib/foundation/js/foundation.min.js" type="text/javascript"></script>
-        <script src="../lib/js/logout.js" type="text/javascript"></script>
-        <script src="../lib/js/order_status.js" type="text/javascript"></script>
+      <!-- Required header files -->
+      <!-- Foundation Javascript -->
+      <script src="../lib/foundation/js/vendor/jquery.js" type="text/javascript"></script>
+      <script src="../lib/foundation/js/vendor/modernizr.js" type="text/javascript"></script>
+      <script src="../lib/foundation/js/foundation.min.js" type="text/javascript"></script>
+      <!-- End Foundation Javascript-->
+      <script src="../lib/js/logout.js" type="text/javascript"></script>
+      <script src="../lib/js/order_status.js" type="text/javascript"></script>
 
-        <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
-        <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
-        <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
-        <link rel="stylesheet" href="../lib/css/order_status.css" type="text/css">
+      <!-- Foundation CSS -->
+      <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
+      <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
+      <!-- End Foundation CSS -->
+      <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
+      <link rel="stylesheet" href="../lib/css/order_status.css" type="text/css">
 
-    </head>
+      <!-- End header files -->
+   </head>
 
-    <body>
-        <nav class="top-bar" data-topbar role="navigation">
-            <ul class="title-area">
-                <!-- <img src="../lib/images/smallCMTlogo.jpg" alt="CMT" style="width:100px;height:110px">-->
-                <li class="name">
-                    <h1><a href="index.php">Costume Inventory System</a></h1>
-                </li>
+   <body>
+      <!-- Top Navigation -->
+      <nav class="top-bar" data-topbar role="navigation">
+
+         <ul class="title-area">
+            <!-- <img src="../lib/images/smallCMTlogo.jpg" alt="CMT" style="width:100px;height:110px">-->
+            <li class="name">
+               <h1><a href="index.php">Costume Inventory System</a></h1>
+            </li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+         </ul>
+
+         <section class="top-bar-section">
+            <!-- Left Nav Section -->
+            <ul class="left">
+
+               <li class="divider"></li>
+
+               <!-- Welcome User Section -->
+               <?php 
+                  if(isset($_SESSION['login_user'])) { 
+               ?>
+                  <li class="has-dropdown">
+                     <a href="#">Welcome, <?=$_SESSION['login_user']?>!</a>
+                     <ul class="dropdown">
+                        <li><a href="edit_profile.php">Edit Profile</a></li>
+               <?php
+                  if(checkIfAdmin($_SESSION['login_user'])) {
+               ?>
+                  <li><a href="add_administrator.php">Add Administrator</a></li>
+               <?php 
+                  }
+               ?>
+                     </ul>
+                  </li>
+               <?php 
+                  }
+                  else { 
+               ?>
+                  <li>
+                     <div id="anonymous_login">Welcome, Anonymous!</div>
+                  </li>
+               <?php 
+                  }
+               ?>
+               <!-- End Welcome User Section -->
+
+               <!-- Admin Navigation -->
+               <?php
+                  if(isset($_SESSION['login_user']))
+                     if(checkIfAdmin($_SESSION['login_user'])) {
+               ?>
+                     <li class="divider"></li>
+                     <li>
+                        <a href="pending_requests.php">Pending Pull Requests (<?php include '../backend/GetPendingPullRequestCount.php'; ?>)</a>
+                     </li>
+
+                     <li class="divider"></li>
+                     <li>
+                        <a href="view_master_records.php">View Master Records</a>
+                     </li>
+               <?php 
+                     }
+               ?>
+               <!-- End Admin Navigation -->
+
+               <li class="divider"></li>
+               <li>
+                  <a href="pull_request_cart.php">Pull Request Cart <span id="cart_size"><?php include '../backend/cartSize.php';?></span></a>
+               </li>
+
+               <li class="divider"></li>
+               <li>
+                  <a href="order_status.php">Order Status</a>
+               </li>
+
+               <li class="divider"></li>
+               <li>
+                  <a href="view_invoices.php">View Invoices</a>
+               </li>
+
+               <li class="divider"></li>
             </ul>
+            <!-- End Left Nav Section -->
 
-            <section class="top-bar-section">
-                    <!-- Left Nav Section -->
-                <ul class="left">
-                  <li class="divider"></li>
-                    <?php 
-                        if(isset($_SESSION['login_user'])) { 
-                    ?>
-                        <li class="has-dropdown">
-                            <a href="#">Welcome, <?=$_SESSION['login_user']?>!</a>
-                        <ul class="dropdown">
-                            <li><a href="edit_profile.php">Edit Profile</a></li>
-                        </ul>
-                        </li>
-                    <?php 
-                        }
-                        else { 
-                    ?>
-                        <li>
-                            <div id="anonymous_login">Welcome, Anonymous!</div>
-                        </li>
-                    <?php 
-                        }
-                    ?>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="pull_request_cart.php">Pull Request Cart<?php include '../backend/cartSize.php';?></a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#1">Pull an entire set</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="order_status.php">Current Order Status</a>
-                    </li>
-                </ul>
-
-                <!-- Right Nav Section -->
-                <ul class="right">
-                    <li class="has-form">
-                        <a href="search_page.php" class="button alert">Search Inventory</a>
-                    </li>
-                    <li class="has-form">
-                        <div class="button" id="logout_button" value="Logout">Logout</div>
-                    </li>
-                </ul>
-            </section>
-        </nav>
-
-        <div class="main-content row">    
-
-            <!-- Main Content Section -->
-            <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
-
-          <div class="large-10 push-2 columns">
-              <h3>Status of your Pull Requests</h3>
-              <div class="pull_request_results">
-                <ul class="accordion" data-accordion>
-                    <?php include '../backend/viewPullRequest.php';?>
-    <!--              <li class="accordion-navigation">
-                    <a href="#pull_request_1">
-                      <div class="pull_request_name">PULL REQUEST NAME - DATE SUBMITTED: 05-05-2015 <div class="availability right">Pending</div></div>
-                    </a>
-                    <div id="pull_request_1" class="content active">
-                      <div class="row">
-                        <h5 class="item_name"><a href="inventory_page.php?idnumber=15">Name of Item</a></h5>
-                        <div class="large-2 columns">
-                          
-                          Group: <br>
-                          Type: 
-                        </div>
-                        <div class="large-10 columns">
-                          Description
-                        </div>
-                      </div>
-                        <hr>
-                      <div class="row">
-                        <h5 class="item_name"><a href="inventory_page.php?idnumber=15">Name of Item</a></h5>
-                        <div class="large-2 columns">
-                          
-                          Group: <br>
-                          Type: 
-                        </div>
-                        <div class="large-10 columns">
-                          Description
-                        </div>
-                      </div>
-                    </div>
+            <!-- Right Nav Section -->
+            <ul class="right">
+              <li class="has-form">
+                  <a href="search_page.php" class="button alert">Search Inventory</a>
+              </li>
+               <?php
+                  if(isset($_SESSION['login_user'])) { 
+               ?>
+                  <li class="has-form">
+                     <div class="button" id="logout_button" value="Logout">Logout</div>
                   </li>
-                  <li class="accordion-navigation">
-                    <a href="#pull_request_2">
-                      <div class="pull_request_name">PULL REQUEST NAME - DATE SUBMITTED: 05-05-2015 <div class="availability right">Rejected</div></div>
-                    </a>
-                    <div id="pull_request_2" class="content">
-                      <div class="row">
-                        <h5 class="item_name"><a href="inventory_page.php?idnumber=15">Name of Item</a></h5>
-                        <div class="large-2 columns">
-                          
-                          Group: <br>
-                          Type: 
-                        </div>
-                        <div class="large-10 columns">
-                          Description
-                        </div>
-                      </div>
-                        <hr>
-                      <div class="row">
-                        <h5 class="item_name"><a href="inventory_page.php?idnumber=15">Name of Item</a></h5>
-                        <div class="large-2 columns">
-                          
-                          Group: <br>
-                          Type: 
-                        </div>
-                        <div class="large-10 columns">
-                          Description
-                        </div>
-                      </div>
-                    </div>
+               <?php 
+                  }
+                  else { 
+               ?>
+                  <li class="has-form">
+                     <a href="index.php?form=register" class="button">Register</a>
                   </li>
-                  <li class="accordion-navigation">
-                    <!-- If approved, a href should link to view invoice page. -->
-                    <!--<a href="#pull_request_3">
-                      <div class="pull_request_name">PULL REQUEST NAME - DATE SUBMITTED: 05-05-2015 <div class="availability right">Approved</div></div>
-                    </a>
-                    <div id="pull_request_3" class="content">
-                      This pull request is approved, <a href="view_invoice.php">View Invoice Here</a>!
-                    </div>
-                  </li>-->
-                </ul>
-              </div>
-          </div>
-    
-          <div class="large-2 pull-10 columns">
-              <p><img src="http://placehold.it/250x300&text=Ad" /></p>
-          </div>
-        </div>
+                  <li class="has-form">
+                     <a href="index.php" class="button">Login</a>
+                  </li>
+               <?php 
+                  }
+               ?>
+            </ul>
+            <!-- End Right Nav Section -->
+         </section>
+      </nav>
+      <!-- End Top Navigation -->
 
-    <script>
-        $(document).foundation();
-    </script>
-    </body>
+      <div class="row">    
+
+         <!-- Pull Request List Section -->
+         <div class="large-10 large-offset-1 columns">
+            <h3>Status of your Pull Requests</h3>
+            <div class="pull_request_results">
+               <ul class="accordion" data-accordion>
+                  <?php include '../backend/viewPullRequest.php';?>
+               </ul>
+            </div>
+         </div>
+         <!-- End Pull Request List Section -->    
+
+      </div>
+
+   <script>
+      $(document).foundation();
+   </script>
+   </body>
 
 </html>

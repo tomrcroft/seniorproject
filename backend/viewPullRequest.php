@@ -38,7 +38,9 @@
             //need to convert to string '. $row['Created_Date'] .'
             echo '<li class="accordion-navigation">
                     <a href="#pull_request_'. $row['Pull_Request_ID'] .'">
-                      <div class="pull_request_name">'. $row['Pull_Request_ID'] . $row['Production'] .' - DATE SUBMITTED: '. $row['Created_Date'] .'<div class="availability right">'. $row['Status'] .'</div></div>
+                      <div class="pull_request_name"><b>'. $row['Production'] .'</b></div>
+                      <span class="date_submitted">Date Submitted: '. $row['Created_Date'] .'</span>
+                      <div class="availability right">'. $row['Status'] .'</div>
                     </a>
                     <div id="pull_request_'. $row['Pull_Request_ID'] .'" class="content">';
             if ($row['Status'] != 'Accepted')
