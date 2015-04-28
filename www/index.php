@@ -92,51 +92,62 @@
                      <div class="row">
                         <div class="large-12 columns">
                            Registration
+                           <form id="myForm" data-abide="ajax">
                            <div class="row">
                               <div class="large-12 columns">
-                                 <input type="text" name="firstname" id="signup_firstname" placeholder="First Name" />
+                                 <input type="text" name="firstname" id="signup_firstname" placeholder="First Name" required />
+                                 <small class="error">Name is required and must be a string.</small>
                               </div>
                            </div>
                            <div class="row">
                               <div class="large-12 columns">
-                                 <input type="text" name="lastname" id="signup_lastname" placeholder="Last Name" />
+                                 <input type="text" name="lastname" id="signup_lastname" placeholder="Last Name" required />
+                                 <small class="error">Name is required and must be a string.</small>
                               </div>
                            </div>
                            <div class="row">
                               <div class="large-12 columns">
-                                 <input type="text" name="Company" id="signup_company" placeholder="Company" />
+                                 <input type="text" name="Company" id="signup_company" placeholder="Company" required />
+                                 <small class="error">Name is required and must be a string.</small>
                               </div>
                            </div>
                            <div class="row">
                               <div class="large-12 columns">
-                                 <input type="text" name="email" id="signup_email" placeholder="E-mail" />
+                                 <input type="text" name="email" id="signup_email" placeholder="E-mail" required />
+                                 <small class="error">Name is required and must be a string.</small>
                               </div>
                            </div>
                            <div class="row">
                               <div class="large-12 columns">
-                                 <input type="text" name="phone" id="signup_phone" placeholder="Phone" />
+                                 <input type="text" name="phone" id="signup_phone" placeholder="Phone" required />
+                                 <small class="error">Name is required and must be a string.</small>
                               </div>
                            </div>
                            <div class="row">
                               <div class="large-12 columns">
-                                 <input type="text" name="fax" id="signup_fax" placeholder="Fax" />
+                                 <input type="text" name="fax" id="signup_fax" placeholder="Fax" required />
+                                 <small class="error">Name is required and must be a string.</small>
                               </div>
                            </div>
                            <div class="row">
                               <div class="large-12 columns">
-                                 <input type="text" name="username" id="signup_username" placeholder="Username" />
+                                 <input type="text" name="username" id="signup_username" placeholder="Username" required />
+                                 <small class="error">Name is required and must be a string.</small>
                               </div>
                            </div>
                            <div class="row">
                               <div class="large-12 columns">
-                                 <input type="password" name="password" id="signup_password" placeholder="Password" />
+                                 <input type="password" name="password" id="signup_password" placeholder="Password" required />
+                                 <small class="error">Name is required and must be a string.</small>
                               </div>
                            </div>
                            <div class="row">
                               <div class="large-12 large-centered columns">
-                                 <input type="submit" class="button expand" id="register_button" value="Register"/>
+                                 <button type="submit" class="button expand" id="register_button">Register</button>
+                                 <!-- <div class="button expand" id="register_button">Register</div> -->
                               </div>
                            </div>
+                           </form>
                         </div>
                      </div>
                   </div>

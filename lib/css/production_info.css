@@ -1,7 +1,11 @@
+/*
+   This is the javascript file for production_info.php.
+   This file is used for the form and instruction areas of the page.
+*/
+
 #notes {
    margin-bottom: 1rem;
 }
-
 .instructions {
    font-size: 130%;
    margin-bottom: 1em;

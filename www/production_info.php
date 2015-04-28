@@ -162,59 +162,55 @@
       <!-- End Instruction Section -->
 
       <!-- User Production Information Form -->
-        <div class="row">
-            <div class="large-3 large-centered columns">
-                <div id="production_info" class="form-box">
-                    <div class="row">
+      <div class="row">
+         <div class="large-3 large-centered columns">
+            <div id="production_info" class="form-box">
+               <div class="row">
+                  <div class="large-12 columns">
+                     <div class="row">
                         <div class="large-12 columns">
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="productionname" id="production_name" placeholder="Production Name" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="deliverydate" id="delivery_date" placeholder="Delivery Date (YYYY-MM-DD)" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="productionopendate" id="production_open_date" placeholder="Production Open Date (YYYY-MM-DD)" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="productionclosedate" id="production_close_date" placeholder="Production Close Date (YYYY-MM-DD)" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="dateofreturn" id="date_of_return" placeholder="Expected Date of Return" />
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <textarea rows="3" id="notes" placeholder="Notes (Optional)"></textarea>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="large-12 large-centered columns">
-                                    <div class="button expand" id="submit_pull_request_button">Submit Pull Request</div>
-                                </div>
-                            </div>
-
+                           <input type="text" name="productionname" id="production_name" placeholder="Production Name" />
                         </div>
-                    </div>
-                </div>
+                     </div>
+                     <div class="row">
+                        <div class="large-12 columns">
+                           <input type="text" name="deliverydate" id="delivery_date" placeholder="Delivery Date (YYYY-MM-DD)" />
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="large-12 columns">
+                           <input type="text" name="productionopendate" id="production_open_date" placeholder="Production Open Date (YYYY-MM-DD)" />
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="large-12 columns">
+                           <input type="text" name="productionclosedate" id="production_close_date" placeholder="Production Close Date (YYYY-MM-DD)" />
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="large-12 columns">
+                           <input type="text" name="dateofreturn" id="date_of_return" placeholder="Expected Date of Return" />
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="large-12 columns">
+                           <textarea rows="3" id="notes" placeholder="Notes (Optional)"></textarea>
+                        </div>
+                     </div>
+                     <div class="row">
+                        <div class="large-12 large-centered columns">
+                           <div class="button expand" id="submit_pull_request_button">Submit Pull Request</div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
             </div>
-        </div>
+         </div>
+      </div>
          <!-- End User Production Information Form -->
 
-    <script>
-        $(document).foundation();
-    </script>
-    </body>
-
+   <script>
+      $(document).foundation();
+   </script>
+   </body>
 </html>
