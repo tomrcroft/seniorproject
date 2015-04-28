@@ -16,6 +16,7 @@
       <script src="../lib/foundation/js/vendor/modernizr.js" type="text/javascript"></script>
       <script src="../lib/foundation/js/foundation.min.js" type="text/javascript"></script>
       <!-- End Foundation Javascript-->
+      <script src="../lib/js/logout.js" type="text/javascript"></script>
       <script src="../lib/js/edit_profile.js" type="text/javascript"></script>
       <script src="../lib/js/shipping_info.js" type="text/javascript"></script>
 
