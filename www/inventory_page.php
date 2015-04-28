@@ -1,3 +1,8 @@
+<?php 
+    session_start();
+    include '../backend/checkAdmin.php';
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -22,82 +27,124 @@
 
     <body>
         <nav class="top-bar" data-topbar role="navigation">
-            <ul class="title-area">
-                <!-- <img src="../lib/images/smallCMTlogo.jpg" alt="CMT" style="width:100px;height:110px">-->
-                <li class="name">
-                    <h1><a href="index.php">Costume Inventory System</a></h1>
-                </li>
+
+         <ul class="title-area">
+            <!-- <img src="../lib/images/smallCMTlogo.jpg" alt="CMT" style="width:100px;height:110px">-->
+            <li class="name">
+               <h1><a href="index.php">Costume Inventory System</a></h1>
+            </li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+         </ul>
+
+         <section class="top-bar-section">
+            <!-- Left Nav Section -->
+            <ul class="left">
+
+               <li class="divider"></li>
+
+               <!-- Welcome User Section -->
+               <?php 
+                  if(isset($_SESSION['login_user'])) { 
+               ?>
+                  <li class="has-dropdown">
+                     <a href="#">Welcome, <?=$_SESSION['login_user']?>!</a>
+                     <ul class="dropdown">
+                        <li><a href="edit_profile.php">Edit Profile</a></li>
+               <?php
+                  if(checkIfAdmin($_SESSION['login_user'])) {
+               ?>
+                  <li><a href="add_administrator.php">Add Administrator</a></li>
+               <?php 
+                  }
+               ?>
+                     </ul>
+                  </li>
+               <?php 
+                  }
+                  else { 
+               ?>
+                  <li>
+                     <div id="anonymous_login">Welcome, Anonymous!</div>
+                  </li>
+               <?php 
+                  }
+               ?>
+               <!-- End Welcome User Section -->
+
+               <!-- Admin Navigation -->
+               <?php
+                  if(isset($_SESSION['login_user']))
+                     if(checkIfAdmin($_SESSION['login_user'])) {
+               ?>
+                     <li class="divider"></li>
+                     <li>
+                        <a href="pending_requests.php">Pending Pull Requests (<?php include '../backend/GetPendingPullRequestCount.php'; ?>)</a>
+                     </li>
+
+                     <li class="divider"></li>
+                     <li>
+                        <a href="view_master_records.php">View Master Records</a>
+                     </li>
+               <?php 
+                     }
+               ?>
+               <!-- End Admin Navigation -->
+
+               <li class="divider"></li>
+               <li>
+                  <a href="pull_request_cart.php">Pull Request Cart <span id="cart_size"><?php include '../backend/cartSize.php';?></span></a>
+               </li>
+
+               <li class="divider"></li>
+               <li>
+                  <a href="order_status.php">Order Status</a>
+               </li>
+
+               <li class="divider"></li>
+               <li>
+                  <a href="view_invoices.php">View Invoices</a>
+               </li>
+
+               <li class="divider"></li>
             </ul>
+            <!-- End Left Nav Section -->
 
-            <section class="top-bar-section">
-                    <!-- Left Nav Section -->
-                <ul class="left">
-                    <li class="divider"></li>
-                    <?php session_start();
-                        if(isset($_SESSION['login_user'])) { 
-                    ?>
-                        <li class="has-dropdown">
-                            <a href="#">Welcome, <?=$_SESSION['login_user']?>!</a>
-                        <ul class="dropdown">
-                            <li><a href="edit_profile.php">Edit Profile</a></li>
-                        </ul>
-                        </li>
-                    <?php 
-                        }
-                        else { 
-                    ?>
-                        <li>
-                            <div id="anonymous_login">Welcome, Anonymous!</div>
-                        </li>
-                    <?php 
-                        }
-                    ?>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="pull_request_cart.php">Pull Request Cart<?php include '../backend/cartSize.php';?></a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#1">Pull an entire set</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="order_status.php">Current Order Status</a>
-                    </li>
-                    <li class="divider"></li>
-                </ul>
+            <!-- Right Nav Section -->
+            <ul class="right">
+               <li class="has-form">
+                  <div class="row collapse">
+                     <div class="large-8 small-9 columns">
+                        <input type="text" id="search_term" placeholder="Search Inventory Database">
+                     </div>
+                     <div class="large-4 small-3 columns">
+                        <input class="alert button expand" id="search_page_form" value="Search"></input>
+                     </div>
+                  </div>
+               </li>
+               <?php
+                  if(isset($_SESSION['login_user'])) { 
+               ?>
+                  <li class="has-form">
+                     <div class="button" id="logout_button" value="Logout">Logout</div>
+                  </li>
+               <?php 
+                  }
+                  else { 
+               ?>
+                  <li class="has-form">
+                     <a href="index.php?form=register" class="button">Register</a>
+                  </li>
+                  <li class="has-form">
+                     <a href="index.php" class="button">Login</a>
+                  </li>
+               <?php 
+                  }
+               ?>
+            </ul>
+            <!-- End Right Nav Section -->
 
-                <!-- Right Nav Section -->
-                <ul class="right">
-                    <li class="has-form">
-                        <div class="row collapse">
-                            <li class="has-form">
-                                <a href="search_page.php" class="button alert">Search Inventory</a>
-                            </li>
-                        </div>
-                    </li>
-                    <?php
-                        if(isset($_SESSION['login_user'])) { 
-                    ?>
-                    <li class="has-form">
-                        <div class="button" id="logout_button" value="Logout">Logout</div>
-                    </li>
-                    <?php 
-                    }
-                        else { 
-                    ?>
-                    <li class="has-form">
-                        <a href="index.php" class="button">Register</a>
-                    </li>
-                    <li class="has-form">
-                        <a href="index.php" class="button">Login</a>
-                    </li>
-                    <?php 
-                        }
-                    ?>
-                </ul>
-            </section>
-        </nav>
+         </section>
+      </nav>
 
         <div class="row">    
 

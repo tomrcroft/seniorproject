@@ -39,3 +39,7 @@
 #reject_pull_request_button {
    margin-left: 1em;
 }
+
+/*td:last-child {
+    width: 100%
+}*/

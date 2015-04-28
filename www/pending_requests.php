@@ -205,36 +205,36 @@
       </div>
       <!-- End Accept Pull Request Modal -->
 
-        <!-- Reject Pull Request Modal -->
-        <div class='reveal-modal' id='reject-request-modal' data-reveal>
+      <!-- Reject Pull Request Modal -->
+      <div class='reveal-modal' id='reject-request-modal' data-reveal>
 
-            <div class="modal_instructions">
-                <b>To Reject the Pull Request</b> <br>
-                Enter the reason for rejection
+         <div class="modal_instructions">
+            <b>To Reject the Pull Request</b> <br>
+            Enter the reason for rejection
+         </div>
+
+         <div class="row">
+            <div class="reject_request_box large-12 columns">
+
+               <div class="row">
+                  <div class="large-12 columns">
+                     <input type="text" name="rejectreason" id="reject_reason" placeholder="Reason" />
+                  </div>
+               </div>
+
+               <div class="row">
+                  <div class="large-12 columns">
+                     <div class="button alert right" id="reject_pull_request_button">Reject Pull Request</div>
+
+                     <div class="button right cancel_modal_button">Cancel</div>
+                  </div>
+               </div>
+
             </div>
+         </div>
 
-            <div class="row">
-                <div class="reject_request_box large-12 columns">
-
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <input type="text" name="rejectreason" id="reject_reason" placeholder="Reason" />
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <div class="button alert right" id="reject_pull_request_button">Reject Pull Request</div>
-
-                            <div class="button right cancel_modal_button">Cancel</div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-        <!-- End Accept Pull Request Modal -->
+      </div>
+      <!-- End Accept Pull Request Modal -->
 
     <script>
         $(document).foundation();
