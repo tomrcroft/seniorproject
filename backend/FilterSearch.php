@@ -3,11 +3,11 @@
  * Filter Search will take in the categories selected field and narrow the search
  * results based on the filter
  */    
-     /*$search = 'nun';
-     $by_age = 'Adult';
-     $by_sex = 'F';
-     $by_type = 'Hat';
-     $by_group = '';*/
+     /*$search = 'i';
+     $by_age = '';
+     $by_sex = '';
+     $by_type = '';
+     $by_group = 'Wizard of Oz';*/
 
     $search = trim($_POST['searchterm']);
     $by_age = trim($_POST['age_facet']);

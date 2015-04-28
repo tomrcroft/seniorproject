@@ -166,6 +166,18 @@ class PDF extends FPDF
             $this->Cell(120,7,'',0,0,'C');
             $this->Cell(45,7,'Rentals',1,0,'L');
             $this->Cell(25,7,'$'.number_format($invoice['Total_Rental_Fee'],2),1,1,'R');
+            if($invoice['Total_Rental_Fee'] > $invoice['Invoice_Total'])//price reduction
+            {
+                $this->Cell(120,7,'',0,0,'C');
+                $this->Cell(45,7,'Price Reduction',1,0,'L');
+                $this->Cell(25,7,'($'.number_format($invoice['Total_Rental_Fee'] - $invoice['Invoice_Total'] .')',2),1,1,'R');
+            }
+            else if ($invoice['Total_Rental_Fee'] < $invoice['Invoice_Total'])//added cost
+            {
+                $this->Cell(120,7,'',0,0,'C');
+                $this->Cell(45,7,'Additional Costs',1,0,'L');
+                $this->Cell(25,7,'$'.number_format($invoice['Invoice_Total'] - $invoice['Total_Rental_Fee'],2),1,1,'R');
+            }
         }
         //restocking cost
         if ($invoice['Status'] == 'Rejected' || $invoice['Status'] == 'Pending'){
@@ -209,7 +221,7 @@ else
         WHERE cmt..[Costume].Costume_Key = cmt..[Invoice_Line].Costume_Key AND
         Invoice_ID = ?";
     //$params = array($_GET['invoiceID']);
-    $params = array(17);//needs user id
+    $params = array(19);//needs user id
     //run queries
     $invoice = getInfo($link,$params[0]);
     
