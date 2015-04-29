@@ -47,12 +47,12 @@ class PDF extends FPDF
         // Date info
         $this->Cell(30,7,'Date Created: ','LTB',0,'C',true);
         $this->SetFont('');
-        $this->Cell(25,7,substr($data['Created_Date'],0,strrpos($data['Created_Date'], " ") + 1),'TB',0,'C',true);
+        $this->Cell(25,7,date_format($data['Created_Date'],'m/d/y'),'TB',0,'C',true);
         $this->SetFont('','B');
         $this->Cell(85,7,'Date Range: ','TB',0,'R',true);
         $this->SetFont('');
-        $this->Cell(0,7,str_replace('-', '/', $data['Delivery_Date']) . ' - ' . 
-                str_replace('-', '/', $data['Expected_Return_Date']),'RTB',1,'C',true);
+        $this->Cell(0,7,date_format($data['Delivery_Date'],'m/d/y') . ' - ' . 
+                date_format($data['Expected_Return_Date'],'m/d/y'),'RTB',1,'C',true);
         
         // Billing and Shipping info
         $this->Ln(3);
@@ -134,10 +134,18 @@ class PDF extends FPDF
         $fill = false;
         foreach($data as $row)
         {
-            $this->Cell($w[0],6,$row['Costume_Key'],'LR',0,'L',$fill);
-            $this->Cell($w[1],6,$row['Costume_Description'],'LR',0,'L',$fill);
-            $this->Cell($w[2],6,'$' . number_format($row['Replacement_Cost'], 2),'LR',0,'R',$fill);
-            $this->Cell($w[3],6,'$' . number_format($row['Rental_Fee'], 2),'LR',0,'R',$fill);
+            $this->Cell($w[0],7,$row['Costume_Key'],'LR',0,'L',$fill);
+            
+            $this->Cell($w[1],7,$row['Costume_Name'] . ' - Type: ' . $row['Costume_Type'] . 
+                    ' - Color: ' . $row['Costume_Color'],'LR',0,'L',$fill);
+            //$this->SetX($this->GetX() - $w[1]);
+            //$this->SetY($this->GetY() - 7);
+            //$this->MultiCell($w[1],7,$row['Costume_Description'],'LR',0,'L',$fill);
+            //$this->SetX($this->GetX() + $w[0] + $w[1]);
+            //$this->SetY($this->GetY() - 7);
+            
+            $this->Cell($w[2],7,'$' . number_format($row['Replacement_Cost'], 2),'LR',0,'R',$fill);
+            $this->Cell($w[3],7,'$' . number_format($row['Rental_Fee'], 2),'LR',0,'R',$fill);
             $this->Ln();
             $fill = !$fill;
         }
@@ -166,6 +174,18 @@ class PDF extends FPDF
             $this->Cell(120,7,'',0,0,'C');
             $this->Cell(45,7,'Rentals',1,0,'L');
             $this->Cell(25,7,'$'.number_format($invoice['Total_Rental_Fee'],2),1,1,'R');
+            if($invoice['Total_Rental_Fee'] > $invoice['Invoice_Total'])//price reduction
+            {
+                $this->Cell(120,7,'',0,0,'C');
+                $this->Cell(45,7,'Price Reduction',1,0,'L');
+                $this->Cell(25,7,'($'.number_format($invoice['Total_Rental_Fee'] - $invoice['Invoice_Total'] .')',2),1,1,'R');
+            }
+            else if ($invoice['Total_Rental_Fee'] < $invoice['Invoice_Total'])//added cost
+            {
+                $this->Cell(120,7,'',0,0,'C');
+                $this->Cell(45,7,'Additional Costs',1,0,'L');
+                $this->Cell(25,7,'$'.number_format($invoice['Invoice_Total'] - $invoice['Total_Rental_Fee'],2),1,1,'R');
+            }
         }
         //restocking cost
         if ($invoice['Status'] == 'Rejected' || $invoice['Status'] == 'Pending'){
@@ -194,7 +214,7 @@ class PDF extends FPDF
 
 //db connection
 $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
-$connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195", "ReturnDatesAsStrings"=>"true");
+$connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
 $link = sqlsrv_connect($server, $connectionInfo);
 
 //Checks connection
@@ -205,11 +225,12 @@ if (!$link) {
 }
 else
 {
-    $str = "SELECT * FROM cmt..[Costume], cmt..[Invoice_Line]
+    $str = "SELECT * FROM cmt..[Costume], cmt..[Invoice_Line], cmt..[Dic_Costume_Type], dbo.[Dic_Costume_Color]
         WHERE cmt..[Costume].Costume_Key = cmt..[Invoice_Line].Costume_Key AND
-        Invoice_ID = ?";
+        Invoice_ID = ? AND dbo.[Costume].Costume_Type_Key = dbo.[Dic_Costume_Type].Costume_Type_Key
+        AND dbo.[Costume].Costume_Color_Key = dbo.[Dic_Costume_Color].Costume_Color_Key";
     //$params = array($_GET['invoiceID']);
-    $params = array(17);//needs user id
+    $params = array(19);//needs user id
     //run queries
     $invoice = getInfo($link,$params[0]);
     
