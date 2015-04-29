@@ -155,7 +155,7 @@
                                 <input type="text" name="email" id="add_admin_email" placeholder="Email of User to Add" />
                             </div>
                             <div class="small-2 columns">
-                                <div id="add_admin_button"class="button postfix">Add Administrator</div>
+                                <div id="add_admin_button" class="button postfix">Add Administrator</div>
                             </div>
                         </div>
                         <div id="add_admin_success"></div>

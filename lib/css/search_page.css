@@ -2,6 +2,24 @@
    This is the CSS file for search_page.php.
 */
 
+.status {
+   font-size: 175%;
+}
+
+#search_bar {
+   vertical-align: middle;
+   padding-left: 0.9375rem;
+   padding-right: 0.9375rem;
+   width: 20em;
+}
+
+#search_page_form {
+   padding-top: 0;
+   padding-bottom: 0;
+   line-height: 1.875em;
+/*   padding-bottom: 1em;*/
+}
+
 .inventory_item {
    max-width: 20%;
    max-height: 20%;
@@ -30,6 +48,14 @@
 
 [class*="column"] + [class*="column"]:last-child {
    float: left;
+}
+
+.top-bar-section #search_bar {
+   background-color: #000000;
+}
+
+.right_nav {
+   background: #000000;
 }
 
 /*

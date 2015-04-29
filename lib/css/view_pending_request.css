@@ -2,6 +2,13 @@
    CSS for view_pending_request.php
 */
 
+.item_description {
+   font-size: 115%;
+}
+.item_location {
+   font-size: 125%;
+}
+
 /*
    Modal CSS
 */
