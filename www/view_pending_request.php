@@ -163,7 +163,7 @@
                   <table>
                      <thead>
                         <tr>
-                           <th width="25%">Item Image</th>
+                           <th width="15%">Item Image</th>
                            <th width="25%">Item Name</th>
                            <th width="100%">Item Description</th>
                            <th width="25%">Item Location</th>

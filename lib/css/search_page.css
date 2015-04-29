@@ -69,3 +69,6 @@
 label {
    color: #FFFFFF;
 }
+input[type="radio"] {
+   margin-bottom: 0;
+}
