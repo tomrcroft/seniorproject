@@ -29,8 +29,8 @@ if (!$conn) {
             }
             //display goes here
             //echo $row['Pull_Request_ID'];
-            $datecreated = date_format($row['Created_Date'], 'Y-m-d H:i:s');
-            $datedelivery = date_format($row['Delivery_Date'], 'Y-m-d H:i:s');
+            $datecreated = date_format($row['Created_Date'], 'm-d-Y');
+            $datedelivery = date_format($row['Delivery_Date'], 'm-d-Y');
 
 			echo '<div class="admin_pull_result panel clearfix" id="pull_request_idnumber" data-pull-id='. $row['Pull_Request_ID'].'>
                             <div class="left pull_request_title"><b>'. $row['Production'] .'</b>
