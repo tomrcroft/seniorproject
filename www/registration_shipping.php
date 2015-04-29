@@ -139,11 +139,8 @@
       <!-- End Top Navigation -->
 
         <div class="welcome">
-            Costume Inventory<br>
-            Welcome to the California Musical Theatre Inventory System.<br>
             <h2 class="text-center">Shipping Information</h2>
             <p class="text-center">
-
             Please <b>continue your registration</b> be entering your <b>Shipping information:</b> <br>
             <i>This information may be editted later.</i> 
             </p>
