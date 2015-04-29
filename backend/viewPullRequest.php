@@ -7,7 +7,7 @@
     //session_start();
     //variables
     $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
-    $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195", "ReturnDatesAsStrings"=>"true");
+    $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
     $link = sqlsrv_connect($server, $connectionInfo);
     $user = $_SESSION['login_user'];
     //$user = 'BBB';
@@ -36,7 +36,7 @@
             //display goes here
             //show the pull request id, status, and date?
             //need to convert to string '. $row['Created_Date'] .'
-            $date = substr($row['Created_Date'],0,strrpos($row['Created_Date'], " ") + 1);
+            $date = date_format($row['Created_Date'],'m/d/y');
             echo '<li class="accordion-navigation">
                     <a href="#pull_request_'. $row['Pull_Request_ID'] .'">
                       <div class="pull_request_name"><b>'. $row['Production'] .'</b></div>
