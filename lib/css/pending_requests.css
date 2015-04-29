@@ -1,4 +1,8 @@
 /*
+   CSS for pending_requests.php
+*/
+
+/*
    Pull Request Panel CSS
 */
 .panel:hover {
@@ -32,33 +36,27 @@
 /*
    Modal CSS
 */
-
 #accept-request-modal {
    color: #000000;
 }
-
 #reject-request-modal {
    color: #000000;
 }
-
 .reveal-modal {
    max-width: 40em;
 }
-
 .modal_instructions {
+   font-size: 105%;
    padding-left: 0.9375rem;
    padding-right: 0.9375rem;
    margin-bottom: 1em;
 }
-
 #pull_request_notes {
    margin-bottom: 1rem;
 }
-
 #accept_pull_request_button {
    margin-left: 1em;
 }
-
 #reject_pull_request_button {
    margin-left: 1em;
 }

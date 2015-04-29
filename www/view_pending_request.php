@@ -6,29 +6,33 @@
 ?>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Costume Inventory System | Administrator | Accept/Reject Pull Request</title>
+      <title>Costume Inventory System | Administrator | View Pending Pull Request</title>
 
-        <!-- Required header files -->
-        <script src="../lib/foundation/js/vendor/jquery.js" type="text/javascript"></script>
-        <script src="../lib/foundation/js/vendor/modernizr.js" type="text/javascript"></script>
-        <script src="../lib/foundation/js/foundation.min.js" type="text/javascript"></script>
-        <script src="../lib/js/logout.js" type="text/javascript"></script>
-        <script src="../lib/js/view_pending_request.js" type="text/javascript"></script>
+      <!-- Required header files -->
+      <!-- Foundation Javascript -->
+      <script src="../lib/foundation/js/vendor/jquery.js" type="text/javascript"></script>
+      <script src="../lib/foundation/js/vendor/modernizr.js" type="text/javascript"></script>
+      <script src="../lib/foundation/js/foundation.min.js" type="text/javascript"></script>
+      <!-- End Foundation Javascript-->
+      <script src="../lib/js/logout.js" type="text/javascript"></script>
+      <script src="../lib/js/view_pending_request.js" type="text/javascript"></script>
 
-        <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
-        <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
-        <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
-        <link rel="stylesheet" href="../lib/css/view_pending_request.css" type="text/css">
+      <!-- Foundation CSS -->
+      <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
+      <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
+      <!-- End Foundation CSS -->
+      <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
+      <link rel="stylesheet" href="../lib/css/view_pending_request.css" type="text/css">
 
-    </head>
+   </head>
 
-    <body>
+   <body>
 
-        <!-- Top Navigation -->
+      <!-- Top Navigation -->
       <nav class="top-bar" data-topbar role="navigation">
 
          <ul class="title-area">
@@ -142,142 +146,122 @@
       </nav>
       <!-- End Top Navigation -->
 
-        <div class="row">    
+      <div class="row">    
 
-            <!-- Pull Request View -->
-            <div class="large-12 columns">
-
-                <div class="row">
-                    <div class="large-10 large-offset-1 columns">
-                        <h3>Pull Request for Company (<span class="pull_number" data-pull-id="<?php echo htmlspecialchars($_GET['idnumber']) ?>">ID: <?php echo htmlspecialchars($_GET['idnumber']) ?></span>)</h3>
-                    </div>
-                </div>
-
-                <!-- Pull Request Items IMAGE, NAME, DESCRIPTION, LOCATION-->
-                <div class="row">
-                    <div class="large-10 large-offset-1 columns" id="pending_pull_results">
-                        <table>
-                            <thead>
-                                <tr>
-                                <th width="25%">Item Image</th>
-                                <th width="25%">Item Name</th>
-                                <th width="100%">Item Description</th>
-                                <th width="25%">Item Location</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php include "../backend/AdminViewPullRequest.php"; ?>
-<!--                                 <tr>
-                                    <td><img src="http://placehold.it/320x240&text=Ad" /></td>
-                                    <td><h4><a href="inventory_page.php?idnumber=xx">Item Name</a></h4></td>
-                                    <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
-                                    <td>Content Goes Here</td>
-                                </tr>
-                                 <tr>
-                                    <td><img src="http://placehold.it/320x240&text=Ad" /></td>
-                                    <td><h4><a href="inventory_page.php?idnumber=xx">Item Name</a></h4></td>
-                                    <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
-                                    <td>Content Goes Here</td>
-                                </tr>
-                                 <tr>
-                                    <td><img src="http://placehold.it/320x240&text=Ad" /></td>
-                                    <td><h4><a href="inventory_page.php?idnumber=xx">Item Name</a></h4></td>
-                                    <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
-                                    <td>Content Goes Here</td>
-                                </tr> -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <!-- End Display of Pull Request Items -->
-
-                <!-- Pull Request Options -->
-                <div class="row">
-                    <div class="large-10 large-offset-1 columns" id="pending_pull_results">
-
-                        <div class="button left" id="go_back">Go Back</div>
-                        <div class="button success right" id="accept_pull_request_modal_button">Accept</div>
-                        <div class="button alert right" id="reject_pull_request_modal_button">Reject</div>
-
-                    </div>
-                </div>
-                <!-- End Pull Request Options -->
-
-            </div>
-
-        </div>
-
-        <!-- Accept Pull Request Modal -->
-        <div class='reveal-modal' id='accept-request-modal' data-reveal>
-
-            <div class="modal_instructions">
-                <b>To Accept the Pull Request</b> <br>
-                Enter the rental fee for these items and any notes
-            </div>
+         <!-- Pull Request View -->
+         <div class="large-12 columns">
 
             <div class="row">
-                <div class="accept_request_box large-12 columns">
-
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <input type="text" name="rentalfee" id="rental_fee" placeholder="Rental Fee" />
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <textarea id="pull_request_notes" placeholder="Notes (Optional)"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <div class="button success right" id="accept_pull_request_button">Accept Pull Request</div>
-
-                            <div class="button alert right cancel_modal_button">Cancel</div>
-                        </div>
-                    </div>
-
-                </div>
+               <div class="large-10 large-offset-1 columns">
+                  <h3>Pull Request for Company (<span class="pull_number" data-pull-id="<?php echo htmlspecialchars($_GET['idnumber']) ?>">ID: <?php echo htmlspecialchars($_GET['idnumber']) ?></span>)</h3>
+               </div>
             </div>
 
-        </div>
-        <!-- End Accept Pull Request Modal -->
-
-        <!-- Reject Pull Request Modal -->
-        <div class='reveal-modal' id='reject-request-modal' data-reveal>
-
-            <div class="modal_instructions">
-                <b>To Reject the Pull Request</b> <br>
-                Enter the reason for rejection
-            </div>
-
+            <!-- Pull Request Items IMAGE, NAME, DESCRIPTION, LOCATION-->
             <div class="row">
-                <div class="reject_request_box large-12 columns">
-
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <input type="text" name="rejectreason" id="reject_reason" placeholder="Reason" />
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <div class="button alert right" id="reject_pull_request_button">Reject Pull Request</div>
-
-                            <div class="button right cancel_modal_button">Cancel</div>
-                        </div>
-                    </div>
-
-                </div>
+               <div class="large-10 large-offset-1 columns" id="pending_pull_results">
+                  <table>
+                     <thead>
+                        <tr>
+                           <th width="25%">Item Image</th>
+                           <th width="25%">Item Name</th>
+                           <th width="100%">Item Description</th>
+                           <th width="25%">Item Location</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <?php include "../backend/AdminViewPullRequest.php"; ?>
+                     </tbody>
+                  </table>
+               </div>
             </div>
+            <!-- End Display of Pull Request Items -->
 
-        </div>
-        <!-- End Accept Pull Request Modal -->
+            <!-- Pull Request Options -->
+            <div class="row">
+               <div class="large-10 large-offset-1 columns" id="pending_pull_results">
 
-    <script>
-        $(document).foundation();
-    </script>
-    </body>
+                  <div class="button left" id="go_back">Go Back</div>
+                  <div class="button success right" id="accept_pull_request_modal_button">Accept</div>
+                  <div class="button alert right" id="reject_pull_request_modal_button">Reject</div>
 
+               </div>
+            </div>
+            <!-- End Pull Request Options -->
+         </div>
+     </div>
+
+      <!-- Accept Pull Request Modal -->
+      <div class='reveal-modal' id='accept-request-modal' data-reveal>
+
+         <div class="modal_instructions">
+            <b>To Accept the Pull Request</b> <br>
+            If you wish change the price of the pull request, enter a new rental fee.<br>
+            Current Total Rental Fee $<span class="current_rental_fee"></span>
+         </div>
+
+         <div class="row">
+            <div class="accept_request_box large-12 columns">
+
+               <div class="row">
+                  <div class="large-12 columns">
+                     <input type="text" name="rentalfee" id="rental_fee" placeholder="Rental Fee" />
+                  </div>
+               </div>
+
+               <div class="row">
+                  <div class="large-12 columns">
+                     <textarea id="pull_request_notes" placeholder="Notes (Optional)"></textarea>
+                  </div>
+               </div>
+
+               <div class="row">
+                  <div class="large-12 columns">
+                     <div class="button success right" id="accept_pull_request_button">Accept Pull Request</div>
+
+                     <div class="button alert right cancel_modal_button">Cancel</div>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+
+      </div>
+      <!-- End Accept Pull Request Modal -->
+
+      <!-- Reject Pull Request Modal -->
+      <div class='reveal-modal' id='reject-request-modal' data-reveal>
+
+         <div class="modal_instructions">
+            <b>To Reject the Pull Request</b> <br>
+            Enter the reason for rejection
+         </div>
+
+         <div class="row">
+            <div class="reject_request_box large-12 columns">
+
+               <div class="row">
+                  <div class="large-12 columns">
+                     <input type="text" name="rejectreason" id="reject_reason" placeholder="Reason" />
+                  </div>
+               </div>
+
+               <div class="row">
+                  <div class="large-12 columns">
+                     <div class="button alert right" id="reject_pull_request_button">Reject Pull Request</div>
+
+                     <div class="button right cancel_modal_button">Cancel</div>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+
+      </div>
+      <!-- End Accept Pull Request Modal -->
+
+   <script>
+      $(document).foundation();
+   </script>
+   </body>
 </html>
