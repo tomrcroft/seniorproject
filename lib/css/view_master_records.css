@@ -7,6 +7,6 @@
 }
 
 
-#records_results > h5 {
+#pull_records_results > h5, #invoice_records_results  > h5 {
    color: #FFFFFF;
 }

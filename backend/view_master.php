@@ -10,8 +10,8 @@ $password="SJSUcmpe195";
 $connectionInfo = array( "UID"=>$username, "PWD"=>$password, "Database"=>$database);
 $conn = sqlsrv_connect( $serverName, $connectionInfo);
 
-//$formvars = array($_POST['companySearch']);
-$formvars = array('bigwatts');
+$formvars = array($_POST['companySearch']);
+// $formvars = array('bigwatts');
 //all pull requests
  $num_items_pull = 0;
  $num_items_invoice = 0;
@@ -77,7 +77,7 @@ $num_items_invoice++;
 //echo $num_items_pull;
 //echo $num_items_invoice;
 
-echo json_encode(array("searchterm"=> 'bigwatts', "results1"=>$rows_pulls, "results2" =>$rows_invoice, "numItemsPull"=>$num_items_pull, "numItemsInvoice" => $num_items_invoice));
+echo json_encode(array("searchterm" => $_POST['companySearch'], "results1" => $rows_pulls, "results2" => $rows_invoice, "numItemsPull" => $num_items_pull, "numItemsInvoice" => $num_items_invoice));
 //echo json_encode(array("searchterm"=> 'CISCO', "results1"=>$rows_pulls, "numItemsPull"=>$num_items_pull));
 
 sqlsrv_free_stmt($stmt1);

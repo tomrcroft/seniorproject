@@ -150,43 +150,41 @@
                 Search Records Form
                 Consider Putting Search form in line with text. Do not have time to put that there now 
                 -->
-                <form action="view_master_records.php" method="POST" data-abide>
+                <!-- <form> -->
                 <div class="row">
                     <div class="large-12 columns" id="search_user_form">
                         <h3 class="text-center">Search records by <b>Company</b> name</h3>
                         <div class="row collapse">
                             <div class="large-6 small-10 large-offset-2 columns">
-                                <input type="text" name="email" id="search_company" placeholder="Search for records by Company" pattern="alpha_numeric" />
-                                <small class="error">Alphanumeric characters only.</small>
+                                <input type="text" name="company" id="search_company" placeholder="Search for records by Company" />
+                                <!-- <small class="error">Alphanumeric characters only.</small> -->
                             </div>
                             <div class="large-2 small-2 columns left">
-                              <button type="submit" name="companySearch" class="button postfix">Search</button>
-                                <!-- <div id="find_records_button" class="button postfix">Search</div> -->
+                              <!-- <button type="submit" name="companySearch" class="button postfix">Search</button> -->
+                                <div id="find_records_button" class="button postfix">Search</div>
                             </div>
                         </div>
                     </div>
                 </div>
-              </form>
+              <!-- </form> -->
 
                 <!-- Records Results Section -->
                 <?php// if(isset($_POST['companySearch'])){?>
                 <div class="row">
-                    <div class="large-4 large-offset-1 columns" id="records_results">
+                    <div class="large-4 large-offset-1 columns" id="pull_records_results">
 
-                        <h5><?php $_POST['companySearch']; ?> Pull Request Records</h5>
-                        <?php include '../backend/view_master.php';//}?>
-                        <!--<div class="admin_pull_results panel" id="pull_request_1">
+<!--                         <div class="admin_pull_results panel" data-pull-id="1">
                             <h5>PULL REQUEST NAME</h5> 
                             DATE MODIFIED: MM-DD-YYYY
                         </div>
                         <div class="admin_pull_results panel" id="pull_request_2">
                             <h5>PULL REQUEST NAME</h5> 
                             DATE MODIFIED: MM-DD-YYYY
-                        </div>
+                        </div> -->
 
                     </div>
-                    <div class="large-4 large-offset-2 columns left" id="records_results">
-                        <h5>COMPANYNAME View Invoice Records for USER (2 Results)</h5>
+                    <div class="large-4 large-offset-2 columns left" id="invoice_records_results">
+<!--                         <h5>COMPANYNAME View Invoice Records for USER (2 Results)</h5>
                         <div class="admin_invoice_results panel" id="pull_request_1">
                             <h5>INVOICE NAME</h5> 
                             DATE MODIFIED: MM-DD-YYYY
@@ -194,7 +192,7 @@
                         <div class="admin_invoice_results panel" id="pull_request_2">
                             <h5>INVOICE NAME</h5> 
                             DATE MODIFIED: MM-DD-YYYY
-                        </div>
+                        </div> -->
 
                     </div>
                 </div>
