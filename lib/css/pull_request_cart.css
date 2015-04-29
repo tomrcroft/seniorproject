@@ -1,6 +1,10 @@
 /*
    This is the CSS file for pull_request_cart.php.
 */
+
+#page_title {
+  font-size: 150%;
+}
 .results {
   margin-top: 50px;
 }
@@ -14,23 +18,25 @@
   margin-bottom: 10px;
 }
 
-.cart_item_image {
-  margin-bottom: 1em;
-}
-
 .cart_results {
    margin-right: 2em;
 }
-
 .item_name {
-  margin-bottom: 0;
-}
 
+  margin-bottom: 0;
+  font-size: 150%;
+}
+a {
+  color: #69BBD6;
+}
 .item_type {
+  font-size: 125%;
   margin-top: 0;
   margin-bottom: 0;
 }
-
+.cart_item_image {
+  margin-bottom: 1em;
+}
 .cart_item_image a img {
    margin: auto;
    display: block;

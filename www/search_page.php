@@ -160,7 +160,7 @@
                <?php
                   if(!empty($_GET['status']))
                      if($_GET['status'] == "LoggedOut")
-                        echo  '<div class="status">You have been logged out</div>';
+                        echo  '<div class="status">You have been logged out.</div>';
                   
                ?>
                <?php

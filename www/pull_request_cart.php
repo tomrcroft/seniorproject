@@ -150,8 +150,8 @@
 
          <!-- Main Content Section -->
          <div class="large-10 push-2 columns">
+            <div id="page_title">Items in your Pull Request</div>
             <p>
-            Items in your Pull Request<br>
             If you would like to rent these items and checkout, click <b>Send Pull Request.</b><br>
             If you would like to restart your pull request, click <b>Cancel Pull Request</b>
             </p>

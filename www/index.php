@@ -95,37 +95,37 @@
                         <form id="registration_form" data-abide="ajax">
                            <div class="row">
                               <div class="large-12 columns">
-                                 <input type="text" name="firstname" id="signup_firstname" placeholder="First Name" required pattern="alpha" />
+                                 <input type="text" name="firstname" id="signup_firstname" placeholder="First Name" required />
                                  <small class="error">First Name is required.</small>
                               </div>
                            </div>
                            <div class="row">
                               <div class="large-12 columns">
-                                 <input type="text" name="lastname" id="signup_lastname" placeholder="Last Name" required pattern="alpha" />
+                                 <input type="text" name="lastname" id="signup_lastname" placeholder="Last Name" required />
                                  <small class="error">Last Name is required.</small>
                               </div>
                            </div>
                            <div class="row">
                               <div class="large-12 columns">
-                                 <input type="text" name="Company" id="signup_company" placeholder="Company" required pattern="alpha" />
+                                 <input type="text" name="Company" id="signup_company" placeholder="Company" required />
                                  <small class="error">Company is required.</small>
                               </div>
                            </div>
                            <div class="row">
                               <div class="large-12 columns">
-                                 <input type="text" name="email" id="signup_email" placeholder="E-mail" required/>
+                                 <input type="text" name="email" id="signup_email" placeholder="E-mail" required pattern="email" />
                                  <small class="error">Valid email is required.</small>
                               </div>
                            </div>
                            <div class="row">
                               <div class="large-12 columns">
-                                 <input type="text" name="phone" id="signup_phone" placeholder="Phone" required/>
+                                 <input type="text" name="phone" id="signup_phone" placeholder="Phone" required pattern="usa_phone" />
                                  <small class="error">Valid 10 digit phone number is required.</small>
                               </div>
                            </div>
                            <div class="row">
                               <div class="large-12 columns">
-                                 <input type="text" name="fax" id="signup_fax" placeholder="Fax" required/>
+                                 <input type="text" name="fax" id="signup_fax" placeholder="Fax" required pattern="usa_phone" />
                                  <small class="error">Valid 10 digit fax is required.</small>
                               </div>
                            </div>
