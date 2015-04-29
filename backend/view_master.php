@@ -60,30 +60,8 @@ while($results = sqlsrv_fetch_array( $stmt1, SQLSRV_FETCH_ASSOC ));
                             DATE MODIFIED: '. $datemodified1 .'
                         </div>
                         ';
-
- $query1 = "SELECT * FROM cmt..[Invoice_Hdr], cmt..[User]
-                                WHERE cmt.[User].Company = ?
-                                AND cmt.[User].Username = cmt..[Invoice_Hdr].Username";
- 	 	echo '	</div>
-                     <div class="large-4 large-offset-2 columns left" id="records_results">
-                         <h5>COMPANYNAME View Invoice Records for USER (2 Results)</h5> ';
- $stmt = sqlsrv_query($conn, $query1, $formvars);
- while($results = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC ));
- {
-
- 	$datemodified = date_format($results['Last_Modified_Date'], 'm-d-Y');
-
-                     echo '    <div class="admin_invoice_results panel" id='. $results['Pull_Request_ID'] .'>
-                             <h5> '.$results['Billing_Name'].'</h5> 
-                             DATE MODIFIED: '. $datemodified .'
-                         </div>
-                         ';
-
-      
-
-
 // //$rows_invoice[] = $results;
-// }
+}
 
 
 //echo json_encode(array("searchterm"=> $find, "results1"=>$rows_pulls, "results2" =>$rows_invoice, "numItems"=>$num_items_returned));
