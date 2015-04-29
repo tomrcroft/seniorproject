@@ -17,27 +17,28 @@ $formvars = array('bigwatts');
  $num_items_invoice = 0;
  $rows_invoice = array();
 
-
 $query1 = "SELECT * FROM cmt..[Invoice_Hdr], cmt..[User]
                                WHERE cmt..[User].Company = ?
-                               AND cmt..[User].Username = cmt..[Invoice_Hdr].Username";
+                               AND cmt..[User].Username = cmt..[Invoice_Hdr].Username
+                               ORDER BY Status ASC";
 	 	// echo '	</div>
    //                  <div class="large-4 large-offset-2 columns left" id="records_results">
    //                      <h5>COMPANYNAME View Invoice Records for USER (2 Results)</h5> ';
-
 $stmt1 = sqlsrv_query($conn, $query1, $formvars);
-while($results = sqlsrv_fetch_array( $stmt1, SQLSRV_FETCH_ASSOC ));
+//echo "this is stmt1: $stmt1         ";
+while($results = sqlsrv_fetch_array( $stmt1, SQLSRV_FETCH_ASSOC ))
 {
+  //echo "this is results: $results       ";
     if($results === false) {
         die( print_r( sqlsrv_errors(), true));
     }
 	
-    echo 'this is one results';
+    //echo 'this is one results';
 $rows_invoice[] = $results; // this is returning null
 $num_items_invoice++;
 }
-echo $num_items_pull;
-echo $num_items_invoice;
+//echo "this is num_items_pull: $num_items_pull      ";
+//cho "this is num_items_invoice: $num_items_invoice    ";
 
 echo json_encode(array("searchterm"=> "bigwatts", "results2" =>$rows_invoice, "numItemsInvoice" => $num_items_invoice));
 
