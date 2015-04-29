@@ -46,7 +46,7 @@ $query1 = "SELECT * FROM cmt..[Invoice_Hdr], cmt..[User]
                                AND cmt..[User].Username = cmt..[Invoice_Hdr].Username";
 	 	echo '	</div>
                     <div class="large-4 large-offset-2 columns left" id="records_results">
-                        <h5>COMPANYNAME View Invoice Records for USER (2 Results)</h5> ';
+                        <h5>'.$result['Company'].' Invoice Records</h5> ';
 
 $stmt1 = sqlsrv_query($conn, $query1, $formvars);
 while($results = sqlsrv_fetch_array( $stmt1, SQLSRV_FETCH_ASSOC ));
