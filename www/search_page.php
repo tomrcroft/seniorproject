@@ -116,14 +116,14 @@
             <!-- End Left Nav Section -->
 
             <!-- Right Nav Section -->
-            <ul class="right">
-               <li class="has-form">
+            <ul class="right right_nav">
+               <li id="search_bar">
                   <div class="row collapse">
                      <div class="large-8 small-9 columns">
                         <input type="text" id="search_term" placeholder="Search Inventory Database">
                      </div>
                      <div class="large-4 small-3 columns">
-                        <input class="alert button expand" id="search_page_form" value="Search"></input>
+                        <div class="alert button postfix" id="search_page_form">Search</div>
                      </div>
                   </div>
                </li>
@@ -160,7 +160,13 @@
                <?php
                   if(!empty($_GET['status']))
                      if($_GET['status'] == "LoggedOut")
-                        echo  'You have been logged out';
+                        echo  '<div class="status">You have been logged out</div>';
+                  
+               ?>
+               <?php
+                  if(!empty($_GET['status']))
+                     if($_GET['status'] == "CartEmptied")
+                        echo  '<div class="status">Your cart has been emptied.</div>';
                   
                ?>
                <div class="hide" id="add_item_text"> added to your cart!</div>   

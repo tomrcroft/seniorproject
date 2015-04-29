@@ -58,8 +58,8 @@ function displayItem($item)
 					<tr>
                     <td>'. $pic .'</td>
                                     <td><h4><a href="inventory_page.php?idnumber='.$item['Costume_Key'].'">'. $item['Costume_Name'] .'</a></h4></td>
-                                    <td> '. $item['Costume_Description'] .'</td>
-                                    <td> '. $item['Storage_Location'] .'</td>
+                                    <td class="item_description"> '. $item['Costume_Description'] .'</td>
+                                    <td class="item_location"> '. $item['Storage_Location'] .'</td>
                                 </tr>
 ';
 
