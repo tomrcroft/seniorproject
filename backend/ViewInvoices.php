@@ -4,7 +4,7 @@
  * This will display all the invoices a user has had sent to them
  */
     $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
-    $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195", "ReturnDatesAsStrings"=>"true");
+    $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
     $link = sqlsrv_connect($server, $connectionInfo);
     $user = $_SESSION['login_user'];
     //$user = 'gurnit';
@@ -34,11 +34,11 @@
             echo '<div class="user_invoice_result panel clearfix" data-invoice-id="'. $row['Invoice_ID'] .'">
                 <div class="left invoice_title">
                    <div class="production_name"><b>'. $row['Production'] .'</b></div>
-                   <div class="created_date">'. substr($row['Created_Date'],0,strrpos($row['Created_Date'], " ") + 1) .'</div>
+                   <div class="created_date">'. date_format($row['Created_Date'],'m/d/y') .'</div>
                 </div>
                 <div class="left dates text-center">
-                   <div class="delivery_date">Expected Delivery Date: '. $row['Delivery_Date'] .'</div>
-                   <div class="return_date">Expected Return Date: '. $row['Expected_Return_Date'] .'</div>
+                   <div class="delivery_date">Expected Delivery Date: '. date_format($row['Delivery_Date'],'m/d/y') .'</div>
+                   <div class="return_date">Expected Return Date: '. date_format($row['Expected_Return_Date'],'m/d/y') .'</div>
                 </div>
                 <div class="right">
                    <div class="invoice_total"><b>TOTAL:</b> $'. number_format($row['Invoice_Total'], 2) .'</div>';
