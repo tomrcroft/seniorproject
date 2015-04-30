@@ -4,7 +4,6 @@
 ?>
 <!DOCTYPE html>
 
-
 <html>
    <head>
       <meta charset="utf-8" />
@@ -158,57 +157,66 @@
       </div>
       <!-- End Instruction Section -->
 
-        <div class="row">
-            <div class="large-3 large-centered columns">
-                <div id="registration_billing" class="form-box">
-                    <div class="row">
-                        <div class="large-12 columns">
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="billingname" id="billing_name" placeholder="Billing Attn" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="billingaddress" id="billing_address" placeholder="Billing Address" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="billingcity" id="billing_city" placeholder="Billing City" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="billingstate" id="billing_state" placeholder="Billing State" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="billingzip" id="billing_zip" placeholder="Billing Zip Code" />
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="large-12 columns">
-                                    <input type="text" name="billingcountry" id="billing_country" placeholder="Billing Country" />
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="large-12 large-centered columns">
-                                    <div class="button expand" id="submit_billing_info_button">Submit Billing Information</div>
-                                </div>
-                            </div>
-
+      <!-- Billing Form -->
+      <div class="row">
+         <div class="large-3 large-centered columns">
+            <div id="registration_billing" class="form-box">
+               <div class="row">
+                  <div class="large-12 columns">
+                     <form id="registration_billing_form" data-abide="ajax">
+                        <div class="row">
+                           <div class="large-12 columns">
+                              <input type="text" name="billingname" id="billing_name" placeholder="Billing Attn" required />
+                              <small class="error">Billing Attn is required.</small>
+                           </div>
                         </div>
-                    </div>
-                </div>
+                        <div class="row">
+                           <div class="large-12 columns">
+                              <input type="text" name="billingaddress" id="billing_address" placeholder="Billing Address" required />
+                              <small class="error">Billing Address is required.</small>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="large-12 columns">
+                              <input type="text" name="billingcity" id="billing_city" placeholder="Billing City" required />
+                              <small class="error">Billing City is required.</small>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="large-12 columns">
+                              <input type="text" name="billingstate" id="billing_state" placeholder="Billing State" required />
+                              <small class="error">Billing State is required.</small>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="large-12 columns">
+                              <input type="text" name="billingzip" id="billing_zip" placeholder="Billing Zip Code" required pattern="zip" />
+                              <small class="error">5 Digit Zip is required.</small>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="large-12 columns">
+                              <input type="text" name="billingcountry" id="billing_country" placeholder="Billing Country" required />
+                              <small class="error">Billing Country is required.</small>
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="large-12 large-centered columns">
+                              <button type="submit" class="button expand" id="submit_billing_info_button_button">Submit Billing</button>
+                              <!-- <div class="button expand" id="submit_billing_info_button">Submit Billing Information</div> -->
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+               </div>
             </div>
-        </div>
+         </div>
+      </div>
+      <!-- End Billing Form -->
 
-    <script>
-        $(document).foundation();
-    </script>
-    </body>
+   <script>
+      $(document).foundation();
+   </script>
+   </body>
 
 </html>

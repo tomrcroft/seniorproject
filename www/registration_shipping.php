@@ -202,7 +202,7 @@
 
                         <div class="row">
                            <div class="large-12 large-centered columns">
-                              <button type="submit" class="button expand" id="register_button">Register</button>
+                              <button type="submit" class="button expand" id="submit_shipping_info_button">Submit Shipping</button>
                               <!-- <div class="button expand" id="submit_shipping_info_button">Submit Shipping Information</div> -->
                            </div>
                         </div>

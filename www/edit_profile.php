@@ -161,7 +161,6 @@
                <div class="large-3 large-offset-1 columns">
                   <!-- Display Profile Information -->
                   <div class="form-box">
-                     <div id="edit_profile_success" class="hide">Editted!</div>
                      <div class="form_title">Edit Profile</div>
                      <div class="account_info">
                         <?php include '../backend/DisplayProfile.php';?>
@@ -298,58 +297,57 @@
                         </div>
                     </div>
 
-                        <div class="large-3 columns">
-                            <div class="form-box">
-                                <div class="row">
-                                    <div class="update_billing_box large-12 columns">
-                                        <div class="row">
-                                            <div class="large-12 columns">
-                                                <input type="text" name="updatebillingname" id="update_billing_name" placeholder="Billing Attn" />
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="large-12 columns">
-                                                <input type="text" name="updatebillingaddress" id="update_billing_address" placeholder="Billing Address" />
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="large-12 columns">
-                                                <input type="text" name="updatebillingcity" id="update_billing_city" placeholder="Billing City" />
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="large-12 columns">
-                                                <input type="text" name="updatebillingstate" id="update_billing_state" placeholder="Billing State" />
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="large-12 columns">
-                                                <input type="text" name="updatebillingzip" id="update_billing_zip" placeholder="Billing Zip Code" />
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="large-12 columns">
-                                                <input type="text" name="updatebillingcountry" id="update_billing_country" placeholder="Billing Country" />
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="large-12 large-centered columns">
-                                                <div class="button expand" id="update_billing_button">Update Billing Information</div>
-                                            </div>
-                                        </div>
+                     <div class="large-3 columns">
+                         <div class="form-box">
+                             <div class="row">
+                                 <div class="update_billing_box large-12 columns">
+                                     <div class="row">
+                                         <div class="large-12 columns">
+                                             <input type="text" name="updatebillingname" id="update_billing_name" placeholder="Billing Attn" />
+                                         </div>
+                                     </div>
+                                     <div class="row">
+                                         <div class="large-12 columns">
+                                             <input type="text" name="updatebillingaddress" id="update_billing_address" placeholder="Billing Address" />
+                                         </div>
+                                     </div>
+                                     <div class="row">
+                                         <div class="large-12 columns">
+                                             <input type="text" name="updatebillingcity" id="update_billing_city" placeholder="Billing City" />
+                                         </div>
+                                     </div>
+                                     <div class="row">
+                                         <div class="large-12 columns">
+                                             <input type="text" name="updatebillingstate" id="update_billing_state" placeholder="Billing State" />
+                                         </div>
+                                     </div>
+                                     <div class="row">
+                                         <div class="large-12 columns">
+                                             <input type="text" name="updatebillingzip" id="update_billing_zip" placeholder="Billing Zip Code" />
+                                         </div>
+                                     </div>
+                                     <div class="row">
+                                         <div class="large-12 columns">
+                                             <input type="text" name="updatebillingcountry" id="update_billing_country" placeholder="Billing Country" />
+                                         </div>
+                                     </div>
+                                     <div class="row">
+                                         <div class="large-12 large-centered columns">
+                                             <div class="button expand" id="update_billing_button">Update Billing Information</div>
+                                         </div>
+                                     </div>
 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
                 </div>
 
             </div>
         </div>
 
-    <script>
-        $(document).foundation();
-    </script>
-    </body>
-
+   <script>
+      $(document).foundation();
+   </script>
+   </body>
 </html>
