@@ -157,10 +157,8 @@
                         <div class="row collapse">
                             <div class="large-6 small-10 large-offset-2 columns">
                                 <input type="text" name="company" id="search_company" placeholder="Search for records by Company" />
-                                <!-- <small class="error">Alphanumeric characters only.</small> -->
                             </div>
                             <div class="large-2 small-2 columns left">
-                              <!-- <button type="submit" name="companySearch" class="button postfix">Search</button> -->
                                 <div id="find_records_button" class="button postfix">Search</div>
                             </div>
                         </div>
@@ -169,9 +167,8 @@
               <!-- </form> -->
 
                 <!-- Records Results Section -->
-                <?php// if(isset($_POST['companySearch'])){?>
                 <div class="row">
-                    <div class="large-4 large-offset-1 columns" id="pull_records_results">
+                    <div class="large-5 large-offset-1 columns" id="pull_records_results">
 
 <!--                         <div class="admin_pull_results panel" data-pull-id="1">
                             <h5>PULL REQUEST NAME</h5> 
@@ -183,7 +180,7 @@
                         </div> -->
 
                     </div>
-                    <div class="large-4 large-offset-2 columns left" id="invoice_records_results">
+                    <div class="large-5 columns left" id="invoice_records_results">
 <!--                         <h5>COMPANYNAME View Invoice Records for USER (2 Results)</h5>
                         <div class="admin_invoice_results panel" id="pull_request_1">
                             <h5>INVOICE NAME</h5> 

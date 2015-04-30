@@ -1,3 +1,8 @@
+.panel:hover {
+   cursor: pointer;
+   background: #e3e3e3;
+}
+
 .admin_pull_results {
    margin-bottom: 0;
 }
@@ -9,4 +14,13 @@
 
 #pull_records_results > h5, #invoice_records_results  > h5 {
    color: #FFFFFF;
+}
+
+.status {
+   font-size: 125%;
+}
+
+.panel {
+   padding-top: 1em;
+   padding-bottom: 1em;
 }
