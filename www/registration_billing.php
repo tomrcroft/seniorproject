@@ -6,27 +6,30 @@
 
 
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>California Musical Theatre | Costume Inventory System</title>
+      <title>California Musical Theatre | Registration</title>
 
-        <!-- Required header files -->
-        <script src="../lib/foundation/js/vendor/jquery.js" type="text/javascript"></script>
-        <script src="../lib/foundation/js/vendor/modernizr.js" type="text/javascript"></script>
-        <script src="../lib/foundation/js/foundation.min.js" type="text/javascript"></script>
-        <script src="../lib/js/registration.js" type="text/javascript"></script>
+      <!-- Required header files -->
+      <!-- Foundation Javascript -->
+      <script src="../lib/foundation/js/vendor/jquery.js" type="text/javascript"></script>
+      <script src="../lib/foundation/js/vendor/modernizr.js" type="text/javascript"></script>
+      <script src="../lib/foundation/js/foundation.min.js" type="text/javascript"></script>
+      <!-- End Foundation Javascript-->
+      <script src="../lib/js/registration.js" type="text/javascript"></script>
 
-        <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
-        <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
-        <link rel="stylesheet" href="../lib/css/forms.css" type="text/css">
-        <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
+      <!-- Foundation CSS -->
+      <link rel="stylesheet" href="../lib/foundation/css/foundation.css" type="text/css">
+      <link rel="stylesheet" href="../lib/foundation/css/normalize.css" type="text/css">
+      <!-- End Foundation CSS -->
+      <link rel="stylesheet" href="../lib/css/forms.css" type="text/css">
+      <link rel="stylesheet" href="../lib/css/main.css" type="text/css">
+   </head>
 
-    </head>
-
-    <body>
-  <!-- Top Navigation -->
+   <body>
+      <!-- Top Navigation -->
       <nav class="top-bar" data-topbar role="navigation">
 
          <ul class="title-area">
@@ -140,15 +143,20 @@
       </nav>
       <!-- End Top Navigation -->
 
-        <div class="welcome">
-            Costume Inventory<br>
-            Welcome to the California Musical Theatre Inventory System.<br>
+      <!-- Instruction Section -->
+      <div class="row">
+         <div class="large-6 large-offset-3 columns">
             <h2 class="text-center">Billing Information</h2>
             <p class="text-center">
-            Please <b>continue your registration</b> be entering your <b>Billing information:</b> <br>
-            <i>This information may be editted later.</i> 
+               Please <b>continue your registration</b> be entering your <b>Billing information:</b> <br>
+               <i>This information may be editted later.</i> 
             </p>
-        </div>
+            <div class="progress large-8 large-offset-2 success round">
+               <span class="meter" style="width: 70%"></span>
+            </div>
+         </div>
+      </div>
+      <!-- End Instruction Section -->
 
         <div class="row">
             <div class="large-3 large-centered columns">
