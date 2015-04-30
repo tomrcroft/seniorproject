@@ -26,7 +26,8 @@
     </head>
 
     <body>
-        <nav class="top-bar" data-topbar role="navigation">
+<!-- Top Navigation -->
+      <nav class="top-bar" data-topbar role="navigation">
 
          <ul class="title-area">
             <!-- <img src="../lib/images/smallCMTlogo.jpg" alt="CMT" style="width:100px;height:110px">-->
@@ -111,16 +112,9 @@
 
             <!-- Right Nav Section -->
             <ul class="right">
-               <li class="has-form">
-                  <div class="row collapse">
-                     <div class="large-8 small-9 columns">
-                        <input type="text" id="search_term" placeholder="Search Inventory Database">
-                     </div>
-                     <div class="large-4 small-3 columns">
-                        <input class="alert button expand" id="search_page_form" value="Search"></input>
-                     </div>
-                  </div>
-               </li>
+              <li class="has-form">
+                  <a href="search_page.php" class="button alert">Search Inventory</a>
+              </li>
                <?php
                   if(isset($_SESSION['login_user'])) { 
                ?>
@@ -142,9 +136,9 @@
                ?>
             </ul>
             <!-- End Right Nav Section -->
-
          </section>
       </nav>
+      <!-- End Top Navigation -->
 
         <div class="row">    
 
@@ -152,34 +146,12 @@
             <?php include '../backend/itemView.php';?>
             
             <!-- Ad Area -->
-            <div class="large-3 pull-9 columns">
+            <div class="large-2 pull-10 columns">
 
             <p><img src="http://placehold.it/320x240&text=Ad" /></p>
 
             </div>
         </div>
-
-
-        <!-- Footer -->
-
-        <footer class="row">
-        <div class="large-12 columns">
-        <hr />
-        <div class="row">
-        <div class="large-6 columns">
-        <p>&copy; Copyright no one at all. Go to town.</p>
-        </div>
-        <div class="large-6 columns">
-        <ul class="inline-list right">
-        <li><a href="#">Section 1</a></li>
-        <li><a href="#">Section 2</a></li>
-        <li><a href="#">Section 3</a></li>
-        <li><a href="#">Section 4</a></li>
-        </ul>
-        </div>
-        </div>
-        </div> 
-        </footer>
 
     <script>
         $(document).foundation();

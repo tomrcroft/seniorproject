@@ -19,9 +19,13 @@
    line-height: 1.875em;
 }
 
-/*.item_description {
-   height: 15em;
-}*/
+.item_name:hover {
+   cursor: pointer;
+   color: #0078a0 !important;
+}
+.item_name {
+   color: #008CBA !important; 
+}
 /*
    Item Display CSS
 */

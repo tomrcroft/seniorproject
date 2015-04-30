@@ -38,42 +38,47 @@ function itemView()
         //print item      
         echo'<!-- Main Content Section -->
             <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
-            <div class="large-9 push-3 columns">
-                <h3>'. $row['Costume_Name'] .'          <small>'. $row['Costume_Type'] .'</small></h3>
+            <div class="large-10 push-2 columns">
+                <div id="'. $row['Costume_Key'] .'" class="item_name">'. $row['Costume_Name'] .'          <small>'. $row['Costume_Type'] .'</small></div>
                     <div class="row">
                         <div class="large-12 columns">
                             <div class="left inventory_image">
                                 '. $pic .'
                             </div>
-                            '. $row['Costume_Description'] .'
-                            <div class="button">Add Item</div>
+                            <div class="item_description left">
+                                NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES 
+                                '. $row['Costume_Description'] .'
+                            </div>
                         </div>
                     </div>
-
-                <p>
-                    COLOR: '. $row['Costume_Color'] .'<br>
-                    GROUP: '. $row['Costume_Group'] .'<br>
-                    FABRIC: '. $row['Costume_Fabric'] .'<br>
-                    TIME PERIOD: '. $row['Costume_Time_Period'] .'<br>
-                    ADULT/CHILD: '. $row['Adult_or_Child'] .'<br>
-                    SIZE: '. $row['Costume_Size'] .'<br>
-                    GENDER: '. $row['Costume_Gender'] .'<br>
-                    DESIGNER: '. $row['Costume_Designer'] .'<br>
-                    CHEST: '. $row['Chest'] .'<br>
-                    WAIST: '. $row['Waist'] .'<br>
-                    HIPS: '. $row['Hips'] .'<br>
-                    GIRTH: '. $row['Girth'] .'<br>
-                    NECK: '. $row['Neck'] .'<br>
-                    SLEEVES: '. $row['Sleeves'] .'<br>
-                    NECK TO WAIST: '. $row['Neck_to_Waist'] .'<br>
-                    WAIST TO HEM: '. $row['Waist_to_Hem'] .'<br>
-                    INSEAM: '. $row['Inseam'] .'<br>
-                    RENT STATUS: '. $availability .'<br>
-                    RENTAL FEE: $'. $row['Rental_Fee'] .'<br>
-                </p>
-
-            
-                
+                    <div class="row">
+                        <div class="large-12 columns">
+                            <div class="add_item left button">Add Item</div>
+                            <div class="item_details_1 left">
+                                COLOR: '. $row['Costume_Color'] .'<br>
+                                GROUP: '. $row['Costume_Group'] .'<br>
+                                FABRIC: '. $row['Costume_Fabric'] .'<br>
+                                TIME PERIOD: '. $row['Costume_Time_Period'] .'<br>
+                                ADULT/CHILD: '. $row['Adult_or_Child'] .'<br>
+                                SIZE: '. $row['Costume_Size'] .'<br>
+                                GENDER: '. $row['Costume_Gender'] .'<br>
+                                DESIGNER: '. $row['Costume_Designer'] .'
+                            </div>
+                            <div class="item_details_2 left">
+                                CHEST: '. $row['Chest'] .'<br>
+                                WAIST: '. $row['Waist'] .'<br>
+                                HIPS: '. $row['Hips'] .'<br>
+                                GIRTH: '. $row['Girth'] .'<br>
+                                NECK: '. $row['Neck'] .'<br>
+                                SLEEVES: '. $row['Sleeves'] .'<br>
+                                NECK TO WAIST: '. $row['Neck_to_Waist'] .'<br>
+                                WAIST TO HEM: '. $row['Waist_to_Hem'] .'<br>
+                                INSEAM: '. $row['Inseam'] .'<br>
+                                RENT STATUS: '. $availability .'<br>
+                                RENTAL FEE: $'. $row['Rental_Fee'] .'<br>
+                            </div>
+                        </div>
+                    </div>                
             </div>';
 
         

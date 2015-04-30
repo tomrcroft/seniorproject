@@ -176,6 +176,7 @@
 
             <div class='reveal-modal' id='send-modal' data-reveal>
                <div class="modal_instructions">
+                  You will be charged a pull request fee. (How much?) <br>
                   Are you sure you want to <b>send a pull request</b> for all items from your cart?
                </div>
                <div id="confirm_send" class="button success right">Yes</div>

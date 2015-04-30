@@ -4,3 +4,20 @@
    margin-right: 1%;
    margin-bottom: 1%;
 }
+
+.item_details_1 {
+   width: 30%;
+   clear: both;
+}
+
+.item_details_2 {
+   width: 30%;
+}
+
+.item_name {
+   font-size: 250%;
+}
+
+.item_description {
+   width: 50%;
+}
