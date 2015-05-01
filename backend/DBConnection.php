@@ -8,8 +8,8 @@
 function connect()
 {
     //db connection
-    $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
-    $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
+    $server = 'CMT-CIMS\CIMS';
+    $connectionInfo = array( "Database"=>"CMT", "UID"=>"CIMSADMIN", "PWD"=>"Hook2015");
     return sqlsrv_connect($server, $connectionInfo);
 }
 ?>
