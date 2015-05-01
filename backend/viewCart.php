@@ -10,9 +10,8 @@
     {
         $cart = $_SESSION['shopping_cart'];
         //$cart = array(17,19,22);
-        $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
-        $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
-        $link = sqlsrv_connect($server, $connectionInfo);
+        include '../backend/DBConnection.php';
+        $link = connect();
 
         //make query array from cart
         foreach ($cart as $value) {
