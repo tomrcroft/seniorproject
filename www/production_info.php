@@ -176,26 +176,26 @@
                         </div>
                         <div class="row">
                            <div class="large-12 columns">
-                              <input type="text" name="deliverydate" id="delivery_date" placeholder="Delivery Date (YYYY-MM-DD)" required pattern="date" />
-                              <small class="error">Delivery Date in YYYY-MM-DD format is required.</small>
+                              <input type="text" name="deliverydate" id="delivery_date" placeholder="Delivery Date (MM-DD-YYYY)" required pattern="MDY_date" />
+                              <small class="error">Delivery Date in MM-DD-YYYY format is required.</small>
                            </div>
                         </div>
                         <div class="row">
                            <div class="large-12 columns">
-                              <input type="text" name="productionopendate" id="production_open_date" placeholder="Production Open Date (YYYY-MM-DD)" required pattern="date" />
-                              <small class="error">Production Open Date in YYYY-MM-DD format is required.</small>
+                              <input type="text" name="productionopendate" id="production_open_date" placeholder="Production Open Date (MM-DD-YYYY)" required pattern="MDY_date" />
+                              <small class="error">Production Open Date in MM-DD-YYYY format is required.</small>
                            </div>
                         </div>
                         <div class="row">
                            <div class="large-12 columns">
-                              <input type="text" name="productionclosedate" id="production_close_date" placeholder="Production Close Date (YYYY-MM-DD)" required pattern="date" />
-                              <small class="error">Production Close Date in YYYY-MM-DD format is required.</small>
+                              <input type="text" name="productionclosedate" id="production_close_date" placeholder="Production Close Date (MM-DD-YYYY)" required pattern="MDY_date" />
+                              <small class="error">Production Close Date in MM-DD-YYYY format is required.</small>
                            </div>
                         </div>
                         <div class="row">
                            <div class="large-12 columns">
-                              <input type="text" name="dateofreturn" id="date_of_return" placeholder="Expected Date of Return (YYYY-MM-DD)" required pattern="date" />
-                              <small class="error">Expected date of Return in YYYY-MM-DD format is required.</small>
+                              <input type="text" name="dateofreturn" id="date_of_return" placeholder="Expected Date of Return (MM-DD-YYYY)" required pattern="MDY_date" />
+                              <small class="error">Expected date of Return in MM-DD-YYYY format is required.</small>
                            </div>
                         </div>
                         <div class="row">

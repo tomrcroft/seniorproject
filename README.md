@@ -3,8 +3,8 @@
 ## Repository Structure
 
 ### Directories
-- api/: PHP scripts
-- lib/: Javascript Libraries, PHP Objects
+- backend/: PHP scripts
+- lib/: Javascript Libraries, CSS Files, Foundation Framework, Images, PHP Objects
 - www/: HTML/CSS/JS pages
 
 ### Branches
