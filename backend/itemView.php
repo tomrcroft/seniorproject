@@ -28,7 +28,7 @@ function itemView()
         //change result into an array
         $row = sqlsrv_fetch_array( $query, SQLSRV_FETCH_ASSOC);
         if( $row['Rentable'] === 1 && !empty($row['Storage_Location']))//checking if item is available
-            $availability = '<span style="color: green">Available</span>';
+            $availability = '<span style="color: #00A300">Available</span>';
         else 
             $availability = '<span style="color: red">Not Available</span>';
         $filename = '../lib/images/temp/item'.$row['Costume_Key'].'.jpeg';
@@ -39,7 +39,7 @@ function itemView()
         echo'<!-- Main Content Section -->
             <!-- This has been source ordered to come first in the markup (and on small devices) but to be to the right of the nav on larger screens -->
             <div class="large-10 push-2 columns">
-                <div id="'. $row['Costume_Key'] .'" class="item_name">'. $row['Costume_Name'] .'          <small>'. $row['Costume_Type'] .'</small></div>
+                <div id="'. $row['Costume_Key'] .'" class="item_name">'. $row['Costume_Name'] .'          <small>'. $row['Costume_Type'] .'</small> <small>'. $availability .'</small></div>
                     <div class="row">
                         <div class="large-12 columns">
                             <div class="left inventory_image">
@@ -74,7 +74,6 @@ function itemView()
                                 NECK TO WAIST: '. $row['Neck_to_Waist'] .'<br>
                                 WAIST TO HEM: '. $row['Waist_to_Hem'] .'<br>
                                 INSEAM: '. $row['Inseam'] .'<br>
-                                RENT STATUS: '. $availability .'<br>
                                 RENTAL FEE: $'. $row['Rental_Fee'] .'<br>
                             </div>
                         </div>

@@ -21,3 +21,7 @@
 .item_description {
    width: 50%;
 }
+
+small {
+   font-size: 60%;
+}
