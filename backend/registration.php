@@ -5,8 +5,8 @@
         $_POST['email'],$crypt,preg_replace('~[^0-9]~','',$_POST['phone']),preg_replace('~[^0-9]~','',$_POST['fax']));
 
     //$formvars = array('alex','gg','my house','aaaa','testing@testtt.com',better_crypt('aaaa'),9999999999,34132423);
-    $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';//remember to change the server
-    $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
+    $server = 'CMT-CIMS\CIMS';//remember to change the server
+    $connectionInfo = array( "Database"=>"CMT", "UID"=>"CIMSADMIN", "PWD"=>"Hook2015");
     $link = sqlsrv_connect($server, $connectionInfo);
             
     //checks if can be added to the database
