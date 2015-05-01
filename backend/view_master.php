@@ -1,8 +1,14 @@
 <?php
 
+// connect to db first
+$serverName="cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433";
+$database="CMT";
+$username="admin";
+$password="SJSUcmpe195";
+
 //DO NOT EDIT BELOW THIS LINE
-include '../backend/DBConnection.php';
-$conn = connect();
+$connectionInfo = array( "UID"=>$username, "PWD"=>$password, "Database"=>$database);
+$conn = sqlsrv_connect( $serverName, $connectionInfo);
 
 $formvars = array($_POST['companySearch']);
 // $formvars = array('bigwatts');
