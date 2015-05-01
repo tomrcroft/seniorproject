@@ -37,7 +37,7 @@ if (!$conn) {
                                 <div class="date_created">DATE CREATED: '. $datecreated .'</div>
                                 <div class="delivery_date">DELIVERY DATE: '. $datedelivery .'</div>
                             </div>
-                            <div class="left notes"> '. $row['Notes'] .' NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES </div>
+                            <div class="left notes"> '. $row['Notes'] .' </div>
                             <div class="right">
                                 <div class="accept_pull_request_modal_button button success right">Accept</div>
                                 <div class="reject_pull_request_modal_button button alert right">Reject</div>
