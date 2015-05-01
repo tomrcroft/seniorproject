@@ -22,6 +22,7 @@ else
 {
     $str = "SELECT Item_Total_Amount FROM cmt..[Pull_Request_Hdr] WHERE Pull_Request_ID = ?";//change to Total_Rental_Fee
     $params = array($_POST['pullid']);
+    //$params = array(24);
     $stmt = sqlsrv_query($link,$str,$params);
     if( $stmt === false ) {
         die( print_r( sqlsrv_errors(), true));
