@@ -40,6 +40,8 @@
     //$formvars[] = 'n/a';
     $formvars[] = $_SESSION['login_user'];
     
+    //include '../backend/CalculateRentalTotal.php';
+    //$value = calcTotal($link,$_SESSION['shopping_cart']);
     //Checks connection
     if (!$link) {
         $output = "Problems with the database connection!"; 
@@ -49,9 +51,8 @@
     else
     {
         $str = "{call dbo.Create_Pull_Request(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,
-            ?,?,?,?,?,?,?,?,?,?,?,?)}";
-        //from new form yet to be added
-        //not needed 3,22,23,24,25
+            ?,?,?,?,?,?,?,?,?,?,?,?)}";//will need to add one more
+        
         $stmt = sqlsrv_query($link,$str,$formvars);//runs statement
         if( $stmt === false ) {
             die( print_r( sqlsrv_errors(), true));

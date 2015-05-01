@@ -5,6 +5,7 @@ include '../backend/checkAdmin.php';
 session_start();
 class PDF extends FPDF
 {
+    private $RentalFee = 0;
     // Page header
     function Header()
     {
@@ -122,7 +123,7 @@ class PDF extends FPDF
         $this->SetLineWidth(.3);
         $this->SetFont('','B');
         // Header
-        $w = array(30, 100, 30, 30);
+        $w = array(20, 120, 30, 20);
         for($i=0;$i<count($header);$i++)
             $this->Cell($w[$i],7,$header[$i],1,0,'C',true);
         $this->Ln();
@@ -138,16 +139,12 @@ class PDF extends FPDF
             
             $this->Cell($w[1],7,$row['Costume_Name'] . ' - Type: ' . $row['Costume_Type'] . 
                     ' - Color: ' . $row['Costume_Color'],'LR',0,'L',$fill);
-            //$this->SetX($this->GetX() - $w[1]);
-            //$this->SetY($this->GetY() - 7);
-            //$this->MultiCell($w[1],7,$row['Costume_Description'],'LR',0,'L',$fill);
-            //$this->SetX($this->GetX() + $w[0] + $w[1]);
-            //$this->SetY($this->GetY() - 7);
             
             $this->Cell($w[2],7,'$' . number_format($row['Replacement_Cost'], 2),'LR',0,'R',$fill);
             $this->Cell($w[3],7,'$' . number_format($row['Rental_Fee'], 2),'LR',0,'R',$fill);
             $this->Ln();
             $fill = !$fill;
+            $this->RentalFee += $row['Rental_Fee'];
         }
         // Closing line
         $this->Cell(array_sum($w),0,'','T');
@@ -173,18 +170,18 @@ class PDF extends FPDF
         if ($invoice['Status'] == 'Pending' || $invoice['Status'] == 'Accepted'){
             $this->Cell(120,7,'',0,0,'C');
             $this->Cell(45,7,'Rentals',1,0,'L');
-            $this->Cell(25,7,'$'.number_format($invoice['Total_Rental_Fee'],2),1,1,'R');
-            if($invoice['Total_Rental_Fee'] > $invoice['Invoice_Total'])//price reduction
+            $this->Cell(25,7,'$'.number_format($this->RentalFee,2),1,1,'R');
+            if($this->RentalFee > $invoice['Total_Rental_Fee'])//price reduction -- will need to change
             {
                 $this->Cell(120,7,'',0,0,'C');
                 $this->Cell(45,7,'Price Reduction',1,0,'L');
-                $this->Cell(25,7,'($'.number_format($invoice['Total_Rental_Fee'] - $invoice['Invoice_Total'] .')',2),1,1,'R');
+                $this->Cell(25,7,'($'. number_format($this->RentalFee - $invoice['Total_Rental_Fee'],2) .')',1,1,'R');
             }
-            else if ($invoice['Total_Rental_Fee'] < $invoice['Invoice_Total'])//added cost
+            else if ($this->RentalFee < $invoice['Total_Rental_Fee'])//added cost -- will need to change
             {
                 $this->Cell(120,7,'',0,0,'C');
                 $this->Cell(45,7,'Additional Costs',1,0,'L');
-                $this->Cell(25,7,'$'.number_format($invoice['Invoice_Total'] - $invoice['Total_Rental_Fee'],2),1,1,'R');
+                $this->Cell(25,7,'$'.number_format($invoice['Total_Rental_Fee'] - $this->RentalFee,2),1,1,'R');
             }
         }
         //restocking cost
@@ -198,7 +195,7 @@ class PDF extends FPDF
         
         if ($invoice['Status'] == 'Accepted' || $invoice['Status'] == 'Pending')
         {
-            $total = $invoice['Invoice_Total'];
+            $total = $invoice['Total_Rental_Fee'];
         }
         else
         {
