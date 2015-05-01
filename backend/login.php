@@ -10,9 +10,8 @@
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
     
-    $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';//remember to change the server
-    $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
-    $link = sqlsrv_connect($server, $connectionInfo);
+    include '../backend/DBConnection.php';
+    $link = connect();
     if (!$link) {
         $output = "Something went wrong with connecting to the database!"; 
         $json = json_encode($output);
