@@ -4,8 +4,8 @@
  * returns the shipping and billing information
  */
 function getAddressInfo($id){
-    $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';//remember to change the server
-    $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
+    $server = 'CMT-CIMS\CIMS';//remember to change the server
+    $connectionInfo = array( "Database"=>"CMT", "UID"=>"CIMSADMIN", "PWD"=>"Hook2015");
     $link = sqlsrv_connect($server, $connectionInfo);
     
     //Checks connection
