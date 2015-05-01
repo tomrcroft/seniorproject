@@ -182,7 +182,7 @@
                   <div class="row">
                      <div class="large-12 columns">
                         <input type="text" name="rentalfee" id="rental_fee" placeholder="Rental Fee" pattern="currency" />
-                        <small class="error">Rental fee in the correct format required. (Up to 8 digits)</small>
+                        <small class="error">Rental fee in the correct format required. (Up to 8 Digits followed by 2 digits after decimal)</small>
                      </div>
                   </div>
 
