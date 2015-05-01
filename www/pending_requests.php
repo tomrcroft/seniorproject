@@ -178,27 +178,29 @@
 
          <div class="row">
             <div class="accept_request_box large-12 columns">
-
-               <div class="row">
-                  <div class="large-12 columns">
-                     <input type="text" name="rentalfee" id="rental_fee" placeholder="Rental Fee" />
+               <form id="accept_request_form" data-abide="ajax">
+                  <div class="row">
+                     <div class="large-12 columns">
+                        <input type="text" name="rentalfee" id="rental_fee" placeholder="Rental Fee" pattern="currency" />
+                        <small class="error">Rental fee in the correct format required. (Up to 8 digits)</small>
+                     </div>
                   </div>
-               </div>
 
-               <div class="row">
-                  <div class="large-12 columns">
-                     <textarea rows="3" id="pull_request_notes" placeholder="Notes (Optional)"></textarea>
+                  <div class="row">
+                     <div class="large-12 columns">
+                        <textarea rows="3" id="pull_request_notes" placeholder="Notes (Optional)"></textarea>
+                     </div>
                   </div>
-               </div>
 
-               <div class="row">
-                  <div class="large-12 columns">
-                     <div class="button success right" id="accept_pull_request_button">Accept Pull Request</div>
+                  <div class="row">
+                     <div class="large-12 columns">
+                        <button type="submit" class="button success right" id="accept_pull_request_button">Accept Pull Request</button>
+                        <!-- <div class="button success right" id="accept_pull_request_button">Accept Pull Request</div> -->
 
-                     <div class="button alert right cancel_modal_button">Cancel</div>
+                        <div class="button alert right cancel_modal_button">Cancel</div>
+                     </div>
                   </div>
-               </div>
-
+               </form>
             </div>
          </div>
 
