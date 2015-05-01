@@ -167,41 +167,49 @@
             <div id="production_info" class="form-box">
                <div class="row">
                   <div class="large-12 columns">
-                     <div class="row">
-                        <div class="large-12 columns">
-                           <input type="text" name="productionname" id="production_name" placeholder="Production Name" />
+                     <form id="production_form" data-abide="ajax">
+                        <div class="row">
+                           <div class="large-12 columns">
+                              <input type="text" name="productionname" id="production_name" placeholder="Production Name" required />
+                              <small class="error">Production Name is required.</small>
+                           </div>
                         </div>
-                     </div>
-                     <div class="row">
-                        <div class="large-12 columns">
-                           <input type="text" name="deliverydate" id="delivery_date" placeholder="Delivery Date (YYYY-MM-DD)" />
+                        <div class="row">
+                           <div class="large-12 columns">
+                              <input type="text" name="deliverydate" id="delivery_date" placeholder="Delivery Date (YYYY-MM-DD)" required pattern="date" />
+                              <small class="error">Delivery Date in YYYY-MM-DD format is required.</small>
+                           </div>
                         </div>
-                     </div>
-                     <div class="row">
-                        <div class="large-12 columns">
-                           <input type="text" name="productionopendate" id="production_open_date" placeholder="Production Open Date (YYYY-MM-DD)" />
+                        <div class="row">
+                           <div class="large-12 columns">
+                              <input type="text" name="productionopendate" id="production_open_date" placeholder="Production Open Date (YYYY-MM-DD)" required pattern="date" />
+                              <small class="error">Production Open Date in YYYY-MM-DD format is required.</small>
+                           </div>
                         </div>
-                     </div>
-                     <div class="row">
-                        <div class="large-12 columns">
-                           <input type="text" name="productionclosedate" id="production_close_date" placeholder="Production Close Date (YYYY-MM-DD)" />
+                        <div class="row">
+                           <div class="large-12 columns">
+                              <input type="text" name="productionclosedate" id="production_close_date" placeholder="Production Close Date (YYYY-MM-DD)" required pattern="date" />
+                              <small class="error">Production Close Date in YYYY-MM-DD format is required.</small>
+                           </div>
                         </div>
-                     </div>
-                     <div class="row">
-                        <div class="large-12 columns">
-                           <input type="text" name="dateofreturn" id="date_of_return" placeholder="Expected Date of Return" />
+                        <div class="row">
+                           <div class="large-12 columns">
+                              <input type="text" name="dateofreturn" id="date_of_return" placeholder="Expected Date of Return (YYYY-MM-DD)" required pattern="date" />
+                              <small class="error">Expected date of Return in YYYY-MM-DD format is required.</small>
+                           </div>
                         </div>
-                     </div>
-                     <div class="row">
-                        <div class="large-12 columns">
-                           <textarea rows="3" id="notes" placeholder="Notes (Optional)"></textarea>
+                        <div class="row">
+                           <div class="large-12 columns">
+                              <textarea rows="3" id="notes" placeholder="Notes (Optional)"></textarea>
+                           </div>
                         </div>
-                     </div>
-                     <div class="row">
-                        <div class="large-12 large-centered columns">
-                           <div class="button expand" id="submit_pull_request_button">Submit Pull Request</div>
+                        <div class="row">
+                           <div class="large-12 large-centered columns">
+                              <button type="submit" class="button expand" id="submit_pull_request_button">Submit Pull Request</button>
+                              <!-- <div class="button expand" id="submit_pull_request_button">Submit Pull Request</div> -->
+                           </div>
                         </div>
-                     </div>
+                     </form>
                   </div>
                </div>
             </div>
