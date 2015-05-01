@@ -137,7 +137,7 @@
                            </div>
                            <div class="row">
                               <div class="large-12 columns">
-                                 <input type="password" name="password" id="signup_password" placeholder="Password" required pattern="alpha_numeric" />
+                                 <input type="password" name="password" id="signup_password" placeholder="Password" required />
                                  <small class="error">Password is required.</small>
                               </div>
                            </div>

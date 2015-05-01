@@ -1,9 +1,9 @@
 <?php
 // connect to db first
-$serverName="cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433";
+$serverName="CMT-CIMS\CIMS";
 $database="CMT";
-$username="admin";
-$password="SJSUcmpe195";
+$username="CIMSADMIN";
+$password="Hook2015";
 //DO NOT EDIT BELOW THIS LINE
 $connectionInfo = array( "UID"=>$username, "PWD"=>$password, "Database"=>$database);
 $conn = sqlsrv_connect( $serverName, $connectionInfo);
