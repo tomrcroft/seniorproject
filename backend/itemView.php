@@ -46,7 +46,6 @@ function itemView()
                                 '. $pic .'
                             </div>
                             <div class="item_description left">
-                                NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES NOTES 
                                 '. $row['Costume_Description'] .'
                             </div>
                         </div>
@@ -54,6 +53,7 @@ function itemView()
                     <div class="row">
                         <div class="large-12 columns">
                             <div class="add_item left button">Add Item</div>
+                            <div class="rental_fee">RENTAL FEE: $'. $row['Rental_Fee'] .' </div>
                             <div class="item_details_1 left">
                                 COLOR: '. $row['Costume_Color'] .'<br>
                                 GROUP: '. $row['Costume_Group'] .'<br>
@@ -74,7 +74,6 @@ function itemView()
                                 NECK TO WAIST: '. $row['Neck_to_Waist'] .'<br>
                                 WAIST TO HEM: '. $row['Waist_to_Hem'] .'<br>
                                 INSEAM: '. $row['Inseam'] .'<br>
-                                RENTAL FEE: $'. $row['Rental_Fee'] .'<br>
                             </div>
                         </div>
                     </div>                

@@ -25,3 +25,12 @@
 small {
    font-size: 60%;
 }
+
+.add_item {
+   margin-right: 1.25em;
+}
+
+.rental_fee {
+   font-size: 125%;
+   margin-top: .5em;
+}
