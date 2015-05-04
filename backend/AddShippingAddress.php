@@ -6,8 +6,8 @@
     session_start();
     if(!isset($_SESSION['user_id']))
         include '../backend/getUserId.php';
-    $server = 'CMT-CIMS\CIMS';
-    $connectionInfo = array( "Database"=>"CMT", "UID"=>"CIMSADMIN", "PWD"=>"Hook2015");
+    $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
+    $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
     $link = sqlsrv_connect($server, $connectionInfo);
     $formvars = array($_SESSION['user_id'],$_POST['shipAddress'],$_POST['shipCity'],$_POST['shipState'],
         $_POST['shipAreaCode'],$_POST['shipCountry'],$_POST['shipAttn']);

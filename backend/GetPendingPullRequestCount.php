@@ -4,8 +4,8 @@
  * Returns the number of pending pull requests
  */
 
-    $server = 'CMT-CIMS\CIMS';
-    $connectionInfo = array( "Database"=>"CMT", "UID"=>"CIMSADMIN", "PWD"=>"Hook2015", "ReturnDatesAsStrings"=>"true");
+    $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
+    $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195", "ReturnDatesAsStrings"=>"true");
     $link = sqlsrv_connect($server, $connectionInfo);
     //Checks connection
     if (!$link) {

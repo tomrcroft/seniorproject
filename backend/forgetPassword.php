@@ -4,8 +4,8 @@ session_start();
 
 $email = $_POST['email'];
 //echo "email:" .$email;
-$server = 'CMT-CIMS\CIMS';
-$connectionInfo = array( "Database"=>"CMT", "UID"=>"CIMSADMIN", "PWD"=>"Hook2015");
+$server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
+$connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
 $link = sqlsrv_connect($server, $connectionInfo);
 $sql = "SELECT * FROM [User] WHERE email='$email'";
 $stmt = sqlsrv_query( $link, $sql );

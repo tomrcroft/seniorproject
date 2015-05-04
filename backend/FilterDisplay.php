@@ -8,8 +8,8 @@ function filterDisplay()
     //if empty have the filter show all filter possibilities
     if(!isset($_POST['searchterm']))
     {
-        $server = 'CMT-CIMS\CIMS';
-        $connectionInfo = array( "Database"=>"CMT", "UID"=>"CIMSADMIN", "PWD"=>"Hook2015");
+        $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
+        $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
         $link = sqlsrv_connect($server, $connectionInfo);
         
         //Checks connection
@@ -48,8 +48,8 @@ function filterDisplay()
     else//run queries for each of the 4 with the search term
     {
         $search = array($_POST['searchterm']);//the value in the search box
-        $server = 'CMT-CIMS\CIMS';
-        $connectionInfo = array( "Database"=>"CMT", "UID"=>"CIMSADMIN", "PWD"=>"Hook2015");
+        $server = 'cmt.cs87d7osvy2t.us-west-2.rds.amazonaws.com,1433';
+        $connectionInfo = array( "Database"=>"CMT", "UID"=>"admin", "PWD"=>"SJSUcmpe195");
         $link = sqlsrv_connect($server, $connectionInfo);
         
         //Checks connection
